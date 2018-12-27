@@ -52,9 +52,9 @@
 					<nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
 						<div class="navbar-brand">
 							{% if page.url == '/' %}
-								<a id="unicorn-btn" class="navbar-item" href="https://sindresorhus.com/unicorn" title="Click me!">🦄</a>
+								<a id="unicorn-btn" class="navbar-item" href="https://sindresorhus.com/unicorn" title="Click me!">\u2622</a>
 							{% else %}
-								<span class="navbar-item">Sindre Sorhus</span>
+								<span class="navbar-item">Juan Imbett</span>
 							{% endif %}
 							<a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
 								<span aria-hidden="true"></span>
@@ -65,13 +65,9 @@
 						<div class="navbar-menu">
 							<div class="navbar-end">
 								<a class="navbar-item is-tab" href="{% link index.html %}">Home</a>
-								<a class="navbar-item is-tab" href="{% link index.html %}#projects">Projects</a>
-								<a class="navbar-item is-tab" href="{% link apps.html %}">Apps</a>
-								<a class="navbar-item is-tab" href="{% link donate.md %}">Donate</a>
-								<a class="navbar-item is-tab" href="{% link thanks.md %}">Supporters</a>
 								<a class="navbar-item is-tab" href="{% link about.md %}">About</a>
-								<a class="navbar-item is-tab" href="{% link contact.md %}">Contact</a>
-								<a class="navbar-item is-tab" href="https://blog.sindresorhus.com">Blog</a>
+								<a class="navbar-item is-tab" href="{% link contact.md %}">Notes</a>
+								<a class="navbar-item is-tab" href="https://blog.sindresorhus.com">Code</a>
 							</div>
 						</div>
 					</nav>
