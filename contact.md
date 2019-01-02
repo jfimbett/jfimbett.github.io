@@ -38,9 +38,13 @@ I value my time, so make it worth it, and [keep it succinct.](https://www.google
 ---
 
 <p id="email">
-	<a href="mailto:sindresorhus@gmail.com">sindresorhus@gmail.com</a>
+	<a href="">juan.imbet@upf.edu</a>
 </p>
 
 ---
 
-Please no support questions, job offers, questionnaires, etc.
+<xmp>
+   function an_example(x)
+   			return x*2
+   	end
+</xmp>
