@@ -3,6 +3,7 @@ layout: simple
 title: Contact
 ---
 
+
 <style>
 .hero-body .column {
 	margin-bottom: 180px;
@@ -33,7 +34,7 @@ element.search = searchParams.toString();
 
 # Contact
 
-
+Some Text
 
 ---
 
