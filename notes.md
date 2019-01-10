@@ -43,45 +43,12 @@ In this page I present posts about things that I have struggled with during my r
 ---
 
 Cochrane 2005 writes some example...
-<pre><code><? $str = <<<'EOD'
-  <!-- your code here -->
-EOD;
-  $str = htmlspecialchars($str, ENT_HTML5, ENT_NOQUOTES);
-  $str = str_replace("&amp;hellip;", "&hellip;", $str);
-  echo($str);?>
-</code></pre>
-
 <figure>
   <figcaption>Your code title</figcaption>
   <pre>
-    <code>
+    <code contenteditable spellcheck="false">
       <!-- your code here -->
-      g_all <- function (parms,X) {
-			  a <- parms[1:25]
-			  b <- parms[26:50]
-			  s <- parms[51:75]
-			  h <- parms[76:100]
-			  lambda_market<-parms[101]
-			  lambda_smb<-parms[102]
-			  lambda_hml<-parms[103]
-			  mktrf<-X[,26]
-			  smb<-X[,27]
-			  hml<-X[,28]
-			  mcond<-c()
-			  for (i in 1:25){ 
-			    e <- X[,i]- a[i]- b[i]*mktrf-s[i]*smb-h[i]*hml
-			    mcond <- cbind(mcond,e,e*mktrf, e*smb, e*hml)
-			  }
-			  
-			  for (i in 1:25){ 
-			    e <- X[,i]- b[i]*lambda_market-s[i]*lambda_smb-h[i]*lambda_hml
-			    mcond <- cbind(mcond,e)
-			  }
-			  return (mcond);
-			}
+      some_code
     </code>
   </pre>
 </figure>
-<xmp>
-
-</xmp>
