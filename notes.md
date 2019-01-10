@@ -50,29 +50,29 @@ Cochrane 2005 writes some example...
   <pre>
     <code>
       <!-- your code here -->
-    g_all <- function (parms,X) {
-	  a <- parms[1:25]
-	  b <- parms[26:50]
-	  s <- parms[51:75]
-	  h <- parms[76:100]
-	  lambda_market<-parms[101]
-	  lambda_smb<-parms[102]
-	  lambda_hml<-parms[103]
-	  mktrf<-X[,26]
-	  smb<-X[,27]
-	  hml<-X[,28]
-	  mcond<-c()
-	  for (i in 1:25){ 
-	    e <- X[,i]- a[i]- b[i]*mktrf-s[i]*smb-h[i]*hml
-	    mcond <- cbind(mcond,e,e*mktrf, e*smb, e*hml)
-	  }
+g_all <- function (parms,X) {
+ a <- parms[1:25]
+ b <- parms[26:50]
+ s <- parms[51:75]
+ h <- parms[76:100]
+ lambda_market<-parms[101]
+ lambda_smb<-parms[102]
+ lambda_hml<-parms[103]
+ mktrf<-X[,26]
+ smb<-X[,27]
+ hml<-X[,28]
+ mcond<-c()
+ for (i in 1:25){ 
+   e <- X[,i]- a[i]- b[i]*mktrf-s[i]*smb-h[i]*hml
+   mcond <- cbind(mcond,e,e*mktrf, e*smb, e*hml)
+ }
 			  
-	  for (i in 1:25){ 
-	    e <- X[,i]- b[i]*lambda_market-s[i]*lambda_smb-h[i]*lambda_hml
-	    mcond <- cbind(mcond,e)
-	  }
-	  return (mcond);
-	}
+ for (i in 1:25){ 
+   e <- X[,i]- b[i]*lambda_market-s[i]*lambda_smb-h[i]*lambda_hml
+   mcond <- cbind(mcond,e)
+ }
+ return (mcond);
+}
     </code>
   </pre>
 </figure>
