@@ -43,8 +43,13 @@ In this page I present posts about things that I have struggled with during my r
 ---
 
 Cochrane 2005 writes some example...
-<xmp>
-g_all <- function (parms,X) {
+
+<figure>
+  <figcaption>Your code title</figcaption>
+  <pre>
+    <code>
+      <!-- your code here -->
+      g_all <- function (parms,X) {
   a <- parms[1:25]
   b <- parms[26:50]
   s <- parms[51:75]
@@ -67,4 +72,9 @@ g_all <- function (parms,X) {
   }
   return (mcond);
 }
+    </code>
+  </pre>
+</figure>
+<xmp>
+
 </xmp>
