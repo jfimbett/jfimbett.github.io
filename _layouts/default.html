@@ -19,14 +19,15 @@
 				{% endif %}
 			{% endfor %}
 		{% else %}
-			<meta property="og:image" content="https://sindresorhus.com/sindre-sorhus.jpg">
+			<meta property="og:image" content="">
 		{% endif %}
 		<meta name="twitter:card" content="summary">
-		<meta name="twitter:site" content="@sindresorhus">
-		<meta name="twitter:creator" content="@sindresorhus">
+		<meta name="twitter:site" content="">
+		<!--<meta name="twitter:site" content="@sindresorhus">-->
+		<meta name="twitter:creator" content="">
 		<meta name="x-build-time" content="{{ site.time | date_to_rfc822 }}">
 		<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-		<link rel="alternate" type="application/rss+xml" title="Sindre Sorhus' blog" href="https://blog.sindresorhus.com/feed">
+		<link rel="alternate" type="application/rss+xml" title="Juan Imbett' blog" href="">
 		<link rel="preload" href="{{ '/font-awesome.woff' | relative_url }}" as="font" crossorigin>
 		<link rel="icon" href="{{ '/favicon.png' | relative_url }}" sizes="32x32">
 		<link rel="stylesheet" href="{{ '/main.css' | relative_url }}">
@@ -66,7 +67,7 @@
 							<div class="navbar-end">
 								<a class="navbar-item is-tab" href="{% link index.html %}">Home</a>
 								<a class="navbar-item is-tab" href="{% link about.md %}">About</a>
-								<a class="navbar-item is-tab" href="{% link contact.md %}">Contact</a>
+								<a class="navbar-item is-tab" href="{% link contact.md %}">Research</a>
 								<a class="navbar-item is-tab" href="{% link notes.md %}">Notes</a>
 								<a class="navbar-item is-tab" href="https://blog.sindresorhus.com">Code</a>
 							</div>

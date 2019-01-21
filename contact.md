@@ -32,20 +32,17 @@ if (originalSearchParams.has('body')) {
 element.search = searchParams.toString();
 </script>
 
-# Contact
+# Research
 
-Some Text
+Working Papers
 
 ---
 
-<p id="email">
-	<a href="">juan.imbet@upf.edu</a>
+<p>
+	<a href="">Tweeting for Money (with Javier Gil-Bazo)</a>
+	<a href="">Listening to the Fates: Investor Learning and the Likelihood of Future Events</a>
 </p>
 
 ---
 
-<xmp>
-   function an_example(x)
-   			return x*2
-   	end
-</xmp>
+
