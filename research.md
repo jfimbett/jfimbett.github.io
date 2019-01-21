@@ -39,9 +39,10 @@ Working Papers
 ---
 
 <p>
-	<a href="">Tweeting for Money (with Javier Gil-Bazo)</a>
-	<a href="">Listening to the Fates: Investor Learning and the Likelihood of Future Events</a>
+	<a href="">Tweeting for Money </a> (with Javier Gil-Bazo)
 </p>
+
+<p><a href="">Listening to the Fates: Investor Learning and the Likelihood of Future Events</a></p>
 
 ---
 
