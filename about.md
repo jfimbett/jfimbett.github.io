@@ -5,7 +5,7 @@ title: About
 
 # About Juan Imbett
 
-I'm a Ph.D. student in Finance at Universitat Pompeu Fabra and BGSE in Barcelona. I am interested in Information Disclosure, Asset Pricing, Corporate Finance, and Computational Finance. 
+I'm a Ph.D. student in Finance at Universitat Pompeu Fabra and BGSE in Barcelona. I am interested in Information Disclosure, Asset Pricing, Corporate Finance, and Computational Finance. You can find my full cv <a href="main.pdf"> here </a>
 
 
 ### Education
