@@ -10,7 +10,7 @@
 		const div = document.createElement('div');
 		div.style.position = 'fixed';
 
-		document.title = '✨🦄✨';
+		document.title = '';
 
 		let numType = 'px';
 		const heightRandom = Math.random() * 0.75;
