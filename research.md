@@ -39,14 +39,16 @@ Working Papers
 ---
 
 <p>
-	<a href="">Tweeting for Money </a> (with Javier Gil-Bazo)
+	<a>Tweeting for Money </a> (with Javier Gil-Bazo)
 </p>
 
 
-<p style="text-align:justify"><font size="-1"></font></p>
+<p style="text-align:justify"></p>
 
-<p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">Listening to the Fates: Investor Learning and the Likelihood of Future Events</a></p>
+<p>
+	<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">Listening to the Fates: Investor Learning and the Likelihood of Future Events</a></p>
 <b>Presentations: </b> ESADE (2018)
+
 ---
 
 
