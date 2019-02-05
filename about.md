@@ -10,7 +10,7 @@ I'm a Ph.D. student in Finance at Universitat Pompeu Fabra and BGSE in Barcelona
 
 ### Education
 
-- Ph.D. in Finance (UPF and BGSE) 2016-2020
+- Ph.D. in Finance (UPF and BGSE) 2016-2021
 - M.Res. in Finance (UPF) 2015-2016
 - M.Sc. in Finance (BGSE) 2014-2015
 - Minor in Mathematics (Universidad de los Andes) 2010-2013
