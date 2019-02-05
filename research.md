@@ -39,7 +39,7 @@ Working Papers
 ---
 
 <p>
-	<a>Tweeting for Money </a> (with Javier Gil-Bazo)
+	<a>Tweeting for Money </a> with Javier Gil-Bazo (UPF and BGSE)
 </p>
 
 
@@ -48,6 +48,11 @@ Working Papers
 <p>
 	<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">Listening to the Fates: Investor Learning and the Likelihood of Future Events</a></p>
 <b>Presentations: </b> ESADE (2018)
+
+<p>
+	<a> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </a> with Filippo Ippolito (UPF and BGSE), Stefano Sacchetto (IESE), and Roberto Steri (HEC Lausanne)
+</p>
+
 
 ---
 
