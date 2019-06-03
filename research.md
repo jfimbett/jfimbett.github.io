@@ -37,13 +37,10 @@ element.search = searchParams.toString();
 Working Papers
 
 ---
-
+<p style="text-align:justify"></p>
 <p>
 	<b>Tweeting for Money </b> with Javier Gil-Bazo (UPF and BGSE)
 </p>
-
-
-<p style="text-align:justify"></p>
 
 <p>
 	<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">Listening to the Fates: Investor Learning and the Likelihood of Future Events</a></p>
