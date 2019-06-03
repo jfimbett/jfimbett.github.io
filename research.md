@@ -39,7 +39,7 @@ Working Papers
 ---
 
 <p>
-	<a>Tweeting for Money </a> with Javier Gil-Bazo (UPF and BGSE)
+	<b>Tweeting for Money </b> with Javier Gil-Bazo (UPF and BGSE)
 </p>
 
 
@@ -50,7 +50,7 @@ Working Papers
 <b>Presentations: </b> ESADE (2018)
 
 <p>
-	<a> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </a> with Filippo Ippolito (UPF and BGSE), Stefano Sacchetto (IESE), and Roberto Steri (HEC Lausanne)
+	<b> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </b> with Filippo Ippolito (UPF and BGSE), Stefano Sacchetto (IESE), and Roberto Steri (HEC Lausanne)
 </p>
 
 
