@@ -46,7 +46,10 @@ Working Papers
 
 <p>
 	<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">Listening to the Fates: Investor Learning and the Likelihood of Future Events</a>
-Information that is difficult to quantify, process, and verify - commonly refered as qualitative
+
+</p>
+
+<p>Information that is difficult to quantify, process, and verify - commonly refered as qualitative
 or soft information - is disclosed by firms, and processed by investors in financial markets. When
 this information is informative, it affects investors’ decisions and moulds prices in equilibrium.
 Despite its relevance, researchers lack a theoretical framework to model its impact on capital
@@ -59,14 +62,11 @@ to their posterior. I study how this type of information affects capital allocat
 Intuitively, investors seek funds with more favorable qualitative information. Due to its soft
 nature, firms have incentives to manipulate the information. In equilibrium, reputation costs
 decrease the probability of investors verifying information, and verification costs and investors’
-risk aversion decrease the probability of funds manipulating information
-
-
-</p>
+risk aversion decrease the probability of funds manipulating information</p>
 <b>Presentations: </b> ESADE (2018)
 
 <p>
-	<b> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </b> with Filippo Ippolito (UPF and BGSE), Stefano Sacchetto (IESE), and Roberto Steri (HEC Lausanne)
+	<b> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </b> with Filippo Ippolito (UPF and BGSE), Stefano Sacchetto (IESE), and Roberto Steri (University of Luxembourg)
 </p>
 
 
