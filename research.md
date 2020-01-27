@@ -45,7 +45,7 @@ Working Papers
 </p>
 
 <p>
-	<b>Listening to the Fates: Investor Learning and the Likelihood of Future Events</b>
+	<b><li>Listening to the Fates: Investor Learning and the Likelihood of Future Events</b>
 
 </p>
 
