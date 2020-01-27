@@ -49,7 +49,7 @@ Working Papers
 
 </p>
 
-<p>Information that is difficult to quantify, process, and verify - commonly refered as qualitative
+<p style="text-align:justify">Information that is difficult to quantify, process, and verify - commonly refered as qualitative
 or soft information - is disclosed by firms, and processed by investors in financial markets. When
 this information is informative, it affects investors’ decisions and moulds prices in equilibrium.
 Despite its relevance, researchers lack a theoretical framework to model its impact on capital
