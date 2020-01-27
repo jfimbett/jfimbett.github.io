@@ -34,7 +34,7 @@ element.search = searchParams.toString();
 
 # Research
 
-Working Papers
+## Working Papers
 
 ---
 <p style="text-align:justify"></p>
@@ -68,6 +68,7 @@ risk aversion decrease the probability of funds manipulating information</p>
 
 <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606"> Download Paper </a>
 
+## Work in Progress
 <p>
 	<b> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </b> with Filippo Ippolito (UPF and BGSE), Stefano Sacchetto (IESE), and Roberto Steri (University of Luxembourg)
 </p>
