@@ -44,11 +44,6 @@ Working Papers
 </p>
 <p style="text-align:justify">Political Uncertainty is inversely related to how well an economic agent can forecast political decisions. Using data on the US political agenda and a data rich forecasting exercise, I develop a multi-dimensional index of political uncertainty that isolates its source (executive or legislative) and content of the political decisions from which the uncertainty arises. Guided by restrictions on potential state-variables consistent with the ICAPM and large statistical thresholds, I study the relation between political uncertainty and financial markets. Executive political uncertainty, arising from blurriness in forecasting executive order decisions related to Energy and Immigration by the US President, negatively captures aggregate market expected excess return variation. Moreover, innovations on these uncertainty measures are priced in the cross-section of expected returns.</p>
 
-<p>
-	<b>Tweeting for Money </b> with Javier Gil-Bazo (UPF and BGSE)
-
-
-</p>
 
 <p>
 	<b>Listening to the Fates: Investor Learning and the Likelihood of Future Events</b>
@@ -84,6 +79,7 @@ Illan Cooper, Paulo Maio, and Chunyu Yang
 2nd Corporate Policies and Asset Prices Conference
 Cass Business School, London
 December 2018
+<a href="discussions/slides.pdf"> Download</a>
 
 ---
 
