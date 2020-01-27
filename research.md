@@ -45,7 +45,7 @@ Working Papers
 </p>
 
 <p>
-	<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">Listening to the Fates: Investor Learning and the Likelihood of Future Events</a>
+	<b>Listening to the Fates: Investor Learning and the Likelihood of Future Events</b>
 
 </p>
 
@@ -65,10 +65,19 @@ decrease the probability of investors verifying information, and verification co
 risk aversion decrease the probability of funds manipulating information</p>
 <b>Presentations: </b> ESADE (2018)
 
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606"> Download Paper </a>
+
 <p>
 	<b> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </b> with Filippo Ippolito (UPF and BGSE), Stefano Sacchetto (IESE), and Roberto Steri (University of Luxembourg)
 </p>
 
+# Discussions
+
+What drives Q and investment Fluctuations?
+Illan Cooper, Paulo Maio, and Chunyu Yang
+2nd Corporate Policies and Asset Prices Conference
+Cass Business School, London
+December 2018
 
 ---
 
