@@ -38,6 +38,12 @@ Working Papers
 
 ---
 <p style="text-align:justify"></p>
+
+<p>
+	<b>Expected Returns and Political Agenda Uncertainty </b> 
+</p>
+<p style="text-align:justify">Political Uncertainty is inversely related to how well an economic agent can forecast political decisions. Using data on the US political agenda and a data rich forecasting exercise, I develop a multi-dimensional index of political uncertainty that isolates its source (executive or legislative) and content of the political decisions from which the uncertainty arises. Guided by restrictions on potential state-variables consistent with the ICAPM and large statistical thresholds, I study the relation between political uncertainty and financial markets. Executive political uncertainty, arising from blurriness in forecasting executive order decisions related to Energy and Immigration by the US President, negatively captures aggregate market expected excess return variation. Moreover, innovations on these uncertainty measures are priced in the cross-section of expected returns.</p>
+
 <p>
 	<b>Tweeting for Money </b> with Javier Gil-Bazo (UPF and BGSE)
 
@@ -45,7 +51,7 @@ Working Papers
 </p>
 
 <p>
-	<b><li>Listening to the Fates: Investor Learning and the Likelihood of Future Events</b>
+	<b>Listening to the Fates: Investor Learning and the Likelihood of Future Events</b>
 
 </p>
 
