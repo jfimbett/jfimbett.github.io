@@ -48,18 +48,18 @@ element.search = searchParams.toString();
 <p style="text-align:justify"> <b>Abstract:</b> Energy policy uncertainty - as measured by uncertainty about a U.S. President signing an energy related executive order in the future - covaries positively with corporate investment and aggregate consumption growth, and its innovations carry a negative price of risk. I propose and test a q-theory explanation in which firms invest in energy-efficient capital when facing energy policy uncertainty. This uncertainty amplifies differences in investment between growth and value companies as the benefits of substituting energy for capital increase with growth opportunities. As the benefits to invest increase, aggregate current consumption decreases relative to future consumption, creating time varying expected variation in aggregate market returns and consumption growth. Without an investment factor, uncertainty betas explain cross-sectional variation in stock returns across portfolios that differ in their growth opportunities. However, since investment reacts to uncertainty endogenously, an asset pricing model that accounts for an investment factor absorbs the cross-sectional differences in expected returns explained by this policy uncertainty. My findings suggest that uncertainty about future energy policies in the last four decades can explain firms' adoption of energy-efficient capital.  </p>
 
 
-<p>
+<p href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">
 	<b>- Learning from Quant (Qual)-itative Information</b>
 
 </p>
 <p>
-    <i>Under revision</i>
+    <i>Submitted</i>
 </p>
 
 <p style="text-align:justify"> <b>Abstract:</b> I develop a model of mutual fund investor learning and voluntary disclosure of information about managerial ability, to investigate how capital allocation depends on quantitative and qualitative information. Qualitative information affects the investors' posterior distribution and the reliance on past performance. In equilibrium, reputation costs and incentives to verify information are required to obtain truthful voluntary disclosure.</p>
 <b>Presentations: </b> ESADE (2018)
 
-<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606"> Download Paper </a>
+<a href="online_appendices/frl_onlineappendix.pdf"> Online Appendix </a>
 
 ## Work in Progress
 <p>
