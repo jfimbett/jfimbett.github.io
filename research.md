@@ -40,30 +40,23 @@ element.search = searchParams.toString();
 <p style="text-align:justify"></p>
 
 <p>
-	<b>Energy Political Uncertainty, Investment Opportunities, and Stock Returns </b> 
+	<b>Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b> 
 </p>
-<p style="text-align:justify">  In this paper I revisit the relation among political uncertainty, investment, and risk premia. I show that contrary to the current empirical findings, political uncertaitny can have a positive impact on investment and asset prices. Using the uncertainty about future energy policies captured by U.S. executive orders, I find that political uncertainty can capture an investment-specific shock affecting growth opportunities of firms relative to assets in place. This investment specific shock provides forecastable variation in consumption and therefore in aggregate returns, as well as variation in investment between growth and value companies. Periods of high energy political uncertainty negatively capture expected return variation not explained by changes in risk aversion. In anticipation of lower expected returns, investors demand growth companies whose cash-flows covary positively with innovations on uncertainty relative to value companies. These results are robust to the way in which investors form expectations about political decisions, as well as to industry specific dynamics. My results suggest that political uncertainty does not necessary have a pervasive impact on investment and asset prices. </p>
+<p>
+    Job Market Paper
+</p>
+<p style="text-align:justify"> <b>Abstract:</b> Energy policy uncertainty - as measured by uncertainty about a U.S. President signing an energy related executive order in the future - covaries positively with corporate investment and aggregate consumption growth, and its innovations carry a negative price of risk. I propose and test a q-theory explanation in which firms invest in energy-efficient capital when facing energy policy uncertainty. This uncertainty amplifies differences in investment between growth and value companies as the benefits of substituting energy for capital increase with growth opportunities. As the benefits to invest increase, aggregate current consumption decreases relative to future consumption, creating time varying expected variation in aggregate market returns and consumption growth. Without an investment factor, uncertainty betas explain cross-sectional variation in stock returns across portfolios that differ in their growth opportunities. However, since investment reacts to uncertainty endogenously, an asset pricing model that accounts for an investment factor absorbs the cross-sectional differences in expected returns explained by this policy uncertainty. My findings suggest that uncertainty about future energy policies in the last four decades can explain firms' adoption of energy-efficient capital.  </p>
 
 
 <p>
-	<b>Listening to the Fates: Investor Learning and the Likelihood of Future Events</b>
+	<b>Learning from Quant (Qual)-itative Information</b>
 
 </p>
+<p>
+    <i>Under revision</i>
+</p>
 
-<p style="text-align:justify">Information that is difficult to quantify, process, and verify - commonly refered as qualitative
-or soft information - is disclosed by firms, and processed by investors in financial markets. When
-this information is informative, it affects investors’ decisions and moulds prices in equilibrium.
-Despite its relevance, researchers lack a theoretical framework to model its impact on capital
-allocation and its transmission by firms. I pretend to fill this gap by borrowing from the axiomatic decision making literature a framework to accomodate this information into expectation
-formation. In particular I study how quantitative and qualitative information affect capital allocation in a market for mutual funds. In my model mutual fund investors learn about the ability
-of a mutual fund manager to generate abnormal returns from past returns and a qualitative
-signal. When investors observe past returns, they update their beliefs following Bayes rule, but
-follow a more general rule consistent with rationality to accomodate the qualitative information
-to their posterior. I study how this type of information affects capital allocation and disclosure.
-Intuitively, investors seek funds with more favorable qualitative information. Due to its soft
-nature, firms have incentives to manipulate the information. In equilibrium, reputation costs
-decrease the probability of investors verifying information, and verification costs and investors’
-risk aversion decrease the probability of funds manipulating information</p>
+<p style="text-align:justify"> <b>Abstract:</b> I develop a model of mutual fund investor learning and voluntary disclosure of information about managerial ability, to investigate how capital allocation depends on quantitative and qualitative information. Qualitative information affects the investors' posterior distribution and the reliance on past performance. In equilibrium, reputation costs and incentives to verify information are required to obtain truthful voluntary disclosure.</p>
 <b>Presentations: </b> ESADE (2018)
 
 <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606"> Download Paper </a>
