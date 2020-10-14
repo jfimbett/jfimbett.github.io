@@ -59,7 +59,7 @@ element.search = searchParams.toString();
 <p style="text-align:justify"> <b>Abstract:</b> I develop a model of mutual fund investor learning and voluntary disclosure of information about managerial ability, to investigate how capital allocation depends on quantitative and qualitative information. Qualitative information affects the investors' posterior distribution and the reliance on past performance. In equilibrium, reputation costs and incentives to verify information are required to obtain truthful voluntary disclosure.</p>
 <b>Presentations: </b> ESADE (2018)
 
-<a href="online_appendices/frl_onlineappendix.pdf"> Online Appendix </a>
+<a href="assets/online_appendices/frl_onlineappendix.pdf"> Online Appendix </a>
 
 ## Work in Progress
 <p>
