@@ -40,7 +40,7 @@ element.search = searchParams.toString();
 <p style="text-align:justify"></p>
 
 <p>
-	<b>Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b> 
+	<b>- Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b> 
 </p>
 <p>
     Job Market Paper
@@ -49,7 +49,7 @@ element.search = searchParams.toString();
 
 
 <p>
-	<b>Learning from Quant (Qual)-itative Information</b>
+	<b>- Learning from Quant (Qual)-itative Information</b>
 
 </p>
 <p>

@@ -18,7 +18,5 @@ I'm a Ph.D. student in Finance at Universitat Pompeu Fabra and BGSE in Barcelona
 - B.A. in Economics (Universidad de los Andes) 2009-2013
 - B.Sc. in Industrial Engineering (Universidad de los Andes) 2008-2012
 
-### Links
 
-- [GitHub](https://github.com/jfimbett)
 
