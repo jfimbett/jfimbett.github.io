@@ -44,25 +44,37 @@ if (location.hash === '#apps') {
 					</style>
 
 					<style>
-					    .card {
-					        width: auto;
-					        height: auto;
-					        background: url("assets/jobmarket.jpg") no-repeat;
-					        display: inline-block;
-					    }
-					    .card:hover {
-				
-					        background: url("assets/jobmarketbw.jpg") no-repeat;
-					        display: inline-block;
-					    }
+					   #cf {
+							  position:relative;
+							  height:281px;
+							  width:450px;
+							  margin:0 auto;
+							}
+
+							#cf img {
+							  position:absolute;
+							  left:0;
+							  -webkit-transition: opacity 1s ease-in-out;
+							  -moz-transition: opacity 1s ease-in-out;
+							  -o-transition: opacity 1s ease-in-out;
+							  transition: opacity 1s ease-in-out;
+							}
+
+							#cf img.top:hover {
+							  opacity:0;
+							}
 					</style>
 					
 					<h1 class="title is-2" itemprop="name">Juan Felipe Imbet</h1>
 					<h2 class="subtitle is-4" itemprop="description">Ph.D. Candidate in Finance, UPF and Barcelona GSE</h2>
 					<!--<p> Web Page being migrated from juanimbett.com, please wait for future updates </p> -->
-					<img src="assets/jobmarketbw.jpg"  
+<!-- 					<img src="assets/jobmarketbw.jpg"  
 					onMouseOver="this.src='assets/jobmarket.jpg'"
-					onMouseOut="this.src='assets/jobmarketbw.jpg'" width="200" height="80"/>
+					onMouseOut="this.src='assets/jobmarketbw.jpg'" width="200" height="80"/> -->
+					<div id="cf">
+				  <img class="bottom" src="assets/jobmarketbw.jpg.jpg" />
+				  <img class="top" src="assets/jobmarket.jpg" />
+				</div>
 					<br>
 					
 					<p align="left" class="bottom-three">Welcome to my website! I am a Ph.D. Candidate in Finance at UPF and the Barcelona GSE. My research interests include Corporate Finance, Asset Pricing, and the role of information on capital allocation. I am currently on the job market and will be available online for interviews at the European Winter Meeting 2020 and the 2021 ASSA Virtual Meeting.
