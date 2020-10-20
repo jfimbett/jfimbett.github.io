@@ -34,13 +34,48 @@ if (location.hash === '#apps') {
 		<div id="info-container" class="container has-text-centered">
 			<div class="columns is-vcentered">
 				<div class="column is-two-thirds is-centered has-nice-link" itemscope itemtype="http://schema.org/Person">
-					
-					<img id="profile-pic" src="assets/jobmarketbw.jpg" width="160" height="160" itemprop="image" alt="Juan Imbet"> 
+					<section>
+					  <img id="profile-pic" class="bottom" src="assets/jobmarketbw.jpg" width="160" height="160" itemprop="image" alt="Juan Imbet"> 
 				
+					  <img id="profile-pic" class="top" src="assets/jobmarket.jpg" width="160" height="160" itemprop="image" alt="Juan Imbet"> 
+				
+					</section>
+					
 					<style>
 					  .bottom-three {
 					     margin-bottom: 3cm;
 					  }
+
+					  section {
+						  position: relative;
+						}
+
+						section img {
+						  position: absolute;
+						}
+
+						.top {
+						  animation-name: fade;
+						  animation-timing-function: ease-in-out;
+						  animation-iteration-count: infinite;
+						  animation-duration: 1s;
+						  animation-direction: alternate;
+						}
+
+						@keyframes fade {
+						  0% {
+						    opacity: 1;
+						  }
+						  25% {
+						    opacity: 1;
+						  }
+						  75% {
+						    opacity: 0;
+						  }
+						  100% {
+						    opacity: 0;
+						  }
+						}
 					</style>
 
 					
