@@ -73,7 +73,8 @@ Illan Cooper, Paulo Maio, and Chunyu Yang
 2nd Corporate Policies and Asset Prices Conference
 Cass Business School, London
 December 2018
-<p><a href="discussions/slides.pdf"> Download Slides</a></p>
+<i> Slides upon request </i>
+<!-- <p><a href="discussions/slides.pdf"> Download Slides</a></p> -->
 
 
 ---
