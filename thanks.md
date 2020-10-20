@@ -1,4 +1,4 @@
----
+<!-- ---
 layout: simple
 title: Thanks!
 ---
@@ -205,3 +205,4 @@ I'm forever thankful to these people and companies that have previously supporte
 ---
 
 <i style="font-size:12px">This page is updated on the first day of every month.</i>
+ -->

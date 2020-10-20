@@ -63,7 +63,7 @@ element.search = searchParams.toString();
 
 ## Work in Progress
 <p>
-	<b> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </b> with Filippo Ippolito (UPF and BGSE), Stefano Sacchetto (IESE), and Roberto Steri (University of Luxembourg)
+	<b> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </b> with <a href="https://sites.google.com/site/filippoippolito/"> Filippo Ippolito</a> (UPF and BGSE), <a href="https://www.iese.edu/faculty-research/faculty/stefano-sacchetto/"> Stefano Sacchetto </a> (IESE), and <a href="https://sites.google.com/site/robertosteripersonalpage/"> Roberto Steri (University of Luxembourg)</a>
 </p>
 
 # Discussions

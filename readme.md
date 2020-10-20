@@ -1,14 +1,5 @@
-# [sindresorhus.com](https://sindresorhus.com)
+# [jfimbett.github.io](https://jfimbett.github.io)
 
-> Personal website of Sindre Sorhus
-
-*The website targets the latest version of Chrome, Safari, and Firefox.*
-
-<a href="https://sindresorhus.com">
-	<img src="screenshot.jpg" width="600">
-</a>
+> Personal website of Juan Imbet
 
 
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)
