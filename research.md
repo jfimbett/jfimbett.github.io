@@ -39,17 +39,23 @@ element.search = searchParams.toString();
 ---
 <p style="text-align:justify"></p>
 
-<p href="/assets/jmp_juan_imbet.pdf">
-	<b>- Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b> 
+<p >
+	<b href="/assets/jmp_juan_imbet.pdf">- Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b> 
 </p>
 <p>
     Job Market Paper
 </p>
 <p style="text-align:justify"> <b>Abstract:</b> Energy policy uncertainty - as measured by uncertainty about a U.S. President signing an energy related executive order in the future - covaries positively with corporate investment and aggregate consumption growth, and its innovations carry a negative price of risk. I propose and test a q-theory explanation in which firms invest in energy-efficient capital when facing energy policy uncertainty. This uncertainty amplifies differences in investment between growth and value companies as the benefits of substituting energy for capital increase with growth opportunities. As the benefits to invest increase, aggregate current consumption decreases relative to future consumption, creating time varying expected variation in aggregate market returns and consumption growth. Without an investment factor, uncertainty betas explain cross-sectional variation in stock returns across portfolios that differ in their growth opportunities. However, since investment reacts to uncertainty endogenously, an asset pricing model that accounts for an investment factor absorbs the cross-sectional differences in expected returns explained by this policy uncertainty. My findings suggest that uncertainty about future energy policies in the last four decades can explain firms' adoption of energy-efficient capital.  </p>
 
+<p style="text-align:justify"></p>
 
-<p href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">
-	<b>- Learning from Quant (Qual)-itative Information</b>
+<p >
+	<b href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169">- Tweeting for money: Social media and mutual fund flows </b> with <a href="https://www.javiergilbazo.es/">Javier Gil-Bazo (UPF and BGSE)</a>
+</p>
+<p style="text-align:justify"> <b>Abstract:</b> In contrast to mandatory information disclosures, social media offer companies the opportunity to communicate with investors with few constraints on frequency, content, and format. To investigate the use of social media by asset management firms, we collect a database of 1.4 million Twitter posts by mutual fund families offering equity funds in the US from 2009 to 2017 and analyze their content using machine learning algorithms. We find that larger and younger families use Twitter more intensively. Investors do not respond to the amount of social media activity of a fund family but to the tone of its posts. A one standard deviation increase in the positiveness of a family's tweets in a given month increases its assets under management by 15 basis points, or USD 11 million, in the following month. However, tweets with a positive tone do not predict higher subsequent fund performance. These results suggest that asset managers use social media to persuade investors rather than to alleviate information asymmetries by either lowering search costs or disclosing privately observed information. Consistently with this explanation, families facing more difficulties in raising assets benefit the most from positive posts on Twitter.</p>
+
+<p >
+	<b href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">- Learning from Quant (Qual)-itative Information</b>
 
 </p>
 <p>
