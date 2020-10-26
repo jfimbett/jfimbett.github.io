@@ -39,8 +39,8 @@ element.search = searchParams.toString();
 ---
 <p style="text-align:justify"></p>
 
-<p >
-	<b href="/assets/jmp_juan_imbet.pdf">- Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b> 
+<p href="/assets/jmp_juan_imbet.pdf">
+	<b>- Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b> 
 </p>
 <p>
     Job Market Paper
@@ -49,13 +49,13 @@ element.search = searchParams.toString();
 
 <p style="text-align:justify"></p>
 
-<p >
-	<b href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169">- Tweeting for money: Social media and mutual fund flows </b> with <a href="https://www.javiergilbazo.es/">Javier Gil-Bazo (UPF and BGSE)</a>
+<p href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169">
+	<b>- Tweeting for money: Social media and mutual fund flows </b> with <a href="https://www.javiergilbazo.es/">Javier Gil-Bazo (UPF and BGSE)</a>
 </p>
 <p style="text-align:justify"> <b>Abstract:</b> In contrast to mandatory information disclosures, social media offer companies the opportunity to communicate with investors with few constraints on frequency, content, and format. To investigate the use of social media by asset management firms, we collect a database of 1.4 million Twitter posts by mutual fund families offering equity funds in the US from 2009 to 2017 and analyze their content using machine learning algorithms. We find that larger and younger families use Twitter more intensively. Investors do not respond to the amount of social media activity of a fund family but to the tone of its posts. A one standard deviation increase in the positiveness of a family's tweets in a given month increases its assets under management by 15 basis points, or USD 11 million, in the following month. However, tweets with a positive tone do not predict higher subsequent fund performance. These results suggest that asset managers use social media to persuade investors rather than to alleviate information asymmetries by either lowering search costs or disclosing privately observed information. Consistently with this explanation, families facing more difficulties in raising assets benefit the most from positive posts on Twitter.</p>
 
-<p >
-	<b href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">- Learning from Quant (Qual)-itative Information</b>
+<p href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">
+	<b>- Learning from Quant (Qual)-itative Information</b>
 
 </p>
 <p>
