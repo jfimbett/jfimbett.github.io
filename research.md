@@ -71,6 +71,10 @@ element.search = searchParams.toString();
 	<b> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </b> with <a href="https://sites.google.com/site/filippoippolito/"> Filippo Ippolito</a> (UPF and BGSE), <a href="https://www.iese.edu/faculty-research/faculty/stefano-sacchetto/"> Stefano Sacchetto </a> (IESE), and <a href="https://sites.google.com/site/robertosteripersonalpage/"> Roberto Steri </a> (University of Luxembourg)
 </p>
 
+<p>
+    <b> The forecasting power of short-term options </b> with <a> Arthur Böök</a> (ESADE), <a> Martin Reinke </a> (München), and <a href="https://www.esade.edu/faculty/carlo.sala"> Carlo Sala </a> (ESADE)
+</p>
+
 # Discussions
 
 What drives Q and investment Fluctuations?
