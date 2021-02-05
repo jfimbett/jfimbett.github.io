@@ -49,6 +49,8 @@ element.search = searchParams.toString();
 
 <p style="text-align:justify"></p>
 
+<!--Presentations: UPF, Paris-Dauphine PSL, Bank of Lithuania, University of Bristol, University of Glasgow, CUNEF, Universitat de les Illes Balears -->
+
 <p>
 	<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169"> <b>- Tweeting for money: Social media and mutual fund flows </b> </a> with <a href="https://www.javiergilbazo.es/">Javier Gil-Bazo (UPF and BGSE)</a>
 </p>
