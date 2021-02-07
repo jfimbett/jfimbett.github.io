@@ -59,9 +59,6 @@ element.search = searchParams.toString();
 <p>
 <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">	<b>-  Learning from Quant (Qual)-itative Information </b> </a>
 </p>
-<p>
-    <i>Submitted</i>
-</p>
 
 <p style="text-align:justify; font-size:70%;"> <b>Abstract:</b> I develop a model of mutual fund investor learning and voluntary disclosure of information about managerial ability, to investigate how capital allocation depends on quantitative and qualitative information. Qualitative information affects the investors' posterior distribution and the reliance on past performance. In equilibrium, reputation costs and incentives to verify information are required to obtain truthful voluntary disclosure.</p>
 <b>Presentations: </b> ESADE (2018)
