@@ -40,7 +40,7 @@ element.search = searchParams.toString();
 <p style="text-align:justify"></p>
 
 <p >
-<a href="/assets/jmp_juan_imbet.pdf">	<b>-  Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b>  </a>
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3711536">	<b>-  Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b>  </a>
 </p>
 <p>
     Job Market Paper
