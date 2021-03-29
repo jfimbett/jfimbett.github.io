@@ -143,11 +143,11 @@
                                                                                     <ul class="values-list">
                                                                                     <li class="navAmountChange " data-col="fundHeader.fundNav.navAmountChange" data-path="">
                                                                                     <span class="header-nav-label navAmountChange">
-                                                                                                1 Day % Change as of Mar 12, 2021
+                                                                                                1 Day % Change as of Mar 10, 2021
                                                                                     </span>         
-                                                                                    <span class="nav-change-arrow-down"></span>
+                                                                                  
                                                                                     <span class="header-nav-data">
-                                                                                                    (0.0)
+                                                                                                    <p> 1.55 % <i class="arrow up "></i></p>
                                                                                     </span>
                                                                                     <span class="header-info-bubble">
                                                                                     </span>
@@ -155,15 +155,27 @@
                                                                                     <li class="yearToDateCalc " data-col="fundHeader.fundNav.yearToDateCalc" data-path="">
                                                                                     <span class="header-nav-label yearToDateCalc">
                                                                                                 Total Return between Oct 18, 2000 and Mar 12, 2021
-                                                                                    </span>    
-                                                                                    <span class="ytd-change-arrow-up">
-                                                                                    </span>
+                                                                                    </span>   
+                                                                                    <style>
+                                                                                   .arrow {
+                                                                                        width: 0; 
+                                                                                        height: 0; 
+                                                                                        border-left: 15px solid transparent;
+                                                                                        border-right: 15px solid transparent;
+                                                                                    }
+                                                                                    .up {
+                                                                                        border-bottom: 15px solid green;
+                                                                                    }
+                                                                                    .down {
+                                                                                        border-bottom: 15px solid red;
+                                                                                    }
+                                                                                
+                                                                                    </style>
+                                                                                   
                                                                                     <span class="header-nav-data">
-                                                                                                    1552.86%
+                                                                                    <p> 1552.86 % <i class="arrow up "></i></p>            
                                                                                     </span>
-                                                                                    <span class="header-info-bubble">
-                                                                                    <a role="button" class="product-info-bubble " href="#" title="The calculation for total returns assumes the reinvestment of all capital gains and dividends and does not include transaction costs nor management fees."></a>
-                                                                                    </span>
+                                                                             
                                                                                     </li>
                                                                                     </ul>
                                                                                     </div>
@@ -233,17 +245,15 @@
                                                                             <h2 class="mobile-hidden">Performance</h2>
                                                                             <div id="performanceThumbnails">
                                                                                 <div class="performance-thumb">
-                                                                                    <h3>
-                                                                                         <a role="button" class="product-info-bubble " href="#" title="The growth of hypothetical $10,000 chart reflects a hypothetical $10,000 investment and assumes reinvestment of dividends and capital gains. Fund expenses, including management fees and other expenses were deducted."></a>
-                                                                                    </h3>
+                                                                                  
                                                                                     <div class="thumbnail-chart">
                                                                                     <a href="#chartDialog" class="performance-modal chart" data-modaltitle="Growth of Hypothetical $10,000" data-link-event="feature:graph:View full chart">
-                                                                                        <span class="total-returns thumb mobile-hidden"></span>
-                                                                                        <span class="icon-zoomin">View simulated performance</span>
+                                                                                     
+                                                                                        <span >View simulated performance</span>
                                                                                     </a>
                                                                                       <a href="#chartDialog2" class="performance-modal chart" data-modaltitle="Investment Horizon" data-link-event="feature:graph:View full chart">
-                                                                                        <span class="total-returns thumb mobile-hidden"></span>
-                                                                                        <span class="icon-zoomin">For how long should I hold the strategy?</span>
+                                                                                       
+                                                                                        <span>For how long should I hold the strategy?</span>
                                                                                     </a>
                                             
                                                                                     <input type="hidden" id="chartSinceIncept" value="Since Incept." />
@@ -430,9 +440,8 @@
                                                                                                         <table class="product-table border-row average-ann-returns"><thead><tr><th>&nbsp;</th><th class="oneYearAnnualized "> 2021 </th><th class="oneYearAnnualized "> 2020 </th><th class="oneYearAnnualized "> 2019 </th><th class="oneYearAnnualized "> 2018 </th><th class="oneYearAnnualized "> 2017 </th><th class="oneYearAnnualized "> 2016 </th></tr></thead><tbody><tr><td class="align-left navSourced">Portfolio (%) <span class="separator"></span></td><td class="oneYearAnnualized ">21.89</td><td class="oneYearAnnualized ">25.84</td><td class="oneYearAnnualized ">3.74</td><td class="oneYearAnnualized ">21.83</td><td class="oneYearAnnualized ">16.0</td><td class="oneYearAnnualized ">3.95</td></tr><tr><td class="align-left navSourced">S&P500 (%) <span class="separator"></span></td><td class="oneYearAnnualized ">3.8</td><td class="oneYearAnnualized ">12.84</td><td class="oneYearAnnualized ">28.87</td><td class="oneYearAnnualized ">-0.51</td><td class="oneYearAnnualized ">19.22</td><td class="oneYearAnnualized ">9.19</td></tr><tr><td class="align-left navSourced">Nasdaq (%) <span class="separator"></span></td><td class="oneYearAnnualized ">3.35</td><td class="oneYearAnnualized ">41.96</td><td class="oneYearAnnualized ">34.72</td><td class="oneYearAnnualized ">-0.38</td><td class="oneYearAnnualized ">28.47</td><td class="oneYearAnnualized ">6.19</td></tr></tbody></table>
                                                                                                     </div>
                                                                                                 </div>
-
                                                                                                 <div class="disclaimers performance.returns.disclaimer">
-                                                                                                    <em>This is some text for the disclosure of performance filled with Lorem Ipsum "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</em>
+                                                                                                <em> Disclaimer</em>
                                                                                                 </div>
                                                                                             </div>
                                                                                         </div>
@@ -456,7 +465,7 @@
                                                                                             <div class="float-left in-left col-numHoldings ">
                                                                                                 <span class="caption">
                                                                                                     Number of Holdings
-                                                                                                    <a role="button" class="product-info-bubble " href="#" title="The number of holdings in the fund excluding cash positions and derivatives such as futures and currency forwards."></a>
+                                                                                                    
                                                                                                     <span class="as-of-date">
                                                                                                         as of Mar 12, 2021
                                                                                                     </span>
@@ -468,8 +477,7 @@
                                                                                             <div class="float-left in-right col-numHoldings ">
                                                                                                 <span class="caption">
                                                                                                     Number of Long Positions
-                                                                                                    <a role="button" class="product-info-bubble " href="#" title="The number of holdings in the fund excluding cash positions and derivatives such as futures and currency forwards."></a>
-                                                                                                    <span class="as-of-date">
+                                                                                                     <span class="as-of-date">
                                                                                                         as of Mar 12, 2021
                                                                                                     </span>
                                                                                                 </span>
@@ -480,8 +488,7 @@
                                                                                             <div class="float-left in-left col-numHoldings ">
                                                                                                 <span class="caption">
                                                                                                     Number of Short Positions
-                                                                                                    <a role="button" class="product-info-bubble " href="#" title="The number of holdings in the fund excluding cash positions and derivatives such as futures and currency forwards."></a>
-                                                                                                    <span class="as-of-date">
+                                                                                                     <span class="as-of-date">
                                                                                                         as of Mar 12, 2021
                                                                                                     </span>
                                                                                                 </span>
@@ -492,8 +499,7 @@
                                                                                             <div class="float-left in-right col-beta3Yr ">
                                                                                                 <span class="caption">
                                                                                                     Equity Beta (3y)
-                                                                                                    <a role="button" class="product-info-bubble " href="#" title="Original Text: Beta is a measure of the tendency of securities to move with the market as a whole. A beta of 1 indicates that the security&#39;s price will move with the market. A beta less than 1 indicates the security tends to be less volatile than the market, while a beta greater than 1 indicates the security is more volatile than the market.<br/><br/>Calculated vs. S&amp;P 500"></a>
-                                                                                                    <span class="as-of-date">
+                                                                                                     <span class="as-of-date">
                                                                                                         as of Mar 12, 2021
                                                                                                     </span>
                                                                                                 </span>
@@ -504,8 +510,7 @@
                                                                         <div class="float-left in-right col-standardDeviation3Yr ">
                                                                             <span class="caption">
                                                                                 Annualized Standard Deviation (3y)
-                                                                                <a role="button" class="product-info-bubble " href="#" title="Standard deviation measures how dispersed returns are around the average. A higher standard deviation indicates that returns are spread out over a larger range of values and thus, more volatile."></a>
-                                                                                <span class="as-of-date">
+                                                                                 <span class="as-of-date">
                                                                                     as of Mar 12, 2021
                                                                                 </span>
                                                                             </span>
@@ -516,7 +521,7 @@
                                                                         <div class="clear"></div>
                                                                     </div>
                                                                     <div class="disclaimers fundamentals-and-risk.disclaimer">
-                                                                        This information must be preceded or accompanied by a current prospectus, for now is lorem ipsum "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                                                        <b> Disclaimer </b>    
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -714,11 +719,13 @@
                     <div id="exposureTabs" data-pp-tabs>
                         <ul role="tablist" class="component-tabs">
                             <li role="presentation" class="active">
-                                <a role="tab" href="#tabsSector" data-link-event="portfolio:exposure breakdowns:long-short:SectorLong">Sector</a>
+                                <a role="tab" href="#tabsSectorLong" data-link-event="portfolio:exposure breakdowns:long-short:SectorLong">Sector - Long</a>
                             </li>
-                    
+                            <li role="presentation">
+                                <a role="tab" href="#tabsSectorShort" data-link-event="portfolio:exposure breakdowns:long-short:SectorLong">Sector - Short</a>
+                            </li>
                         </ul>
-                        <div id="tabsSector" class="component-tabs-panel active">
+                        <div id="tabsSectorLong" class="component-tabs-panel active">
                             <section>
                             <script src="sectorpos.js"></script>
                             <div class="col-2 column grid">
@@ -729,9 +736,9 @@
                                     Number of positions
                                 </p>
                             </div>
-                            <div class="table-chart-container col-2 column grid" data-chart-type="bar" data-container-name="Sector" data-tab-id="tabsSector">
+                            <div class="table-chart-container col-2 column grid" data-chart-type="bar" data-container-name="Sector" data-tab-id="tabsSectorLong">
                                 <div class="fund-component column">
-                                <table id="tabsSectorDataTable" class="product-table display bar less-padding" data-has-fund="true" data-has-index="false">
+                                <table id="tabsSectorLongDataTable" class="product-table display bar less-padding" data-has-fund="true" data-has-index="false">
                                 <thead>
                                     <tr>
                                         <th>Type</th>
@@ -739,24 +746,51 @@
                                     </tr>
                                 </thead>
                                 </table>
-                                <a href="#" id="tabsSectorShowAll" role="button" class="toggle-records display-none">Show All</a>
-                                <a href="#" id="tabsSectorShowFewer" role="button" class="toggle-records display-none">Show Fewer</a>
+                                <a href="#" id="tabsSectorLongShowAll" role="button" class="toggle-records display-none">Show All</a>
+                                <a href="#" id="tabsSectorLongShowFewer" role="button" class="toggle-records display-none">Show Fewer</a>
                                 </div>
                                 <div class="column">
-                                    <div id="tabsSectorChart" class="chart-container bar"></div>
+                                    <div id="tabsSectorLongChart" class="chart-container bar"></div>
                                 </div>
                             </div>
-                            </section>
+                            </section> 
                         </div>
-                        
 
-    <div class="data-loading"></div>
+                           <div id="tabsSectorShort" class="component-tabs-panel">
+                            <section>
+                            <script src="sectorneg.js"></script>
+                            <div class="col-2 column grid">
+                                <div class="component-date-list">
+                                    as of Mar 12, 2021
+                                </div>
+                                <p class="column value-label">
+                                    Number of positions
+                                </p>
+                            </div>
+                            <div class="table-chart-container col-2 column grid" data-chart-type="bar" data-container-name="Sector" data-tab-id="tabsSectorShort">
+                                <div class="fund-component column">
+                                <table id="tabsSectorShortDataTable" class="product-table display bar less-padding" data-has-fund="true" data-has-index="false">
+                                <thead>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Fund</th>
+                                    </tr>
+                                </thead>
+                                </table>
+                                <a href="#" id="tabsSectorShortShowAll" role="button" class="toggle-records display-none">Show All</a>
+                                <a href="#" id="tabsSectorShortShowFewer" role="button" class="toggle-records display-none">Show Fewer</a>
+                                </div>
+                                <div class="column">
+                                    <div id="tabsSectorShortChart" class="chart-container bar"></div>
+                                </div>
+                            </div>
+                            </section> 
+                        </div>
     </div>
 
     
     <div class="disclaimers exposure-breakdowns.disclaimer">
-        Allocations are subject to change. And more lorme ipsum "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    </div>
+        Disclaimer    </div>
     </div></div></div>
     </div>
    
