@@ -1,4 +1,4 @@
-Plotly.d3.csv("https://github.com/jfimbett/jfimbett.github.io/blob/master/assets/backtests/csvTRPF.csvS", function(err, rows) {
+Plotly.d3.csv("https://raw.githubusercontent.com/jfimbett/jfimbett.github.io/master/assets/backtests/csvTRPF.csv", function(err, rows) {
 
     function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
@@ -42,7 +42,7 @@ Plotly.d3.csv("https://github.com/jfimbett/jfimbett.github.io/blob/master/assets
 })
 
 
-Plotly.d3.csv("https://github.com/jfimbett/jfimbett.github.io/blob/master/assets/backtests/csv_holdingTRPF.csv", function(err, rows) {
+Plotly.d3.csv("https://raw.githubusercontent.com/jfimbett/jfimbett.github.io/master/assets/backtests/csv_holdingTRPF.csv", function(err, rows) {
 
     function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
