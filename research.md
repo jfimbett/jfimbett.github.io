@@ -40,11 +40,9 @@ element.search = searchParams.toString();
 <p style="text-align:justify"></p>
 
 <p >
-<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3711536">	<b>-  Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b>  </a>
+<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3711536">	<b>-  Stroke of a Pen: Investment and Stock Returns under  Energy Policy Uncertainty </b>  </a> (Job Market Paper)
 </p>
-<p>
-    Job Market Paper
-</p>
+
 
 <p style="text-align:justify; font-size:90%;"></p>
 
