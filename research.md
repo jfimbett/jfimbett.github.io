@@ -51,33 +51,27 @@ Presentations: UPF, Paris-Dauphine PSL, Bank of Lithuania, University of Bristol
 <p>
 	<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169"> <b>- Tweeting for money: Social media and mutual fund flows </b> </a> with <a href="https://www.javiergilbazo.es/">Javier Gil-Bazo (UPF and BGSE)</a>
 </p>
+<p style="text-align:justify; font-size:90%;"></p>
 
+Presentations: French Finance Association, Spanish Finance Association, 
+2022 Consortium on Asset Management and Fintech (Expected)
 
-<p>
-<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3320606">	<b>-  Learning from Quant (Qual)-itative Information </b> </a>
-</p>
-
-<b>Presentations: </b> ESADE (2018)
-
-<a href="assets/online_appendices/frl_onlineappendix.pdf"> Online Appendix </a>
-
-## Work in Progress
-<p>
-	<b> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </b> with <a href="https://sites.google.com/site/filippoippolito/"> Filippo Ippolito</a> (UPF and BGSE), <a href="https://www.iese.edu/faculty-research/faculty/stefano-sacchetto/"> Stefano Sacchetto </a> (IESE), and <a href="https://sites.google.com/site/robertosteripersonalpage/"> Roberto Steri </a> (University of Luxembourg)
-</p>
 
 <p>
     <b> The forecasting power of short-term options </b> with <a> Arthur Böök</a> (ESADE), <a> Martin Reinke </a> (München), and <a href="https://www.esade.edu/faculty/carlo.sala"> Carlo Sala </a> (ESADE)
 </p>
 
-# Discussions
+# Work in Progress
 
-What drives Q and investment Fluctuations?
-Illan Cooper, Paulo Maio, and Chunyu Yang
-2nd Corporate Policies and Asset Prices Conference
-Cass Business School, London
-December 2018
-<i> Slides upon request </i>
+<p>
+	<b> Joint Liquidity Management at Banks and Firms: 	A Structural Approach </b> with <a href="https://sites.google.com/site/filippoippolito/"> Filippo Ippolito</a> (UPF and BGSE), <a href="https://www.iese.edu/faculty-research/faculty/stefano-sacchetto/"> Stefano Sacchetto </a> (IESE), and <a href="https://sites.google.com/site/robertosteripersonalpage/"> Roberto Steri </a> (University of Luxembourg)
+</p>
+
+<p>
+	<b> The rogue offshore finance industry: evidence from a structural estimation </b> with <a href="https://www.marceloortizm.com/"> Marcelo Ortiz</a> (UPF)
+</p>
+
+
 <!-- <p><a href="discussions/slides.pdf"> Download Slides</a></p> -->
 
 
