@@ -58,7 +58,7 @@ Presentations: French Finance Association, Spanish Finance Association,
 
 
 <p>
-    <b> The forecasting power of short-term options </b> with <a> Arthur Böök</a> (ESADE), <a> Martin Reinke </a> (München), and <a href="https://www.esade.edu/faculty/carlo.sala"> Carlo Sala </a> (ESADE)
+    <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3622433"> <b> The forecasting power of short-term options </b> </a> with <a> Arthur Böök</a> (ESADE), <a> Martin Reinke </a> (München), and <a href="https://www.esade.edu/faculty/carlo.sala"> Carlo Sala </a> (ESADE)
 </p>
 
 # Work in Progress
