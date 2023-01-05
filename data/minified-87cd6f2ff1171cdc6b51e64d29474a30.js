@@ -1,1 +1,0 @@
-$(document).ready(function(){$(".login .-ebz-action-login, .login .-ebz-action-logout").removeClass()});$(document).ready(function(){$(".login .-ebz-action-profile").removeClass()});
