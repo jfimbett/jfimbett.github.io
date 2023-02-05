@@ -49,6 +49,6 @@ f = lambda g : m["Mkt-RF"].mean()/100 + 0.5 * m_std**2 - g* dc_m_corr*dc_std * m
 from scipy.optimize import root
 g = root(f, 0.5).x[0]
 # print the result
-print(f"gamma = {g:.2f}")
+print(f"gamma = {g:.2f}") # required coeff of risk aversion is way to large
 
 # %%
