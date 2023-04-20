@@ -40,6 +40,16 @@ for url in urls:
         'url': url
     })
 
+#%% mentions in the press or other info
+# the paper that finishes in 4422754 has a mention here
+# https://www.ft.com/content/adb0ca9e-010b-4861-a2b5-ec0e30916956#comments-anchor
+# add some extra text below the abstract saying "Featured in"
+# and then add the link to the FT article
+
+for paper in papers:
+    if paper['url'] == 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754':
+        paper['abstract'] += f"<p><b>Featured in:</b> <a href='https://www.ft.com/content/adb0ca9e-010b-4861-a2b5-ec0e30916956#comments-anchor'>A hat-trick of genuinely interesting papers relevant to the banking mess. FT 2023 </a></p>"
+
 #%%
 # generate HTML for papers, justify the abstract, include the url as a hyperlink in the title
 # and bold the author Juan Felipe Imbet 
