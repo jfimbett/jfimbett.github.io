@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 
 # List of SSRN URLs to scrape
 urls = ['https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754',
-        'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3622433',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169',
+        'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3622433',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3711536']
 
 # Empty list to store paper details
@@ -54,6 +54,17 @@ for paper in papers:
             <li><a href='https://www.ft.com/content/adb0ca9e-010b-4861-a2b5-ec0e30916956#comments-anchor'>A hat-trick of genuinely interesting papers relevant to the banking mess. FT 2023 </a></li>
             <li><a href='https://www.ft.com/content/a60e543d-c950-4ebb-8da9-d6b0b359ad7b'>Wake up to the dangers of digital bank runs. FT 2023 </a></li>
             <li><a href='https://www.nytimes.com/2023/04/21/business/dealbook/buzzfeed-news-shuts-down.html'>A social-media-powered bank run. The New York Times DEALBOOK 2023 </a></li>
+            <li><a href="https://money.com/twitter-svb-collapse-study/">Study Finds Twitter Chatter Fueled SVB Collapse — and Other Banks Are at Risk. Money 2023</a></li>
+        </ul>
+        </p>
+        """
+
+    if paper['url'] == 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169':
+        paper['abstract'] += f"""
+        <p><b>Summary:</b> 
+        <ul>
+            <li><a href='https://focus.bse.eu/tweeting-for-money-impact-on-money-flows-when-mutual-funds-tweet/'>Tweeting for Money: Impact on Money Flows When Mutual Funds Tweet. BSE Focus 2023 </a></li>
+            <li><a href='https://www.upf.edu/en/web/e-noticies/home/-/asset_publisher/wEpPxsVRD6Vt/content/id/262764917/maximized#.Y3tjxXbMKUm'>Asset management companies use social media to persuade investors, according to a study. Focus UPF 2022 </a></li>
         </ul>
         </p>
         """
