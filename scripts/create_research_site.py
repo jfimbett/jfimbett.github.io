@@ -55,6 +55,9 @@ for paper in papers:
             <li><a href='https://www.ft.com/content/a60e543d-c950-4ebb-8da9-d6b0b359ad7b'>Wake up to the dangers of digital bank runs. FT 2023 </a></li>
             <li><a href='https://www.nytimes.com/2023/04/21/business/dealbook/buzzfeed-news-shuts-down.html'>A social-media-powered bank run. The New York Times DEALBOOK 2023 </a></li>
             <li><a href="https://money.com/twitter-svb-collapse-study/">Study Finds Twitter Chatter Fueled SVB Collapse — and Other Banks Are at Risk. Money 2023</a></li>
+            <li><a href="https://www.cnbc.com/2023/04/24/social-media-raises-bank-run-risk-fueled-svbs-collapse-paper-says.html">Social media raises bank run risk, fueled Silicon Valley Bank’s collapse, paper says. CNBC 2023</a></li>
+            <li><a href="https://www.axios.com/2023/04/24/twitter-svb-bank-run"> Twitter fueled run on Silicon Valley Bank, new paper finds. Axios 2023</a></li>
+            <li><a href="https://fortune.com/2023/04/24/twitter-financial-system-risk-silicon-valley-bank-run-study/">Twitter poses a risk to the financial system and helped fuel the SVB run, says first major study to investigate the topic. Fortune 2023</a></li> 
         </ul>
         </p>
         """
