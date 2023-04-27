@@ -59,6 +59,7 @@ for paper in papers:
             <li><a href="https://www.axios.com/2023/04/24/twitter-svb-bank-run"> Twitter fueled run on Silicon Valley Bank, new paper finds. Axios 2023</a></li>
             <li><a href="https://fortune.com/2023/04/24/twitter-financial-system-risk-silicon-valley-bank-run-study/">Twitter poses a risk to the financial system and helped fuel the SVB run, says first major study to investigate the topic. Fortune 2023</a></li> 
             <li><a href="https://www.technewsworld.com/story/social-media-fueled-the-run-on-silicon-valley-bank-study-178230.html">Social Media Fueled the Run on Silicon Valley Bank: Study. TECHNEWSWORLD 2023</a></li>
+            <li><a href="https://www.nasdaq.com/articles/did-tweets-help-crash-silicon-valley-bank-paper-shows-new-social-media-risks">Did Tweets Help Crash Silicon Valley Bank? Paper Shows New Social Media Risks. Kiplinger 2023 </a></li>
         </ul>
         </p>
         """
