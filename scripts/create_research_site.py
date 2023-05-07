@@ -61,6 +61,8 @@ for paper in papers:
             <li><a href="https://www.technewsworld.com/story/social-media-fueled-the-run-on-silicon-valley-bank-study-178230.html">Social Media Fueled the Run on Silicon Valley Bank: Study. TECHNEWSWORLD 2023</a></li>
             <li><a href="https://www.nasdaq.com/articles/did-tweets-help-crash-silicon-valley-bank-paper-shows-new-social-media-risks">Did Tweets Help Crash Silicon Valley Bank? Paper Shows New Social Media Risks. Kiplinger 2023 </a></li>
             <li><a href="https://www.wsj.com/articles/silicon-valley-bank-run-twitter-59061759"> The Surprising Risk That Turbocharged a $142 Billion Bank Run. WSJ 2023 </a></li>
+            <li><a href="https://www.brookings.edu/2023/04/27/hutchins-roundup-bank-runs-and-social-media-rising-wages-and-inflation-and-more/">Hutchins Roundup: Bank runs and social media, rising wages and inflation, and more. Brookings 2023</a></li>
+            <li><a href="https://archive.ph/2023.05.07-050116/https://www.americanbanker.com/news/twitter-helped-kill-silicon-valley-bank-are-other-banks-at-risk">Twitter helped kill Silicon Valley Bank. Are other banks at risk? American Banker 2023</a></li> 
         </ul>
         </p>
         """
