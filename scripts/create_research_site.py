@@ -49,7 +49,7 @@ for url in urls:
 for paper in papers:
     if paper['url'] == 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754':
         paper['abstract'] += f"""
-        <p><b>Featured in:</b> 
+        <p><b>Media mentions:</b> 
         <ul>
             <li><a href='https://www.ft.com/content/adb0ca9e-010b-4861-a2b5-ec0e30916956#comments-anchor'>A hat-trick of genuinely interesting papers relevant to the banking mess. FT 2023 </a></li>
             <li><a href='https://www.ft.com/content/a60e543d-c950-4ebb-8da9-d6b0b359ad7b'>Wake up to the dangers of digital bank runs. FT 2023 </a></li>
@@ -63,6 +63,10 @@ for paper in papers:
             <li><a href="https://www.wsj.com/articles/silicon-valley-bank-run-twitter-59061759"> The Surprising Risk That Turbocharged a $142 Billion Bank Run. WSJ 2023 </a></li>
             <li><a href="https://www.brookings.edu/2023/04/27/hutchins-roundup-bank-runs-and-social-media-rising-wages-and-inflation-and-more/">Hutchins Roundup: Bank runs and social media, rising wages and inflation, and more. Brookings 2023</a></li>
             <li><a href="https://archive.ph/2023.05.07-050116/https://www.americanbanker.com/news/twitter-helped-kill-silicon-valley-bank-are-other-banks-at-risk">Twitter helped kill Silicon Valley Bank. Are other banks at risk? American Banker 2023</a></li> 
+        </ul>
+        <b>Mentions by regulators:</b> 
+        <ul>
+            <li><a href="https://dfpi.ca.gov/wp-content/uploads/sites/337/2023/05/Review-of-DFPIs-Oversight-and-Regulation-of-Silicon-Valley-Bank.pdf"> Review of DFPI's Oversight and Regulation of Silicon Valley Bank. Department of FInancial Protection and Innovation DFPI. May 2023 </a></li>
         </ul>
         </p>
         """
