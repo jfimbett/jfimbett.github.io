@@ -63,6 +63,8 @@ for paper in papers:
             <li><a href="https://www.wsj.com/articles/silicon-valley-bank-run-twitter-59061759"> The Surprising Risk That Turbocharged a $142 Billion Bank Run. WSJ 2023 </a></li>
             <li><a href="https://www.brookings.edu/2023/04/27/hutchins-roundup-bank-runs-and-social-media-rising-wages-and-inflation-and-more/">Hutchins Roundup: Bank runs and social media, rising wages and inflation, and more. Brookings 2023</a></li>
             <li><a href="https://archive.ph/2023.05.07-050116/https://www.americanbanker.com/news/twitter-helped-kill-silicon-valley-bank-are-other-banks-at-risk">Twitter helped kill Silicon Valley Bank. Are other banks at risk? American Banker 2023</a></li> 
+            <li><a href="https://cincodias.elpais.com/mercados-financieros/2023-05-12/twitter-un-motor-que-azuzo-el-miedo-financiero-y-precipito-la-caida-de-silicon-valley-bank.html"> Twitter, un motor que azuzó el miedo financiero y precipitó la caída de Silicon Valley Bank. Cinco días El Pais, 2023</a></li>
+            <li><a href="https://www.lavanguardia.com/economia/20230514/8963234/panico-empresa-hablan-redes-sociales.html">Pánico en la empresa: hablan las redes sociales. La Vanguardia 2023</a></li>
         </ul>
         <b>Mentions by regulators:</b> 
         <ul>
