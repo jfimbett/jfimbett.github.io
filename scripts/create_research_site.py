@@ -69,6 +69,7 @@ for paper in papers:
         <b>Mentions by regulators:</b> 
         <ul>
             <li><a href="https://dfpi.ca.gov/wp-content/uploads/sites/337/2023/05/Review-of-DFPIs-Oversight-and-Regulation-of-Silicon-Valley-Bank.pdf"> Review of DFPI's Oversight and Regulation of Silicon Valley Bank. Department of FInancial Protection and Innovation DFPI. May 2023 </a></li>
+            <li><a href="https://repositorio.banrep.gov.co/bitstream/handle/20.500.12134/10638/reporte-estabilidad-financiera-primer-semestre-2023.pdf?sequence=1"> Reporte de Estabilidad Financiera. Banco de la Republica de Colombia (2023) </a></li>
         </ul>
         </p>
         """
