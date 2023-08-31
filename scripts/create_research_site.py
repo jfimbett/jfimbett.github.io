@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 urls = ['https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3622433',
+        'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4557679',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3711536']
 
 # Empty list to store paper details
@@ -100,8 +101,15 @@ for paper in papers:
 
 papers_html = ""
 for paper in papers:
-    papers_html += f"<h3><a href='{paper['url']}'>{paper['title']}</a></h3><p>{', '.join(paper['authors'])}</p><p style='text-align: justify;'>{paper['abstract']}</p>"
 
+    if paper['url'] == 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754':
+        papers_html += f"<h3><a href='{paper['url']}'>{paper['title']}</a></h3><h4>R&R at the Journal of Financial Economics</h4><p>{', '.join(paper['authors'])}</p><p style='text-align: justify;'>{paper['abstract']}</p>"
+    else:
+        papers_html += f"<h3><a href='{paper['url']}'>{paper['title']}</a></h3><p>{', '.join(paper['authors'])}</p><p style='text-align: justify;'>{paper['abstract']}</p>"
+
+    # add some space between papers
+    papers_html += "<br>"
+    
 # Read existing HTML file
 with open('../research_base.html', 'r') as f:
     html = f.read()
@@ -110,7 +118,7 @@ with open('../research_base.html', 'r') as f:
 html = html.replace('<!-- INSERT PAPERS HERE -->', papers_html)
 
 # Write updated HTML back to file
-with open('../research.html', 'w') as f:
+# encode to utf-8 to avoid issues with accents
+with open('../research.html', 'w', encoding='utf-8') as f:
     f.write(html)
-
 # %%
