@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 # List of SSRN URLs to scrape
 urls = ['https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169',
-        'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3622433',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4557679',
+        'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3622433',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3711536']
 
 # Empty list to store paper details
@@ -109,7 +109,7 @@ for paper in papers:
 
     # add some space between papers
     papers_html += "<br>"
-    
+
 # Read existing HTML file
 with open('../research_base.html', 'r') as f:
     html = f.read()
