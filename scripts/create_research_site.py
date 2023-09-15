@@ -41,7 +41,7 @@ for url in urls:
         'url': url
     })
 
-#%% mentions in the press or other info
+#% mentions in the press or other info
 # the paper that finishes in 4422754 has a mention here
 # https://www.ft.com/content/adb0ca9e-010b-4861-a2b5-ec0e30916956#comments-anchor
 # add some extra text below the abstract saying "Featured in"
@@ -85,7 +85,7 @@ for paper in papers:
         </p>
         """
 
-#%%
+#%
 # generate HTML for papers, justify the abstract, include the url as a hyperlink in the title
 # and bold the author Juan Felipe Imbet 
 
@@ -111,7 +111,7 @@ for paper in papers:
     papers_html += "<br>"
 
 # Read existing HTML file
-with open('../research_base.html', 'r') as f:
+with open('../index2.html', 'r') as f:
     html = f.read()
 
 # Insert generated HTML after placeholder comment
@@ -119,6 +119,6 @@ html = html.replace('<!-- INSERT PAPERS HERE -->', papers_html)
 
 # Write updated HTML back to file
 # encode to utf-8 to avoid issues with accents
-with open('../research.html', 'w', encoding='utf-8') as f:
+with open('../index.html', 'w', encoding='utf-8') as f:
     f.write(html)
 # %%
