@@ -6,8 +6,15 @@
 # You cannot use the built-in functions min and max.
 
 def min_max(func, numbers):
-    pass
-
+    min_ = numbers[0]
+    max_ = numbers[0]
+    for number in numbers:
+        result = func(number)
+        if min_ is None or result < min_:
+            min_ = result
+        if max_ is None or result > max_:
+            max_ = result
+    return min_, max_
 
 # Create a test
 assert min_max(lambda x: x**2, [1, 2, 3, 4, 5]) == (1, 25)
@@ -17,7 +24,12 @@ assert min_max(lambda x: x**2, [1, 2, 3, 4, 5]) == (1, 25)
 # You can sort a list by swapping elements one by one until the list is sorted.
 
 def sort_list(numbers):
-    pass
+    
+    for i in range(len(numbers)):
+        for j in range(i + 1, len(numbers)):
+            if numbers[i] > numbers[j]:
+                numbers[i], numbers[j] = numbers[j], numbers[i]
+    return numbers
 # Create a test
 assert sort_list([3, 1, 2, 4, 5]) == [1, 2, 3, 4, 5]
 # %%
@@ -32,7 +44,18 @@ assert sort_list([3, 1, 2, 4, 5]) == [1, 2, 3, 4, 5]
 # 5. If the number is not in the list, return None.
 
 def binary_search(numbers, number):
-    pass
+    left = 0
+    right = len(numbers) - 1
+    while left <= right:
+        middle = (left + right) // 2
+        if numbers[middle] == number:
+            return middle
+        elif numbers[middle] > number:
+            right = middle - 1
+        else:
+            left = middle + 1
+    return None
 
 # Create a test
 assert binary_search([1, 2, 3, 4, 5], 3) == 2
+# %%
