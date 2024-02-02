@@ -8,9 +8,12 @@ import statsmodels.api as sm
 
 pdr.famafrench.get_available_datasets()
 
+#%%
 # industry portfolios
 # '49_Industry_Portfolios'
 df_10 = pdr.famafrench.FamaFrenchReader('10_Industry_Portfolios', start='1926-07', end='2020-12').read()[0]
+
+#%%
 # factors
 # 'F-F_Research_Data_5_Factors_2x3'
 df_5 = pdr.famafrench.FamaFrenchReader('F-F_Research_Data_5_Factors_2x3', start='1926-07', end='2020-12').read()[0]
@@ -43,6 +46,7 @@ df = df.drop(columns=['RF'])
 # average excess returns
 ER = df[assets].mean()
 
+#%%
 # compute betas wrt to all factors
 betas = np.zeros((len(assets), len(factors)))
 a = np.zeros(len(assets))
@@ -72,6 +76,7 @@ model = model.fit()
 # print results, recall that it assumes homoskedasticity
 print(model.summary())
 
+#%%
 # let's try to recover the point estimates
 # and compute proper s.e. 
 from numpy.linalg import inv
@@ -82,7 +87,7 @@ lambda_ols = inv(betas.T @ betas) @ betas.T @ ER
 for i, factor in enumerate(factors):
     print(f"Price of risk of {factor}: {lambda_model[i]:.4f} vs {lambda_ols[i]:.4f}")
 
-
+#%%
 # Standard error assuming homoskedasticity
 # compute residuals
 residuals = ER - betas @ lambda_model
@@ -97,6 +102,7 @@ se_model = model.bse
 for i, factor in enumerate(factors):
     print(f"S.E. of {factor}: {se_model[i]:.4f} vs {se[i]:.4f}")
 
+#%%
 # compute the appropriate s.e. for OLS
 # Factor covariance
 Sigma_f = np.cov(df[factors].T)
