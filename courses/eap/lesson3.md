@@ -8,6 +8,13 @@ author: Juan F. Imbet Ph.D.
 # Lesson 3: GMM Estimation
 
 ---
+# Some sources used in the slides
+
+- Whited T.  and Taylor L.  Summer School in Structural Estimation. 
+- Wooldridge, J. M. (2001). Econometric analysis of cross section and panel data. 
+- Asset Pricing, Cochrane J. 2006. 
+
+---
 # Introduction
 
 - GMM stands for Generalized Method of Moments. It is a generalization of the method of moments estimator.
@@ -125,12 +132,110 @@ where $\hat{W}$ is a positive definite weighting matrix that converges in probba
 $$
 \begin{align*}
 
-\hat{\theta} &= \arg \min_{\theta} \Big[ g_T( \theta)\Big]' \hat{W} \Big[ g_T( \theta)\Big] \\
+\hat{\theta_1} &= \arg \min_{\theta} \Big[ g_T( \theta)\Big]' W \Big[ g_T( \theta)\Big] \\
 \end{align*}
 $$
-FOC
+First Order Condition
 $$
 \begin{align*}
-\frac{\partial g_T(\theta)}{\partial \theta}W g_T(\theta)=0
+\frac{\partial g_T(\theta)}{\partial \theta}W g_T(\theta)=a g_T(\theta)=0
 \end{align*}
 $$
+
+This estimator is consistent and asymptotically normal but not always efficient, the efficient estimator is obtained by estimating $W$ as the inverse of covariance of moments $g_T(\hat{\theta_1})$ and re-estimate. 
+
+---
+# Standard Errors
+
+Hansen prooved that the estimator
+
+$$
+\begin{align*}
+\hat{\theta_2} &= \arg \min_{\theta} \Big[ g_T( \theta)\Big]' \hat{S}^{-1} \Big[ g_T( \theta)\Big] \\
+\end{align*}
+$$
+where $\hat{S}$ is the sample covariance of the moments given $\hat{\theta_1}$, is consistent and asymptotically normal. Define 
+$$
+d = \frac{\partial g_T(\theta)}{\partial \theta}
+$$
+Then the asymptotic variance of $\hat{\theta_2}$ is
+$$
+\begin{align*}
+\hat{V}(\hat{\theta_2}) &=\frac{1}{T} \Big[  d' \hat{S}^{-1} d \Big]^{-1} \\
+\end{align*}
+$$
+
+---
+# Goodness of Fit
+
+- The GMM criterion function can be used to test the null hypothesis that the model is correctly specified.
+- The test statistic is
+$$
+ T Q_T(\hat{\theta}) \xrightarrow{d} \chi^2_{L-P}
+$$
+
+---
+# Example, OLS using GMM
+
+- Consider the simple linear regression model
+$$
+\begin{align*}
+y = X\beta + \epsilon
+\end{align*}
+$$
+The OLS conditions are
+$$
+\begin{align*}
+\mathbb{E}[X'\epsilon] &= 0 \\
+\mathbb{E}[\epsilon] &= 0 \\
+\end{align*}
+$$
+Replace
+$$
+\begin{align*}
+g(w_i, \theta) &= \begin{bmatrix} X_i'\epsilon_i \\ \epsilon_i \end{bmatrix} \\
+\end{align*}
+$$
+
+---
+# Example, OLS using GMM (cont.)
+
+Then the GMM estimator in the first step is
+$$
+\begin{align*}
+\hat{\beta_1} &= \arg \min_\beta \Big[N^{-1}\sum_{i=1}^N \begin{bmatrix} X_i'\epsilon_i \\ \epsilon_i \end{bmatrix}\Big]' I \Big[N^{-1}\sum_{i=1}^N \begin{bmatrix} X_i'\epsilon_i \\ \epsilon_i \end{bmatrix}\Big] \\
+ &= \arg \min_\beta \Big[N^{-1}\sum_{i=1}^N \begin{bmatrix} X_i'(y_i - X_i\beta) \\ (y_i - X_i\beta) \end{bmatrix}\Big]' I \Big[N^{-1}\sum_{i=1}^N \begin{bmatrix} X_i'(y_i - X_i\beta) \\ (y_i - X_i\beta) \end{bmatrix}\Big] \\
+\end{align*}
+$$
+
+---
+# Example, OLS using GMM (cont.)
+
+Second step, given $\hat{\beta_1}$ compute the covariance matrix of the moments
+$$
+\begin{align*}
+\hat{S} &= \frac{1}{N} \sum_{i=1}^N \begin{bmatrix} X_i'(y_i - X_i\hat{\beta_1}) \\ (y_i - X_i\hat{\beta_1}) \end{bmatrix} \begin{bmatrix} X_i'(y_i - X_i\hat{\beta_1}) \\ (y_i - X_i\hat{\beta_1}) \end{bmatrix}' \\
+\end{align*}
+$$
+Then the GMM estimator is
+$$
+\begin{align*}
+\hat{\beta_2} &= \arg \min_\beta \Big[N^{-1}\sum_{i=1}^N \begin{bmatrix} X_i'(y_i - X_i\beta) \\ (y_i - X_i\beta) \end{bmatrix}\Big]' \hat{S}^{-1} \Big[N^{-1}\sum_{i=1}^N \begin{bmatrix} X_i'(y_i - X_i\beta) \\ (y_i - X_i\beta) \end{bmatrix}\Big] \\
+\end{align*}
+$$
+
+with covariance matrix
+$$
+\begin{align*}
+\hat{V}(\hat{\beta_2}) &=\frac{1}{N} \Big[  d' \hat{S}^{-1} d \Big]^{-1} \\
+\end{align*}
+$$
+
+---
+# GMM in practice
+
+- In many applications, the covariance matrix of the moments is numerically singular.
+- How to solve it?
+    1. Use only 1 step. 
+    2. Add small noise to the variance matrix.
+    3. Use a "generalized" inverse.
