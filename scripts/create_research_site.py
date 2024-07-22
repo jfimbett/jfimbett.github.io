@@ -1,26 +1,33 @@
 #%%
 import requests
 from bs4 import BeautifulSoup
+import time
 
 # List of SSRN URLs to scrape
 urls = ['https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4557679',
+        'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4872375',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3622433',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3711536']
 
 # Empty list to store paper details
 papers = []
 
+#%%
 # Loop through each URL and scrape paper details
 for url in urls:
+    time.sleep(10)
     # Make a GET request to the SSRN URL
     # but use headers
-    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+    response = requests.get(url, headers={
+        # good user agent to avoid being blocked
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
+    })
 
     # Check if the request was successful
     if response.status_code != 200:
-        print(f"Error: {response.status_code}")
+        print(f"Error: {response.status_code} {url}")
         continue
     # Parse the HTML content of the response using BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
