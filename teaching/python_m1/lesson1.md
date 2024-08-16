@@ -24,21 +24,13 @@ paginate: true
 - Office hours by appointment.
 
 ---
-
-# Prerequisites (brush up if necessary!)
-
-- Discrete Mathematics (sets, functions, relations, logic, integers, rational numbers).
-- Linear Algebra (vectors, matrices, determinants).
-- Statistics (mean, median, mode, variance, standard deviation, correlation, regression).
-
----
-# Roadmap
-- **Session 1**: Getting Started and Introduction to Programming. 
-- **Session 2**: Intermediate Concepts.
-- **Session 3**: Linear Algebra
-- **Session 4**: Data Frames
-- **Session 5**: Object Oriented Programming.
-- **Session 6**: Computational Complexity.
+# Roadmap, Groups (1, 2)
+- **Session 1**: (20/09, 05/11) Getting Started and Introduction to Programming. 
+- **Session 2**: (23/09, 07/11) Intermediate Concepts.
+- **Session 3**: (27/09, 12/11) Linear Algebra
+- **Session 4**: (30/09, 14/11) Data Frames
+- **Session 5**: (07/10, 19/11) Object Oriented Programming.
+- **Session 6**: (11/10, 21/11) Computational Complexity.
 
 ---
 # Session 1
