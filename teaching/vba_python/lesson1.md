@@ -13,13 +13,13 @@ paginate: true
 ---
 # Roadmap 
 
-- Session 1 (03/09)
-- Session 2 (10/09)
-- Session 3 (20/09)
-- Session 4 (01/10)
-- Session 5 (08/10)
-- Session 6 (15/10)
-- Session 7 (22/10)
-- Session 8 (29/10)
-- Session 9 (12/11)
-- Session 10 (19/11)
+- Session 1 (03/09) What is Programming?
+- Session 2 (10/09) VBA 1
+- Session 3 (20/09) VBA 2
+- Session 4 (01/10) Programming with Solver
+- Session 5 (08/10) Introduction to Python: Getting Started and Introduction to Programming.
+- Session 6 (15/10) Intermediate Concepts.
+- Session 7 (22/10) Linear Algebra
+- Session 8 (29/10) Data Frames
+- Session 9 (12/11) Object Oriented Programming.
+- Session 10 (19/11) API and Web Scraping, Project Presentation.
