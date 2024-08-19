@@ -6,32 +6,37 @@ paginate: true
 ---
 
 # A handbook for Github
+
 ## Juan F. Imbet *Ph.D.*
+
 ### Paris Dauphine University
 
 ---
-# GitHub
 
-Github is a cloud-based platform to store and share code. 
+## GitHub
 
-- Showcase your work. 
-- Track and manage changes. 
+Github is a cloud-based platform to store and share code.
+
+- Showcase your work.
+- Track and manage changes.
 - Review and collaborate.
 
-# Git
+## Git
 
 Git is a version control system. It is useful when you and other people are working on the same project.
 
 ---
-# Requirements 
 
--  [Create an account on GitHub](https://docs.github.com/en/get-started/using-github/connecting-to-github)
+## Requirements
+
+- [Create an account on GitHub](https://docs.github.com/en/get-started/using-github/connecting-to-github)
 - [Install Git on your computer](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 - [Connect to GitHub](https://docs.github.com/en/get-started/using-github/connecting-to-github)
-- [Install the GitHub CLI](https://github.com/cli/cli) 
+- [Install the GitHub CLI](https://github.com/cli/cli)
 
 ---
-# Command Line Interface
+
+## Command Line Interface
 
 ```bash
 git --version 
@@ -52,7 +57,8 @@ gh auth login
 ```
 
 ---
-# Step 3: Create a Local Repository
+
+## Step 3: Create a Local Repository
 
 ```bash
 cd 
@@ -61,7 +67,7 @@ cd hello-world
 git init # creates .git folder
 ```
 
-# Step 4: Add Files to the Repository
+## Step 4: Add Files to the Repository
 
 ```bash
 git add .
@@ -69,7 +75,8 @@ git commit -m "First commit"
 ```
 
 ---
-# Step 5: Create a Remote Repository
+
+## Step 5: Create a Remote Repository
 
 ```bash
 gh repo create hello-world --public --source=.
@@ -82,7 +89,8 @@ gh repo create hello-world --public --source=.
 ```
 
 ---
-# Step 6: Push the Local Repository to GitHub
+
+## Step 6: Push the Local Repository to GitHub
 
 You can use the git remote add command to match a remote URL with a name. For example, you'd type the following in the command line:
 
@@ -97,10 +105,11 @@ git remote add origin https://github.com/jfimbett/hello-world.git
 ```
 
 ---
-# Step 7: Push the Local Repository to GitHub
+
+## Step 7: Push the Local Repository to GitHub
 
 ```bash
-
 git push -u origin master
 ```
-Where `origin` is the name of the remote repository and `master` is the name of the branch (more on this later).
+
+Where `origin` is the name of the remote repository and `master` is the name of the branch (more on this later)
