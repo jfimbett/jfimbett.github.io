@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v1.0.0 (2024-08-28)
+
+### Breaking
+
+* fix: Enable version control functionality
+
+BREAKING CHANGE: This changes completely the website structure ([`faac640`](https://github.com/jfimbett/jfimbett.github.io/commit/faac640ed098499fb59f8968d2bf7a67e6e60069))
+
 ## v0.0.1 (2024-08-28)
 
 ### Fix
