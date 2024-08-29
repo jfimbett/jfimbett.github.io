@@ -15,6 +15,3 @@ paginate: true
 
 ---
 
-- poetry add --group dev pytest
-- create dev.py file not inside src/pybacktestchain
-$ poetry add --group dev python-semantic-release
