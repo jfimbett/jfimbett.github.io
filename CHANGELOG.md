@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.0.2 (2024-08-29)
+
+### Fix
+
+* fix: pdf files for python m2 ([`30fb2b5`](https://github.com/jfimbett/jfimbett.github.io/commit/30fb2b58375830ac3ca0c00ae6a47ff3523ea02d))
+
 ## v1.0.1 (2024-08-29)
 
 ### Fix
