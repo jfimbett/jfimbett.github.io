@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "jfimbett"
-version = "1.0.0"
+version = "1.0.1"
 description = ""
 authors = ["Juan Imbett <jfimbett@gmail.com>"]
 readme = "README.md"

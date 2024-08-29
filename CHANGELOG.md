@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.0.1 (2024-08-29)
+
+### Fix
+
+* fix: update cv ([`4d824b7`](https://github.com/jfimbett/jfimbett.github.io/commit/4d824b78df6928d907f12084ce1d3f907cf361cb))
+
 ## v1.0.0 (2024-08-28)
 
 ### Breaking
