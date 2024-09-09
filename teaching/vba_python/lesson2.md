@@ -26,7 +26,20 @@ Write a program that converts from any of the following temperature units to any
 
 # Exercise 2: Prime numbers (20 minutes)
 
-Write a program that asks the user for a number and then displays whether the number is prime or not. A prime number is a number that is only divisible by 1 and itself. You can use the modulo operator in VBA (`mod`) to check if a number is divisible by another number.
+- You are going to replicate the Sieve of Eratosthenes algorithm in VBA. Here is the pseudocode:
 
----
+```
+Input: an integer n > 1
+
+Let A be an array of Boolean values, indexed by integers 2 to n,
+initially all set to true.
+
+for i = 2, 3, 4, ..., not exceeding √n:
+    if A[i] is true:
+        for j = i^2, i^2+i, i^2+2i, i^2+3i, ..., not exceeding n:
+            A[j] := false
+
+Output: all i such that A[i] is true
+
+```
 
