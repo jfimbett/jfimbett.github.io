@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v1.0.3 (2024-09-10)
+
+### Fix
+
+* fix: added slides for data module ([`11ca13f`](https://github.com/jfimbett/jfimbett.github.io/commit/11ca13f134c8cf914c9eb3fc541931903fe52d75))
+
+* fix: added slides backtest1 ([`ad151ae`](https://github.com/jfimbett/jfimbett.github.io/commit/ad151aeb4fa98448bbdeffd188d57e63ee3a24e4))
+
+* fix: worked on the teaching.html sites ([`35b7885`](https://github.com/jfimbett/jfimbett.github.io/commit/35b788554c76dfc3918638c8d8d7d85d552794d8))
+
+### Unknown
+
+* started working on the VBA lessons ([`deb20dd`](https://github.com/jfimbett/jfimbett.github.io/commit/deb20dd322f889edd51f3e570b4e1616971524f9))
+
 ## v1.0.2 (2024-08-29)
 
 ### Fix
