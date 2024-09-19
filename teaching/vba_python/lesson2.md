@@ -11,7 +11,7 @@ paginate: true
 
 ---
 
-# Exercise 1: Temperature conversion (20 minutes)
+# Exercise 1: Temperature conversion (30 minutes)
 
 Write a program that converts from any of the following temperature units to any of the others: Celsius, Fahrenheit, and Kelvin. The program should ask the user for the temperature and the unit of the temperature, and then ask the user for the unit to which the temperature should be converted. The program should then display the converted temperature. You can interact with the user using the `InputBox` function or directly in the excel sheet.
 
@@ -24,7 +24,7 @@ Write a program that converts from any of the following temperature units to any
 
 ---
 
-# Exercise 2: Prime numbers (20 minutes)
+# Exercise 2: Prime numbers (30 minutes)
 
 - You are going to replicate the Sieve of Eratosthenes algorithm in VBA. Here is the pseudocode:
 
