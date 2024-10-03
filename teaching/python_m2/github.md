@@ -914,6 +914,50 @@ No build command specified, skipping
 
 ---
 
+### Note: Failed to create release on Github!
+
+Sometimes you will see the following message:
+
+```output
+[09:46:57] ERROR    [semantic_release.cli.commands.version] ERROR version.version: 404 Client Error: Not  version.py:744
+                    Found for url: https://api.github.com/repos/jfimbett/sec_yf/releases
+                    NoneType: None
+404 Client Error: Not Found for url: https://api.github.com/repos/jfimbett/sec_yf/releases
+Failed to create release on Github!
+```
+
+This is because semantic-release requires a GitHub token to create a release. 
+
+---
+
+### Create a GitHub token 
+
+(Thanks to Samuli Salonen for finding this solution)
+
+- Go to https://github.com/settings/tokens
+- Generate new token with “repo” and “workflow” access
+- Copy the token (only shown once, so save it somewhere)
+- Add the token to your environment variables with the name `GH_TOKEN`. In Windows, you can do this with the command `setx GH_TOKEN <your token>`.
+- Remember to restart your terminal after setting the environment variable.
+
+---
+
+### Instructions for MacOS (zsh)
+
+1. For `zsh` users, (default chell on macOS Catalina and later). 
+2. Open your terminal
+3. Type `nano ~/.zshrc` this will open the `.zshrc` file in the nano text editor (a minimalistic text editor that comes by default in most Unix systems).
+4. Add the following line to the end of the file
+```bash
+export GH_TOKEN=<your token>
+```
+5. Save the file and exit. (Look at the bottom of the terminal for the commands to save and exit).
+6. Apply the changes with the command `source ~/.zshrc`.
+7. For `bash` users do the same but with the file `~/.bash_profile`.
+
+
+---
+
 ## Patches
 
 Add some code to src/mylibrary/mylibrary.py
