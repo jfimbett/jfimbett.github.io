@@ -9,10 +9,12 @@ df = pd.read_csv('https://raw.githubusercontent.com/mwaskom/seaborn-data/master/
 # Probability of survival for a passenger in each class
 survival_prob = df.groupby('class')['survived'].mean()
 
+#%%
 # 2.
 # Probability of survival for a passenger
 survival_prob = df.groupby(['class', 'who'])['survived'].mean()
 
+#%%
 # 3.
 
 # compute P(not surviving and male) and P(not surviving and male | class)
@@ -25,7 +27,7 @@ for c in df['class'].unique():
     if abs(not_surviving_male - prob_not_surviving) < 0.01:
         print(f"Events independent for class {c}") 
 
-
+#%%
 # Estimate the average age of the passengers who survived and the passengers who did not survive.
 
 avg_age = df.groupby('survived')['age'].mean()
@@ -63,6 +65,3 @@ plt.show()
 
 
 
-# How does this relationship change across the different classes?
-
-# %%

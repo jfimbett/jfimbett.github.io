@@ -332,7 +332,11 @@ $$
 ### Respect the restrictions
 
 $$
-x_{im} + x_{jm} \geq 2\times r_{ij} \quad \forall i,j,m
+ x_{im} + x_{jm} \geq 2\times r_{ij}\times x_{im} \quad \forall i,j,m
+$$
+
+$$
+ x_{im} + x_{jm} \geq 2\times r_{ij}\times x_{jm} \quad \forall i,j,m
 $$
 
 ---
@@ -346,7 +350,7 @@ $$
 ### Objective Function
 
 $$
-\text{Maximize } Z = \sum_{i=1}^{N} \sum_{j=1}^{N} p_{ij} \times r_{ij} \times x_{im} \times x_{jm}
+\text{Maximize } Z = \sum_{i=1}^{N} \sum_{j=1}^{N}\sum_{m=1}^M p_{ij} \times x_{im} \times x_{jm}
 $$
 
 What is the problem? The objective function is not linear. We need to linearize it to make it simpler. 
@@ -396,4 +400,8 @@ y_{ijm} \in \{0, 1\} \quad \forall i,j,m
 \end{aligned}
 $$
 
+---
 
+## See attached Excel file for the modelling of the constraints. 
+
+- Excel's solver is limited to 200 decision variables and 100 constraints. For larger problems, you can use Python to "pass" the problem to a solver. More on this in the following sessions (project overview).

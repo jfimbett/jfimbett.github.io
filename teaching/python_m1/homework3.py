@@ -41,6 +41,11 @@ class Library:
                 return
         print(f"'{title}' not found in the library.")
 
+    def __add__(self, other):
+        new_library = Library()
+        new_library.books = self.books + other.books
+        return new_library
+
 # Example usage:
 if __name__ == "__main__":
     my_library = Library()
@@ -66,3 +71,8 @@ if __name__ == "__main__":
 
     print("\nAvailable books after returning:")
     my_library.display_books()
+
+
+    my_new_library = my_library + my_library 
+
+    my_new_library.display_books()
