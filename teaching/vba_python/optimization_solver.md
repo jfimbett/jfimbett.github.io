@@ -405,3 +405,68 @@ $$
 ## See attached Excel file for the modelling of the constraints. 
 
 - Excel's solver is limited to 200 decision variables and 100 constraints. For larger problems, you can use Python to "pass" the problem to a solver. More on this in the following sessions (project overview).
+
+---
+
+## Using Solver with VBA
+
+Consider the following problem:
+$$
+\begin{align*}
+\max_{x_1,x_2} \quad 3x_1+2x_2 \\
+\text{subject to} \quad x_1+x_2 &\leq 4 \\
+x_1 - x_2 &\leq 1 \\
+x_1,x_2 &\geq 0
+\end{align*}
+$$
+
+---
+### References to cells in Excel
+
+- In cell `B1` you will input $x_1$. 
+- In cell `B2` you will input $x_2$.
+- In cell `B3` you will input the objective function ```=3*B1+2*B2```.
+- In cell `B4` you will input the first constraint ```=B1+B2```.
+- In cell `B5` you will input the second constraint ```=B1-B2```.
+
+---
+### Solve it in VBA
+
+```vba
+Sub SolveLinearProgram()
+
+    ' Clear any previous solver settings
+    SolverReset
+
+    ' Set the objective: Maximize Z = 3*X1 + 2*X2 (which is in B3)
+    SolverOk SetCell:=Range("B3"), MaxMinVal:=1, ValueOf:=0, ByChange:=Range("B1:B2")
+
+    ' Add the constraints:
+    ' X1 + X2 <= 4 (which is in B4)
+    SolverAdd CellRef:=Range("B4"), Relation:=1, FormulaText:=4
+    ' X1 - X2 <= 1 (which is in B5)
+    SolverAdd CellRef:=Range("B5"), Relation:=1, FormulaText:=1
+    ' X1 >= 0
+    SolverAdd CellRef:=Range("B1"), Relation:=3, FormulaText:=0
+    ' X2 >= 0
+    SolverAdd CellRef:=Range("B2"), Relation:=3, FormulaText:=0
+
+    ' Solve the problem
+    SolverSolve UserFinish:=True
+
+    ' Keep the Solver solution
+    SolverFinish KeepFinal:=1
+
+End Sub
+```
+
+---
+
+### Explanation of the code
+
+- `SolverReset`: Clears any existing solver settings.
+-`SolverOk`: Sets the objective function in cell B3 (the formula for Z). The argument `MaxMinVal:=1` indicates that we are maximizing the objective.
+`ByChange`: Refers to the decision variables $x_1$ and $x_2$ in the range `B1:B2`.
+- `SolverAdd`: Adds constraints. For each constraint, we specify the cell reference, the type of relationship (Relation), and the target value (FormulaText). For example, `Relation:=1` corresponds to <=, and `Relation:=3` corresponds to >=.
+- `SolverSolve`: Solves the linear program, and the argument `UserFinish:=True` means the solution will be completed without showing Solver's results dialog.
+- `SolverFinish`: Keeps the solution in place after Solver completes.
