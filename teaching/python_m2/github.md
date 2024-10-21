@@ -568,6 +568,158 @@ rmdir .git /s /q
 ```
 
 ---
+## The Git Fork-Branch-Pull Workflow
+
+1. Fork and Clone a project. 
+  - Fork: Create a copy of the repository on your GitHub account.
+  - Clone: Download the repository to your local machine.
+
+```bash
+gh repo fork jfimbett/pybacktestchain --remote=true
+```
+---
+
+```output
+✓ Created fork jfimbett-test/pybacktestchain
+? Would you like to clone the fork? Yes
+Cloning into 'pybacktestchain'...
+remote: Enumerating objects: 128, done.
+remote: Counting objects: 100% (128/128), done.
+remote: Compressing objects: 100% (69/69), done.
+remote: Total 128 (delta 52), reused 110 (delta 39), pack-reused 0 (from 0)
+Receiving objects: 100% (128/128), 158.67 KiB | 4.07 MiB/s, done.
+Resolving deltas: 100% (52/52), done.
+From https://github.com/jfimbett/pybacktestchain
+ * [new branch]      branch1           -> upstream/branch1
+ * [new branch]      branch2           -> upstream/branch2
+ * [new branch]      branch_blockchain -> upstream/branch_blockchain
+ * [new branch]      master            -> upstream/master
+✓ Cloned fork
+! Repository jfimbett/pybacktestchain set as the default repository. To learn more about the default repository, run: gh repo set-default --help
+```
+---
+
+## Origin vs Upstream vs Local
+
+![](https://www.tomasbeuzen.com/post/git-fork-branch-pull/featured_hud478d74d48d19bfd1c1c03fc398c8033_312322_720x0_resize_lanczos_3.png)
+
+---
+## `origin`
+
+What is it?
+
+- `origin` is the default name given to the remote repository when you clone a repository. It refers to the repository from which your local copy was cloned.
+
+Purpose:
+
+- It's typically where you push your changes (e.g., git push origin main) and pull updates from.
+- If you fork a repository on GitHub and then clone your fork locally, origin points to your forked repository (i.e., your own copy of the repository on GitHub).
+
+- If you fork a repository using `gh repo fork` the `--remote=true` flag will automatically bring both the `origin` and `upstream` remotes.
+
+---
+
+## `upstream`
+
+What is it?
+`upstream` is a common convention (but not a special keyword in Git) to refer to the original repository from which you forked a project. It points to the repository you forked from, typically maintained by the original author or organization.
+- Purpose: It is used to pull changes from the original repository into your fork. This is especially useful when you want to keep your fork up-to-date with the latest changes from the original repository.
+- It helps maintain a link to the "source of truth" repository.
+
+---
+## What are the branches I have access to?
+
+```bash
+cd repository
+git branch -a
+```
+
+```output
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/branch1
+  remotes/origin/branch2
+  remotes/origin/branch_blockchain
+  remotes/origin/master
+  remotes/upstream/branch1
+  remotes/upstream/branch2
+  remotes/upstream/branch_blockchain
+  remotes/upstream/master
+```
+
+---
+
+## What if I only have `origin` or `upstream` but not both?
+
+- You can add a remote repository with the command `git remote add <name> <url>`. 
+```bash 
+git remote add upstream jfimbett/pybacktestchain.git
+```
+Why would I want both?
+- `origin` points to `https://github.com/yourusername/repo.git`. 
+- `upstream` points to `https://github.com/originaluser/repo.git`
+
+---
+## `fetch`
+
+- `fetch` is a command that downloads changes from a remote repository to your local repository. It does not merge the changes, it only downloads them. 
+
+```bash 
+git fetch upstream
+```
+
+---
+
+## Pull from a branch
+
+`git checkout upstream/branch_blockchain`
+```output
+Switched to a new branch 'branch_blockchain'
+```
+```bash
+git pull upstream branch_blockchain
+```
+```output
+From https://github.com/jfimbett/pybacktestchain
+ * branch            branch_blockchain -> FETCH_HEAD
+ ```
+
+---
+## What if there is a new branch in the `upstream` repository?
+
+Before
+```bash
+master
+remotes/origin/HEAD -> origin/master
+remotes/origin/branch1
+remotes/origin/branch2
+remotes/origin/branch_blockchain
+remotes/origin/master
+remotes/upstream/branch1
+remotes/upstream/branch2
+remotes/upstream/branch_blockchain
+remotes/upstream/master
+```
+
+---
+## `fetch`
+```bash
+git fetch upstream
+```
+```output
+remotes/origin/HEAD -> origin/master
+remotes/origin/branch1
+remotes/origin/branch2
+remotes/origin/branch_blockchain
+remotes/origin/master
+remotes/upstream/branch1
+remotes/upstream/branch2
+remotes/upstream/branch_blockchain
+remotes/upstream/master
+remotes/upstream/testing_branch
+```
+
+---
 
 ## Version Control 
 
@@ -657,6 +809,7 @@ mylibrary
 ```bash
 cookiecutter https://github.com/py-pkgs/py-pkgs-cookiecutter.git
 ```
+---
 
 ```output
   [1/7] author_name (Monty Python): Juan F. Imbet
