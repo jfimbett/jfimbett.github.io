@@ -16,7 +16,7 @@ paginate: true
 ## About Me
 
 - Assistant Professor of Finance at Paris Dauphine University - Paris Sciences et Lettres. 
-- Ph.D. in Finance from Pompeu Fabra Universit and the Barcelona School of Economics.
+- Ph.D. in Finance from Pompeu Fabra University and the Barcelona School of Economics.
 - External Member of the Institute for Advanced Studies in Luxembourg.
 - Researcher in Financial Economics and Asset Management.
 - Instructor of courses on Data Science and Finance (Python). 
@@ -66,18 +66,18 @@ paginate: true
 ---
 ## Hedge Funds vs Mutual Funds
 
-- Hedge funds have a lot of freedome in the trading that they do, as well as limited requirements. 
-- In exchange for this freedome they are restricted in how they can raise money. 
-- In terms of freedom, hedge funds can use levearge, short-selling, derivatives, and incentive fees. 
-- Hedge fund investor smust be accredited investors (they need to be rich).
+- Hedge funds have a lot of freedom in the trading that they do, as well as limited requirements. 
+- In exchange for this freedom they are restricted in how they can raise money. 
+- In terms of freedom, hedge funds can use leverage, short-selling, derivatives, and incentive fees. 
+- Hedge fund investors must be accredited investors (they need to be rich).
 - The first formal hedge fund is believed to have been a fund created by Alfred Winslow Jones in 1949.  
 - In the 1990s the hedge fund industry sa a dramatically increased interest as institutional investors began to embrace hedge funds. 
 ---
 ## Objectives and Fees
 
-- The objective of asset managers is to add value tot heir investors by making money relative to a becnhmark.
+- The objective of asset managers is to add value tot heir investors by making money relative to a benchmark.
 - Mutual funds typically have a market index as a benchmark.
-- Hedge funds are not trying to beat the stock market but, ather, trying to make money in any environment.
+- Hedge funds are not trying to beat the stock market but, rather, trying to make money in any environment.
 - This is where the **Hedge** term comes from.
 - E.g. hedge fund investors would normally punish a hedge fund which is down by 10% even if the stock market is down by 20%.
 
@@ -91,8 +91,8 @@ paginate: true
 ---
 ## Performance
 
-- A number of famous hedge fund managers have produced spectacular returns over the years. But hese managers do not represent the typical hedge fund. Are they good or just lucky?
-- This question is very hard to answer fr several reasons. First, the data on hedge fund returns are rather poor as they are avaiable only over a limited tiem period and subject to important **biases**, 
+- A number of famous hedge fund managers have produced spectacular returns over the years. But these managers do not represent the typical hedge fund. Are they good or just lucky?
+- This question is very hard to answer fr several reasons. First, the data on hedge fund returns are rather poor as they are available only over a limited time period and subject to important **biases**, 
 - Hedge funds report their returns to promote themselves in many cases. 
 - When they decide to start reporting information to data providers, the information is backfilled. This means that they might only decide to report their returns when they have a good track record.
 
@@ -106,7 +106,7 @@ Hedge funds are contractually organized in different ways, but the typical **mas
 ## Explanation
 
 - The structure is not as complicated as it looks. 
-- Contractually there is a distinction between the *fund*, where the money is, and the *management company*, where the traaders and other staff are.
+- Contractually there is a distinction between the *fund*, where the money is, and the *management company*, where the traders and other staff are.
 - An investor in a hedge fund invests in a *feeder fund*, whose sole purpose in life is to invest in the *master fund* where the trading is done.
 - This structure is useful since it allows the manager to focus on running a single master fund while at the same time creating different investment products (the feeder funds) for different types of investors.
 - Typically US investors prefer a feeder func that is registered in the US, while non residents prefer an offshore feeder fund.
@@ -116,7 +116,7 @@ Hedge funds are contractually organized in different ways, but the typical **mas
 ---
 ## Explanation
 - This feeder/master structure is also useful for risk management. If the master fund has a volatility of 20%, the feeder fund can have half the volatility by investing half the money in the master fund and the other half in money market funds.
-- The master fund has a poopl of money, and this is where all the trades are carried out. 
+- The master fund has a pool of money, and this is where all the trades are carried out. 
 - The fund has an Investment Management Agreement (IMA) with the management company. The MC provides investment services, including strategy development, implementation, and trading. This is where all the employees work. 
 - The master fund is typically organized as a partnership, where the feeder funds are the limited partners, and the general partner is the company that owns the management company. (E.g. JP Morgan Chase and Jp Morgan Chase Investment Management).
 
@@ -138,7 +138,7 @@ Some nomenclature:
 - Hedge funds often face criticism in the media. 
 - Companies do not like to see their shares shorted, since this indicates a belief that the company's share price could go down. 
 - Short sellers, including hedge funds, are sometimes accused of being the source of a company's problem. 
-- However, hedge funds play several useful rols in the economy. 
+- However, hedge funds play several useful roles in the economy. 
 - They make markets more efficient by collecting information.
 - They also provide diversification to accredited investors.  
 
@@ -150,7 +150,7 @@ Some nomenclature:
 ---
 ## Alpha and Beta
 
-- The most basic measure of trading performance is, ofcourse, the return $R_t$ in a period $t$. The return is often separated into itrs alpha and beta (abussing notation a bit). Beta is the strategy's market exposure, while alpha is the excess return after accounring for performance due to market movements. 
+- The most basic measure of trading performance is, of course, the return $R_t$ in a period $t$. The return is often separated into its alpha and beta (abusing notation a bit). Beta is the strategy's market exposure, while alpha is the excess return after accounting for performance due to market movements. 
 - Defining the excess return on top of the risk free rate $R^e_t=R_t-R^f$
 $$
 R^e_t=\alpha+\beta R^{me}_t+\epsilon_t
@@ -177,10 +177,10 @@ $$
 ---
 ## Alpha and Beta
 
-- Alpha is cleariest the sexiest term in the regression. 
+- Alpha is clearly the sexiest term in the regression. 
 - It is the Holy Grail all active managers seek. 
 - A hedge-fund's quest for alpha *defies* the Capital Asset Pricing Model (CAPM), since they would be compensated for risk that is not systematic.
-- A hedge fund's alpha and beta are estiamted with significant error. Hencem if a hedge fund has an estimated alpha of 6%, how do we know if this is luck or skill?
+- A hedge fund's alpha and beta are estimated with significant error. Hencem if a hedge fund has an estimated alpha of 6%, how do we know if this is luck or skill?
 - Researches often look at the t-statistic. 
 - We can also compute a strategy's excess return above and beyond several risk exposures, e.g. the Fama-French 3-factor model.
 $$
@@ -192,9 +192,9 @@ $$
 
 - As we have seen, a positive alpha is good while a negative alpha is bad. 
 - However, is a high positive alpha always better then a low positive alpha? Not always. 
-- The alpha tells youthe size of the market-neutral returns that a strategy delivers, it does not say at what risk. 
-- Second, alpha depends on how a strategy  is scaled. For instance, a stice-leveraged strategy has twice the alpha of an unlevered version. 
-- Risk-reqard ratios resolve these issues. At a basic level, potential investors in a hedge fund want to know how the future expected excess returns compare to the risk that the hedge fund is taking. 
+- The alpha tells you the size of the market-neutral returns that a strategy delivers, it does not say at what risk. 
+- Second, alpha depends on how a strategy  is scaled. For instance, a twice-leveraged strategy has twice the alpha of an unlevered version. 
+- Risk-reward ratios resolve these issues. At a basic level, potential investors in a hedge fund want to know how the future expected excess returns compare to the risk that the hedge fund is taking. 
 - The Sharpe Ratio (SR) is a measure of just that (some people call it the risk adjusted return, but again this is a misnomer).
 
 ---
@@ -230,8 +230,8 @@ AM = \frac{\alpha}{\text{margin}}
 $$
 
 - The idea behind is to compute the return on a *maximally leveraged" version of a amrket neutral strategy. 
-- While hedge funds can apply leverage to any strategey, there is a maximum amount of leverage that depends on their margin requirements (more on this later). The maximum leverage is therefore 1/margin.
-- There is a close relationship beween the AM ratio and the IR
+- While hedge funds can apply leverage to any strategy, there is a maximum amount of leverage that depends on their margin requirements (more on this later). The maximum leverage is therefore 1/margin.
+- There is a close relationship between the AM ratio and the IR
 $$
 AM = IR \times \frac{\sigma(\epsilon)}{\text{margin}}
 
@@ -351,7 +351,7 @@ $$
 
 - In a time series regression the OLS estimate of the regression gives you the cumulative return of a timing strategy.
 - For the strategy to be profitable, it must be positive. 
-- However, it only provides evidence insample, since it assumes that the unconditional mean of the signal is known in advance.
+- However, it only provides evidence in sample, since it assumes that the unconditional mean of the signal is known in advance.
 
 ---
 ## Cross sectional signals
