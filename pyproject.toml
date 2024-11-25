@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "jfimbett"
+version = "1.0.3"
+description = ""
+authors = ["Juan Imbett <jfimbett@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.dev.dependencies]
+python-semantic-release = "^9.8.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release] 
+version_variable = "pyproject.toml:version" 
+version_toml = [ 
+"pyproject.toml:tool.poetry.version", 
+] 
