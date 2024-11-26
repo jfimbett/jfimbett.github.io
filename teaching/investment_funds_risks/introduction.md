@@ -594,4 +594,175 @@ Real-world features requiring advanced modeling include:
 - Asset liquidity
 - Heterogeneous preferences
 
+---
+#  Part 2: Equity Strategies
+
+---
+## Equity Valuation and Investing
+
+---
+## Equity Strategies
+
+- Equity strategies are also called stock selection strategies.
+- Discretionary: The manager uses his/her judgment to select stocks.
+- Dedicated short bias: The manager shorts stocks (looking for bad news).
+- Quantitative Equity: The manager uses a model to select stocks.
+
+---
+## Intrinsic Value and The Dividend Discount Model
+
+- Intrinsic value is the value of an asset based on its fundamentals.
+- Market Efficiency believers believe that intrinsic values are equal to market prices.
+- Value investors believe that intrinsic values can be different from market prices, and they try to buy assets that are undervalued.
+- This popular investment strategy (Warren Buffet) unfortunately has brought miss-conceptions from practitioners (e.g. bounds on the book-to-market ratio).
+
+---
+## Dividend Discount Model
+
+$$
+V_t = \mathbb{E}_t\Big(\frac{V_{t+1} + D_{t+1}}{1+k_t} \Big)
+$$
+
+Here we will denote discount rates $k$ instead of $r$ to avoid confusion with returns.
+- Iterating forward we get
+$$
+V_t = \sum_{j=1}^\infty \frac{\mathbb{E}_t(D_{t+j})}{(1+k_{t+j-1})^j}
+$$
+
+---
+## Easier said than done
+
+- How are you supposed to estimate the future dividends? Specially as you go further in the future.
+- Gordon's Model: $D_{t+j} = D_t(1+g)^j$ constant dividend growth rate. $V_t=\frac{D_t}{k-g}$.
+- Multi-stage model: Estimate a precise dividend growth rate for a few years, and then assume a constant growth rate from the terminal value. 
+
+---
+## Earnings, Book Value, and the Residual Income Model
+
+Clean surplus accounting: 
+$$
+B_{t} = \underbrace{B_{t-1}}_\text{Book Value} + \underbrace{NI_t}_\text{Net Income} - \underbrace{D_t}_\text{Dividends}
+$$
+Solving for dividends and assuming a constant discount rate $k$
+$$
+\begin{aligned}
+D_t = B_{t-1} + NI_t - B_{t} \\
+D_t = NI_t - (B_t - B_{t-1}) \\
+D_t = NI_t - ((1+k)B_{t-1} - B_{t-1}) \\
+D_t = NI_t - k B_{t-1}
+\end{aligned}
+$$
+Replacing
+$$
+V_t = B_t +\underbrace{\sum_{j=1}^\infty \frac{\mathbb{E}_t((NI_t - k B_{t-1}))}{(1+k_{t+j-1})^j}}_\text{Present Value of Residual Income ($>$, $<$, $=$ 0)}
+$$
+
+---
+## Other Approaches
+
+- Relative Valuations: Look at multiples of similar companies.
+- Implied Expected Returns: Look at the implicit $k$ from the market price and future dividends.
+
+---
+## Discretionary Equity Investing
+
+- Most active equity investors trade based on discretionary judgement.
+- Hedge funds that use this strategy are called long-short equity funds.
+
+---
+## Value Investing
+
+- Value investing: Buy cheap stocks and short expensive stocks.
+- Fundamental Analysis (Valuation)
+- Margin of Safety: Include thresholds for buying and selling.
+- Value Trap: Deeply undervalued stocks that never recover.
+
+---
+## Quality Investing and Quality at a Reasonable Price
+
+$$
+\frac{V_t}{B_t} = \frac{\frac{\mathbb{E}_t[NI_{t+1}]}{B_t}\frac{\mathbb{E}_t[D_{t+1}]}{\mathbb{E}[NI_{t+1}]}}{k-g}=\frac{\text{profitability}\times \text{payout}}{\text{required return}-\text{growth}}
+$$
+
+---
+## Activist Investing
+
+- Activist investors buy a large stake in a company and try to change its strategy.
+- They can be successful if they can convince other shareholders that their strategy is better.
+- When an investors buys more than 5% of a company, they must report this to the SEC in the so called 13D filing and his/her intentions to be an activist investor.
+
+---
+## Trading on Flows and Sentiment
+
+- Technical drivers of price changes. 
+- Large orders can move prices because the may reflect information or because liquidity providers must be enticed to take the other side of the trade.
+- Some hedge funds might buy expensive stocks believing that they will become more expensive (price bubbles).
+- Pump and Dump: Buy a stock, promote it, sell it (illegal). There is some evidence of the opposite (short positions) happening during the SVB failure.
+
+---
+## Dedicated Short Bias
+
+- While many hedge fund investors focus on buying and selling stocks, some focus only on shorting stocks. 
+- They *zoom in* on all the potential problems that a company might have. 
+1. materially overstated earnings
+2. aggressive accounting methods
+3. incomprehensible financial statements
+4. well-intended firms with fundamentally flawed business plans (e.g. blackberry)
+
+---
+## How does shorting work?
+
+Example:
+1. Suppose that Fidelity (a mutual fund) owns 100 shares of IBM and the hedge fund *Coolest Short Fund L.P.* wants to short IBM.
+2. The fund (via its broker) borrows the 100 shares from Fidelity with the promise to return them the next day (or on a determined date in the future).
+3. The fund sells the 100 shares at say the current price of $100. But this money does not go to the fund, it stays in the broker's account plus a margin.
+4. Next day assume the price has dropped to 98. The fund buys 100 shares at 98 using the money in the broker's account and returns the shares to Fidelity. The fund recovers the profit and the margin.
+
+---
+## How does shorting work?
+Example
+5. Imagine the price has gone up to 102. The fund must buy the shares at 102 to return them to Fidelity. The margin is used to cover the loss, but if the price goes up too much the fund might have to add more money to the broker's account.
+
+---
+## What is the margin for?
+
+- The margin serves as a guarantee that the fund will return the shares to Fidelity. 
+- It also helps the broker to cover the losses of the fund in case the price goes up.
+- The margin is usually measured as a percentage of the value of the short position.
+- The fraction 1/margin is the maximum leverage that the fund can apply to the short position.
+
+---
+## Some regulation
+
+- Short selling is not always possible. 
+- It is banned in some countries, or banned for some stocks for some periods. 
+- *recall risk*: contracts are normally daily but are extended if the lender wants to keep the shares. However, the lender can recall the shares at any time.
+- Short Sale Frictions mean that companies can be overvalued!
+
+---
+## Quantitative Equity Investing
+
+- *Quant Equity* means model-driven equity investing, performed, for instance, by equity market neutral hedge funds. 
+
+Cons:
+1. trading rules cannot be tailored to every specific situation. 
+2. Difficult to take advantage of *soft* information (less of a concern in the future with AI).
+
+Advantages:
+1. Applied to a broad set of stocks. 
+2. Rigor may help to avoid behavioral biases.
+3. Backtesting can be done to evaluate the strategy.
+4. Fundamental quant, statistical arbitrage, and high-frequency trading are all examples of quant equity.
+
+---
+
+## The Workflow of a Quant Equity Strategy
+
+1. Data Collection: Collect data on stocks, indices, and other assets (or other data that might be useful).
+2. Signal Generation: Generate signals based on the data.
+3. Identify signals that are predictive of future returns (both in the time series and cross-section).
+4. Estimate the distribution of future returns e.g. using a linear prediction model $\mathbb{E}[R_{t+1}]=\hat{a}+\hat{b}F_t$, or a more complex model (e.g. a machine learning model).
+5. Input the distribution of future returns into a portfolio optimization model.
+6. Add stop-losses, position limits, and other risk management rules not taken into account by the optimization model.
+
 
