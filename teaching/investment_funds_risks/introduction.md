@@ -765,4 +765,86 @@ Advantages:
 5. Input the distribution of future returns into a portfolio optimization model.
 6. Add stop-losses, position limits, and other risk management rules not taken into account by the optimization model.
 
+---
+
+## Asset Allocation and Macro Strategies
+
+---
+## The Returns to the Major Asset Classes
+
+Macro investing deals with an investor’s overall asset allocation, that is, how much to invest in equities, bonds, and the other major asset classes. Two components:
+1. The long- term strategic asset allocation policy. 
+2. The reallocations around the long-term weights based on current market
+views, called tactical asset allocation or market timing.
+
+- Macro investors are concerned with the overall market developments and
+economic conditions such as whether inflation is rising, economic growth,
+which countries are doing well, global trade, and other global trends such as
+political changes. 
+
+---
+## Strategic Asset Allocation
+
+- Large institutional investors often first decide on their long-run strategic asset
+allocation, that is, the desired typical portfolio consistent with the investment
+goals around which one can implement tactical bets and security selection
+views.
+- This strategic asset allocation is crucial to the success of pension funds,
+endowments, and other investors. The strategic allocation is sometimes called
+the policy portfolio or the benchmark portfolio
+
+---
+## Passive Asset Allocation
+
+- The only truly passive portfolio is the market portfolio.
+- The market-weighted asset allocation means that you invest 45% in equities if equities have a total market capitalization that is 45% of the market capitalization of the market.
+- The market portfolio is passive in two unique ways:
+1. Minimal trading: When stocks increase in value, your allocation
+to stocks naturally increases and, simultaneously, the market portfolio weight
+for stocks increases. 
+2. If you buy the market allocation, you are not assuming that someone else is the “sucker”
+
+---
+## Constant Rebalanced Asset Allocation
+
+- A constantly rebalanced portfolio maintains fixed weights (e.g., 60% stocks, 40% bonds) through frequent rebalancing.  
+- Despite fixed weights, this strategy is active as it requires continuous adjustments.  
+- The 60/40 portfolio is popular among pension funds for its value-driven asset allocation.  
+
+---
+## Liquidity-Based Asset Allocation
+
+- Illiquidity in private assets complicates rebalancing and capital withdrawals.  
+- Short-term investors must avoid illiquid assets due to liquidity risk and withdrawal needs.  
+- Mutual funds require highly liquid assets to meet daily redemption requirements.  
+- Long-term investors can earn a liquidity premium by investing in illiquid assets.
+
+
+---
+## Risk-Based Asset Allocation & Risk Parity Investing
+
+- Risk-based allocation focuses on distributing risk, not dollars, across asset classes.  
+- Risk parity allocates portfolio risk more equally, unlike equity-heavy traditional allocations.  
+- Stable Sharpe ratios suggest adjusting exposure inversely with asset volatility.  
+- Leveraged risk parity can deliver higher risk-adjusted returns but adds leverage risks.
+
+---
+## MARKET TIMING AND TACTICAL ASSET ALLOCATION
+
+---
+## Market Timing
+
+$$
+R_{t+1} = \underbrace{\frac{D_{t+1}}{P_t}}_\text{Dividend Yield} + \underbrace{\frac{P_{t+1} - P_t}{P_t}}_\text{Price Appreciation}
+$$
+
+Dividends are more stable than prices, so the dividend yield is a more stable predictor of future returns. E.g. $D_{t+1} \approx D_t$.
+
+---
+## What drives Equity Returns?
+Define $PD_t = \frac{P_t}{D_t}$
+$$
+R_{t+1} = \underbrace{\frac{D_{t+1}}{P_t}}_\text{Dividend yield} + \underbrace{\frac{D_{t+1}-D_{t}}{D_t}}_\text{Dividend growth} + \underbrace{\frac{PD_{t+1}-PD_t}{PD_t}}_\text{Valuation Change} + \underbrace{\frac{D_{t+1}-D_{t}}{D_t} \times \frac{PD_{t+1}-PD_t}{PD_t}}_\text{Small Adjustment}
+$$
+
 
