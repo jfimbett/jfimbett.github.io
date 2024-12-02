@@ -8,7 +8,7 @@ urls = ['https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4557679',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4872375',
-        'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3622433',
+        #'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3622433',
         'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3711536']
 
 # Empty list to store paper details
@@ -112,7 +112,9 @@ papers_html = ""
 for paper in papers:
 
     if paper['url'] == 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754':
-        papers_html += f"<h3><a href='{paper['url']}'>{paper['title']}</a></h3><h4>R&R at the Journal of Financial Economics</h4><p>{', '.join(paper['authors'])}</p><p style='text-align: justify;'>{paper['abstract']}</p>"
+        papers_html += f"<h3><a href='{paper['url']}'>{paper['title']}</a></h3><h4>Revise and Resubmit at the Journal of Financial Economics</h4><p>{', '.join(paper['authors'])}</p><p style='text-align: justify;'>{paper['abstract']}</p>"
+    elif paper['url'] == 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169':
+        papers_html += f"<h3><a href='{paper['url']}'>{paper['title']}</a></h3><h4>Reject and Resubmit at Management Science</h4><p>{', '.join(paper['authors'])}</p><p style='text-align: justify;'>{paper['abstract']}</p>"
     else:
         papers_html += f"<h3><a href='{paper['url']}'>{paper['title']}</a></h3><p>{', '.join(paper['authors'])}</p><p style='text-align: justify;'>{paper['abstract']}</p>"
 
