@@ -101,7 +101,7 @@ $$
 ---
 # Moment Restrictions
 
-- GMM is based on the idea that the moment restrictions shouldbe zero in expectation (e.g. the difference between the sample and population moments). 
+- GMM is based on the idea that the moment restrictions should be zero in expectation (e.g. the difference between the sample and population moments). 
 $$
 \mathbb{E}[g(w_i, \theta_0)] = 0
 $$
@@ -147,7 +147,7 @@ This estimator is consistent and asymptotically normal but not always efficient,
 ---
 # Standard Errors
 
-Hansen prooved that the estimator
+Hansen proved that the estimator
 
 $$
 \begin{align*}
