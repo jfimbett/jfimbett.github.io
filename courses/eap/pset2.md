@@ -9,7 +9,7 @@ Author: "Juan F. Imbet Ph.D."
 
 ## Paris Dauphine - PSL
 
-The problem set together with the code needs to be emailed to juan.imbet@dauphine.psl.eu *before* February 25 2024 23:59. You can solve the problem sets in groups of maximum *3* people. 
+The problem set together with the code needs to be emailed to juan.imbet@dauphine.psl.eu *before* March 7 23:59. You can solve the problem sets in groups of maximum *2* people. 
 
 # Setup
 
