@@ -340,16 +340,6 @@ $$
 2. **Compute residuals**: $g_t(\hat{\theta}^{(1)})$ to estimate $\hat{S}$.
 3. **Second step**: Re-estimate $\hat{\theta}$ using $W_T = \hat{S}^{-1}$.
 
----
-
-## Overidentification Test (J-Test)
-
-- **Test statistic**:
-  $$
-  J = T \cdot Q_T(\hat{\theta}) \overset{d}{\to} \chi^2_{m - p}
-  $$
-  - Tests whether all moments are jointly zero.  
-  - Degrees of freedom: $\#\text{moments} - \#\text{parameters}$.
 
 ---
 
