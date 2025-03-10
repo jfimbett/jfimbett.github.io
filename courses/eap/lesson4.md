@@ -16,7 +16,7 @@ author: Juan F. Imbet Ph.D.
 
 ---
 ## Benchmark, Mehra and Prescott (1985)
-Consider the classical consumption based asset pricing model with power utility and habit formation
+Consider the classical consumption based asset pricing model with power utility
 
 $$
 \begin{align*}
