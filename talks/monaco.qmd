@@ -1,0 +1,195 @@
+---
+title: "Return Predictability for Hedge Fund Managers"
+subtitle: "Crash Course - International University of Monaco"
+author: "Juan F. Imbet"
+date: "2025-03-27"
+format: 
+  revealjs:
+    slide-number: true
+    preview-links: auto
+    css: style.css
+jupyter: python3
+---
+## Preliminaries
+
+- Question at the core of academic finance, Fama (1970). 
+- The Efficient Market Hypothesis (EMH) states that prices reflect all available information, there should be no predictability.
+- However, there is vast evidence that shows that returns are predictable. 
+
+---
+
+## Normative vs Positive Finance
+
+**Why should markets be efficient in the first place?**
+
+- If markets are perfectly efficient, there are no incentives to trade on information. 
+- There would be no information gathering, no research, and no hedge funds. 
+
+**What if markets are inefficient?**
+
+- Prices would deviate largely from fundamentals.
+- Making Money would be super easy, and we would all be millionaries. 
+
+**The truth is somewhere in between** 
+
+- Efficiently Inefficient, Pedersen (2015).
+
+
+
+---
+
+## Return Predictability
+
+```{python}
+import pandas as pd
+import numpy as np
+import yfinance as yf
+import requests
+from io import StringIO
+from matplotlib import pyplot as plt
+
+url = "http://www.econ.yale.edu/~shiller/data/ie_data.xls"
+df = pd.read_excel(url, sheet_name="Data", skiprows=7)
+    
+# Selecting relevant columns (Year, Month, Dividend, Price)
+df = df.iloc[:, :3]
+df = df.dropna()
+df.columns = ["Date", "Price", "Dividend"]
+df["Price"] = pd.to_numeric(df["Price"], errors="coerce")
+df["Dividend"] = pd.to_numeric(df["Dividend"], errors="coerce")
+# drop if Dividend is zero 
+df = df[df["Dividend"]>0]
+df["Year"] = df["Date"].apply(lambda x: int(np.floor(x)))
+df["Month"] = df["Date"].apply(lambda x: int((x - np.floor(x))*100)+1)
+    
+# make end of the month date
+df["Date"] = pd.to_datetime(df[["Year", "Month"]].assign(day=1))    
+# make the date the index
+df = df.set_index("Date")
+# Compute Dividend-Price Ratio
+df["dp"] = np.log(df["Dividend"]) - np.log(df["Price"])
+df["R"] = (df["Price"] + df["Dividend"])/df["Price"].shift(1) 
+df["r"] = np.log(df["R"])
+
+k = 3 # number of years in the future
+
+# cumulative sum of returns
+df[f"r{k}"] = (
+  df["r"].cumsum().shift(-k*12) 
+    - df["r"].cumsum()
+)
+
+# plot only the dp ratio 
+fig, ax1 = plt.subplots()
+df["dp"].plot(ax=ax1, color="blue")
+# label 
+ax1.set_ylabel("Log Dividend-Price Ratio", color="blue")
+plt.show()
+
+```
+
+Log Dividend-Price Ratio of the SP500 in the last 150 years.
+
+---
+
+Return Predictability vs Returns 3 years ahead.
+
+```{python}
+fig, ax1 = plt.subplots()
+ax2 = ax1.twinx()
+df["dp"].plot(ax=ax1, color="blue")
+df[f"r{k}"].plot(ax=ax2, color="red")
+# set the labels
+ax1.set_ylabel("Log Dividend-Price Ratio", color="blue")
+ax2.set_ylabel(f"Log Cumulative Return {k} years", color="red")
+plt.show()
+```
+
+
+---
+
+## Definition
+
+- We say that a variable $x_t$ predicts returns if the value of returns that you expect $k$ periods ahead depends on the value of $x_t$.
+$$
+\mathbb{E}[r_{t+k}|x_t] \neq \mathbb{E}[r_{t+k}]
+$$
+
+- It is not about being right always, but about being right more often than not.
+
+$$
+r_{t+k} = \underbrace{f(x_t)}_\text{Holy Grial} + \epsilon_{t+k}
+$$
+
+---
+
+## Why is this important for Hedge Funds?
+
+- Hedge Funds are paid to make money regardless of market conditions.
+- Their high fees must reflect their ability to gather information, time the market, and mix assets in a way that generates alpha.
+- If returns are predictable in the time-series, then Hedge Funds could decide when to take more risk and when to take less risk.
+- But, since most assets have a positive loading on the market, they can only generate consistent profits across long/short strategies.
+
+---
+
+## Simplest tool: Linear Models
+
+$$
+R_{t+1}^e = a + b \times S_{t} + \epsilon_{t+1} \rightarrow \mathbb{E}[R_{t+1}^e|S_{t}] = \hat{a} + \hat{b} \times S_{t}
+$$ 
+
+Identifying good signals?
+- Statistical inference: $t$-statistics, $R^2$, $F$-statistics.
+- Avoids overfitting: Finding spurious correlations where there is none.
+- How big is the potential profit? Out-of sample you will never know, in-sample, look at the $t$-statistics.
+
+$$
+\hat{b} = \frac{\sum_{t=1}^{T} (S_t - \bar{S})R_{t+1}}{\sum_{t=1}^{T} (S_t - \bar{S})^2} = \sum_{t=1}^{T} x_t R^e_{t+1}
+$$
+
+where
+$$
+x_t \sim k \times (S_t - \bar{S})
+$$
+$$
+\hat{b} = \text{ average return of a timing strategy. }
+$$
+
+---
+
+## Example: Dividend-Price Ratio
+
+- Timing strategy based on predicting three-year returns based on rolling-regressions with the dividend price ratio. 
+- Benchmark: Predicting returns based on rolling historical averages.
+
+
+---
+
+## Example: Dividend-Price Ratio
+
+| Sample    | Strategy    | Mean | Vol | Sharpe |
+|-----------|-------------|------|-----|--------|
+| 1871-2023 | Benchmark   | 0.45 | 0.17| 2.63   |
+| 1871-2023 | Rolling Reg | 0.54 | 0.15| 3.67   |
+| 1914-2023 | Benchmark   | 0.39 | 0.18| 2.10   |
+| 1914-2023 | Rolling Reg | 0.51 | 0.16| 3.22   |
+| 1950-2023 | Benchmark   | 0.26 | 0.17| 1.54   |
+| 1950-2023 | Rolling Reg | 0.41 | 0.13| 3.19   |
+| 2000-2023 | Benchmark   | 0.11 | 0.15| 0.71   |
+| 2000-2023 | Rolling Reg | 0.34 | 0.12| 2.85   |
+
+: ***Rolling averages, vs Rolling regressions.*** {.responsive-md .active}
+
+
+---
+
+## Longterm vs Short-term Predictability
+
+- Predictability tends to matter more in the shortterm. 
+- Over longer horizons, much less. 
+- Market Efficiency vs Inefficiency?
+- Analogy: Quantum Mechanics and General Relativity
+
+---
+
+## 

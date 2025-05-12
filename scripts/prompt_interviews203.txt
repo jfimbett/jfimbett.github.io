@@ -1,0 +1,763 @@
+The following are the dossiers of a potential student that i will interview for the upcoming semester of the master in financial markets. 
+
+I need you create a document summarizing the information of each applicant, and I need you to develop three questions for each one, the level of each question must be appropriate for entry into a master program.  
+
+Before each question, indicate (for me) how it relates to her experience/background. Inccude also a one sentence answer to the question. 
+
+1. One technical question about statistics
+2. One technical question about investments
+3. One question about current financial events
+3. One question about how to apply AI in a specific area of finance
+
+Give me the document in .txt format
+
+EL ARGAB Nada - M4I203_ELAR1B76
+1/6
+INFORMATIONS GÉNÉRALES
+ÉTAT CIVIL
+Civilité : Madame Pays de
+naissance :
+MAROC
+Nom : EL ARGAB Ville de
+naissance :
+CASA BLANCA
+Non usuel : Nationalité : MAROCAIN(E)
+Prénom(s) : Nada Autre nationalité :
+Date de naissance : 28/11/2004
+N° dossier : ELAR1B76 Numéro / Clé
+INE :
+COORDONNÉES DE CONTACT
+Pays : FRANCE Téléphone : 0625809395
+Ville : PARIS 16EME Mail : nada.el-argab@dauphine.eu
+Adresse : 104 rue boileau
+M. Fouad Boukhajou
+BACCALAURÉAT OU ÉQUIVALENCE
+Établissement : AL JABR
+Pays de
+l’établissement :
+MAROC Commune de
+l’établissement :
+Année du bac : 2022
+Série du bac : Série générale Spécialité :
+Mention : Très bien Classes
+internationales :
+CURSUS POST-BACCALAURÉAT
+Dauphinois Oui N° étudiant 22202842
+Année universitaire : 2024-2025 Formation : 3ème année de licence -
+Economie Appliquée - FI
+Établissement : UNIVERSITE PARIS DAUPHINE PSL
+Pays de
+l’établissement :
+FRANCE Commune de
+l’établissement :
+PARIS 16EME
+Diplôme obtenu : EN_COURS Mention :
+Libellé exacte :
+Année universitaire : 2023-2024 Formation : 2ème année de licence -
+Sciences des Organisations -
+Paris - FI
+Établissement : UNIVERSITE PARIS DAUPHINE PSL
+Pays de
+l’établissement :
+FRANCE Commune de
+l’établissement :
+PARIS 16EME
+Diplôme obtenu : EN_COURS Mention :
+Libellé exacte :
+Page 1 - Récapitulatif
+Nada EL ARGAB - M4I203_ELAR1B76
+EL ARGAB Nada - M4I203_ELAR1B76
+2/6
+Année universitaire : 2023-2024 Formation : Certificat Introduction Média et
+Journalisme - 2ème année - FI
+Établissement : UNIVERSITE PARIS DAUPHINE PSL
+Pays de
+l’établissement :
+FRANCE Commune de
+l’établissement :
+PARIS 16EME
+Diplôme obtenu : EN_COURS Mention :
+Libellé exacte :
+Année universitaire : 2022-2023 Formation : 1ère année de licence -
+Sciences des Organisations -
+Paris - FI
+Établissement : UNIVERSITE PARIS DAUPHINE PSL
+Pays de
+l’établissement :
+FRANCE Commune de
+l’établissement :
+PARIS 16EME
+Diplôme obtenu : EN_COURS Mention :
+Libellé exacte :
+Année universitaire : 2022-2023 Formation : Certificat Introduction Média et
+Journalisme - 1ère année - FI
+Établissement : UNIVERSITE PARIS DAUPHINE PSL
+Pays de
+l’établissement :
+FRANCE Commune de
+l’établissement :
+PARIS 16EME
+Diplôme obtenu : EN_COURS Mention :
+Libellé exacte :
+CURSUS PROFESSIONNEL - STAGE
+Période : 25/06/2023 - 25/07/2023
+Société / Organisme : Banque Misr
+Fonction / Post occupé : Stagiaire en Réglementation bancaire Nb d’heures par
+semaine :
+35
+Description : · Participation au calcul et analyse des métriques règlementaires : ratio de
+liquidité (LCR) et ratio de financement stable (NSFR)
+· Présentation et rédaction de veille règlementaire sur IRRBB et Digital
+Operational Resilience Act (DORA)
+· Rédaction de notices sur les pondérations des lettres de crédit, lettres de
+garantie et dépôts opérationnels
+Période : 18/10/2022 - 31/05/2024
+Société / Organisme : Bureau des Arts Dauphine
+Fonction / Post occupé : Responsable projet Prix Dauphine Mode Nb d’heures par
+semaine :
+5
+Description : · Management d’une équipe de 5 collaborateurs tout au long de l’année, et de
+30 personnes le jour de l’événement
+· Planification opérationnelle et coordination logistique complète de
+l’événement
+· Gestion du budget et des financements (6k €) et recherche et gestion de
+partenariats stratégiques
+· Démarchage des jurés d’évaluation
+Période : 27/05/2024 - 16/08/2024
+Société / Organisme : Banque Misr
+Fonction / Post occupé : Stagiaire Analyste financier Nb d’heures par
+semaine :
+35
+Page 2 - Récapitulatif
+Nada EL ARGAB - M4I203_ELAR1B76
+EL ARGAB Nada - M4I203_ELAR1B76
+3/6
+Description : Audit interne des comptes : capitaux propres, dettes subordonnées, prêts et
+comptes dormants
+Automatisation de l’analyse du P&L (prêts, emprunts, intérêts sur dettes
+subordonnées, HQLA) via SQL et Excel
+Contrôle quotidien des valeurs de marché, obligations, rapprochements de
+comptes et gestion des positions FX
+Automatisation quotidienne des ratios financiers
+Période : 01/11/2024 - 01/01/2025
+Société / Organisme : Association Dauphine d'Intelligence Artificielle
+Fonction / Post occupé : Membre du pole Entreprises et Chargée de
+communication
+Nb d’heures par
+semaine :
+5
+Description : Planification d’événements: conférences thématiques et les Digital Days.
+Coordination de visites de haut niveau à la Banque de France Lab et Forvis
+Mazars.
+Démarchage et recherche des collaborations auprès d’entreprises, de
+startups et d’organisations.
+FORMATIONS COMPLÉMENTAIRES
+Aucune formation complémentaire
+JUSTIFICATIFS FOURNIS - DOSSIER
+Aucun justificatif fourni
+CANDIDATURE
+Formation : 1ère année de Master Financial Markets - FI - M4I203 - Master
+QUESTIONS - RÉPONSES
+BACCALAUREAT - Indiquez la série et la moyenne obtenues au baccalauréat - Baccalauréat - Série
+Générale Option International Baccalauréat
+BACCALAUREAT - Indiquez la série et la moyenne obtenues au baccalauréat - Baccalauréat - Année
+d'obtention
+2022
+BACCALAUREAT - Indiquez la série et la moyenne obtenues au baccalauréat - Baccalauréat -
+Moyenne obtenue
+18,04
+BACCALAUREAT - Indiquez la série et la moyenne obtenues au baccalauréat - Baccalauréat - Mention
+(P, AB, B, TB ou Félicitations)
+Félicitations
+BACCALAUREAT - Note en mathématiques
+19
+ETUDES SUPERIEURES 2024-2025 - Intitulé Formation
+Licence 3 Economie Appliquée et Ingénierie financière
+ETUDES SUPERIEURES 2024-2025 - Etablissement-ville
+Université Paris Dauphine PSL, Paris
+Page 3 - Récapitulatif
+Nada EL ARGAB - M4I203_ELAR1B76
+EL ARGAB Nada - M4I203_ELAR1B76
+4/6
+ETUDES SUPERIEURES 2024-2025 - Moyenne Semestre 1
+15.63
+ETUDES SUPERIEURES 2023-2024 - Intitulé Formation
+Licence 2 Sciences des organisations
+ETUDES SUPERIEURES 2023-2024 - Etablissement-ville
+Université Paris Dauphine PSL, Paris
+ETUDES SUPERIEURES 2023-2024 - Moyenne Semestre 1
+12.82
+ETUDES SUPERIEURES 2023-2024 - Moyenne Semestre 2
+14.18
+ETUDES SUPERIEURES 2023-2024 - Moyenne Année
+13.62
+ETUDES SUPERIEURES 2022-2023 - Intitulé Formation
+Licence 1 Sciences des organisations
+ETUDES SUPERIEURES 2022-2023 - Etablissement-ville
+Université Paris Dauphine PSL, Paris
+ETUDES SUPERIEURES 2022-2023 - Moyenne Semestre 1
+14.54
+ETUDES SUPERIEURES 2022-2023 - Moyenne Semestre 2
+13.91
+ETUDES SUPERIEURES 2022-2023 - Moyenne Année
+14.24
+ANGLAIS - TOEFL-IBT ou IELTS obligatoire - TOEFL-IBT ou IELTS - Score total
+105
+ANGLAIS - TOEFL-IBT ou IELTS obligatoire - TOEFL-IBT ou IELTS - Date du test
+08/02/2025
+ANGLAIS - TOEFL-IBT ou IELTS obligatoire - TOEFL-IBT ou IELTS - Listening score
+26
+ANGLAIS - TOEFL-IBT ou IELTS obligatoire - TOEFL-IBT ou IELTS - Reading score
+27
+ANGLAIS - TOEFL-IBT ou IELTS obligatoire - TOEFL-IBT ou IELTS - Writing score
+25
+ANGLAIS - TOEFL-IBT ou IELTS obligatoire - TOEFL-IBT ou IELTS - Speaking score
+27
+GENERAL QUESTIONS - MASTER FINANCIAL MARKETS - Why do you want to apply for the
+Master's degree instead of starting your career ?
+Pursuing the Master 203 program is a strategic investment in my future. Rather than rushing into the
+workforce with a basic skill set, I recognize that today's financial markets demand advanced and
+specialized expertise. Your master's program is designed to bridge the gap between theory and
+practice with a rigorous curriculum taught by industry experts and renowned professors from the
+university.
+I am excited about the opportunity to deepen my knowledge in areas such as derivative pricing, fixed
+income, and econometrics. These courses will provide me with a solid understanding of complex
+financial instruments and quantitative techniques that drive modern markets. Additionally, I look forward
+to enhancing my coding skills in VBA and Python, these tools that are indispensable in the front office.
+Page 4 - Récapitulatif
+Nada EL ARGAB - M4I203_ELAR1B76
+EL ARGAB Nada - M4I203_ELAR1B76
+5/6
+By mastering these technical areas, I will be well-prepared to develop innovative financial models and
+contribute effectively to high-stakes financial environments.
+I also recognize that technical expertise alone is not enough to build a successful career. That’s why I
+value the program’s emphasis on soft skills. I will benefit from courses focused on interview
+preparation, career development in finance, and crucial areas such as ethics and compliance. These
+modules will help me develop strong communication, leadership, and ethical decision-making abilities,
+which are essential for creating a well-rounded professional profile.
+GENERAL QUESTIONS - MASTER FINANCIAL MARKETS - For two of the courses you took during
+your undergraduate studies (or equivalent), provide a detailed analysis, identifying two or three
+components you consider essential for your training and your application to continue in your chosen
+field.
+In my third year, I took the Financial Products and Markets course led by Mr. Philippe Gillet. It was my
+first real exposure to market finance after two years of generalized courses. It was only a theoretical
+introduction, but it confirmed my enthusiasm relative to this field and encouraged me to become
+specialized. The course covered essential aspects of financial markets, including bond markets, equity
+markets, financial mathematics, and derivatives markets, providing me with a strong foundational
+knowledge. Beyond the coursework, it motivated me to deepen my knowledge through extensive
+readings which helped me refine my performance in the subject.
+In the same year, I also took the VBA Programming course, taught by Professor Frédéric Peltrault,
+which built upon the basic introduction course we had in our second year. As there had not been many
+substantive applications in second year, I found it rather superficial. However, by the third year, I was
+applying VBA to analyze CAC 40 data, calculating and automating financial ratios, developing Monte
+Carlo pricing models and simulating risk. This was the first time I could see how programming could be
+directly applicable to finance. In order to achieve this, I had to combine market knowledge and
+mathematical reasoning with technical skills, not only to create and optimize the program but also to
+consider user interface and presentation. This is the first time I've learned something directly applicable
+to real-world work and the financial sector.
+GENERAL QUESTIONS - MASTER FINANCIAL MARKETS - How would you assess your professional
+experience and how is it an asset for your application? (For candidates seeking course credits for their
+experience).
+I'm not asking for course credits, I just want to share what I learned from my previous internships.
+During my time at Misr Bank as a Regulatory Analyst Intern, I got a real taste of how fast-paced and
+demanding the banking world can be. I worked on time-sensitive projects, often independently, but also
+closely with my managers and senior analysts. This experience forced me to adapt quickly, handle
+pressure, and develop a strong sense of accountability. More than just technical knowledge, it taught
+me the importance of soft skills such as managing stress, and learning how to communicate effectively
+in a professional setting. But beyond that, it was an eye-opening experience on a personal level. I
+learned a lot from my colleagues and gained insights that shaped my understanding of the industry.
+This is why I’m eager to continue this journey, learning from the professors in your program.
+As a Financial Analyst Intern, I faced unexpected challenges that required a mix of technical and
+practical skills. It made me realize just how competitive and demanding the financial sector really is.
+That’s why I know your master’s program is the right fit for me. The courses are designed to bridge the
+gap between theory and real-world applications, equipping students with the technical expertise
+needed to thrive in an ever-evolving industry. This experience also made me more self-aware about my
+career aspirations. It pushed me to think critically about my future path and solidified my motivation to
+specialize. I took the initiative to self-study SQL and became much more proficient with Excel.
+GENERAL QUESTIONS - MASTER FINANCIAL MARKETS - Provide any other information you think
+would help the jury to assess your application.
+I have always believed that growth comes from stepping into the unknown, embracing challenges, and
+striving to be better every day. That mindset has defined my journey: from leaving Morocco alone to
+study in France at the age of 17, adapting to a new environment, and proving to myself that I can thrive,
+no matter the challenge.
+Moving alone to a new country meant learning to navigate an unfamiliar world, understanding new
+codes, and constantly pushing myself to earn my place. In many ways, this mirrors the world of finance,
+an intense, fast-moving environment where resilience, adaptability, and the ability to perform under
+pressure are key.
+This hunger to learn led me to pursue a dual path at Dauphine, combining finance with journalism. I
+wanted a broader perspective, to understand how financial information shapes the world. Beyond
+academics, I actively sought personal experiences that would push me further from leading projects,
+Page 5 - Récapitulatif
+Nada EL ARGAB - M4I203_ELAR1B76
+EL ARGAB Nada - M4I203_ELAR1B76
+6/6
+negotiating with professionals, and learning to navigate high-pressure environments.
+Beyond the master's reputation for excellence, it offers the rigorous environment I seek, it will push me,
+refine my skills, and surround me with ambitious peers who, like me, are driven to excel.
+GENERAL QUESTIONS - MASTER FINANCIAL MARKETS - What are your professional plans after
+the degree program ?
+After completing the Master 203 in Financial Markets, my goal is to start my career in structuring at a
+top-tier international bank and to specialize in equity derivatives or credit hybrid products. Structuring
+appeals to me because it blends quantitative expertise with market strategy, offering a dynamic role
+that requires both creativity and deep technical skills.
+In the short term, I aim to secure a full-time position as a junior structurer at a leading investment bank,
+such as Goldman Sachs or Bank of America, leveraging the strong alumni network and industry
+partnerships of your master. I will hopefully work closely with traders and quantitative analysts to
+develop structured solutions tailored to institutional clients. Additionally, I want to gain knowledge about
+the commercial side of structuring by collaborating with sales teams to better understand the client
+demands.
+In the medium term, I want to progress to a senior structurer role, leading product development
+initiatives and working on more complex hybrid structures that combine different asset classes.
+In the long run, my goal is to become a senior structurer or head of a desk in a leading financial hub.
+With the international prestige of the Master 203, I will be well-positioned to work in major financial
+centers like New York, London, or Hong Kong, contributing to innovative financial solutions.
+JUSTIFICATIFS FOURNIS - FORMATION
+Tout autre document pouvant enrichir votre dossier
+Curriculum Vitae en anglais
+Lettre de motivation manuscrite en anglais
+Relevé de Notes du Baccalauréat - ou équivalent
+Relevé de Notes Licence 1 (Semestre 1 + Semestre 2) - ou équivalent
+Relevé de Notes Licence 2 (Semestre 1 + Semestre 2 )- ou équivalent
+Relevé de Notes Licence 3 (Semestre 1 + Semestre 2) - ou équivalent
+Mandatory TOEFL-ibt (or equivalently IELTS) of no more than 2 years
+AUTRES INFORMATIONS
+Je déclare avoir pris connaissance que toute fraude ou tentative de fraude dans les renseignements
+saisis ou documents fournis pourra entraîner des sanctions pouvant aller jusqu'à l'annulation de mes
+voeux, au retrait de toute proposition éventuelle d'admission et au refus d'inscription par l'université
+Paris Dauphine-PSL, sans préjuger des poursuites qui pourraient, par ailleurs, être engagées à mon
+encontre. Il est rappelé que toute personne procédant à une fausse déclaration pour elle-même ou
+pour autrui s'expose, notamment aux sanctions prévues à l'article 441-1 du Code pénal, prévoyant des
+peines pouvant aller jusqu'à trois ans d'emprisonnement et 45000 euros d'amende
+Oui
+Etes-vous boursier du CROUS au titre de l'année universitaire en cours ?
+Non
+Etes-vous réfugié ou demandeur d'asile ?
+Non
+Page 6 - Récapitulatif
+Nada EL ARGAB - M4I203_ELAR1B76
+NON CERTIFIÉ
+Détail des notes -Page1- Date d'édition : 24-02-2025
+NOTES ET RÉSULTATS
+NADA EL ARGAB
+Dossier : 22202842
+NNE : 213317956HK
+Courriel : nada.el-argab@dauphine.eu
+Date d'édition : 24-02-2025
+Certificat Introduction Média et Journalisme - 1ère année - FI - Année universitaire : 2022/2023
+Code Libellé Session 1 Résultat Session 2 Résultat
+L1IJOU Certificat Introduction Média et Journalisme - 1ère année - FI 16.5 ADM
+L1IJOUV9 Certificat Introduction Média et Journalisme 16.5 ADM
+1LCIMJAN Semestres 16.5 ADM
+1LLSOO08 Techniques d'Ecritures Journalistiques S1 16 ADM
+1LLSOO58 Techniques d'Ecirture Journalistique S2 17 ADM
+INFORMATIONS
+Signification des codes résultats :
+ADM : Admis
+Page 7 - Tout autre document pouvant enrichir votre dossier
+Nada EL ARGAB - M4I203_ELAR1B76
+NON CERTIFIÉ
+Détail des notes -Page1- Date d'édition : 24-02-2025
+NOTES ET RÉSULTATS
+NADA EL ARGAB
+Dossier : 22202842
+NNE : 213317956HK
+Courriel : nada.el-argab@dauphine.eu
+Date d'édition : 24-02-2025
+Certificat Introduction Média et Journalisme - 2ème année - FI - Année universitaire : 2023/2024
+Code Libellé Session 1 Résultat Session 2 Résultat
+L2IJOU Certificat Introduction Média et Journalisme - 2ème année - FI 13.75 ADM
+L2IJOUV9 Certificat Introduction Média et Journalisme 13.75 ADM
+2LCIMJAN Semestres 13.75 ADM
+2LCIMJS3 Semestre 3 14.5 ADM
+2LLSOO15 Ecritures Numériques : Genres Rédactionnels 15 ADM
+2LLSOO16 Connaissances des Médias : Panorama 14 ADM
+2LCIMJS4 Semestre 4 13 ADM
+2LLSOO65 Ecritures Numériques : Productions 14 ADM
+2LLSOO66 Connaissances des Médias : Métiers 12 ADM
+INFORMATIONS
+Signification des codes résultats :
+ADM : Admis
+Page 8 - Tout autre document pouvant enrichir votre dossier
+Nada EL ARGAB - M4I203_ELAR1B76
+Nada EL ARGAB
+Paris | +33 6 25 80 93 95 | nada.el-argab@dauphine.eu | www.linkedin.com/in/nada-elargab
+EDUCATION
+Paris-Dauphine PSL University Paris, France
+Bachelor, Applied Economics and Financial Engineering (Ranked #1 by Eduniversal 2024) Sep 2022 – May 2025
+● Core Coursework: Portfolio Management, Financial Products and Markets, Insurance, Macroeconomics
+● Quantitative Skills :Statistics, Linear Algebra, Functional Optimization, Python, VBA, R, SQL
+● Accounting (Management and Finance), French Law (Private, Public, European, Contractual)
+Paris-Dauphine PSL University & French Institute of Journalism Paris, France
+Double Diploma, Introduction to Media and Journalism (With Honors) Sep 2022– May 2024
+● Relevant Courses: Media Law, Sociology and Economics of Media, Theoretical Fundamentals of Journalism
+● Participant, National Young Reporters for the Environment Competition (2024)
+PROFESSIONAL EXPERIENCE
+Misr Bank Paris, France
+Financial Analyst Intern May - Aug 2024
+● Conducted internal audits of equity, debt, and loan accounts, reducing discrepancies and errors by 20%
+● Automated P&L analysis for loans and subordinated debt using SQL and Excel, cutting manual processing time by 50%
+● Developed an automated system for key financial ratios (ROE, ROA, NPL, Debt-to-Equity), enhancing daily monitoring.
+● Performed bank reconciliations for over 1,000 transactions in Q1 2024
+● Assisted in preparing 10 tax procedures, ensuring timely and accurate filings.
+● Forecasted annual departmental expenses with a 5% variance, increasing budget accuracy and cost control
+Misr Bank Paris, France
+Regulatory Analyst Intern Jun - Aug 2023
+● Assisted in reviewing liquidity coverage ratios (LCR) and net stable funding ratios (NSFR), supporting accuracy
+improvements in regulatory reporting
+● Drafted regulatory updates on CRR2/CRR3 and Basel III, ensuring compliance with evolving regulations
+● Provided insights on DORA and IRRBB, aiding in the adaptation to regulatory impacts on risk management
+● Developed technical sheets on risk weightings for letters of credit, guarantees, and operational deposits, standardizing
+internal reporting processes
+EXTRACURRICULAR ACTIVITIES
+Dau’IA – Artificial Intelligence Association of Paris-Dauphine PSL University Paris, France
+Corporate Visits Team Member Oct 2023- Present
+● Led event planning and logistics for flagship initiatives, including Digital Days and conferences.
+● Coordinated high-profile innovation tours at the Banque de France Innovation Lab and Forvis Mazars.
+● Arranged networking events with leading institutions (Polytechnique, Centrale, ESSEC) to foster cross-disciplinary
+partnerships.
+Paris Dauphine Art's Society Paris, France
+Head of the 11th Edition of the Prix Dauphine Fashion Sep - May 2024
+● Managed a team of 5 and a €6,000 event budget to successfully execute the annual fashion competition.
+● Directed operational planning on the event day, overseeing 30+ staff and volunteers.
+● Secured and managed strategic partnerships and sponsorships, evaluating 20+ potential partners
+● Solicited and organized evaluations with 3 jurors to ensure a high-quality selection process.
+SKILLS & INTERESTS
+Languages: French (fluent), English (C1 TOEFL: 105/120), Arabic (fluent), German (Intermediate)
+IT Skills: Microsoft Office (Advanced), VBA (Intermediate), SQL (Basic), , Python (Basic)
+Certifications: “The Role of Central Banks and Financial Supervisory Authorities in Governing Sustainable Finance
+Financial Globalization, “Capital Flows, and the Global Financial Cycle” (Asian Development Bank),” Fundamentals of
+Generative AI” (Microsoft)
+Interests: Karate, Running, Formula 1
+Page 9 - Curriculum Vitae en anglais
+Nada EL ARGAB - M4I203_ELAR1B76
+Page 10 - Lettre de motivation manuscrite en anglais
+Nada EL ARGAB - M4I203_ELAR1B76
+Page 11 - Lettre de motivation manuscrite en anglais
+Nada EL ARGAB - M4I203_ELAR1B76
+Page 12 - Relevé de Notes du Baccalauréat - ou équivalent
+Nada EL ARGAB - M4I203_ELAR1B76
+Université Paris Oauphine-PSL
+e>auptllO~ 1 PSL~ \
+Année universitaire 2022/2023
+,..___ R_EL_EV_E _DE_ N_OT_ES_ E_T R_E_SU_LT_AT_S __ j Page :
+EL ARGAB Nada
+N° Etudiant : 22202842
+Née le : 28 novembre 2004
+Session 1
+INE: 213317956HK
+EL ARGAB Nada
+5 RUE HENRY MOREAU, VAL FLEURI
+20390 Casa blanca
+MAROC
+à : CASA BLANCA (MAROC)
+inscrite en L 1 SCIENCES DES ORGANISATIONS
+Note/Barème pts jury Résultat Session Crédits
+Semestre 1 14.54 /20
+Sc Sociales et Méthode S 1 13.25 /20
+Macroéconomie S1
+1 14.787 /20
+Microéconomie S1 15.375 /20
+lntro à la Gestion S 1 16.5 /20
+Compta Financière S1 14.875 /20
+Informatique 12.65 /20
+\ lntro au Droit Privé 15.6 /20
+1 lntro au Droit Public 11.5 /20
+\ Anglais S1 13.075 /20
+1 Outils Mathématiques 19/20
+\ Culture Economique 11 .3 /20
+Les Enjeux Ecologiques du
+1
+14.52 /20
+21ème siècle
+Techniques d'Ecritures
+1
+16 /20
+Joumalistiaues S1
+Sort Skills
+1
+Semestre 2 1
+13.909 /20
+Sc Sociales et Méthode S2
+1
+12/20
+Macroéconomie S2 11 .95/20
+Microéconomie S2 13.5 /20
+lntro à la Gestion S2 14.97 /20
+Compta Financière S2 13.33 /20
+\ Mathématiques 15.875 /20
+1 Statistiques 17.25 /20
+\ lntro au Droit Européen 10.37 /20
+Anglais S2
+1
+11 .9 /20
+1 Techniques d'Ecirture 1 17 /20 1
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+/1.dmis
+Admis
+1
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+Admis
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+S1 2022/23
+Fait à Paris, le 1 juin 2023
+La Directrice du Département
+__.,,,.,--
+---- Dorothée GALLOIS-COCHET
+Avis important : Il ne peut être délivré qu'un seul exemplaire du présent relevé. Aucun duplicata ne sera fourni.
+L -
+30
+3
+2
+3
+2
+3
+3
+2
+2
+3
+2
+1
+2
+2
+30
+3
+4
+3
+2
+3
+4
+4
+2
+3
+2
+/ 2
+1
+Page 13 - Relevé de Notes Licence 1 (Semestre 1 + Semestre 2) - ou équivalent
+Nada EL ARGAB - M4I203_ELAR1B76
+Jniversité Paris Dauphine-PSL
+E>aupmo~ 1 PSL ~1 Année universitaire 2022/2023
+EL ARGAB Nada
+'--R-E-L-E-VE- D-E- N-O-T-E-S -ET- -RE-S-U-LT-A-T-S --'
+Session 1
+EL ARGAS Nada
+5 RUE HENRY MOREAU, VAL FLEURI
+20390 Casa blanca
+MAROC
+N' Etudiant : 22202842 INE : 213317956HK
+Née le : 28 novembre 2004 à : CASA BLANCA (MAROC)
+inscrite en L 1 SCIENCES DES ORGANISATIONS
+Notes et résultats
+Page : 2 / 2
+Note/Barème pts jury Résultat Session Crédits
+L_:Journalistique s2
+Résultat d'admission : 14.235/20
+Résultat global
+Admis Bien
+,,
+Fait à Paris, le 1 juin 2023
+La Directrice du Département
+-------------
+Dorothée GALLOIS-COCHET
+Avis important : Il ne peut être délivré qu'un seul exemplaire du présent relevé. Aucun duplicata ne sera fourni.
+60 _]
+équivalent
+Nada EL ARGAB - M4I203_ELAR1B76
+Page 15 - Relevé de Notes Licence 2 (Semestre 1 + Semestre 2 )- ou équivalent
+Nada EL ARGAB - M4I203_ELAR1B76
+Page 16 - Relevé de Notes Licence 2 (Semestre 1 + Semestre 2 )- ou équivalent
+Nada EL ARGAB - M4I203_ELAR1B76
+Page 17 - Relevé de Notes Licence 3 (Semestre 1 + Semestre 2) - ou équivalent
+Nada EL ARGAB - M4I203_ELAR1B76
+ETS TOEFL iBT logo. Test Taker Report
+EL ARGAB, Nada
+Last (Family/Surname) Name, First (Given) Name Middle Name
+Email: nada.el-argab@dauphine.eu
+Test takers address is
+EL ARGAB, Nada
+11 rue Leonard de vinci
+paris, 75016
+France
+Test Date: February 08, 2025 Gender: Female
+Appointment #: 5048 9022 5101 1542 Date of Birth: November 28, 2004
+Native Language: French Country of Birth: Morocco
+Test Center Country: France
+Test Center: STN14032A - ITTS Paris (c/o Groupe Medicis)
+Institution
+Code
+Department
+Code
+Test Date: February 08, 2025 Your total score is 105 out of 120.
+Reading score is
+27
+out of 30
+Listening score is
+26
+out of 30
+Speaking score is
+27
+out of 30
+Writing score is
+25
+out of 30
+MyBest® Scores |
+Sum of Highest
+Section Scores
+105
+out of 120
+Reading (0–30).
+Score is
+27
+Test Date
+Feb 08, 2025
+Listening (0–30).
+Score is
+26
+Test Date
+Feb 08, 2025
+Speaking (0–30).
+Score is
+27
+Test Date
+Feb 08, 2025
+Writing (0–30).
+Score is
+25
+Test Date
+Feb 08, 2025
+Your highest section scores from all valid test dates, as of February 11, 2025.
+A total score is not reported when one or more sections have not been
+administered. Expired scores are not included in MyBest® calculations.
+15-15
+SECURITY IDENTIFICATION
+ID Type: PASSPORT
+ID No.: xxxxxxxxxxxxxxxxxxxxx6873
+Issuing Country: Morocco
+THIS IS A PDF SCORE REPORT, DOWNLOADED AND PRINTED BY THE TEST TAKER.
+Copyright © 2024 by ETS. ETS, MYBEST, TOEFL and TOEFL IBT are registered trademarks of
+ETS in the United States and other countries. The Eight-Point logo is a trademark of ETS.
+Page 1 of 2
+Page 18 - Mandatory TOEFL-ibt (or equivalently IELTS) of no more than 2 years
+Nada EL ARGAB - M4I203_ELAR1B76
+For additional TOEFL iBT scoring details,
+score ranges, and how to improve your
+skills, visit www.ets.org/toefl/ibt/scores.
+Score Ranges Total Score Range: 0-120
+Reading Range is 0–30.
+Advanced Range is 24–30.
+High–Intermediate Range is 18–23.
+Low–Intermediate Range is 4–17.
+Below Low–Intermediate Range is 0–3.
+Listening Range is 0–30.
+Advanced Range is 22–30.
+High–Intermediate Range is 17–21.
+Low–Intermediate Range is 9–16.
+Below Low–Intermediate Range is 0–8.
+Speaking Range is 0–30.
+Advanced Range is 25–30.
+High–Intermediate Range is 20–24.
+Low–Intermediate Range is 16–19.
+Basic Range is 10–15.
+Below Basic Range is 0–9.
+Writing Range is 0–30.
+Advanced Range is 24–30.
+High–Intermediate Range is 17–23.
+Low–Intermediate Range is 13–16.
+Basic Range is 7–12.
+Below Basic Range is 0–6.
+Comparison to CEFR (Common European Framework Reference for Languages)
+Level is CEFR Level. Total Score
+Level is C2. 114-120
+Range is C1. 95-113
+Range is B2. 72-94
+Range is B1. 42-71
+Range is A2. Below 42
+Institution Codes
+Department Where the Report was Sent
+00 Admissions office for undergraduate study
+01, 04-41, 43-98 Admissions office graduate study in the field other than management (business)
+or law according to the codes selected when you registered
+02 Admissions office of a graduate school of management (business)
+03 Admissions office of a graduate school of law
+42 Admissions office of a school of medicine or nursing or licensing agency
+99 Institution or agency that is not a college or university
+IMPORTANT NOTE TO SCORE USERS: This is a PDF score report, downloaded and printed by the test taker.
+Therefore, ETS cannot guarantee that it has not been altered. To verify the scores on this report, please contact the
+TOEFL® Score Verification Service at +1-800-257-9547 or +1-609-771-7100. Scores more than two years old cannot
+be reported or validated.
+Page 2 of 2
+Page 19 - Mandatory TOEFL-ibt (or equivalently IELTS) of no more than 2 years
+Nada EL ARGAB - M4I203_ELAR1B76
+Mr Abdoulkarim IDI CHEFFOU
+abdoulkarim.idi-cheffou@dauphine.psl.eu
+abdoulkarim.idicheffou@isg.fr
+Tel (ligne directe) : 01 56 26 10 08
+Portable : 06 10 54 52 44 Lundi 24 février 2025
+Recommandation pour admission en 1ère année de Master Financial Markets - FI
+FINANCE de l’Université Paris Dauphine-PSL
+Madame, Monsieur,
+Je viens à travers ces quelques mots recommander Mme Nada EL ARGAB pour la poursuite
+de ses études en 1ère année de Master Financial Markets - FI FINANCE de l’Université Paris
+Dauphine-PSL. J’ai connu la candidate dans le cadre du cours de Produits et Marchés Financiers
+(PMF) que j’ai enseigné au 1er semestre de l’année académique 2024-2025 en L3 éco-App à
+Dauphine. La candidate fait partie de mes meilleurs étudiants dans le cadre de cet enseignement.
+La candidate est très impliquée dans tous ses travaux, elle a un niveau de participation en classe
+qui est remarquable et elle est également très sérieuse. L’excellence de la candidate est
+confirmée par l’obtention de la note de 18/20 à l’examen final.
+La candidate est très motivée pour cette formation car elle souhaite travailler dans le domaine
+de la finance de marché.
+Je suis convaincu que le Master Financial Markets - FI FINANCE de l’Université Paris Dauphine-
+PSL est une formation qui correspond au projet professionnel de la candidate.
+Pour toutes ces raisons je recommande fortement la candidature de Mme Nada EL
+ARGAB pour la poursuite de ses études en 1ère année de Master Financial Markets - FI
+FINANCE de l’Université Paris Dauphine-PSL.
+Dr Abdoulkarim IDI CHEFFOU
+Enseignant-Chercheur, professeur de Finance à l’ISG
+Ancien de Dauphine, Doctorat de Dauphine en 2007 sous la direction du Pr Laurent BATSCH
+Alumni du DEA 104 Finance de Dauphine
+Page 20 - Lettre 1
+Nada EL ARGAB - M4I203_ELAR1B76

@@ -1,0 +1,25 @@
+.reveal h1{
+  font-size: 1.5em !important;
+}
+
+.reveal h2{
+  font-size: 1.2em !important;
+}
+
+/*Make the overall text smaller*/
+.reveal p{
+  font-size: 0.8em !important;
+}
+
+/* also for elements in lists - */
+.reveal ul li{
+  font-size: 0.8em !important;
+}
+
+/* Example for making your tables smaller & centered in Reveal.js slides */
+table {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.8em !important;
+}

@@ -1,0 +1,2 @@
+From the following document extract only the tax footnote, nothing else. Normally it appears after some text that sys Note )some number) income tax. Return only the information nothing more
+

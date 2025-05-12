@@ -3,6 +3,7 @@ marp: true
 paginate: true
 title: Research Presentation - International University of Monaco
 author: Juan F. Imbet Ph.D.
+theme: my-theme
 ---
 
 # **Research Presentation**

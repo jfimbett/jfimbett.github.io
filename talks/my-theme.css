@@ -1,0 +1,16 @@
+/* my-theme.css */
+
+@import 'default';
+
+section {
+  /* This is just a simple example—real transitions may need more tweaking! */
+  transition: opacity 0.6s ease-in-out;
+}
+
+li {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+section[aria-hidden="false"] li {
+  opacity: 1;
+}
