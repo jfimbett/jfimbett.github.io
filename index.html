@@ -4,135 +4,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juan Imbet | Assistant Professor of Finance</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="description" content="Juan Felipe Imbet - Assistant Professor of Finance at Paris Dauphine University">
+    <title>Juan Felipe Imbet | Assistant Professor of Finance</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/custom.css" rel="stylesheet">
 </head>
 
-<body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Dauphine_logo_2019_-_Bleu.png/798px-Dauphine_logo_2019_-_Bleu.png" alt="Paris Dauphine University Logo" width="200" height="30" class="d-inline-block align-top mr-2">
-            Juan Imbet
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#research">Research</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#publications">Publications</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#cv">CV</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="teaching.html">Teaching</a>
-                </li>
-            </ul>
+<body>    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Dauphine_logo_2019_-_Bleu.png/798px-Dauphine_logo_2019_-_Bleu.png" alt="Paris Dauphine University Logo" width="180" height="27" class="d-inline-block align-top me-2">
+                Juan Felipe Imbet
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#work-in-progress">Work in Progress</a>
+                    </li>                    <li class="nav-item">
+                        <a class="nav-link" href="teaching/index.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="code.html">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cv">CV</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="container mt-5">
-        <div class="row">
-                    <!-- Image Column -->
-        <div class="col-md-4">
-            <img src="pic_last.png" alt="Description of Image" class="img-fluid mb-4" style="width: 80%;">
-        </div>
-
-            <div class="col-md-8">
-                <h1>Welcome!</h1>
-                <p>I'm an Assistant Professor of Finance at Paris Dauphine University and a PSL Junior Fellow. My research interests lie at the intersection of Corporate Finance, Asset Pricing, and Computational Finance. My two main research agendas study the impact of the offshore finance industry on corporate policies and the role of social media in investment decisions.</p>
+    <!-- Hero Section -->
+    <section class="hero-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="assets/images/profile.jpg" alt="Juan Felipe Imbet" class="profile-image img-fluid">
+                </div>
+                <div class="col-md-8">
+                    <h1>Juan Felipe Imbet</h1>
+                    <h2 class="mb-4">Assistant Professor of Finance</h2>
+                    <p class="lead">
+                        I'm an Assistant Professor of Finance at Paris Dauphine University and a PSL Junior Fellow. 
+                        My research interests lie at the intersection of Corporate Finance, Asset Pricing, and Computational Finance.
+                    </p>
+                    <p>
+                        My two main research agendas study the impact of the offshore finance industry on corporate policies 
+                        and the role of social media in investment decisions.
+                    </p>
+                    <div class="mt-4">
+                        <a href="mailto:juan.imbet@dauphine.psl.eu" class="btn btn-outline-primary me-2">
+                            <i class="fas fa-envelope me-1"></i> Contact Me
+                        </a>
+                        <a href="cv.pdf" class="btn btn-primary">
+                            <i class="fas fa-file-pdf me-1"></i> Download CV
+                        </a>
+                    </div>
+                </div>
             </div>
-            
-        </div>
+        </div>    </section>
 
-        <hr>
-
-        <div class="row" id="research">
-            <div class="col-md-12">
-                <h2><strong>Working Papers</strong><br/> </h2>
-                
-            
-                <h3><a href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754'>Social Media as a Bank Run Catalyst</a></h3><h4>Revise and Resubmit (2nd Round) at the Journal of Financial Economics</h4><p>J. Anthony Cookson, Corbin Fox, Javier Gil-Bazo, <b>Juan Felipe Imbet</b>, Christoph Schiller</p><p style='text-align: justify;'><b>Abstract:</b>
-After the run on Silicon Valley Bank (SVB), U.S. regional banks entered a period of significant distress. We quantify social media's role in this distress using comprehensive Twitter data.  During the SVB run period, banks with high pre-existing exposure to Twitter lost 4.3 percentage points more stock market value. Moreover, Twitter pre-exposure interacts significantly with classical run risks to predict greater run severity and greater deposit outflows during Q1 2023, effects unexplained by other banking or market characteristics. At the hourly frequency during the run, high Twitter attention over the past four hours predicts stock market losses, especially for banks with high run risks.  By contrast, we find that negative Twitter sentiment does not amplify bank run risks.  Rather, our evidence points to a distinctive role of Twitter attention by tech community members who are likely depositors in SVB, as well as tweets that mention running and contagion.
-        <p><b>Media mentions:</b> 
-        <ul>
-            <li><a href='https://www.ft.com/content/adb0ca9e-010b-4861-a2b5-ec0e30916956#comments-anchor'>A hat-trick of genuinely interesting papers relevant to the banking mess. FT 2023 </a></li>
-            <li><a href='https://www.ft.com/content/a60e543d-c950-4ebb-8da9-d6b0b359ad7b'>Wake up to the dangers of digital bank runs. FT 2023 </a></li>
-            <li><a href='https://www.nytimes.com/2023/04/21/business/dealbook/buzzfeed-news-shuts-down.html'>A social-media-powered bank run. The New York Times DEALBOOK 2023 </a></li>
-            <li><a href="https://money.com/twitter-svb-collapse-study/">Study Finds Twitter Chatter Fueled SVB Collapse — and Other Banks Are at Risk. Money 2023</a></li>
-            <li><a href="https://www.cnbc.com/2023/04/24/social-media-raises-bank-run-risk-fueled-svbs-collapse-paper-says.html">Social media raises bank run risk, fueled Silicon Valley Bank’s collapse, paper says. CNBC 2023</a></li>
-            <li><a href="https://www.axios.com/2023/04/24/twitter-svb-bank-run"> Twitter fueled run on Silicon Valley Bank, new paper finds. Axios 2023</a></li>
-            <li><a href="https://fortune.com/2023/04/24/twitter-financial-system-risk-silicon-valley-bank-run-study/">Twitter poses a risk to the financial system and helped fuel the SVB run, says first major study to investigate the topic. Fortune 2023</a></li> 
-            <li><a href="https://www.technewsworld.com/story/social-media-fueled-the-run-on-silicon-valley-bank-study-178230.html">Social Media Fueled the Run on Silicon Valley Bank: Study. TECHNEWSWORLD 2023</a></li>
-            <li><a href="https://www.nasdaq.com/articles/did-tweets-help-crash-silicon-valley-bank-paper-shows-new-social-media-risks">Did Tweets Help Crash Silicon Valley Bank? Paper Shows New Social Media Risks. Kiplinger 2023 </a></li>
-            <li><a href="https://www.wsj.com/articles/silicon-valley-bank-run-twitter-59061759"> The Surprising Risk That Turbocharged a $142 Billion Bank Run. WSJ 2023 </a></li>
-            <li><a href="https://www.brookings.edu/2023/04/27/hutchins-roundup-bank-runs-and-social-media-rising-wages-and-inflation-and-more/">Hutchins Roundup: Bank runs and social media, rising wages and inflation, and more. Brookings 2023</a></li>
-            <li><a href="https://archive.ph/2023.05.07-050116/https://www.americanbanker.com/news/twitter-helped-kill-silicon-valley-bank-are-other-banks-at-risk">Twitter helped kill Silicon Valley Bank. Are other banks at risk? American Banker 2023</a></li> 
-            <li><a href="https://cincodias.elpais.com/mercados-financieros/2023-05-12/twitter-un-motor-que-azuzo-el-miedo-financiero-y-precipito-la-caida-de-silicon-valley-bank.html"> Twitter, un motor que azuzó el miedo financiero y precipitó la caída de Silicon Valley Bank. Cinco días El Pais, 2023</a></li>
-            <li><a href="https://www.lavanguardia.com/economia/20230514/8963234/panico-empresa-hablan-redes-sociales.html">Pánico en la empresa: hablan las redes sociales. La Vanguardia 2023</a></li>
-        </ul>
-        <b>Mentions by regulators:</b> 
-        <ul>
-            <li><a href="https://dfpi.ca.gov/wp-content/uploads/sites/337/2023/05/Review-of-DFPIs-Oversight-and-Regulation-of-Silicon-Valley-Bank.pdf"> Review of DFPI's Oversight and Regulation of Silicon Valley Bank. Department of FInancial Protection and Innovation DFPI. May 2023 </a></li>
-            <li><a href="https://repositorio.banrep.gov.co/bitstream/handle/20.500.12134/10638/reporte-estabilidad-financiera-primer-semestre-2023.pdf?sequence=1"> Reporte de Estabilidad Financiera. Banco de la Republica de Colombia (2023) </a></li>
-        </ul>
-        </p>
-        </p><br><h3><a href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169'>Tweeting for Money: Social Media and Mutual Fund Flows</a></h3><h4>Revise and Resubmit (Minor Revision) at Management Science</h4><p>Javier Gil-Bazo, <b>Juan Felipe Imbet</b></p><p style='text-align: justify;'><b>Abstract:</b>
-We unveil asset managers’ social media communications as a distinct new channel for attracting flows of money to mutual funds. Combining a database of more than 1.6 million posts on X/Twitter by U.S.  mutual fund families with textual analysis, we find that flows of money to mutual funds respond positively to both the number and tone of the posts. The link between social media communications and flows of money is not explained by marketing efforts, but the two strategies reinforce each other. A high-frequency analysis that exploits intraday ETF trade data allows us to isolate the effect of tweets on investor decisions from potential confounders. We then consider and test four different economic mechanisms. The results of these tests do not support the hypothesis that asset managers’ social media communications reduce search costs for potential investors. The results do not support, either, that asset management companies’ Twitter activity increases investor attention or alleviates information asymmetries by communicating performance-relevant information to investors. In contrast, our evidence suggests that asset managers use social media as an effective persuasion tool.
-        <p><b>Summary:</b> 
-        <ul>
-            <li><a href='https://focus.bse.eu/tweeting-for-money-impact-on-money-flows-when-mutual-funds-tweet/'>Tweeting for Money: Impact on Money Flows When Mutual Funds Tweet. BSE Focus 2023 </a></li>
-            <li><a href='https://www.upf.edu/en/web/e-noticies/home/-/asset_publisher/wEpPxsVRD6Vt/content/id/262764917/maximized#.Y3tjxXbMKUm'>Asset management companies use social media to persuade investors, according to a study. Focus UPF 2022 </a></li>
-        </ul>
-        </p>
-        </p><br><h3><a href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4557679'>The Real Effects of Offshore Data Leaks: Evidence from Private Firms</a></h3><p>Marcelo Ortiz M., <b>Juan Felipe Imbet</b></p><p style='text-align: justify;'><b>Abstract:</b>
-This study investigates the real effects of major offshore data leaks on private firms. By matching leaked data with firm-level information, we identify a large sample of small private firms involved in offshore activities in tax havens and analyze their corporate policies. Employing the sequence of leaks in a staggered difference-in-difference design, we observe that exposed firms invest more in fixed assets and labor pre-leaks but then significantly decrease their investments after the leaks.  Our cross-sectional analyses show that unproductive firms and firms with faster deduction of investment expenditures benefit the most from offshore tax evasion before the leaks. The leaks also reduced corporate taxation, an effect that is not driven by fewer sales. Overall, our results suggest that offshore tax evasion boosts domestic investment among less productive firms, an effect that is muted or even reversed after the leaks.</p><br><h3><a href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4872375'>Dynamic Contracting and Corporate Tax Strategies</a></h3><p><b>Juan Felipe Imbet</b>, Marcelo Ortiz M., Vincent Tena</p><p style='text-align: justify;'><b>Abstract:</b>
-We investigate the optimal delegation of corporate tax strategy. We develop a dynamic model that incorporates moral hazard and random inspections by tax authorities. The firm's owner cannot directly observe either the firm's underlying gross profits process or the agent's continuous efforts to reduce tax expenses. Inspections are random, and while illegal strategies can be detected and penalized, the extent of evasion remains unobservable. In our setting, a risk-averse owner may avoid contracting tax strategies if the agent's effort costs or underlying profit volatility are too high, providing a contractual explanation for under-sheltering.  The optimal tax strategy is a constant under-reporting of profits over time, which becomes more aggressive when the agent is less risk-averse and corporate tax rates are higher. The optimal compensation includes a fixed salary to ensure the agent's participation and a performance-based component that increases with the agent’s risk aversion and the reported profits. Under inspection risk, however, the optimal tax strategy is not constant and becomes progressively less aggressive as the expected penalty rises over time. The agent’s compensation includes an additional risk premium by bearing the inspection risk and a contingent loss in case of detection.</p><br><h3><a href='https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3711536'>Stroke of a Pen: Investment and Stock Returns under Energy Policy Uncertainty</a></h3><p><b>Juan Felipe Imbet</b></p><p style='text-align: justify;'><b>Abstract:</b>
-Energy policy uncertainty - as measured by uncertainty about a U.S. President signing an energy related executive order in the future - covaries positively with corporate investment and aggregate consumption growth, and its innovations carry a negative price of risk. I propose and test a q-theory explanation in which firms invest in energy-efficient capital when facing energy policy uncertainty. This uncertainty amplifies differences in investment between growth and value companies as the benefits of substituting energy for capital increase with growth opportunities. As the benefits to invest increase, aggregate current consumption decreases relative to future consumption, creating time varying expected variation in aggregate market returns and consumption growth. Without an investment factor, uncertainty betas explain cross-sectional variation in stock returns across portfolios that differ in their growth opportunities. However, since investment reacts to uncertainty endogenously, an asset pricing model that accounts for an investment factor absorbs the cross-sectional differences in expected returns explained by this policy uncertainty. My findings suggest that uncertainty about future energy policies in the last four decades can explain firms' adoption of energy-efficient capital.</p><br>
-
+    <!-- Publications Section -->
+    <section class="section bg-light" id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-4 paper-card">
+                        <div class="card-body">                            <h3 class="card-title paper-title">
+                                <a href="https://www.pm-research.com/content/iijderiv/32/3/80" target="_blank">
+                                    The Forecasting Power of Short-Term Options
+                                </a>
+                            </h3>                            <p class="paper-status">The Journal of Derivatives, Spring 2025, 32(3) 80-116</p>
+                            <p class="paper-authors">Arthur Böök, <strong>Juan F. Imbet</strong>, Martin Reinke, Carlo Sala</p>
+                            <p><a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5073514" target="_blank" class="btn btn-sm btn-outline-info"><i class="fas fa-file-alt me-1"></i>Internet Appendix</a></p><div class="paper-abstract collapse">
+                                <p class="mt-3"><strong>Abstract:</strong> We propose robust option-implied measures of conditional volatility, skewness and kurtosis based upon quantiles and expectiles inferred from weekly options on the S&P 500. All quantities are by construction forward-looking and estimated non-parametrically through a novel robust and arbitrage-free natural smoothing spline technique that produces quick to estimate volatility smiles. We find that some of the option-implied robust indicators exhibit short-, medium- and long-term predictive ability for the U.S. equity risk premium and higher moments, both in- and out-of-sample, which outperform equal indicators inferred from historical returns.</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary mt-2 toggle-abstract">Show Abstract</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
+    
+    <!-- Research Papers Section -->
+    <section class="section bg-light" id="research">
+        <div class="container">
+            <h2 class="section-title">Working Papers</h2>
+            <div class="row">
+                <!-- Social Media as a Bank Run Catalyst -->
+                <div class="col-md-12 mb-4">
+                    <div class="card paper-card">
+                        <div class="card-body">
+                            <h3 class="card-title paper-title">
+                                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4422754" target="_blank">
+                                    Social Media as a Bank Run Catalyst
+                                </a>
+                            </h3>
+                            <p class="paper-status">Revise and Resubmit (2nd Round) at the Journal of Financial Economics</p>
+                            <p class="paper-authors">J. Anthony Cookson, Corbin Fox, Javier Gil-Bazo, <strong>Juan Felipe Imbet</strong>, Christoph Schiller</p>                            <div class="paper-abstract collapse">
+                                <p class="mt-3"><strong>Abstract:</strong> After the run on Silicon Valley Bank (SVB), U.S. regional banks entered a period of significant distress. We quantify social media's role in this distress using comprehensive Twitter data. During the SVB run period, banks with high pre-existing exposure to Twitter lost 4.3 percentage points more stock market value. Moreover, Twitter pre-exposure interacts significantly with classical run risks to predict greater run severity and greater deposit outflows during Q1 2023, effects unexplained by other banking or market characteristics. At the hourly frequency during the run, high Twitter attention over the past four hours predicts stock market losses, especially for banks with high run risks. By contrast, we find that negative Twitter sentiment does not amplify bank run risks. Rather, our evidence points to a distinctive role of Twitter attention by tech community members who are likely depositors in SVB, as well as tweets that mention running and contagion.</p>
+                            </div>                            <button class="btn btn-sm btn-outline-primary mt-2 toggle-abstract">Show Abstract</button>
+                            <div class="media-mentions mt-3 collapse">
+                                <h5><i class="fas fa-newspaper me-2"></i>Media Mentions</h5>
+                                <ul>
+                                    <li><a href="https://www.ft.com/content/adb0ca9e-010b-4861-a2b5-ec0e30916956#comments-anchor" target="_blank">A hat-trick of genuinely interesting papers relevant to the banking mess. Financial Times 2023</a></li>
+                                    <li><a href="https://www.ft.com/content/a60e543d-c950-4ebb-8da9-d6b0b359ad7b" target="_blank">Wake up to the dangers of digital bank runs. Financial Times 2023</a></li>
+                                    <li><a href="https://www.nytimes.com/2023/04/21/business/dealbook/buzzfeed-news-shuts-down.html" target="_blank">A social-media-powered bank run. The New York Times DEALBOOK 2023</a></li>
+                                    <li><a href="https://money.com/twitter-svb-collapse-study/" target="_blank">Study Finds Twitter Chatter Fueled SVB Collapse — and Other Banks Are at Risk. Money 2023</a></li>
+                                    <li><a href="https://www.cnbc.com/2023/04/24/social-media-raises-bank-run-risk-fueled-svbs-collapse-paper-says.html" target="_blank">Social media raises bank run risk, fueled Silicon Valley Bank's collapse, paper says. CNBC 2023</a></li>
+                                    <li><a href="https://www.axios.com/2023/04/24/twitter-svb-bank-run" target="_blank">Twitter fueled run on Silicon Valley Bank, new paper finds. Axios 2023</a></li>
+                                    <li><a href="https://fortune.com/2023/04/24/twitter-financial-system-risk-silicon-valley-bank-run-study/" target="_blank">Twitter poses a risk to the financial system and helped fuel the SVB run, says first major study to investigate the topic. Fortune 2023</a></li>
+                                    <li><a href="https://www.technewsworld.com/story/social-media-fueled-the-run-on-silicon-valley-bank-study-178230.html" target="_blank">Social Media Fueled the Run on Silicon Valley Bank: Study. TECHNEWSWORLD 2023</a></li>
+                                    <li><a href="https://www.nasdaq.com/articles/did-tweets-help-crash-silicon-valley-bank-paper-shows-new-social-media-risks" target="_blank">Did Tweets Help Crash Silicon Valley Bank? Paper Shows New Social Media Risks. Kiplinger 2023</a></li>
+                                    <li><a href="https://www.wsj.com/articles/silicon-valley-bank-run-twitter-59061759" target="_blank">The Surprising Risk That Turbocharged a $142 Billion Bank Run. Wall Street Journal 2023</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-sm btn-outline-secondary mt-2 toggle-mentions">Show Media Mentions</button>
+                            
+                            <div class="regulator-mentions mt-3 collapse">
+                                <h5><i class="fas fa-landmark me-2"></i>Mentions by Regulators</h5>
+                                <ul>
+                                    <li><a href="https://dfpi.ca.gov/wp-content/uploads/sites/337/2023/05/Review-of-DFPIs-Oversight-and-Regulation-of-Silicon-Valley-Bank.pdf" target="_blank">Review of DFPI's Oversight and Regulation of Silicon Valley Bank. Department of Financial Protection and Innovation DFPI 2023</a></li>
+                                    <li><a href="https://repositorio.banrep.gov.co/bitstream/handle/20.500.12134/10638/reporte-estabilidad-financiera-primer-semestre-2023.pdf?sequence=1" target="_blank">Reporte de Estabilidad Financiera. Banco de la Republica de Colombia 2023</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-sm btn-outline-secondary mt-2 toggle-regulator-mentions">Show Regulator Mentions</button>
+                        </div>
+                    </div>
+                </div>
 
-        <hr>
+                <!-- Tweeting for Money Paper -->
+                <div class="col-md-12 mb-4">
+                    <div class="card paper-card">
+                        <div class="card-body">
+                            <h3 class="card-title paper-title">
+                                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3719169" target="_blank">
+                                    Tweeting for Money: Social Media and Mutual Fund Flows
+                                </a>
+                            </h3>
+                            <p class="paper-status">Revise and Resubmit (Minor Revision) at Management Science</p>
+                            <p class="paper-authors">Javier Gil-Bazo, <strong>Juan Felipe Imbet</strong></p>                            <div class="paper-abstract collapse">
+                                <p class="mt-3"><strong>Abstract:</strong> We unveil asset managers' social media communications as a distinct new channel for attracting flows of money to mutual funds. Combining a database of more than 1.6 million posts on X/Twitter by U.S. mutual fund families with textual analysis, we find that flows of money to mutual funds respond positively to both the number and tone of the posts. The link between social media communications and flows of money is not explained by marketing efforts, but the two strategies reinforce each other. A high-frequency analysis that exploits intraday ETF trade data allows us to isolate the effect of tweets on investor decisions from potential confounders. We then consider and test four different economic mechanisms. The results of these tests do not support the hypothesis that asset managers' social media communications reduce search costs for potential investors. The results do not support, either, that asset management companies' Twitter activity increases investor attention or alleviates information asymmetries by communicating performance-relevant information to investors. In contrast, our evidence suggests that asset managers use social media as an effective persuasion tool.</p>
+                            </div>                            <button class="btn btn-sm btn-outline-primary mt-2 toggle-abstract">Show Abstract</button>
+                            <div class="media-mentions mt-3 collapse">
+                                <h5><i class="fas fa-newspaper me-2"></i>Media Mentions</h5>
+                                <ul>
+                                    <li><a href="https://focus.bse.eu/tweeting-for-money-impact-on-money-flows-when-mutual-funds-tweet/" target="_blank">Tweeting for Money: Impact on Money Flows When Mutual Funds Tweet. BSE Focus 2023</a></li>
+                                    <li><a href="https://www.upf.edu/en/web/e-noticies/home/-/asset_publisher/wEpPxsVRD6Vt/content/id/262764917/maximized#.Y3tjxXbMKUm" target="_blank">Asset management companies use social media to persuade investors, according to a study. Focus UPF 2022</a></li>
+                                </ul>
+                            </div>
+                            <button class="btn btn-sm btn-outline-secondary mt-2 toggle-mentions">Show Media Mentions</button>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="row" id="publications">
-            <div class="col-md-12">
-                <h2><strong>Publications</strong><br/> </h2>
-                
-            
-                <!-- The Forecasting Power of Short Term Options:  -->
-                <!--Arthur BÃ¶Ã¶k, Juan Felipe Imbet, Martin Reinke, Carlo Sala-->
-                <!-- <h3><a href='{paper['url']}'>{paper['title']}</a></h3><h4>Revise and Resubmit at the Journal of Financial Economics</h4><p>{', '.join(paper['authors'])}</p><p style='text-align: justify;'>{paper['abstract']}</p>" -->
+                <!-- The Real Effects of Offshore Data Leaks Paper -->
+                <div class="col-md-12 mb-4">
+                    <div class="card paper-card">
+                        <div class="card-body">
+                            <h3 class="card-title paper-title">
+                                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4557679" target="_blank">
+                                    The Real Effects of Offshore Data Leaks: Evidence from Private Firms
+                                </a>
+                            </h3>
+                            <p class="paper-status">Working Paper</p>
+                            <p class="paper-authors">Marcelo Ortiz M., <strong>Juan Felipe Imbet</strong></p>                            <div class="paper-abstract collapse">
+                                <p class="mt-3"><strong>Abstract:</strong> This study investigates the real effects of major offshore data leaks on private firms. By matching leaked data with firm-level information, we identify a large sample of small private firms involved in offshore activities in tax havens and analyze their corporate policies. Employing the sequence of leaks in a staggered difference-in-difference design, we observe that exposed firms invest more in fixed assets and labor pre-leaks but then significantly decrease their investments after the leaks. Our cross-sectional analyses show that unproductive firms and firms with faster deduction of investment expenditures benefit the most from offshore tax evasion before the leaks. The leaks also reduced corporate taxation, an effect that is not driven by fewer sales. Overall, our results suggest that offshore tax evasion boosts domestic investment among less productive firms, an effect that is muted or even reversed after the leaks.</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary mt-2 toggle-abstract">Show Abstract</button>
+                        </div>
+                    </div>
+                </div>
 
-                <h3><a>The Forecasting Power of Short-term Options</a></h3><h4>Accepted at the Journal of Derivatives</h4>
-                <p>Arthur Book, <b>Juan Felipe Imbet</b>, Martin Reinke, Carlo Sala</p>
+                <!-- Dynamic Contracting and Corporate Tax Strategies Paper -->
+                <div class="col-md-12 mb-4">
+                    <div class="card paper-card">
+                        <div class="card-body">
+                            <h3 class="card-title paper-title">
+                                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4872375" target="_blank">
+                                    Dynamic Contracting and Corporate Tax Strategies
+                                </a>
+                            </h3>
+                            <p class="paper-status">Working Paper</p>
+                            <p class="paper-authors"><strong>Juan Felipe Imbet</strong>, Marcelo Ortiz M., Vincent Tena</p>                            <div class="paper-abstract collapse">
+                                <p class="mt-3"><strong>Abstract:</strong> We investigate the optimal delegation of corporate tax strategy. We develop a dynamic model that incorporates moral hazard and random inspections by tax authorities. The firm's owner cannot directly observe either the firm's underlying gross profits process or the agent's continuous efforts to reduce tax expenses. Inspections are random, and while illegal strategies can be detected and penalized, the extent of evasion remains unobservable. In our setting, a risk-averse owner may avoid contracting tax strategies if the agent's effort costs or underlying profit volatility are too high, providing a contractual explanation for under-sheltering. The optimal tax strategy is a constant under-reporting of profits over time, which becomes more aggressive when the agent is less risk-averse and corporate tax rates are higher. The optimal compensation includes a fixed salary to ensure the agent's participation and a performance-based component that increases with the agent's risk aversion and the reported profits. Under inspection risk, however, the optimal tax strategy is not constant and becomes progressively less aggressive as the expected penalty rises over time. The agent's compensation includes an additional risk premium by bearing the inspection risk and a contingent loss in case of detection.</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary mt-2 toggle-abstract">Show Abstract</button>
+                        </div>
+                    </div>
+                </div>
 
-                 
+                <!-- Stroke of a Pen Paper -->
+                <div class="col-md-12 mb-4">
+                    <div class="card paper-card">
+                        <div class="card-body">
+                            <h3 class="card-title paper-title">
+                                <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3711536" target="_blank">
+                                    Stroke of a Pen: Investment and Stock Returns under Energy Policy Uncertainty
+                                </a>
+                            </h3>
+                            <p class="paper-status">Working Paper</p>
+                            <p class="paper-authors"><strong>Juan Felipe Imbet</strong></p>                            <div class="paper-abstract collapse">
+                                <p class="mt-3"><strong>Abstract:</strong> Energy policy uncertainty - as measured by uncertainty about a U.S. President signing an energy related executive order in the future - covaries positively with corporate investment and aggregate consumption growth, and its innovations carry a negative price of risk. I propose and test a q-theory explanation in which firms invest in energy-efficient capital when facing energy policy uncertainty. This uncertainty amplifies differences in investment between growth and value companies as the benefits of substituting energy for capital increase with growth opportunities. As the benefits to invest increase, aggregate current consumption decreases relative to future consumption, creating time varying expected variation in aggregate market returns and consumption growth. Without an investment factor, uncertainty betas explain cross-sectional variation in stock returns across portfolios that differ in their growth opportunities. However, since investment reacts to uncertainty endogenously, an asset pricing model that accounts for an investment factor absorbs the cross-sectional differences in expected returns explained by this policy uncertainty. My findings suggest that uncertainty about future energy policies in the last four decades can explain firms' adoption of energy-efficient capital.</p>
+                            </div>
+                            <button class="btn btn-sm btn-outline-primary mt-2 toggle-abstract">Show Abstract</button>
+                        </div>
+                    </div>                </div>
+            </div>
+        </div>    
+    </section>
+
+    <!-- Work in Progress Section -->
+    <section class="section" id="work-in-progress">
+        <div class="container">
+            <h2 class="section-title">Work in Progress</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-4 paper-card">
+                        <div class="card-body">
+                            <h3 class="card-title paper-title">Competitive Executive Compensation with Profitability Shocks</h3>
+                            <p class="paper-authors">Gilles Chemla, <strong>Juan Felipe Imbet</strong>, Marcelo Ortiz, Vincent Tena</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <hr>
-
-        <div class="row" id="cv">
-            <div class="col-md-12">
-                <h2>Curriculum Vitae</h2>
-                <a href ="cv.pdf">Click here</a>
+    <!-- CV Section -->
+    <section class="section bg-light" id="cv">
+        <div class="container">
+            <h2 class="section-title">Curriculum Vitae</h2>
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="lead">You can view or download my complete Curriculum Vitae below:</p>
+                    <a href="cv.pdf" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-file-pdf me-2"></i>View CV
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer class="text-center mt-5 py-4">
-        <p>&copy; 2023 Juan Imbet | Paris Dauphine University</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Juan Felipe Imbet</h4>
+                    <p>Assistant Professor of Finance<br>Paris Dauphine University</p>
+                    <p>
+                        <i class="fas fa-envelope me-2"></i>juan.imbet@dauphine.psl.eu
+                    </p>
+                </div>                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=0nHr8-4AAAAJ&hl=es" target="_blank" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/juan-f-imbet-0b053079/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/jfimbett" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/JuanImbett" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div><p class="mt-3">&copy; 2025 Juan Felipe Imbet. All rights reserved.</p>
+                    <p class="small text-white">Website enhanced using GitHub Copilot Agent Mode powered by Claude 3.7 Sonnet</p>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,63 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE/Editor folders
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# Temporary files
+*.bak
+*.swp
+*.tmp
+
+# Log files
+*.log
+
+# Backup and old versions of files
+*~
+*_old
+*_backup
+backup_*
+*_bak
+
+# Local environment variables
+.env
+
+# Cache directories
+.cache/
+-p/

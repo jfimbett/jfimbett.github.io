@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Understanding Transformer Architecture in Large Language Models - Juan Felipe Imbet">
+    <title>Understanding Transformer Architecture in LLMs | Juan Felipe Imbet</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Prism.js for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+    
+    <!-- MathJax for LaTeX equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <!-- Custom CSS -->
+    <link href="../assets/css/custom.css" rel="stylesheet">
+    
+    <style>
+        .blog-header {
+            padding-top: 120px;
+            padding-bottom: 40px;
+            background-color: #f8f9fa;
+            background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            position: relative;
+        }
+        
+        .blog-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        
+        .blog-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .blog-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .blog-content h3 {
+            margin-top: 1.8rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-content ul, .blog-content ol {
+            margin-bottom: 1.5rem;
+        }
+        
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+        
+        .equation-block {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 2rem 0;
+        }
+        
+        .blog-author {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #dee2e6;
+        }
+        
+        .blog-author img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .blog-date {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        .blog-tags {
+            margin: 1.5rem 0;
+        }
+        
+        .blog-tag {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 8px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        
+        .code-block {
+            margin: 2rem 0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        blockquote {
+            border-left: 4px solid #0d6efd;
+            padding-left: 1.5rem;
+            font-style: italic;
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 1.5rem;
+            color: #495057;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Dauphine_logo_2019_-_Bleu.png/798px-Dauphine_logo_2019_-_Bleu.png" alt="Paris Dauphine University Logo" width="180" height="27" class="d-inline-block align-top me-2">
+                Juan Felipe Imbet
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#work-in-progress">Work in Progress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../teaching/index.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#cv">CV</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="blog-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="fw-bold">Understanding Transformer Architecture in Large Language Models</h1>
+                    <p class="blog-date mt-3">May 12, 2025</p>
+                    <div class="blog-tags mt-4">
+                        <span class="blog-tag">AI</span>
+                        <span class="blog-tag">LLMs</span>
+                        <span class="blog-tag">NLP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Blog Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto blog-content">
+                    <p>
+                        Large Language Models (LLMs) have transformed the landscape of artificial intelligence, enabling sophisticated natural language processing capabilities that were unimaginable just a few years ago. Central to this revolution is the Transformer architecture, first introduced in the landmark paper "Attention is All You Need" by Vaswani et al. (2017). In this blog post, I'll break down the key components of the Transformer architecture and explain why it has become the foundation for modern language models like GPT-4, Claude, and LLaMA.
+                    </p>
+
+                    <h2>The Birth of Transformers</h2>
+                    <p>
+                        Prior to Transformers, recurrent neural networks (RNNs) and their variants like LSTMs and GRUs dominated sequence modeling tasks. While effective, these architectures processed tokens sequentially, creating two significant challenges:
+                    </p>
+                    <ol>
+                        <li>They struggled to capture long-range dependencies in text</li>
+                        <li>They couldn't be easily parallelized, limiting training efficiency</li>
+                    </ol>
+                    <p>
+                        Transformers addressed both issues by introducing a novel architecture that replaced recurrence with attention mechanisms, allowing the model to consider all tokens simultaneously and enabling massive parallelization during training.
+                    </p>
+
+                    <h2>The Core Component: Self-Attention</h2>
+                    <p>
+                        At the heart of the Transformer architecture lies the self-attention mechanism, which allows the model to weigh the importance of different words in a sequence when encoding each word. For each token in a sequence, self-attention computes how much focus should be placed on other tokens when producing the representation for that token.
+                    </p>
+
+                    <div class="equation-block">
+                        <p>The self-attention mechanism can be mathematically expressed as:</p>
+                        \begin{align}
+                        \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
+                        \end{align}
+                        <p>Where:</p>
+                        <ul>
+                            <li>$Q$ represents Query matrices</li>
+                            <li>$K$ represents Key matrices</li>
+                            <li>$V$ represents Value matrices</li>
+                            <li>$d_k$ is the dimensionality of the keys</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Each token is transformed into three vectors: query, key, and value. The attention weights are computed by taking the dot product of query and key vectors, scaled by $\sqrt{d_k}$, and then normalized using the softmax function. These weights determine how much each value vector contributes to the final representation.
+                    </p>
+
+                    <h2>Multi-Head Attention</h2>
+                    <p>
+                        Rather than performing a single attention function, Transformers employ multi-head attention, which allows the model to jointly attend to information from different representation subspaces at different positions.
+                    </p>
+
+                    <div class="equation-block">
+                        \begin{align}
+                        \text{MultiHead}(Q, K, V) &= \text{Concat}(\text{head}_1, \text{head}_2, \ldots, \text{head}_h)W^O \\
+                        \text{where}~\text{head}_i &= \text{Attention}(QW_i^Q, KW_i^K, VW_i^V)
+                        \end{align}
+                    </div>
+
+                    <p>
+                        Each "head" learns a different aspect of the relationships between tokens. Some heads might focus on adjacent words, while others might capture long-distance relationships or syntactic structures.
+                    </p>
+
+                    <h2>Positional Encoding</h2>
+                    <p>
+                        Unlike recurrent networks, Transformers process all tokens in parallel, losing the sequential information inherent in language. To address this, positional encodings are added to the input embeddings to provide information about the relative or absolute position of tokens in the sequence.
+                    </p>
+
+                    <div class="equation-block">
+                        \begin{align}
+                        PE_{(pos, 2i)} &= \sin\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right) \\
+                        PE_{(pos, 2i+1)} &= \cos\left(\frac{pos}{10000^{2i/d_{\text{model}}}}\right)
+                        \end{align}
+                    </div>
+
+                    <p>
+                        These sinusoidal functions create a unique pattern for each position, allowing the model to distinguish between different positions in the sequence.
+                    </p>
+
+                    <h2>Feed-Forward Networks</h2>
+                    <p>
+                        Each Transformer block contains a feed-forward neural network applied to each position independently:
+                    </p>
+
+                    <div class="equation-block">
+                        \begin{align}
+                        FFN(x) = \max(0, xW_1 + b_1)W_2 + b_2
+                        \end{align}
+                    </div>
+
+                    <p>
+                        This simple yet effective two-layer network with a ReLU activation function processes the attention outputs and transforms them into representations for the next layer.
+                    </p>
+
+                    <h2>Putting It All Together</h2>
+                    <p>
+                        The complete Transformer architecture consists of an encoder and a decoder, each containing multiple layers of self-attention and feed-forward networks. Modern LLMs like GPT models primarily use the decoder architecture, while models like BERT use only the encoder.
+                    </p>
+
+                    <p>
+                        Each layer in the Transformer encoder contains:
+                    </p>
+                    <ol>
+                        <li>Multi-head self-attention mechanism</li>
+                        <li>Layer normalization</li>
+                        <li>Feed-forward neural network</li>
+                        <li>Another layer normalization</li>
+                    </ol>
+
+                    <p>
+                        Additionally, residual connections are employed around each sub-layer to facilitate training of deep networks:
+                    </p>
+
+                    <div class="equation-block">
+                        \begin{align}
+                        \text{LayerNorm}(x + \text{Sublayer}(x))
+                        \end{align}
+                    </div>
+
+                    <h2>Scaling to Modern LLMs</h2>
+                    <p>
+                        The elegant design of Transformers has enabled unprecedented scaling in language models. From the original Transformer with 65 million parameters to modern behemoths like GPT-4 with hundreds of billions of parameters, the core architecture has remained remarkably stable.
+                    </p>
+
+                    <p>
+                        The scaling laws for Transformer-based language models follow power-law relationships, where performance improves predictably with:
+                    </p>
+                    <ul>
+                        <li>More parameters</li>
+                        <li>More training data</li>
+                        <li>More compute</li>
+                    </ul>
+
+                    <p>
+                        This insight, formalized by Kaplan et al. (2020), has guided the development of increasingly capable models.
+                    </p>
+
+                    <h2>Implications for Financial Modeling</h2>
+                    <p>
+                        The success of Transformers in language modeling has significant implications for financial research and modeling. Time series data in finance shares certain characteristics with sequential language data, making Transformer-based approaches promising for:
+                    </p>
+                    <ul>
+                        <li>Asset price prediction</li>
+                        <li>Risk assessment</li>
+                        <li>Market sentiment analysis</li>
+                        <li>Portfolio optimization</li>
+                    </ul>
+
+                    <p>
+                        In particular, the ability of Transformers to capture long-range dependencies could help identify complex patterns in market data that traditional models might miss. Consider a simple example where we adapt the self-attention mechanism for financial time series:
+                    </p>
+
+                    <div class="equation-block">
+                        \begin{align}
+                        \text{FinAttention}(P_t, P_{t-1:t-n}) = \text{softmax}\left(\frac{P_t \cdot P_{t-1:t-n}^T}{\sqrt{d}}\right) \cdot V_{t-1:t-n}
+                        \end{align}
+                    </div>
+
+                    <p>
+                        Here, $P_t$ represents the feature vector of the current time step, $P_{t-1:t-n}$ represents historical feature vectors, and $V_{t-1:t-n}$ represents the value vectors derived from historical data.
+                    </p>
+
+                    <h2>Conclusion</h2>
+                    <p>
+                        The Transformer architecture has revolutionized natural language processing and is beginning to make significant inroads into other domains, including finance. Its ability to process sequences in parallel while capturing complex dependencies makes it an invaluable tool for modern AI applications.
+                    </p>
+
+                    <p>
+                        As we continue to refine and extend this architecture, we can expect even more powerful models that push the boundaries of what's possible in language understanding, generation, and beyond.
+                    </p>
+
+                    <p>
+                        In future posts, I'll explore specific applications of Transformer-based models in financial research and quantitative analysis, demonstrating how these powerful tools can enhance our understanding of markets and economic systems.
+                    </p>
+                    
+                    <div class="blog-author">
+                        <div class="d-flex align-items-center mb-4">
+                            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" alt="Juan Felipe Imbet" class="me-4">
+                            <div>
+                                <h5 class="mb-1">Juan Felipe Imbet</h5>
+                                <p class="text-muted mb-0">Assistant Professor of Finance<br>Paris Dauphine University</p>
+                            </div>
+                        </div>
+                        <p>
+                            Juan specializes in asset pricing, derivatives, and the application of machine learning in finance. His research focuses on the intersection of traditional finance theories and modern computational methods.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Posts -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h3 class="text-center mb-4">Related Posts</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card blog-card h-100">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="card-img-top" alt="Finance and AI">
+                        <div class="card-body">
+                            <p class="blog-date">Coming Soon</p>
+                            <h5 class="card-title">AI Applications in Quantitative Finance</h5>
+                            <p class="card-text">Exploring how machine learning and AI are transforming financial modeling and investment strategies.</p>
+                            <a href="#" class="btn btn-secondary disabled">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card blog-card h-100">
+                        <img src="https://images.unsplash.com/photo-1607968565043-36af90dde238?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="card-img-top" alt="Mathematical Finance">
+                        <div class="card-body">
+                            <p class="blog-date">Coming Soon</p>
+                            <h5 class="card-title">Advanced Mathematical Models in Asset Pricing</h5>
+                            <p class="card-text">A deep dive into the mathematical foundations of modern asset pricing theories.</p>
+                            <a href="#" class="btn btn-secondary disabled">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card blog-card h-100">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="card-img-top" alt="Option Pricing">
+                        <div class="card-body">
+                            <p class="blog-date">Coming Soon</p>
+                            <h5 class="card-title">Modern Approaches to Option Pricing</h5>
+                            <p class="card-text">Examining recent developments in option pricing models and their implications for market practitioners.</p>
+                            <a href="#" class="btn btn-secondary disabled">Coming Soon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Juan Felipe Imbet</h4>
+                    <p>Assistant Professor of Finance<br>Paris Dauphine University</p>
+                    <p>
+                        <i class="fas fa-envelope me-2"></i>juan.imbet@dauphine.psl.eu
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=0nHr8-4AAAAJ&hl=es" target="_blank" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/juan-f-imbet-0b053079/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/jfimbett" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/JuanImbett" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <p class="mt-3">&copy; 2025 Juan Felipe Imbet. All rights reserved.</p>
+                    <p class="small text-white">Website enhanced using GitHub Copilot Agent Mode powered by Claude 3.7 Sonnet</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Prism.js for code highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

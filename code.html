@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Juan Felipe Imbet - Code and Development Projects">
+    <title>Juan Felipe Imbet | Code Projects</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link href="assets/css/custom.css" rel="stylesheet">
+    
+    <style>
+        .code-header {
+            padding-top: 120px;
+            padding-bottom: 40px;
+            background-color: #f8f9fa;
+        }
+        
+        .code-card {
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .code-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .code-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .extension-icon {
+            width: 128px;
+            height: 128px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        
+        .extension-stats {
+            margin: 15px 0;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .extension-stat {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .extension-stat i {
+            margin-right: 5px;
+        }
+        
+        .install-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #0d6efd;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .install-btn:hover {
+            background-color: #0b5ed7;
+            color: white;
+        }
+        
+        .install-btn i {
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Dauphine_logo_2019_-_Bleu.png/798px-Dauphine_logo_2019_-_Bleu.png" alt="Paris Dauphine University Logo" width="180" height="27" class="d-inline-block align-top me-2">
+                Juan Felipe Imbet
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#work-in-progress">Work in Progress</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teaching/index.html">Teaching</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="code.html">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#cv">CV</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Code Header -->
+    <header class="code-header">
+        <div class="container">
+            <h1 class="fw-bold">Code </h1>
+            <p class="lead">I sometimes code useful tools that I like to share. Feel free to use them under their respective license and send me any feedback.</p>
+        </div>
+    </header>
+
+    <!-- Code Projects -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="mb-4">VS Code Extensions</h2>
+                    
+                    <!-- Stata4VS Extension -->
+                    <div class="card mb-5">
+                        <div class="card-body">
+                            <div class="d-md-flex">
+                                <div class="me-md-4 text-center">
+                                    <img src="https://juanimbet.stata4vs.gallerycdn.vsassets.io/extensions/juanimbet/stata4vs/0.0.1/1682648516327/Microsoft.VisualStudio.Services.Icons.Default" alt="Stata4VS Extension Icon" class="extension-icon">
+                                </div>
+                                <div>
+                                    <h3 class="card-title">Stata4VS</h3>
+                                    <p class="text-muted">Version 0.0.1 • Published April 28, 2023</p>
+                                    <p>Simple extension to help run Stata code from VS Code. This extension creates a temporal do file to be ran from Stata, mimicking the Shift+D command from the Stata editor.</p>
+                                    
+                                    <div class="extension-stats">
+                                        <div class="extension-stat">
+                                            <i class="fas fa-download"></i> 300+ installs
+                                        </div>
+                                        <div class="extension-stat">
+                                            <i class="fas fa-star"></i> 5.0 (1 rating)
+                                        </div>
+                                    </div>
+                                    
+                                    <h5 class="mt-4">Features</h5>
+                                    <ul>
+                                        <li>Run selected Stata code directly from VS Code</li>
+                                        <li>Creates temporary do files without cluttering your workspace</li>
+                                        <li>Simple keyboard shortcut integration</li>
+                                        <li>Works with Stata installed on your system</li>
+                                    </ul>
+                                    
+                                    <h5 class="mt-4">How to Use</h5>
+                                    <ol>
+                                        <li>Install the extension</li>
+                                        <li>Open a file with Stata code</li>
+                                        <li>Select the code you want to run</li>
+                                        <li>Use the keyboard shortcut or command palette to execute</li>
+                                    </ol>
+                                    
+                                    <div class="mt-4">
+                                        <a href="https://marketplace.visualstudio.com/items?itemName=JuanImbet.stata4vs" class="install-btn" target="_blank">
+                                            <i class="fas fa-download"></i> Install from VS Code Marketplace
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Juan Felipe Imbet</h4>
+                    <p>Assistant Professor of Finance<br>Paris Dauphine University</p>
+                    <p>
+                        <i class="fas fa-envelope me-2"></i>juan.imbet@dauphine.psl.eu
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=0nHr8-4AAAAJ&hl=es" target="_blank" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/juan-f-imbet-0b053079/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/jfimbett" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/JuanImbett" target="_blank" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                    <p class="mt-3">&copy; 2025 Juan Felipe Imbet. All rights reserved.</p>
+                    <p class="small text-white">Website enhanced using GitHub Copilot Agent Mode powered by Claude 3.7 Sonnet</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

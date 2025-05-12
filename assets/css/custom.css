@@ -1,0 +1,184 @@
+/* Custom CSS for Juan Felipe Imbet's Academic Website */
+
+:root {
+  --primary-color: #1a4d85;
+  --secondary-color: #3d7ab8;
+  --accent-color: #e6f0fa;
+  --text-color: #333;
+  --light-bg: #f8f9fa;
+  --dark-bg: #343a40;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.7;
+  padding-top: 70px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Header and Navigation */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: white !important;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: var(--primary-color) !important;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--text-color) !important;
+  transition: color 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 6rem 0 4rem;
+  background-color: var(--accent-color);
+}
+
+.profile-image {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 85%;
+  margin: 0 auto;
+}
+
+/* Content Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.section-title {
+  position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 50px;
+  background-color: var(--primary-color);
+}
+
+/* Paper Cards */
+.paper-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: white;
+  height: 100%;
+}
+
+.paper-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.paper-title {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.paper-status {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #666;
+}
+
+.paper-authors {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.paper-abstract {
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+/* Teaching Section */
+.course-card {
+  border-left: 4px solid var(--primary-color);
+  background-color: white;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateX(5px);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark-bg);
+  color: white;
+  padding: 3rem 0;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--accent-color);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .profile-image {
+    max-width: 60%;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-section {
+    text-align: center;
+    padding: 4rem 0 2rem;
+  }
+  
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+/* Paper Media Mentions */
+.media-mentions {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.media-mentions h5 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.media-mentions ul {
+  padding-left: 1.2rem;
+}
+
+.media-mentions li {
+  margin-bottom: 0.5rem;
+}
