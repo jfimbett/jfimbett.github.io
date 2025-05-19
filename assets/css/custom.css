@@ -57,13 +57,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Content Sections */
 .section {
-  padding: 4rem 0;
+  padding: 3rem 0; /* Reduced from 4rem */
 }
 
 .section-title {
   position: relative;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  padding-bottom: 0.75rem; /* Reduced from 1rem */
+  margin-bottom: 1.5rem; /* Reduced from 2rem */
 }
 
 .section-title::after {
@@ -76,6 +76,25 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--primary-color);
 }
 
+/* Research subsection styles */
+.section h3.mb-4 {
+  color: var(--primary-color);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section h3.mb-4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 30px;
+  background-color: var(--secondary-color);
+}
+
 /* Paper Cards */
 .paper-card {
   border-radius: 8px;
@@ -83,40 +102,65 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: white;
   height: 100%;
+  padding: 0.5rem; /* Reduced padding */
+  margin-bottom: 1rem; /* Reduced margin */
 }
 
 .paper-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(-3px); /* Reduced hover effect */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1); /* Reduced shadow */
 }
 
 .paper-title {
   color: var(--primary-color);
   font-weight: 600;
+  font-size: 1.4rem; /* Reduced from default h3 size */
+}
+
+/* Remove underline from paper title links */
+.paper-title a, 
+.paper-title a:hover,
+.paper-title a:focus,
+.paper-title a:active {
+  text-decoration: none;
+  color: inherit;
 }
 
 .paper-status {
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Reduced from 0.9rem */
   font-style: italic;
   color: #666;
+  margin-bottom: 0.5rem; /* Added smaller margin */
 }
 
 .paper-authors {
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Reduced from 0.95rem */
   color: #444;
+  margin-bottom: 0.5rem; /* Added smaller margin */
 }
 
 .paper-abstract {
-  font-size: 0.9rem;
+  font-size: 0.85rem; /* Reduced from 0.9rem */
   text-align: justify;
+}
+
+/* Reducing card body padding */
+.paper-card .card-body {
+  padding: 1rem; /* Adding custom padding for paper card bodies */
+}
+
+/* Adding custom styles for paper card buttons */
+.paper-card .btn-sm {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
 }
 
 /* Teaching Section */
 .course-card {
   border-left: 4px solid var(--primary-color);
   background-color: white;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
   border-radius: 0 8px 8px 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
@@ -124,6 +168,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .course-card:hover {
   transform: translateX(5px);
+}
+
+.course-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.course-card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.course-card .btn {
+  font-size: 0.9rem;
+  padding: 0.375rem 0.75rem;
 }
 
 /* Footer */
@@ -142,6 +201,37 @@ h1, h2, h3, h4, h5, h6 {
 
 .social-links a:hover {
   color: var(--accent-color);
+}
+
+/* Teaching page specific styles */
+.teaching-hero-section {
+  padding: 4rem 0 2rem;
+}
+
+.teaching-hero-section h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.teaching-hero-section .lead {
+  font-size: 1.1rem;
+}
+
+.teaching-section-title {
+  font-size: 1.8rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.teaching-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 40px;
+  background-color: var(--primary-color);
 }
 
 /* Media Queries */
@@ -164,21 +254,23 @@ h1, h2, h3, h4, h5, h6 {
 /* Paper Media Mentions */
 .media-mentions {
   background-color: #f8f9fa;
-  padding: 1rem;
+  padding: 0.75rem; /* Reduced from 1rem */
   border-radius: 8px;
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  margin-top: 0.75rem; /* Reduced from 1rem */
+  font-size: 0.85rem; /* Reduced from 0.9rem */
 }
 
 .media-mentions h5 {
-  font-size: 1rem;
+  font-size: 0.95rem; /* Reduced from 1rem */
   font-weight: 600;
+  margin-bottom: 0.5rem; /* Added smaller margin */
 }
 
 .media-mentions ul {
   padding-left: 1.2rem;
+  margin-bottom: 0.5rem; /* Added smaller margin */
 }
 
 .media-mentions li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.4rem; /* Reduced from 0.5rem */
 }
