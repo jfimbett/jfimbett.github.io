@@ -53,7 +53,7 @@ theme: my-theme
 ---
 ### **Social Media as a Bank Run Catalyst**
 #### Cookson, Fox, Gil-Bazo, ***Imbet*** and Schiller. 
-#### ***Revise and Resubmit (2nd round) Journal of Financial Economics***
+#### ***Revise and Resubmit (3rd Round - Minor Revision) Journal of Financial Economics***
 
 - Presented at top conferences including the NBER Summer Institute. 
 - Presented to policy makers at the ECB, SRB, and the Bank of France. 
