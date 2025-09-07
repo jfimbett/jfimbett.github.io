@@ -7,8 +7,8 @@ theme: my-theme
 ---
 
 # **Return Predictability: Lessons and Insights for Future Hedge Fund Managers**
-## Crash Course - International University of Monaco
-## March 2025
+## Crash Course - UASM
+## August 2025
 
 ### Juan F. Imbet 
 
@@ -222,6 +222,41 @@ It does if you are careful.
     - Social Media. <!-- fadeIn -->
 
 ---
+## **Why Text Matters in Investing**
+
+- Much of the information in finance is conveyed through words, not just numbers.
+- Words can reveal emotions, intentions, and subtle cues that quantitative data misses.
+- Intuition: Like reading between the lines in a business meeting.
+
+---
+## **Sentiment Analysis Basics**
+
+- **Sentiment**: The emotional tone behind words – positive, negative, or neutral.
+- Algorithms analyze text to score sentiment, similar to how humans judge a conversation.
+- Business intuition: A positive tone in a CEO's speech might predict better company performance.
+
+---
+## **Text-Based Signals in Practice**
+
+- **Earnings Calls**: The tone of executives can predict stock price movements.
+- **News Articles**: Negative coverage often leads to immediate market drops.
+- **Social Media**: Public sentiment on platforms like Twitter influences retail trading.
+
+---
+## **Challenges with Text Data**
+
+- Text can be ambiguous: sarcasm, irony, or context-dependent meanings.
+- Not all information is useful; some is just noise.
+- Over-relying on text without combining with numbers can lead to poor decisions.
+
+---
+## **Integrating Text into Investment Strategies**
+
+- Combine text signals with traditional financial metrics for better predictions.
+- Hedge funds use NLP to gain an edge in timing trades or selecting stocks.
+- Intuition: It's like having a translator for the "human" side of markets.
+
+---
 ## **AI Adoption**
 
 A BarclayHedge survey of 55 hedge fund/CTA professionals
@@ -243,3 +278,15 @@ A BarclayHedge survey of 55 hedge fund/CTA professionals
 - Q5: What are your approximate total strategy assets that utilize machine learning/artificial intelligence (funds and managed accounts)?
 
 ![](q5_survey.png)
+
+---
+# **Conclusions**
+
+- **Return predictability exists** and varies systematically with business cycles and market conditions
+- **Modern hedge funds** increasingly leverage AI, NLP, and alternative data sources to gain competitive advantages
+- **Success requires** combining traditional financial metrics with innovative approaches and rigorous risk management
+
+---
+# **Questions?**
+
+Thank you for your attention!
