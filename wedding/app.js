@@ -219,7 +219,7 @@ const content = {
     ],
     cityHighlights: [
       "Altitude : 2 600 m (pensez à bien vous hydrater).",
-      "Climat : journées douces, soirées fraîches, prévoyez des couches.",
+      "Climat : journées douces, soirées fraîches, prévoyez une veste.",
       "Quartiers : Usaquén et Chapinero.",
       "Culture : Museo del Oro, Monserrate, restaurants et bars.",
       "Transport : Uber."
