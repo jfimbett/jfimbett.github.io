@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Camille & Juan — Boda</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="successBanner" class="notification-banner" aria-hidden="true">
+      <div class="container notification-content">
+        <span class="notification-icon">✓</span>
+        <p data-i18n="formSuccessMessage">¡Gracias! Tu respuesta ha sido enviada.</p>
+        <button id="closeBanner" class="notification-close" aria-label="Cerrar notificación">✕</button>
+      </div>
+    </div>
+    <a class="skip-link" href="#home">Saltar al contenido</a>
+
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <div class="brand">
+          <span class="brand-mark">C ♥ J</span>
+          <div class="brand-text">
+            <span class="brand-title" data-i18n="brandTitle">Camille & Juan</span>
+            <span class="brand-subtitle" data-i18n="brandSubtitle">Celebración de boda</span>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Primary">
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+            <span class="sr-only" data-i18n="navToggle">Abrir menú</span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
+          <div class="nav-links" id="nav-links">
+            <a href="#home" data-i18n="navHome">Inicio</a>
+            <a href="#story" data-i18n="navStory">Nuestra historia</a>
+            <a href="#schedule" data-i18n="navSchedule">Agenda</a>
+            <a href="#venue" data-i18n="navVenue">Lugar & Viaje</a>
+            <a href="#city" data-i18n="navCity">Bogotá</a>
+            <a href="#rsvp" data-i18n="navRsvp">RSVP</a>
+            <a href="#registry" data-i18n="navRegistry">Regalos</a>
+            <a href="#faq" data-i18n="navFaq">FAQ</a>
+            <a href="#contact" data-i18n="navContact">Contacto</a>
+          </div>
+        </nav>
+
+        <div class="lang-tabs" role="tablist" aria-label="Language switcher">
+          <button class="lang-tab is-active" role="tab" aria-selected="true" data-lang="es">Español</button>
+          <button class="lang-tab" role="tab" aria-selected="false" data-lang="fr">Français</button>
+          <button class="lang-tab" role="tab" aria-selected="false" data-lang="en">English</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow" data-i18n="heroEyebrow">Nos casamos</p>
+            <h1 data-i18n="heroTitle">Camille & Juan</h1>
+            <p class="hero-meta" data-i18n="heroMeta">Sábado, 25 de julio de 2026 · Bogotá, Colombia</p>
+            <p class="hero-text" data-i18n="heroText">
+              Un fin de semana de amor, amistad y celebración en las alturas.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#rsvp" data-i18n="heroCta">Confirmar asistencia</a>
+              <a class="btn btn-ghost" href="#story" data-i18n="heroSecondary">Nuestra historia</a>
+            </div>
+          </div>
+          <div class="hero-media">
+            <img src="images/top_picture.jpeg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="story">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="storyEyebrow">Nuestra historia</p>
+            <h2 data-i18n="storyTitle">De compartir unas tapas a un para siempre</h2>
+            <p data-i18n="storyIntro">
+              Momentos que nos trajeron hasta aquí.
+            </p>
+          </div>
+
+          <div class="timeline" id="storyTimeline" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="schedule">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="scheduleEyebrow">Agenda</p>
+            <h2 data-i18n="scheduleTitle">Un fin de semana para celebrar</h2>
+            <p data-i18n="scheduleIntro"></p>
+          </div>
+
+          <div class="card-grid" id="scheduleCards"></div>
+        </div>
+      </section>
+
+      <section class="section" id="venue">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="venueEyebrow">Lugar & viaje</p>
+            <h2 data-i18n="venueTitle">Nos vemos junto al mar</h2>
+            <p data-i18n="venueIntro">Todo lo que necesitas para planear tu visita.</p>
+          </div>
+
+          <div class="venue-grid">
+            <div class="card venue-card">
+              <h3 data-i18n="venueName">Club Campestre Los Arrayanes</h3>
+              <p class="card-meta" data-i18n="venueAddress">Autopista Norte Km 15, Bogotá, Colombia</p>
+              <img src="images/photo_club.jpeg" alt="" aria-hidden="true" />
+              <p class="card-text" data-i18n="venueDetails">
+                El Club Campestre Los Arrayanes ofrece un entorno natural y elegante para nuestra celebración, con vistas impresionantes y comodidades excepcionales.
+              </p>
+            </div>
+            <div class="card travel-card">
+              <h3 data-i18n="travelTitle">Consejos de viaje</h3>
+              <ul class="list" id="travelTips"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="city">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="cityEyebrow">Bogotá</p>
+            <h2 data-i18n="cityTitle">Descubre Bogotá</h2>
+            <p data-i18n="cityIntro">
+              Una ciudad vibrante entre montañas, cultura y sabores.
+            </p>
+          </div>
+
+          <div class="venue-grid">
+            <div class="card">
+              <h3 data-i18n="cityHighlightsTitle">Información útil</h3>
+              <ul class="list" id="cityHighlights"></ul>
+            </div>
+            <div class="card">
+              <img src="images/bogota.jpg" alt="" aria-hidden="true" />
+           
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="rsvp">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="rsvpEyebrow">RSVP</p>
+            <h2 data-i18n="rsvpTitle">Confirma tu asistencia</h2>
+            <p data-i18n="rsvpIntro"></p>
+          </div>
+
+          <p class="form-note" data-i18n="rsvpPerGuestNote">(Por favor llena un formulario por invitado)</p>
+
+          <iframe name="rsvpHiddenFrame" title="RSVP submission" aria-hidden="true" style="display:none;"></iframe>
+
+          <form class="card form" id="rsvpForm" action="https://docs.google.com/forms/d/e/1FAIpQLSc2dcdzYTOZjlgi1QVOaq3423Q1RMkUypVtGwBnm3rbQ4Ta5g/formResponse" method="POST" target="rsvpHiddenFrame">
+            <div class="form-row">
+              <label>
+                <span data-i18n="formName">Nombre completo</span>
+                <input type="text" name="entry.1498135098" placeholder="Lucía García" required />
+              </label>
+              <label>
+                <span data-i18n="formEmail">Correo electrónico</span>
+                <input type="email" name="entry.2606285" placeholder="lucia@email.com" required />
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                <span data-i18n="formAttend">¿Asistirás?</span>
+                <select name="entry.877086558" required>
+                  <option value="" data-i18n="formSelectPlaceholder">Selecciona una opción</option>
+                  <option value="Yes,  I'll be there" data-i18n="formAttendYes">Sí, allí estaré</option>
+                  <option value="Sorry, can't make it" data-i18n="formAttendNo">No podré asistir</option>
+                </select>
+              </label>
+              <label>
+                <span data-i18n="formCountry">País de origen</span>
+                <select name="entry.1982201267" required>
+                  <option value="" data-i18n="formCountryPlaceholder">Selecciona tu país</option>
+                  <option>Afghanistan</option>
+                  <option>Akrotiri</option>
+                  <option>Albania</option>
+                  <option>Algeria</option>
+                  <option>American Samoa</option>
+                  <option>Andorra</option>
+                  <option>Angola</option>
+                  <option>Anguilla</option>
+                  <option>Antarctica</option>
+                  <option>Antigua and Barbuda</option>
+                  <option>Argentina</option>
+                  <option>Armenia</option>
+                  <option>Aruba</option>
+                  <option>Ashmore and Cartier Islands</option>
+                  <option>Australia</option>
+                  <option>Austria</option>
+                  <option>Azerbaijan</option>
+                  <option>Bahamas, The</option>
+                  <option>Bahrain</option>
+                  <option>Bangladesh</option>
+                  <option>Barbados</option>
+                  <option>Bassas da India</option>
+                  <option>Belarus</option>
+                  <option>Belgium</option>
+                  <option>Belize</option>
+                  <option>Benin</option>
+                  <option>Bermuda</option>
+                  <option>Bhutan</option>
+                  <option>Bolivia</option>
+                  <option>Bosnia and Herzegovina</option>
+                  <option>Botswana</option>
+                  <option>Bouvet Island</option>
+                  <option>Brazil</option>
+                  <option>British Indian Ocean Territory</option>
+                  <option>British Virgin Islands</option>
+                  <option>Brunei</option>
+                  <option>Bulgaria</option>
+                  <option>Burkina Faso</option>
+                  <option>Burma</option>
+                  <option>Burundi</option>
+                  <option>Cambodia</option>
+                  <option>Cameroon</option>
+                  <option>Canada</option>
+                  <option>Cape Verde</option>
+                  <option>Cayman Islands</option>
+                  <option>Central African Republic</option>
+                  <option>Chad</option>
+                  <option>Chile</option>
+                  <option>China</option>
+                  <option>Christmas Island</option>
+                  <option>Clipperton Island</option>
+                  <option>Cocos (Keeling) Islands</option>
+                  <option>Colombia</option>
+                  <option>Comoros</option>
+                  <option>Congo, Democratic Republic of the</option>
+                  <option>Congo, Republic of the</option>
+                  <option>Cook Islands</option>
+                  <option>Coral Sea Islands</option>
+                  <option>Costa Rica</option>
+                  <option>Cote d'Ivoire</option>
+                  <option>Croatia</option>
+                  <option>Cuba</option>
+                  <option>Cyprus</option>
+                  <option>Czech Republic</option>
+                  <option>Denmark</option>
+                  <option>Dhekelia</option>
+                  <option>Djibouti</option>
+                  <option>Dominica</option>
+                  <option>Dominican Republic</option>
+                  <option>Ecuador</option>
+                  <option>Egypt</option>
+                  <option>El Salvador</option>
+                  <option>Equatorial Guinea</option>
+                  <option>Eritrea</option>
+                  <option>Estonia</option>
+                  <option>Ethiopia</option>
+                  <option>Europa Island</option>
+                  <option>Falkland Islands (Islas Malvinas)</option>
+                  <option>Faroe Islands</option>
+                  <option>Fiji</option>
+                  <option>Finland</option>
+                  <option>France</option>
+                  <option>French Guiana</option>
+                  <option>French Polynesia</option>
+                  <option>French Southern and Antarctic Lands</option>
+                  <option>Gabon</option>
+                  <option>Gambia, The</option>
+                  <option>Gaza Strip</option>
+                  <option>Georgia</option>
+                  <option>Germany</option>
+                  <option>Ghana</option>
+                  <option>Gibraltar</option>
+                  <option>Glorioso Islands</option>
+                  <option>Greece</option>
+                  <option>Greenland</option>
+                  <option>Grenada</option>
+                  <option>Guadeloupe</option>
+                  <option>Guam</option>
+                  <option>Guatemala</option>
+                  <option>Guernsey</option>
+                  <option>Guinea</option>
+                  <option>Guinea-Bissau</option>
+                  <option>Guyana</option>
+                  <option>Haiti</option>
+                  <option>Heard Island and McDonald Islands</option>
+                  <option>Holy See (Vatican City)</option>
+                  <option>Honduras</option>
+                  <option>Hong Kong</option>
+                  <option>Hungary</option>
+                  <option>Iceland</option>
+                  <option>India</option>
+                  <option>Indonesia</option>
+                  <option>Iran</option>
+                  <option>Iraq</option>
+                  <option>Ireland</option>
+                  <option>Isle of Man</option>
+                  <option>Israel</option>
+                  <option>Italy</option>
+                  <option>Jamaica</option>
+                  <option>Jan Mayen</option>
+                  <option>Japan</option>
+                  <option>Jersey</option>
+                  <option>Jordan</option>
+                  <option>Juan de Nova Island</option>
+                  <option>Kazakhstan</option>
+                  <option>Kenya</option>
+                  <option>Kiribati</option>
+                  <option>Korea, North</option>
+                  <option>Korea, South</option>
+                  <option>Kuwait</option>
+                  <option>Kyrgyzstan</option>
+                  <option>Laos</option>
+                  <option>Latvia</option>
+                  <option>Lebanon</option>
+                  <option>Lesotho</option>
+                  <option>Liberia</option>
+                  <option>Libya</option>
+                  <option>Liechtenstein</option>
+                  <option>Lithuania</option>
+                  <option>Luxembourg</option>
+                  <option>Macau</option>
+                  <option>Macedonia</option>
+                  <option>Madagascar</option>
+                  <option>Malawi</option>
+                  <option>Malaysia</option>
+                  <option>Maldives</option>
+                  <option>Mali</option>
+                  <option>Malta</option>
+                  <option>Marshall Islands</option>
+                  <option>Martinique</option>
+                  <option>Mauritania</option>
+                  <option>Mauritius</option>
+                  <option>Mayotte</option>
+                  <option>Mexico</option>
+                  <option>Micronesia, Federated States of</option>
+                  <option>Moldova</option>
+                  <option>Monaco</option>
+                  <option>Mongolia</option>
+                  <option>Montserrat</option>
+                  <option>Morocco</option>
+                  <option>Mozambique</option>
+                  <option>Namibia</option>
+                  <option>Nauru</option>
+                  <option>Navassa Island</option>
+                  <option>Nepal</option>
+                  <option>Netherlands</option>
+                  <option>Netherlands Antilles</option>
+                  <option>New Caledonia</option>
+                  <option>New Zealand</option>
+                  <option>Nicaragua</option>
+                  <option>Niger</option>
+                  <option>Nigeria</option>
+                  <option>Niue</option>
+                  <option>Norfolk Island</option>
+                  <option>Northern Mariana Islands</option>
+                  <option>Norway</option>
+                  <option>Oman</option>
+                  <option>Pakistan</option>
+                  <option>Palau</option>
+                  <option>Panama</option>
+                  <option>Papua New Guinea</option>
+                  <option>Paracel Islands</option>
+                  <option>Paraguay</option>
+                  <option>Peru</option>
+                  <option>Philippines</option>
+                  <option>Pitcairn Islands</option>
+                  <option>Poland</option>
+                  <option>Portugal</option>
+                  <option>Puerto Rico</option>
+                  <option>Qatar</option>
+                  <option>Reunion</option>
+                  <option>Romania</option>
+                  <option>Russia</option>
+                  <option>Rwanda</option>
+                  <option>Saint Helena</option>
+                  <option>Saint Kitts and Nevis</option>
+                  <option>Saint Lucia</option>
+                  <option>Saint Pierre and Miquelon</option>
+                  <option>Saint Vincent and the Grenadines</option>
+                  <option>Samoa</option>
+                  <option>San Marino</option>
+                  <option>Sao Tome and Principe</option>
+                  <option>Saudi Arabia</option>
+                  <option>Senegal</option>
+                  <option>Serbia and Montenegro</option>
+                  <option>Seychelles</option>
+                  <option>Sierra Leone</option>
+                  <option>Singapore</option>
+                  <option>Slovakia</option>
+                  <option>Slovenia</option>
+                  <option>Solomon Islands</option>
+                  <option>Somalia</option>
+                  <option>South Africa</option>
+                  <option>South Georgia and the South Sandwich Islands</option>
+                  <option>Spain</option>
+                  <option>Spratly Islands</option>
+                  <option>Sri Lanka</option>
+                  <option>Sudan</option>
+                  <option>Suriname</option>
+                  <option>Svalbard</option>
+                  <option>Swaziland</option>
+                  <option>Sweden</option>
+                  <option>Switzerland</option>
+                  <option>Syria</option>
+                  <option>Taiwan</option>
+                  <option>Tajikistan</option>
+                  <option>Tanzania</option>
+                  <option>Thailand</option>
+                  <option>Timor-Leste</option>
+                  <option>Togo</option>
+                  <option>Tokelau</option>
+                  <option>Tonga</option>
+                  <option>Trinidad and Tobago</option>
+                  <option>Tromelin Island</option>
+                  <option>Tunisia</option>
+                  <option>Turkey</option>
+                  <option>Turkmenistan</option>
+                  <option>Turks and Caicos Islands</option>
+                  <option>Tuvalu</option>
+                  <option>Uganda</option>
+                  <option>Ukraine</option>
+                  <option>United Arab Emirates</option>
+                  <option>United Kingdom</option>
+                  <option>United States</option>
+                  <option>Uruguay</option>
+                  <option>Uzbekistan</option>
+                  <option>Vanuatu</option>
+                  <option>Venezuela</option>
+                  <option>Vietnam</option>
+                  <option>Virgin Islands</option>
+                  <option>Wake Island</option>
+                  <option>Wallis and Futuna</option>
+                  <option>West Bank</option>
+                  <option>Western Sahara</option>
+                  <option>Yemen</option>
+                  <option>Zambia</option>
+                  <option>Zimbabwe</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              <span data-i18n="formDiet">Restricciones alimentarias</span>
+              <input type="text" name="entry.224532816" placeholder="Vegetariano, sin gluten, etc." />
+            </label>
+            <button class="btn btn-primary" type="submit" data-i18n="formSubmit">Enviar RSVP</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section" id="registry">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="registryEyebrow">Regalos</p>
+            <h2 data-i18n="registryTitle">Regalos</h2>
+            <p data-i18n="registryIntro">
+              Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo puedes traer efectivo o transferirnos.
+            </p>
+          </div>
+
+          <div class="card">
+            <p class="card-text" data-i18n="registryBody">
+              Tu presencia es nuestro mejor regalo, pero si deseas obsequiarnos algo puedes traer efectivo o transferirnos. 
+            </p>
+            <div class="list">
+              <div>
+                <strong data-i18n="registryCoLabel">Cuenta Colombia</strong>
+                <p class="card-text">
+                  <strong data-i18n="registryCoAccountHolder">Titular:</strong> Juan Felipe Imbet Jimenez<br>
+                  <strong data-i18n="registryCoIdType">Tipo identificación:</strong> CC<br>
+                  <strong data-i18n="registryCoIdNumber">Nº de identificación:</strong> 1136882408<br>
+                  <strong data-i18n="registryCoBank">Banco:</strong> Global66<br>
+                  <strong data-i18n="registryCoAccountType">Tipo de cuenta:</strong> <span data-i18n="registryCoAccountTypeValue">Depósito Electrónico</span><br>
+                  <strong data-i18n="registryCoAccountNumber">Nº de cuenta Electrónica:</strong> 1136882408
+                </p>
+              </div>
+                <div>
+                <strong data-i18n="registryEuLabel">IBAN Europa</strong>
+                <p class="card-text">
+                  <strong>Beneficiary:</strong> Juan Felipe Imbet Jiménez<br>
+                  <strong>IBAN:</strong> FR76 2823 3000 0171 8268 3763 373<br>
+                  <strong>BIC/SWIFT:</strong> REVOFRP2<br>
+                  <strong data-i18n="registryBankName">Bank Name and Address:</strong> Revolut Bank UAB, 10 Avenue Kléber, 75116, Paris France<br>
+                  <strong data-i18n="registryCorrespondent">Correspondent BIC:</strong> CHASDEFX
+                </p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-muted" id="faq">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="faqEyebrow">FAQ</p>
+            <h2 data-i18n="faqTitle">Preguntas frecuentes</h2>
+            <p data-i18n="faqIntro">Respuestas rápidas para planear tu visita.</p>
+          </div>
+
+          <div class="accordion" id="faqAccordion"></div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-header">
+            <p class="eyebrow" data-i18n="contactEyebrow">Contacto</p>
+            <h2 data-i18n="contactTitle">Mantente en contacto</h2>
+            <p data-i18n="contactIntro">Nos encantará ayudarte con lo que necesites.</p>
+          </div>
+
+          <div class="card">
+            <h3 data-i18n="contactGalleryTitle">Galería</h3>
+            <div class="carousel" data-carousel>
+              <button class="carousel-btn prev" type="button" aria-label="Previous photo">‹</button>
+              <div class="carousel-track">
+                <img class="carousel-image is-active" src="images/gallery_1.jpeg" alt="" aria-hidden="true" />
+                <img class="carousel-image" src="images/gallery_2.jpeg" alt="" aria-hidden="true" />
+                <img class="carousel-image" src="images/gallery_3.jpeg" alt="" aria-hidden="true" />
+                <img class="carousel-image" src="images/gallery_4.jpeg" alt="" aria-hidden="true" />
+                <img class="carousel-image" src="images/gallery_5.jpeg" alt="" aria-hidden="true" />
+                <img class="carousel-image" src="images/gallery_6.jpeg" alt="" aria-hidden="true" />
+                <img class="carousel-image" src="images/gallery_7.jpeg" alt="" aria-hidden="true" />
+              </div>
+              <button class="carousel-btn next" type="button" aria-label="Next photo">›</button>
+            </div>
+            <p class="card-text" data-i18n="contactDetails">Para cualquier pregunta: jfimbett@gmail.com · WhatsApp +34 722 404 282</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p data-i18n="footerText">Gracias por ser parte de nuestro día.</p>
+        <div class="lang-tabs" role="tablist" aria-label="Language switcher footer">
+          <button class="lang-tab is-active" role="tab" aria-selected="true" data-lang="es">Español</button>
+          <button class="lang-tab" role="tab" aria-selected="false" data-lang="fr">Français</button>
+          <button class="lang-tab" role="tab" aria-selected="false" data-lang="en">English</button>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" rx="32" fill="#F5E7E2" />
+  <rect x="80" y="80" width="1040" height="540" rx="24" fill="#FFFFFF" />
+  <path d="M160 520C320 380 480 560 640 420C800 280 960 460 1040 320" stroke="#C07C66" stroke-width="6" stroke-linecap="round" />
+  <circle cx="300" cy="240" r="60" fill="#C07C66" fill-opacity="0.2" />
+  <circle cx="900" cy="360" r="80" fill="#C07C66" fill-opacity="0.2" />
+  <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" fill="#C07C66" font-family="Segoe UI, Arial" font-size="28" letter-spacing="4">HERO PLACEHOLDER</text>
+</svg>
