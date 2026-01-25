@@ -239,6 +239,8 @@ img {
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.6rem;
   font-size: 0.9rem;
   padding: 0.35rem;
@@ -286,6 +288,39 @@ img {
   background: linear-gradient(135deg, var(--accent-soft), rgba(255, 183, 3, 0.2));
   padding: 0.3rem;
   border-radius: 999px;
+}
+
+/* Medium viewport adjustments to keep navbar visible at 100% */
+@media (max-width: 1200px) {
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .brand-title {
+    font-size: 0.95rem;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links {
+    font-size: 0.85rem;
+    gap: 0.45rem;
+    padding: 0.3rem;
+  }
+
+  .nav-links a {
+    padding: 0.35rem 0.65rem;
+  }
+
+  .lang-tabs {
+    order: 2;
+    margin-left: auto;
+  }
 }
 
 .lang-tab {
