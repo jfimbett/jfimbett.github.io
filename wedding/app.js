@@ -85,7 +85,7 @@ const content = {
       { title: "2026", text: "Boda en Colombia." }
     ],
     scheduleCards: [
-      { time: "17:00 – 2:00", title: "Celebración de la boda", text: "Club Campestre Los Arrayanes - Autopista Norte Km 15, Bogotá<br><br>Ceremonia, recepción y fiesta durante la noche.<br><br><strong>Dress code:</strong> Cóctel o formal." }
+      { time: "17:00 – 2:00", title: "Celebración de la boda", text: "Club Campestre Los Arrayanes - Autopista Norte Km 15, Bogotá<br><br>Ceremonia, recepción y fiesta durante la noche.<br><br><strong>Dress code:</strong> Cóctel formal." }
     ],
     travelTips: [
       "Zonas de hotel recomendadas: Parque 93 / Chicó, Zona T / Zona Rosa / El Retiro, Usaquén, Zona G.",
@@ -110,7 +110,7 @@ const content = {
     ],
     registryCards: [],
     faqItems: [
-      { q: "¿Cuál es el código de vestimenta?", a: "Formal o cóctel." },
+      { q: "¿Cuál es el código de vestimenta?", a: "Cóctel formal." },
       { q: "¿Hay transporte desde el hotel?", a: "Para invitados extranjeros, ayudaremos a coordinar un shuttle hacia y desde el lugar desde los hoteles o un área central. Si alguien desea salir antes, se pueden llamar Uber o taxis." },
       { q: "¿Puedo compartir fotos?", a: "¡Sí! Compartiremos un código QR en el evento para que todos puedan compartir sus fotos." }
     ]
