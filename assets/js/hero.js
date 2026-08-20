@@ -144,14 +144,26 @@ async function start(target) {
   resize();
   frame(0);
 
+  let intersecting = false;
+
+  function updatePlayState() {
+    // Two independent signals (viewport visibility and tab visibility) drive
+    // one loop. Both must be satisfied, or a tab switch can resume the loop
+    // on a hero that is scrolled far off-screen.
+    if (intersecting && !document.hidden) {
+      play();
+    } else {
+      pause();
+    }
+  }
+
   if (!reduced) {
     window.addEventListener('resize', () => { resize(); });
     new IntersectionObserver((entries) => {
-      entries[0].isIntersecting ? play() : pause();
+      intersecting = entries[0].isIntersecting;
+      updatePlayState();
     }).observe(target);
-    document.addEventListener('visibilitychange', () => {
-      document.hidden ? pause() : play();
-    });
+    document.addEventListener('visibilitychange', updatePlayState);
   }
 
   // Anchor hover and click.
