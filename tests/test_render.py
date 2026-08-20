@@ -64,6 +64,15 @@ def test_render_emits_teaching_when_a_course_exists(tmp_path, monkeypatch):
     index = tmp_path / "index.html"
     assert "teaching.html" in index.read_text(encoding="utf-8")
 
+    # The conditional page must meet the same heading contract as the
+    # always-present pages: exactly one h1. Regression guard — teaching.html
+    # is invisible to the parametrized h1 test because it only exists when
+    # courses.yml is non-empty.
+    teaching = (tmp_path / "teaching.html").read_text(encoding="utf-8")
+    assert teaching.count("<h1") == 1, "teaching.html has {} h1 elements".format(
+        teaching.count("<h1")
+    )
+
 
 def test_no_bootstrap_or_fontawesome_in_output(tmp_path):
     for path in render_site(out_dir=tmp_path):
