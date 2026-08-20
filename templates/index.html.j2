@@ -31,6 +31,10 @@
       <canvas class="hero__canvas" id="hero-canvas" role="img"
               aria-label="An animated field of particles positioned by the similarity of this researcher's papers."></canvas>
       <div class="hero__anchor-label" id="hero-label" aria-hidden="true"></div>
+      <figcaption class="visually-hidden">
+        Papers shown in the field:
+        <ul>{% for paper in papers %}<li><a href="research.html#{{ paper.id }}">{{ paper.title }}</a></li>{% endfor %}</ul>
+      </figcaption>
     </figure>
   </div>
 </section>
