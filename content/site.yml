@@ -1,0 +1,59 @@
+name: Juan Felipe Imbet
+short_name: Juan F. Imbet
+title: Assistant Professor of Finance
+institution: EDHEC Business School
+email: juan.imbet@edhec.edu
+office: ""
+photo: assets/images/profile.jpg
+cv: cv.pdf
+tagline: Finance, computation, and machine intelligence.
+research_interests:
+  - Corporate Finance
+  - Asset Pricing
+  - Computational Finance
+bio: |
+  I am an Assistant Professor of Finance at EDHEC Business School. My research
+  sits at the intersection of corporate finance, asset pricing, and
+  computational finance.
+
+  Two agendas run through most of my work. The first studies how the offshore
+  finance industry shapes what firms actually do — how they invest, how they
+  are taxed, and what happens when secrecy breaks down. The second studies how
+  social media moves capital, from mutual fund flows to the speed of a bank
+  run.
+
+  Increasingly, both use large language models as research instruments rather
+  than as objects of study. I teach that toolkit at the Barcelona School of
+  Economics, and I hold a PhD in Finance from Universitat Pompeu Fabra.
+profiles:
+  scholar: https://scholar.google.com/citations?user=0nHr8-4AAAAJ
+  orcid: https://orcid.org/0000-0003-4970-3711
+  github: https://github.com/jfimbett
+  linkedin: https://www.linkedin.com/in/juan-f-imbet-0b053079/
+  x: https://twitter.com/JuanImbett
+  ssrn: ""
+  # repec: https://ideas.repec.org/e/pim50.html
+  # researchgate: https://www.researchgate.net/profile/Juan-Imbet
+previous_affiliations:
+  - institution: Université Paris Dauphine–PSL
+    role: Assistant Professor of Finance
+    years: 2021–2026
+  - institution: Institute for Advanced Studies, Luxembourg
+    role: External Member of the Scientific Council
+    years: 2024–2028
+education:
+  - institution: Universitat Pompeu Fabra
+    detail: "PhD in Finance (cum laude). Advisor: Javier Gil-Bazo"
+    years: 2016–2021
+  - institution: The Wharton School, University of Pennsylvania
+    detail: "Visiting PhD student in Finance. Sponsor: Winston Dou"
+    years: 2020
+  - institution: Universitat Pompeu Fabra
+    detail: MRes in Finance
+    years: 2015–2016
+  - institution: Barcelona School of Economics
+    detail: MSc in Finance
+    years: 2014–2015
+  - institution: Universidad de los Andes
+    detail: BA in Economics; BSc in Industrial Engineering; Minor in Mathematics
+    years: 2008–2013

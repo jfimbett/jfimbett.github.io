@@ -1,0 +1,11 @@
+# Courses are hidden while this list is empty: build.py emits no teaching.html
+# and no Teaching nav item. Add an entry and rebuild to turn the page on.
+#
+# - id: llm-finance
+#   title: Large Language Models in Finance
+#   institution: Barcelona School of Economics
+#   level: Summer School
+#   years: [2025, 2026]
+#   url: https://jfimbett.github.io/llm-finance-book
+#   description: One or two sentences.
+[]
