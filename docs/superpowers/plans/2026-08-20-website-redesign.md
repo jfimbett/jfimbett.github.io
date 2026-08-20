@@ -1179,6 +1179,7 @@ git commit -m "feat: add EDHEC-derived design system stylesheet"
 - Create: `templates/base.html.j2`, `templates/index.html.j2`, `templates/research.html.j2`, `templates/cv.html.j2`, `templates/teaching.html.j2`
 - Create: `templates/partials/paper.html.j2`, `templates/partials/icons.html.j2`
 - Modify: `build.py`
+- Modify: `assets/css/site.css` (Step 10 appends the `.visually-hidden` and `.site-nav__search` rules)
 - Create: `tests/test_render.py`
 
 **Interfaces:**
@@ -1426,12 +1427,18 @@ Inline SVG replaces Font Awesome. One macro per profile.
   'scholar': 'Google Scholar', 'orcid': 'ORCID', 'github': 'GitHub',
   'linkedin': 'LinkedIn', 'x': 'X', 'ssrn': 'SSRN'
 } %}
+{#
+  base.html.j2 must import BOTH names:
+    {% from 'partials/icons.html.j2' import icon, profile_labels with context %}
+  Importing only `icon` leaves profile_labels undefined at render time —
+  verified against Jinja2 3.1.2, which raises UndefinedError.
+#}
 ```
 
 - [ ] **Step 5: Write `templates/base.html.j2`**
 
 ```jinja
-{% from 'partials/icons.html.j2' import icon with context %}
+{% from 'partials/icons.html.j2' import icon, profile_labels with context %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1820,6 +1827,7 @@ git commit -m "feat: render site pages from templates with conditional teaching"
 ### Task 5: Search index and BM25 ranking
 
 **Files:**
+- Create: `assets/js/package.json`
 - Create: `assets/js/bm25.js`
 - Create: `tools/test/bm25.test.mjs`
 - Modify: `build.py`
