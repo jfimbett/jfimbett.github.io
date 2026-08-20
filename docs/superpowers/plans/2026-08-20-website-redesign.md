@@ -312,7 +312,7 @@ def validate_papers(papers):
             for field in ("venue", "year"):
                 if not paper.get(field):
                     errors.append(
-                        "{}: published papers require '{}'".format(where, field)
+                        "{}: published papers requires '{}'".format(where, field)
                     )
 
         authors = paper.get("authors")
@@ -365,7 +365,7 @@ def validate_courses(courses):
 - [ ] **Step 6: Run the tests to verify they pass**
 
 Run: `python3 -m pytest tests/test_content.py -v`
-Expected: PASS, 16 passed
+Expected: PASS, 15 passed
 
 - [ ] **Step 7: Commit**
 
