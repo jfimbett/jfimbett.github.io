@@ -1,0 +1,131 @@
+{
+ "docs": [
+  {
+   "authors": "J. Anthony Cookson, Corbin Fox, Javier Gil-Bazo, <strong>Juan Felipe Imbet</strong>, Christoph Schiller",
+   "id": "social-media-bank-run",
+   "status": "published",
+   "summary": "When Silicon Valley Bank collapsed, the banks that suffered most were not\nsimply the weakest ones — they were the ones whose depositors were already\ntalking on Twitter. Banks with high pre-existing Twitter exposure lost 4.3\npercentage points more market value during the run. What mattered was\nattention rather than anger: negative sentiment did not predict damage, but\nsustained attention from tech-community users, and tweets explicitly about\nrunning, did. Social media has made deposit flight faster than the\nregulatory tools designed to contain it.",
+   "text": "Social Media as a Bank Run Catalyst J. Anthony Cookson Corbin Fox Javier Gil-Bazo Christoph Schiller Journal of Financial Economics social media banking bank runs When Silicon Valley Bank collapsed, the banks that suffered most were not\nsimply the weakest ones — they were the ones whose depositors were already\ntalking on Twitter. Banks with high pre-existing Twitter exposure lost 4.3\npercentage points more market value during the run. What mattered was\nattention rather than anger: negative sentiment did not predict damage, but\nsustained attention from tech-community users, and tweets explicitly about\nrunning, did. Social media has made deposit flight faster than the\nregulatory tools designed to contain it. After the run on Silicon Valley Bank (SVB), U.S. regional banks entered a period of significant distress. We quantify social media's role in this distress using comprehensive Twitter data. During the SVB run period, banks with high pre-existing exposure to Twitter lost 4.3 percentage points more stock market value. Moreover, Twitter pre-exposure interacts significantly with classical run risks to predict greater run severity and greater deposit outflows during Q1 2023, effects unexplained by other banking or market characteristics. At the hourly frequency during the run, high Twitter attention over the past four hours predicts stock market losses, especially for banks with high run risks. By contrast, we find that negative Twitter sentiment does not amplify bank run risks. Rather, our evidence points to a distinctive role of Twitter attention by tech community members who are likely depositors in SVB, as well as tweets that mention running and contagion.",
+   "title": "Social Media as a Bank Run Catalyst",
+   "topics": [
+    "social media",
+    "banking",
+    "bank runs"
+   ],
+   "venue": "Journal of Financial Economics"
+  },
+  {
+   "authors": "Javier Gil-Bazo, <strong>Juan Felipe Imbet</strong>",
+   "id": "tweeting-for-money",
+   "status": "published",
+   "summary": "Asset managers talk to investors on social media, and it works. Across more\nthan 1.6 million posts by US mutual fund families, both how much a family\nposts and how positive it sounds predict the money flowing into its funds.\nThis is not just advertising by another name: the effect survives\ncontrolling for marketing spend, and intraday ETF trades let us watch\ntweets move investor decisions directly. What it does not appear to be is\nhelpful — the evidence does not support the idea that these posts are\nlowering search costs for investors trying to find the right fund.",
+   "text": "Tweeting for Money: Social Media and Mutual Fund Flows Javier Gil-Bazo Management Science social media mutual funds fund flows Asset managers talk to investors on social media, and it works. Across more\nthan 1.6 million posts by US mutual fund families, both how much a family\nposts and how positive it sounds predict the money flowing into its funds.\nThis is not just advertising by another name: the effect survives\ncontrolling for marketing spend, and intraday ETF trades let us watch\ntweets move investor decisions directly. What it does not appear to be is\nhelpful — the evidence does not support the idea that these posts are\nlowering search costs for investors trying to find the right fund. We unveil asset managers' social media communications as a distinct new channel for attracting flows of money to mutual funds. Combining a database of more than 1.6 million posts on X/Twitter by U.S. mutual fund families with textual analysis, we find that flows of money to mutual funds respond positively to both the number and tone of the posts. The link between social media communications and flows of money is not explained by marketing efforts, but the two strategies reinforce each other. A high-frequency analysis that exploits intraday ETF trade data allows us to isolate the effect of tweets on investor decisions from potential confounders. We then consider and test four different economic mechanisms. The results of these tests do not support the hypothesis that asset managers' social media communications reduce search costs for potential investors. The results do not support, either, that asset management companies' Twitter activity increases investor attention or alleviates information asymmetries by communicating performance-relevant information to investors. In contrast, our evidence suggests that asset managers use social media as an effective persuasion tool.",
+   "title": "Tweeting for Money: Social Media and Mutual Fund Flows",
+   "topics": [
+    "social media",
+    "mutual funds",
+    "fund flows"
+   ],
+   "venue": "Management Science"
+  },
+  {
+   "authors": "Arthur Böök, <strong>Juan Felipe Imbet</strong>, Martin Reinke, Carlo Sala",
+   "id": "short-term-options",
+   "status": "published",
+   "summary": "Option prices encode what the market expects to happen, but the standard\nways of extracting that expectation are fragile. We build measures of\nexpected volatility, skewness and kurtosis from weekly S&P 500 options\nusing quantiles rather than the usual machinery, fitted with a smoothing\ntechnique that is fast and cannot imply arbitrage. The resulting\nforward-looking indicators predict the US equity risk premium over short,\nmedium and long horizons, in and out of sample, and they beat the\nequivalent measures built from past returns.",
+   "text": "The Forecasting Power of Short-Term Options Arthur Böök Martin Reinke Carlo Sala The Journal of Derivatives derivatives options forecasting Option prices encode what the market expects to happen, but the standard\nways of extracting that expectation are fragile. We build measures of\nexpected volatility, skewness and kurtosis from weekly S&P 500 options\nusing quantiles rather than the usual machinery, fitted with a smoothing\ntechnique that is fast and cannot imply arbitrage. The resulting\nforward-looking indicators predict the US equity risk premium over short,\nmedium and long horizons, in and out of sample, and they beat the\nequivalent measures built from past returns. We propose robust option-implied measures of conditional volatility, skewness and kurtosis based upon quantiles and expectiles inferred from weekly options on the S&P 500. All quantities are by construction forward-looking and estimated non-parametrically through a novel robust and arbitrage-free natural smoothing spline technique that produces quick to estimate volatility smiles. We find that some of the option-implied robust indicators exhibit short-, medium- and long-term predictive ability for the U.S. equity risk premium and higher moments, both in- and out-of-sample, which outperform equal indicators inferred from historical returns.",
+   "title": "The Forecasting Power of Short-Term Options",
+   "topics": [
+    "derivatives",
+    "options",
+    "forecasting"
+   ],
+   "venue": "The Journal of Derivatives"
+  },
+  {
+   "authors": "Marcelo Ortiz M., <strong>Juan Felipe Imbet</strong>",
+   "id": "offshore-data-leaks",
+   "status": "working",
+   "summary": "Leaks like the Panama Papers did more than embarrass their subjects. Matching\nleaked records to company accounts reveals thousands of small private firms\nusing tax havens — and shows that before the leaks these firms invested more\nin plant and people, with the least productive firms benefiting most. After\nexposure, their investment fell sharply. Offshore tax evasion was quietly\nsubsidising domestic investment by firms that would not otherwise have\njustified it.",
+   "text": "The Real Effects of Offshore Data Leaks: Evidence from Private Firms Marcelo Ortiz M. offshore finance tax evasion corporate investment Leaks like the Panama Papers did more than embarrass their subjects. Matching\nleaked records to company accounts reveals thousands of small private firms\nusing tax havens — and shows that before the leaks these firms invested more\nin plant and people, with the least productive firms benefiting most. After\nexposure, their investment fell sharply. Offshore tax evasion was quietly\nsubsidising domestic investment by firms that would not otherwise have\njustified it. This study investigates the real effects of major offshore data leaks on private firms. By matching leaked data with firm-level information, we identify a large sample of small private firms involved in offshore activities in tax havens and analyze their corporate policies. Employing the sequence of leaks in a staggered difference-in-difference design, we observe that exposed firms invest more in fixed assets and labor pre-leaks but then significantly decrease their investments after the leaks. Our cross-sectional analyses show that unproductive firms and firms with faster deduction of investment expenditures benefit the most from offshore tax evasion before the leaks. The leaks also reduced corporate taxation, an effect that is not driven by fewer sales. Overall, our results suggest that offshore tax evasion boosts domestic investment among less productive firms, an effect that is muted or even reversed after the leaks.",
+   "title": "The Real Effects of Offshore Data Leaks: Evidence from Private Firms",
+   "topics": [
+    "offshore finance",
+    "tax evasion",
+    "corporate investment"
+   ],
+   "venue": "working"
+  },
+  {
+   "authors": "<strong>Juan Felipe Imbet</strong>, Marcelo Ortiz M., Vincent Tena",
+   "id": "dynamic-contracting-tax",
+   "status": "working",
+   "summary": "Why do firms evade less tax than a pure cost-benefit calculation predicts?\nBecause someone has to be paid to do it. Modelling tax strategy as a task an\nowner delegates to an agent they cannot monitor, under the threat of random\naudits, shows that a cautious owner may decline to contract on tax\naggressiveness at all — a contractual explanation for the long-standing\npuzzle of corporate under-sheltering.",
+   "text": "Dynamic Contracting and Corporate Tax Strategies Marcelo Ortiz M. Vincent Tena corporate taxation contract theory moral hazard Why do firms evade less tax than a pure cost-benefit calculation predicts?\nBecause someone has to be paid to do it. Modelling tax strategy as a task an\nowner delegates to an agent they cannot monitor, under the threat of random\naudits, shows that a cautious owner may decline to contract on tax\naggressiveness at all — a contractual explanation for the long-standing\npuzzle of corporate under-sheltering. We investigate the optimal delegation of corporate tax strategy. We develop a dynamic model that incorporates moral hazard and random inspections by tax authorities. The firm's owner cannot directly observe either the firm's underlying gross profits process or the agent's continuous efforts to reduce tax expenses. Inspections are random, and while illegal strategies can be detected and penalized, the extent of evasion remains unobservable. In our setting, a risk-averse owner may avoid contracting tax strategies if the agent's effort costs or underlying profit volatility are too high, providing a contractual explanation for under-sheltering. The optimal tax strategy is a constant under-reporting of profits over time, which becomes more aggressive when the agent is less risk-averse and corporate tax rates are higher. The optimal compensation includes a fixed salary to ensure the agent's participation and a performance-based component that increases with the agent's risk aversion and the reported profits. Under inspection risk, however, the optimal tax strategy is not constant and becomes progressively less aggressive as the expected penalty rises over time. The agent's compensation includes an additional risk premium by bearing the inspection risk and a contingent loss in case of detection.",
+   "title": "Dynamic Contracting and Corporate Tax Strategies",
+   "topics": [
+    "corporate taxation",
+    "contract theory",
+    "moral hazard"
+   ],
+   "venue": "working"
+  },
+  {
+   "authors": "<strong>Juan Felipe Imbet</strong>",
+   "id": "stroke-of-a-pen",
+   "status": "working",
+   "summary": "Uncertainty usually makes firms wait. Energy policy uncertainty does the\nopposite: when it is unclear whether a president will sign an energy\nexecutive order, firms invest more, not less, because energy-efficient\ncapital is worth more precisely when energy policy might change. The effect\nis strongest for growth firms, and it shows up in stock returns.",
+   "text": "Stroke of a Pen: Investment and Stock Returns under Energy Policy Uncertainty asset pricing energy policy uncertainty investment Uncertainty usually makes firms wait. Energy policy uncertainty does the\nopposite: when it is unclear whether a president will sign an energy\nexecutive order, firms invest more, not less, because energy-efficient\ncapital is worth more precisely when energy policy might change. The effect\nis strongest for growth firms, and it shows up in stock returns. Energy policy uncertainty - as measured by uncertainty about a U.S. President signing an energy related executive order in the future - covaries positively with corporate investment and aggregate consumption growth, and its innovations carry a negative price of risk. I propose and test a q-theory explanation in which firms invest in energy-efficient capital when facing energy policy uncertainty. This uncertainty amplifies differences in investment between growth and value companies as the benefits of substituting energy for capital increase with growth opportunities. As the benefits to invest increase, aggregate current consumption decreases relative to future consumption, creating time varying expected variation in aggregate market returns and consumption growth. Without an investment factor, uncertainty betas explain cross-sectional variation in stock returns across portfolios that differ in their growth opportunities. However, since investment reacts to uncertainty endogenously, an asset pricing model that accounts for an investment factor absorbs the cross-sectional differences in expected returns explained by this policy uncertainty. My findings suggest that uncertainty about future energy policies in the last four decades can explain firms' adoption of energy-efficient capital.",
+   "title": "Stroke of a Pen: Investment and Stock Returns under Energy Policy Uncertainty",
+   "topics": [
+    "asset pricing",
+    "energy policy",
+    "uncertainty",
+    "investment"
+   ],
+   "venue": "working"
+  },
+  {
+   "authors": "Gilles Chemla, <strong>Juan Felipe Imbet</strong>, Marcelo Ortiz, Vincent Tena",
+   "id": "competitive-executive-compensation",
+   "status": "working",
+   "summary": "Conventional wisdom says executives should not be paid for luck. This model\nsays otherwise once the labour market is competitive and replacing an\nexecutive is costly: an industry-wide profit shock raises what rivals will\npay your CEO, so paying for luck becomes a retention cost rather than a\ngovernance failure. The prediction is sharp — pay should respond to\nindustry-wide shocks but not to firm-specific ones.",
+   "text": "Competitive Executive Compensation with Profitability Shocks Gilles Chemla Marcelo Ortiz Vincent Tena executive compensation contract theory labor markets Conventional wisdom says executives should not be paid for luck. This model\nsays otherwise once the labour market is competitive and replacing an\nexecutive is costly: an industry-wide profit shock raises what rivals will\npay your CEO, so paying for luck becomes a retention cost rather than a\ngovernance failure. The prediction is sharp — pay should respond to\nindustry-wide shocks but not to firm-specific ones. In this paper, we develop a dynamic agency model to examine how profitability shocks, labor market frictions, and compensation design interact. Our framework integrates a competitive labor market with search costs and analyzes the optimal contract under positive profitability shocks. Rewarding profitability shocks is optimal only when a firm's search costs include a component proportional to its value, as replacing the agent entails a partial loss of firm value. In a competitive labor market, such rewards help maintain incentives for continued employment and adjust compensation to reflect changes in the agent's market value. We further show that this effect is stronger when shocks are systemic rather than idiosyncratic, as only systemic shocks increase the agent's outside option, requiring larger adjustments for retention. This challenges the conventional wisdom of RPE-based compensation, which ties rewards to relative performance rather than changes in outside options.",
+   "title": "Competitive Executive Compensation with Profitability Shocks",
+   "topics": [
+    "executive compensation",
+    "contract theory",
+    "labor markets"
+   ],
+   "venue": "working"
+  },
+  {
+   "authors": "Amedeo Andriollo, <strong>Juan Felipe Imbet</strong>",
+   "id": "theories-as-regularizers",
+   "status": "wip",
+   "summary": "Using economic theory not as a hypothesis to be tested but as a constraint\nthat disciplines a machine learning model — keeping the flexibility of\nmodern methods while refusing predictions the theory rules out.",
+   "text": "Theories as Regularizers Amedeo Andriollo machine learning asset pricing methodology Using economic theory not as a hypothesis to be tested but as a constraint\nthat disciplines a machine learning model — keeping the flexibility of\nmodern methods while refusing predictions the theory rules out.",
+   "title": "Theories as Regularizers",
+   "topics": [
+    "machine learning",
+    "asset pricing",
+    "methodology"
+   ],
+   "venue": "wip"
+  },
+  {
+   "authors": "<strong>Juan Felipe Imbet</strong>, Roman Kräussl, Ilaria Piatti, Roberto Steri",
+   "id": "liquid-assets",
+   "status": "wip",
+   "summary": "",
+   "text": "Liquid Assets Roman Kräussl Ilaria Piatti Roberto Steri alternative assets liquidity asset pricing",
+   "title": "Liquid Assets",
+   "topics": [
+    "alternative assets",
+    "liquidity",
+    "asset pricing"
+   ],
+   "venue": "wip"
+  }
+ ]
+}

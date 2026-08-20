@@ -126,3 +126,16 @@ def test_every_page_has_exactly_one_h1(tmp_path, page):
     assert markup.count("<h1") == 1, "{} has {} h1 elements".format(
         page, markup.count("<h1")
     )
+
+
+def test_search_index_covers_every_paper(tmp_path):
+    import json
+
+    render_site(out_dir=tmp_path)
+    payload = json.loads(
+        (tmp_path / "assets" / "data" / "search.json").read_text(encoding="utf-8")
+    )
+    ids = {doc["id"] for doc in payload["docs"]}
+    assert ids == {paper["id"] for paper in build_context()["papers"]}
+    for doc in payload["docs"]:
+        assert doc["text"].strip(), "{} has empty search text".format(doc["id"])

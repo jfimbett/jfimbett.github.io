@@ -22,6 +22,7 @@ CONTENT = ROOT / "content"
 SELF = "SELF"
 VALID_STATUS = {"published", "working", "wip"}
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+DATA_DIR = "assets/data"
 
 
 class ContentError(Exception):
@@ -181,6 +182,45 @@ def partition(papers):
     return grouped
 
 
+def _search_text(paper):
+    """Everything a keyword query might reasonably match."""
+    parts = [
+        paper.get("title", ""),
+        " ".join(str(a) for a in paper.get("authors", []) if a != SELF),
+        paper.get("venue", "") or "",
+        " ".join(paper.get("topics", []) or []),
+        paper.get("summary", "") or "",
+        paper.get("abstract", "") or "",
+    ]
+    return " ".join(part.strip() for part in parts if part).strip()
+
+
+def write_search_index(context, out_dir):
+    """Write the BM25 corpus consumed by assets/js/search.js."""
+    site = context["site"]
+    docs = []
+    for paper in context["papers"]:
+        docs.append({
+            "id": paper["id"],
+            "title": paper["title"],
+            "authors": format_authors(paper["authors"], site["name"]),
+            "venue": paper.get("venue") or paper["status"],
+            "status": paper["status"],
+            "topics": paper.get("topics", []) or [],
+            "summary": (paper.get("summary") or "").strip(),
+            "text": _search_text(paper),
+        })
+
+    directory = Path(out_dir) / DATA_DIR
+    directory.mkdir(parents=True, exist_ok=True)
+    path = directory / "search.json"
+    path.write_text(
+        json.dumps({"docs": docs}, ensure_ascii=False, indent=1, sort_keys=True),
+        encoding="utf-8",
+    )
+    return path
+
+
 def build_context():
     """Load and validate every content file into one render context."""
     site = validate_site(load_yaml(CONTENT / "site.yml"))
@@ -241,6 +281,7 @@ def render_site(out_dir=None):
     if not context["has_teaching"] and stale.exists():
         stale.unlink()
 
+    written.append(write_search_index(context, out_dir))
     return written
 
 
