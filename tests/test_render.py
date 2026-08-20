@@ -85,3 +85,35 @@ def test_every_paper_appears_on_the_research_page(tmp_path):
     research = (tmp_path / "research.html").read_text(encoding="utf-8")
     for paper in build_context()["papers"]:
         assert 'id="{}"'.format(paper["id"]) in research
+
+
+def test_hostile_content_is_escaped_in_rendered_pages(tmp_path, monkeypatch):
+    """Autoescape must cover ordinary fields, not just the hand-escaped authors.
+
+    Regression: select_autoescape(["html"]) never fires for *.html.j2 names,
+    which silently disabled escaping for the entire site.
+    """
+    import build
+
+    real = build.load_yaml
+
+    def fake(path):
+        data = real(path)
+        if path.name == "papers.yml":
+            data[0] = dict(data[0], title="Bank <script>alert(1)</script> Runs")
+        return data
+
+    monkeypatch.setattr(build, "load_yaml", fake)
+    build.render_site(out_dir=tmp_path)
+    markup = (tmp_path / "research.html").read_text(encoding="utf-8")
+    assert "<script>alert(1)</script>" not in markup
+    assert "&lt;script&gt;alert(1)&lt;/script&gt;" in markup
+
+
+@pytest.mark.parametrize("page", ["index.html", "research.html", "cv.html"])
+def test_every_page_has_exactly_one_h1(tmp_path, page):
+    render_site(out_dir=tmp_path)
+    markup = (tmp_path / page).read_text(encoding="utf-8")
+    assert markup.count("<h1") == 1, "{} has {} h1 elements".format(
+        page, markup.count("<h1")
+    )

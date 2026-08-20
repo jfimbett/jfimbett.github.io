@@ -203,7 +203,7 @@ def build_context():
 def _environment():
     env = Environment(
         loader=FileSystemLoader(str(TEMPLATES)),
-        autoescape=select_autoescape(["html"]),
+        autoescape=select_autoescape(["html", "j2"]),
         trim_blocks=True,
         lstrip_blocks=True,
         keep_trailing_newline=True,
