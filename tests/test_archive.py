@@ -17,7 +17,7 @@ STUBS = [
     "teaching/python_m2_203/index.html",
 ]
 
-GENERATED = ["index.html", "research.html", "cv.html"]
+GENERATED = ["index.html", "research.html"]
 
 
 def test_archive_directory_exists():

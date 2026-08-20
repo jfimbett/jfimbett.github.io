@@ -37,7 +37,7 @@ def test_context_reports_teaching_disabled_when_courses_empty():
 def test_render_writes_the_core_pages(tmp_path):
     written = render_site(out_dir=tmp_path)
     names = {path.name for path in written}
-    assert {"index.html", "research.html", "cv.html"} <= names
+    assert {"index.html", "research.html"} <= names
 
 
 def test_render_omits_teaching_when_courses_empty(tmp_path):
@@ -119,7 +119,7 @@ def test_hostile_content_is_escaped_in_rendered_pages(tmp_path, monkeypatch):
     assert "&lt;script&gt;alert(1)&lt;/script&gt;" in markup
 
 
-@pytest.mark.parametrize("page", ["index.html", "research.html", "cv.html"])
+@pytest.mark.parametrize("page", ["index.html", "research.html"])
 def test_every_page_has_exactly_one_h1(tmp_path, page):
     render_site(out_dir=tmp_path)
     markup = (tmp_path / page).read_text(encoding="utf-8")

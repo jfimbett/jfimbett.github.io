@@ -6,25 +6,11 @@ email: juan.imbet@edhec.edu
 office: ""
 photo: assets/images/profile.jpg
 cv: cv.pdf
-tagline: Finance, computation, and machine intelligence.
+intro: Corporate finance, asset pricing, and computational finance.
 research_interests:
   - Corporate Finance
   - Asset Pricing
   - Computational Finance
-bio: |
-  I am an Assistant Professor of Finance at EDHEC Business School. My research
-  sits at the intersection of corporate finance, asset pricing, and
-  computational finance.
-
-  Two agendas run through most of my work. The first studies how the offshore
-  finance industry shapes what firms actually do — how they invest, how they
-  are taxed, and what happens when secrecy breaks down. The second studies how
-  social media moves capital, from mutual fund flows to the speed of a bank
-  run.
-
-  Increasingly, both use large language models as research instruments rather
-  than as objects of study. I teach that toolkit at the Barcelona School of
-  Economics, and I hold a PhD in Finance from Universitat Pompeu Fabra.
 profiles:
   scholar: https://scholar.google.com/citations?user=0nHr8-4AAAAJ
   orcid: https://orcid.org/0000-0003-4970-3711

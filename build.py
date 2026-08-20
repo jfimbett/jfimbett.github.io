@@ -154,7 +154,6 @@ TEMPLATES = ROOT / "templates"
 PAGES = [
     ("index.html.j2", "index.html", "home"),
     ("research.html.j2", "research.html", "research"),
-    ("cv.html.j2", "cv.html", "cv"),
 ]
 TEACHING_PAGE = ("teaching.html.j2", "teaching.html", "teaching")
 

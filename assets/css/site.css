@@ -149,10 +149,11 @@ img { max-width: 100%; height: auto; }
 
 .rule { border: 0; height: 3px; width: 4.5rem; background: var(--coral); margin: 1.75rem 0; }
 
-.hero__figure { position: relative; }
+.hero__figure { position: relative; margin: 1.5rem 0 0; }
 .hero__canvas {
-  display: block; width: 100%; aspect-ratio: 1 / 1;
-  background: var(--grenat-pastel);
+  display: block; width: 100%; max-width: 820px; aspect-ratio: 4 / 3;
+  margin-inline: auto; background: var(--paper);
+  border: 1px solid var(--border);
 }
 .hero__portrait {
   /* Native size is 369x560; never upscale it. */

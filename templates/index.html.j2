@@ -21,12 +21,24 @@
 <section class="hero">
   <div class="wrap hero__grid">
     <div>
-      <h1 class="hero__title">{{ site.tagline }}</h1>
+      <h1 class="hero__title">{{ site.name }}</h1>
+      <p class="hero__role">{{ site.title }}</p>
+      <p class="hero__institution">{{ site.institution }}</p>
       <hr class="rule">
-      <p class="hero__role">{{ site.name }}</p>
-      <p class="hero__institution">{{ site.title }}, {{ site.institution }}</p>
+      <p class="hero__intro">{{ site.intro }}</p>
       <p><a href="research.html">Research</a> · <a href="{{ site.cv }}">CV (PDF)</a> · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
     </div>
+    <img class="hero__portrait" src="{{ site.photo }}" width="369" height="560"
+         alt="Portrait of {{ site.name }}">
+  </div>
+</section>
+
+<section class="section section--tint" id="map">
+  <div class="wrap">
+    <p class="eyebrow">Research map</p>
+    <h2 class="section__title">Papers in embedding space</h2>
+    <p>Each point is a paper, placed by the similarity of its text. Related work
+    sits together. Hover a point for the title; click to open it.</p>
     <figure class="hero__figure">
       <canvas class="hero__canvas" id="hero-canvas" role="img"
               aria-label="An animated field of particles positioned by the similarity of this researcher's papers.">
@@ -52,22 +64,6 @@
   </div>
 </section>
 
-<section class="section section--tint">
-  <div class="wrap">
-    <p class="eyebrow">About</p>
-    <h2 class="section__title">Biography</h2>
-    <div class="hero__grid">
-      <div>
-        {% for paragraph in site.bio.strip().split('\n\n') %}
-        <p>{{ paragraph }}</p>
-        {% endfor %}
-        <p>{% for interest in site.research_interests %}<span class="chip">{{ interest }}</span>{% endfor %}</p>
-      </div>
-      <img class="hero__portrait" src="{{ site.photo }}" width="369" height="560"
-           alt="Portrait of {{ site.name }}" loading="lazy">
-    </div>
-  </div>
-</section>
 
 <section class="section">
   <div class="wrap">
