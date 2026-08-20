@@ -458,6 +458,10 @@ Expected: FAIL — `ContentError: content/site.yml does not exist`
 
 - [ ] **Step 3: Write `content/site.yml`**
 
+Note the quoted `detail:` values under `education`. An unquoted internal
+colon (`Advisor: Javier`) makes YAML read the rest as a nested mapping key
+and the file fails to parse. Quote any value containing `: `.
+
 ```yaml
 name: Juan Felipe Imbet
 short_name: Juan F. Imbet
@@ -504,10 +508,10 @@ previous_affiliations:
     years: 2024–2028
 education:
   - institution: Universitat Pompeu Fabra
-    detail: PhD in Finance (cum laude). Advisor: Javier Gil-Bazo
+    detail: "PhD in Finance (cum laude). Advisor: Javier Gil-Bazo"
     years: 2016–2021
   - institution: The Wharton School, University of Pennsylvania
-    detail: Visiting PhD student in Finance. Sponsor: Winston Dou
+    detail: "Visiting PhD student in Finance. Sponsor: Winston Dou"
     years: 2020
   - institution: Universitat Pompeu Fabra
     detail: MRes in Finance
