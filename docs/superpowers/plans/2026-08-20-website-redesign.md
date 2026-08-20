@@ -2476,7 +2476,7 @@ Expected: PASS, 6 tests
     "test": "node --test test/*.test.mjs"
   },
   "dependencies": {
-    "@huggingface/transformers": "^3.0.0"
+    "@huggingface/transformers": "3.8.1"
   }
 }
 ```
@@ -2490,6 +2490,16 @@ tools/node_modules/
 
 Run: `cd tools && npm install`
 Expected: completes; `tools/node_modules/` exists and is ignored by git.
+
+**The version is pinned exactly — `3.8.1`, not `^3.0.0`.** A caret range resolves
+to whatever 3.x is newest at install time, while `assets/js/semantic.js` loads a
+fixed version from a CDN. Any drift between the two puts the build-time document
+vectors and the browser's query vectors in different embedding spaces, which
+produces plausible but silently wrong similarity scores — the exact failure this
+whole Node-based approach was chosen to make structurally impossible. Both sides
+must name the same version string. Verified available: npm has 3.8.1, and
+`cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1/+esm` returns 200 and
+exports `pipeline`.
 
 If `@huggingface/transformers` fails to install or the model cannot be fetched, **stop and report**. Do not fall back to a hand-rolled embedding — a wrong vector space produces plausible, silently incorrect search results.
 
@@ -2868,7 +2878,7 @@ git commit -m "feat: add embedding-space generative hero"
 - Modify: `templates/base.html.j2`
 
 **Interfaces:**
-- Consumes: `window.__searchRerank` and `window.__loadSemantic` hooks from Task 6; `assets/data/embeddings.json` from Task 7; `MODEL_ID` must equal the value in `tools/embed.mjs`.
+- Consumes: `window.__searchRerank` and `window.__loadSemantic` hooks from Task 6; `assets/data/embeddings.json` from Task 7; `MODEL_ID` must equal the value in `tools/embed.mjs`, and the transformers.js LIBRARY version must equal the exact version pinned in `tools/package.json` (both `3.8.1`).
 - Produces: nothing exported. Replaces `window.__searchRerank` once the model is ready.
 
 Purely additive. If anything in this task fails, Tier 1 keyword search continues to work and the visitor sees no error.
@@ -2884,7 +2894,7 @@ Purely additive. If anything in this task fails, Tier 1 keyword search continues
  * visible error, so this constant is not to be changed on one side alone.
  */
 const MODEL_ID = 'Xenova/all-MiniLM-L6-v2';
-const LIBRARY = 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.0.0';
+const LIBRARY = 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1/+esm';
 
 let ready = null;
 
