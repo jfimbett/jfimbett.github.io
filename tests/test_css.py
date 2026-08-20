@@ -81,18 +81,25 @@ def test_exact_brand_values_are_used(css):
 
 
 def test_raw_coral_and_bleu_are_never_used_for_text_or_focus(css):
-    """They are 2.72:1 and 2.24:1 on white. Decorative fills only."""
-    for rule in re.findall(r"[^{}]+\{[^{}]*\}", css):
-        head, body = rule.split("{", 1)
-        uses_raw = "var(--coral)" in body or "var(--bleu)" in body
-        if not uses_raw:
-            continue
-        assert "color:" not in body.replace("border-color:", "").replace(
-            "background-color:", ""
-        ), "raw coral/bleu used as a colour in: {}".format(head.strip())
-        assert "outline:" not in body, "raw bleu used as a focus ring in: {}".format(
-            head.strip()
-        )
+    """Raw coral is 2.72:1 and raw bleu 2.24:1 on white: decorative fills only.
+
+    Anchored to declaration starts, so a shorthand that merely *contains* a
+    colour (border-left: 3px solid var(--coral)) is not mistaken for a text
+    colour. Only `color`, `outline`, and `outline-color` identify text or a
+    focus indicator.
+    """
+    offenders = []
+    for head, body in re.findall(r"([^{}]+)\{([^{}]*)\}", css):
+        for prop, value in re.findall(
+            r"(?:^|;)\s*(color|outline|outline-color)\s*:\s*([^;]+)", body
+        ):
+            if "var(--coral)" in value or "var(--bleu)" in value:
+                offenders.append(
+                    "{} -> {}: {}".format(head.strip(), prop, value.strip())
+                )
+    assert not offenders, "raw decorative tokens used for text/focus: {}".format(
+        offenders
+    )
 
 
 def test_interactive_variants_are_defined(css):
