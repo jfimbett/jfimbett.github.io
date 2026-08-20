@@ -58,16 +58,25 @@ test('limit is respected', () => {
   assert.equal(search(index, 'social media', { limit: 1 }).length, 1);
 });
 
-test('empty corpus does not divide by zero', () => {
+test('an empty corpus returns no results and does not throw', () => {
   const index = buildIndex([]);
   assert.equal(index.N, 0);
   assert.equal(index.avgdl, 0);
   assert.deepEqual(search(index, 'anything'), []);
 });
 
-test('a corpus of only stopwords does not divide by zero', () => {
-  // Every document tokenises to nothing, so avgdl is 0 while N is 2.
+test('a corpus that tokenises to nothing returns no results and does not throw', () => {
+  // Every document is stopwords only, so avgdl is 0 while N is 2 — the
+  // degenerate shape most likely to produce NaN or Infinity scores.
+  //
+  // Note: this does NOT exercise the `index.avgdl || 1` guard in search().
+  // That branch is unreachable by construction: avgdl === 0 implies every
+  // tf map is empty, so the `if (!freq) return` early-exit fires before the
+  // division is ever evaluated. The guard is retained as protection against
+  // a future refactor that moves that early-exit, not because any input
+  // reaches it today. Verified by instrumenting the branch: it never runs.
   const index = buildIndex([{ id: 'a', text: 'the and of' }, { id: 'b', text: 'it is at' }]);
+  assert.equal(index.N, 2);
   assert.equal(index.avgdl, 0);
   assert.deepEqual(search(index, 'the bank'), []);
 });
