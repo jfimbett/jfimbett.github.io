@@ -16,7 +16,7 @@ export function tokenize(text) {
   return String(text)
     .toLowerCase()
     .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
+    .replace(/[\u0300-\u036f]/g, '')
     .split(/[^a-z0-9]+/)
     .filter((token) => token.length > 1 && !STOPWORDS.has(token));
 }

@@ -57,3 +57,17 @@ test('limit is respected', () => {
   const index = buildIndex(DOCS);
   assert.equal(search(index, 'social media', { limit: 1 }).length, 1);
 });
+
+test('empty corpus does not divide by zero', () => {
+  const index = buildIndex([]);
+  assert.equal(index.N, 0);
+  assert.equal(index.avgdl, 0);
+  assert.deepEqual(search(index, 'anything'), []);
+});
+
+test('a corpus of only stopwords does not divide by zero', () => {
+  // Every document tokenises to nothing, so avgdl is 0 while N is 2.
+  const index = buildIndex([{ id: 'a', text: 'the and of' }, { id: 'b', text: 'it is at' }]);
+  assert.equal(index.avgdl, 0);
+  assert.deepEqual(search(index, 'the bank'), []);
+});
