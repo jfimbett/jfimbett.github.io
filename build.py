@@ -285,6 +285,23 @@ def render_site(out_dir=None):
     return written
 
 
+def warn_if_embeddings_are_stale():
+    """Warn, but never fail, when papers.yml is newer than embeddings.json."""
+    papers = CONTENT / "papers.yml"
+    embeddings = ROOT / DATA_DIR / "embeddings.json"
+    if not embeddings.exists():
+        sys.stderr.write(
+            "warning: assets/data/embeddings.json is missing; "
+            "run `cd tools && npm run embed`\n"
+        )
+        return
+    if papers.stat().st_mtime > embeddings.stat().st_mtime:
+        sys.stderr.write(
+            "warning: papers.yml is newer than embeddings.json; "
+            "run `cd tools && npm run embed` to refresh search and the hero\n"
+        )
+
+
 def main():
     try:
         written = render_site()
@@ -293,6 +310,7 @@ def main():
         return 1
     for path in written:
         print("wrote {}".format(path.relative_to(ROOT)))
+    warn_if_embeddings_are_stale()
     return 0
 
 

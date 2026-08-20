@@ -1,0 +1,12 @@
+{
+  "name": "jfimbett-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "embed": "node embed.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "3.8.1"
+  }
+}

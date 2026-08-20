@@ -1,0 +1,68 @@
+{
+ "model": "Xenova/all-MiniLM-L6-v2",
+ "anchors": [
+  {
+   "id": "social-media-bank-run",
+   "x": 1,
+   "y": -0.3159,
+   "label": "Social Media as a Bank Run Catalyst",
+   "href": "research.html#social-media-bank-run"
+  },
+  {
+   "id": "tweeting-for-money",
+   "x": 0.8548,
+   "y": -0.2,
+   "label": "Tweeting for Money: Social Media and Mutual Fund Flows",
+   "href": "research.html#tweeting-for-money"
+  },
+  {
+   "id": "short-term-options",
+   "x": -0.1339,
+   "y": 0.4341,
+   "label": "The Forecasting Power of Short-Term Options",
+   "href": "research.html#short-term-options"
+  },
+  {
+   "id": "offshore-data-leaks",
+   "x": -0.5043,
+   "y": -0.8374,
+   "label": "The Real Effects of Offshore Data Leaks: Evidence from Private Firms",
+   "href": "research.html#offshore-data-leaks"
+  },
+  {
+   "id": "dynamic-contracting-tax",
+   "x": -1,
+   "y": -0.6167,
+   "label": "Dynamic Contracting and Corporate Tax Strategies",
+   "href": "research.html#dynamic-contracting-tax"
+  },
+  {
+   "id": "stroke-of-a-pen",
+   "x": -0.2356,
+   "y": 0.2759,
+   "label": "Stroke of a Pen: Investment and Stock Returns under Energy Policy Uncertainty",
+   "href": "research.html#stroke-of-a-pen"
+  },
+  {
+   "id": "competitive-executive-compensation",
+   "x": -0.8142,
+   "y": -0.4273,
+   "label": "Competitive Executive Compensation with Profitability Shocks",
+   "href": "research.html#competitive-executive-compensation"
+  },
+  {
+   "id": "theories-as-regularizers",
+   "x": -0.4501,
+   "y": 0.8374,
+   "label": "Theories as Regularizers",
+   "href": "research.html#theories-as-regularizers"
+  },
+  {
+   "id": "liquid-assets",
+   "x": -0.4971,
+   "y": 0.7749,
+   "label": "Liquid Assets",
+   "href": "research.html#liquid-assets"
+  }
+ ]
+}

@@ -61,3 +61,13 @@ backup_*
 # Cache directories
 .cache/
 -p/
+
+# LaTeX build artifacts
+*.aux
+*.out
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Build-time embedding tool
+tools/node_modules/
