@@ -1,0 +1,65 @@
+{% macro entry(paper, number) %}
+<article class="entry" id="{{ paper.id }}">
+  <div class="entry__num" aria-hidden="true">{{ '%02d' % number }}</div>
+  <div class="entry__body">
+    <h3 class="entry__title">
+      {% if paper.doi or paper.ssrn or paper.url %}
+      <a href="{{ paper.doi or paper.ssrn or paper.url }}" target="_blank" rel="noopener">{{ paper.title }}</a>
+      {% else %}
+      {{ paper.title }}
+      {% endif %}
+    </h3>
+    <p class="entry__authors">{{ paper.authors_html | safe }}</p>
+    {% if paper.venue %}
+    <p class="entry__venue">{{ paper.venue }}{% if paper.detail %} · {{ paper.detail }}{% endif %}</p>
+    {% elif paper.status == 'working' %}
+    <p class="entry__venue">Working paper</p>
+    {% elif paper.status == 'wip' %}
+    <p class="entry__venue">Work in progress</p>
+    {% endif %}
+
+    {% if paper.summary %}
+    <div class="summary"><p>{{ paper.summary | trim }}</p></div>
+    {% endif %}
+
+    {% if paper.abstract %}
+    <details>
+      <summary>Abstract</summary>
+      <p>{{ paper.abstract | trim }}</p>
+    </details>
+    {% endif %}
+
+    {% if paper.media %}
+    <details>
+      <summary>Media coverage ({{ paper.media | length }})</summary>
+      <ul>
+        {% for item in paper.media %}
+        <li><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a> — {{ item.outlet }}</li>
+        {% endfor %}
+      </ul>
+    </details>
+    {% endif %}
+
+    {% if paper.regulators %}
+    <details>
+      <summary>Cited by regulators ({{ paper.regulators | length }})</summary>
+      <ul>
+        {% for item in paper.regulators %}
+        <li><a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }}</a> — {{ item.body }}</li>
+        {% endfor %}
+      </ul>
+    </details>
+    {% endif %}
+
+    <div class="entry__links">
+      {% if paper.doi %}<a href="{{ paper.doi }}" target="_blank" rel="noopener">Published version</a>{% endif %}
+      {% if paper.ssrn %}<a href="{{ paper.ssrn }}" target="_blank" rel="noopener">SSRN</a>{% endif %}
+      {% if paper.url and not paper.doi and not paper.ssrn %}<a href="{{ paper.url }}" target="_blank" rel="noopener">Paper</a>{% endif %}
+    </div>
+
+    {% if paper.topics %}
+    <p>{% for topic in paper.topics %}<span class="chip">{{ topic }}</span>{% endfor %}</p>
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}

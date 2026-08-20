@@ -1,0 +1,69 @@
+{% extends 'base.html.j2' %}
+{% from 'partials/paper.html.j2' import entry %}
+{% block title %}{{ site.name }} | {{ site.title }}{% endblock %}
+
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": {{ site.name | tojson }},
+  "jobTitle": {{ site.title | tojson }},
+  "email": {{ ('mailto:' ~ site.email) | tojson }},
+  "url": "https://jfimbett.github.io/",
+  "affiliation": {"@type": "Organization", "name": {{ site.institution | tojson }}},
+  "sameAs": {{ (site.profiles.values() | select | list) | tojson }}
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="wrap hero__grid">
+    <div>
+      <h1 class="hero__title">{{ site.tagline }}</h1>
+      <hr class="rule">
+      <p class="hero__role">{{ site.name }}</p>
+      <p class="hero__institution">{{ site.title }}, {{ site.institution }}</p>
+      <p><a href="research.html">Research</a> · <a href="{{ site.cv }}">CV (PDF)</a> · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+    <figure class="hero__figure">
+      <canvas class="hero__canvas" id="hero-canvas" role="img"
+              aria-label="An animated field of particles positioned by the similarity of this researcher's papers."></canvas>
+      <div class="hero__anchor-label" id="hero-label" aria-hidden="true"></div>
+    </figure>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h2 class="section__title">Biography</h2>
+    <div class="hero__grid">
+      <div>
+        {% for paragraph in site.bio.strip().split('\n\n') %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
+        <p>{% for interest in site.research_interests %}<span class="chip">{{ interest }}</span>{% endfor %}</p>
+      </div>
+      <img class="hero__portrait" src="{{ site.photo }}" width="369" height="560"
+           alt="Portrait of {{ site.name }}" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Selected work</p>
+    <h2 class="section__title">Publications</h2>
+    {% for paper in grouped.published %}
+    {{ entry(paper, loop.index) }}
+    {% endfor %}
+    <p style="margin-top:2.5rem"><a href="research.html">All research →</a></p>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="assets/js/hero.js"></script>
+{% endblock %}

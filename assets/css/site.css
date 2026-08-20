@@ -247,3 +247,15 @@ img { max-width: 100%; height: auto; }
 .profile-links svg { width: 22px; height: 22px; fill: currentColor; }
 
 .colophon { color: var(--muted); font-size: var(--step--1); margin-top: 2rem; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.site-nav__search {
+  background: none; border: 1px solid var(--border); cursor: pointer;
+  color: var(--ink); font-size: var(--step-1); line-height: 1;
+  padding: 0.15rem 0.6rem; font-family: var(--body);
+}
+.site-nav__search:hover { border-color: var(--coral-ink); color: var(--grenat); }

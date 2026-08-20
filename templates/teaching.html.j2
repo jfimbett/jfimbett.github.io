@@ -1,0 +1,26 @@
+{% extends 'base.html.j2' %}
+{% block title %}Teaching | {{ site.name }}{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Teaching</p>
+    <h2 class="section__title">Courses</h2>
+    {% for course in courses %}
+    <article class="entry" id="{{ course.id }}">
+      <div class="entry__num" aria-hidden="true">{{ '%02d' % loop.index }}</div>
+      <div class="entry__body">
+        <h3 class="entry__title">
+          {% if course.url %}<a href="{{ course.url }}" target="_blank" rel="noopener">{{ course.title }}</a>
+          {% else %}{{ course.title }}{% endif %}
+        </h3>
+        <p class="entry__venue">
+          {{ course.institution }}{% if course.level %} · {{ course.level }}{% endif %}
+          {% if course.years %} · {{ course.years | join(', ') }}{% endif %}
+        </p>
+        {% if course.description %}<p>{{ course.description }}</p>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

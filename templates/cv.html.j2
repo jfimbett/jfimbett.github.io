@@ -1,0 +1,41 @@
+{% extends 'base.html.j2' %}
+{% block title %}CV | {{ site.name }}{% endblock %}
+{% block content %}
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Curriculum vitae</p>
+    <h2 class="section__title">{{ site.name }}</h2>
+    <p><a href="{{ site.cv }}">Download the full CV (PDF)</a></p>
+    <hr class="rule">
+
+    <h3>Appointments</h3>
+    <article class="entry">
+      <div class="entry__num" aria-hidden="true">01</div>
+      <div class="entry__body">
+        <h4 class="entry__title">{{ site.institution }}</h4>
+        <p class="entry__venue">{{ site.title }} · 2026–present</p>
+      </div>
+    </article>
+    {% for post in site.previous_affiliations %}
+    <article class="entry">
+      <div class="entry__num" aria-hidden="true">{{ '%02d' % (loop.index + 1) }}</div>
+      <div class="entry__body">
+        <h4 class="entry__title">{{ post.institution }}</h4>
+        <p class="entry__venue">{{ post.role }} · {{ post.years }}</p>
+      </div>
+    </article>
+    {% endfor %}
+
+    <h3 style="margin-top:3rem">Education</h3>
+    {% for item in site.education %}
+    <article class="entry">
+      <div class="entry__num" aria-hidden="true">{{ '%02d' % loop.index }}</div>
+      <div class="entry__body">
+        <h4 class="entry__title">{{ item.institution }}</h4>
+        <p class="entry__venue">{{ item.detail }} · {{ item.years }}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

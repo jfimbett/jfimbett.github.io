@@ -7,10 +7,14 @@ HTML committed alongside the source. Run: python3 build.py
 
 from __future__ import annotations
 
+import html
+import json
 import re
+import sys
 from pathlib import Path
 
 import yaml
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 ROOT = Path(__file__).parent
 CONTENT = ROOT / "content"
@@ -142,3 +146,114 @@ def validate_courses(courses):
     if errors:
         raise ContentError("\n".join(errors))
     return courses
+
+
+TEMPLATES = ROOT / "templates"
+
+PAGES = [
+    ("index.html.j2", "index.html", "home"),
+    ("research.html.j2", "research.html", "research"),
+    ("cv.html.j2", "cv.html", "cv"),
+]
+TEACHING_PAGE = ("teaching.html.j2", "teaching.html", "teaching")
+
+
+def format_authors(authors, self_name):
+    """Render an author list as HTML, bolding the SELF token.
+
+    Everything is escaped: author names come from YAML and are interpolated
+    into a template marked safe.
+    """
+    parts = []
+    for author in authors:
+        if author == SELF:
+            parts.append("<strong>{}</strong>".format(html.escape(self_name)))
+        else:
+            parts.append(html.escape(str(author)))
+    return ", ".join(parts)
+
+
+def partition(papers):
+    """Group papers by status, preserving file order within each group."""
+    grouped = {"published": [], "working": [], "wip": []}
+    for paper in papers:
+        grouped[paper["status"]].append(paper)
+    return grouped
+
+
+def build_context():
+    """Load and validate every content file into one render context."""
+    site = validate_site(load_yaml(CONTENT / "site.yml"))
+    papers = validate_papers(load_yaml(CONTENT / "papers.yml"))
+    courses = validate_courses(load_yaml(CONTENT / "courses.yml"))
+
+    for paper in papers:
+        paper["authors_html"] = format_authors(paper["authors"], site["name"])
+
+    return {
+        "site": site,
+        "papers": papers,
+        "grouped": partition(papers),
+        "courses": courses,
+        "has_teaching": bool(courses),
+        "year": 2026,
+    }
+
+
+def _environment():
+    env = Environment(
+        loader=FileSystemLoader(str(TEMPLATES)),
+        autoescape=select_autoescape(["html"]),
+        trim_blocks=True,
+        lstrip_blocks=True,
+        keep_trailing_newline=True,
+    )
+    return env
+
+
+def render_site(out_dir=None):
+    """Render every page. Returns the list of paths written.
+
+    Nothing is written until every template has rendered successfully, so a
+    failure cannot leave a half-generated site on disk.
+    """
+    out_dir = Path(out_dir) if out_dir else ROOT
+    context = build_context()
+    env = _environment()
+
+    pages = list(PAGES)
+    if context["has_teaching"]:
+        pages.append(TEACHING_PAGE)
+
+    rendered = {}
+    for template_name, output_name, page_id in pages:
+        template = env.get_template(template_name)
+        rendered[output_name] = template.render(page=page_id, **context)
+
+    written = []
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for output_name, markup in rendered.items():
+        path = out_dir / output_name
+        path.write_text(markup, encoding="utf-8")
+        written.append(path)
+
+    stale = out_dir / "teaching.html"
+    if not context["has_teaching"] and stale.exists():
+        stale.unlink()
+
+    return written
+
+
+def main():
+    try:
+        written = render_site()
+    except ContentError as exc:
+        sys.stderr.write("Content validation failed:\n{}\n".format(exc))
+        return 1
+    for path in written:
+        print("wrote {}".format(path.relative_to(ROOT)))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

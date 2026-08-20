@@ -1,0 +1,36 @@
+{% extends 'base.html.j2' %}
+{% from 'partials/paper.html.j2' import entry %}
+{% block title %}Research | {{ site.name }}{% endblock %}
+
+{% block head %}
+<script type="application/ld+json">
+{{ {
+  "@context": "https://schema.org",
+  "@graph": papers | map(attribute='id') | list
+} | tojson }}
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="section">
+  <div class="wrap">
+    <p class="eyebrow">Research</p>
+    <h2 class="section__title">Publications</h2>
+    {% for paper in grouped.published %}{{ entry(paper, loop.index) }}{% endfor %}
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="wrap">
+    <h2 class="section__title">Working papers</h2>
+    {% for paper in grouped.working %}{{ entry(paper, loop.index) }}{% endfor %}
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="section__title">Work in progress</h2>
+    {% for paper in grouped.wip %}{{ entry(paper, loop.index) }}{% endfor %}
+  </div>
+</section>
+{% endblock %}
