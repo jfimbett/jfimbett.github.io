@@ -33,6 +33,7 @@ AGENDAS = (
 VALID_AGENDA = {slug for slug, _ in AGENDAS}
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 DATA_DIR = "assets/data"
+SITE_URL = "https://jfimbett.github.io/"
 
 
 class ContentError(Exception):
@@ -245,6 +246,51 @@ def write_search_index(context, out_dir):
     return path
 
 
+def scholarly_article(paper, site):
+    """Schema.org ScholarlyArticle for one paper."""
+    authors = [
+        site["name"] if name == SELF else name for name in paper.get("authors", [])
+    ]
+    node = {
+        "@type": "ScholarlyArticle",
+        "name": paper["title"],
+        "author": [{"@type": "Person", "name": name} for name in authors],
+        "url": SITE_URL + "research.html#" + paper["id"],
+    }
+    if paper.get("year"):
+        node["datePublished"] = str(paper["year"])
+    if paper.get("venue"):
+        node["publication"] = paper["venue"]
+    if paper.get("abstract"):
+        node["abstract"] = paper["abstract"].strip()
+    same_as = [paper.get(key) for key in ("doi", "ssrn", "url")]
+    same_as = [value for value in same_as if value]
+    if same_as:
+        node["sameAs"] = same_as
+    return node
+
+
+def write_sitemap(context, out_dir):
+    """List the public URLs. The archive and the wedding site are excluded."""
+    pages = ["", "research.html"]
+    if context["has_teaching"]:
+        pages.append("teaching.html")
+    pages.append(context["site"]["cv"])
+
+    lines = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
+    for page in pages:
+        lines.append("  <url><loc>{}{}</loc></url>".format(SITE_URL, page))
+    lines.append("</urlset>")
+    lines.append("")
+
+    path = Path(out_dir) / "sitemap.xml"
+    path.write_text("\n".join(lines), encoding="utf-8")
+    return path
+
+
 def build_context():
     """Load and validate every content file into one render context."""
     site = validate_site(load_yaml(CONTENT / "site.yml"))
@@ -273,6 +319,10 @@ def _environment():
         lstrip_blocks=True,
         keep_trailing_newline=True,
     )
+    # Registered as a filter as well as a global, so a template can either call
+    # it directly or map it over a list of papers.
+    env.globals["scholarly_article"] = scholarly_article
+    env.filters["scholarly_article_for"] = scholarly_article
     return env
 
 
@@ -293,7 +343,10 @@ def render_site(out_dir=None):
     rendered = {}
     for template_name, output_name, page_id in pages:
         template = env.get_template(template_name)
-        rendered[output_name] = template.render(page=page_id, **context)
+        canonical = SITE_URL + ("" if output_name == "index.html" else output_name)
+        rendered[output_name] = template.render(
+            page=page_id, canonical=canonical, **context
+        )
 
     written = []
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -307,6 +360,7 @@ def render_site(out_dir=None):
         stale.unlink()
 
     written.append(write_search_index(context, out_dir))
+    written.append(write_sitemap(context, out_dir))
     return written
 
 

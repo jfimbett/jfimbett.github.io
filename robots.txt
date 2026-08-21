@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /archive/
+Disallow: /wedding/
+
+Sitemap: https://jfimbett.github.io/sitemap.xml

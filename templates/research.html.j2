@@ -6,7 +6,7 @@
 <script type="application/ld+json">
 {{ {
   "@context": "https://schema.org",
-  "@graph": papers | map(attribute='id') | list
+  "@graph": grouped.published | map('scholarly_article_for', site) | list
 } | tojson }}
 </script>
 {% endblock %}

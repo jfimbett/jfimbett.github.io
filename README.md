@@ -1,114 +1,80 @@
-# Academic Website - Juan Felipe Imbet
+# jfimbett.github.io
 
-This repository contains the source code for my academic website, hosted via GitHub Pages.
+Academic site for Juan Felipe Imbet. Static HTML generated from YAML and
+served by GitHub Pages.
 
-## Website Structure
+## Adding a paper
 
-- **index.html**: Main landing page with research papers and publications
-- **teaching**: Folder containing teaching-related materials and pages
-- **assets**: Contains all static resources
-  - **css**: Custom stylesheets
-  - **js**: JavaScript files
-  - **images**: Images for the website
+1. Add an entry to `content/papers.yml`:
 
-## Features
+   ```yaml
+   - id: my-new-paper
+     title: The Title
+     authors: [Coauthor Name, SELF]
+     status: working          # published | working | wip
+     year: 2026
+     ssrn: https://papers.ssrn.com/...
+     topics: [asset pricing]
+     agenda: asset-pricing    # colours the point on the research map
+     short: New Paper         # its label on the map, ~25 characters
+     abstract: |
+       ...
+     summary: |
+       One plain-language paragraph.
+   ```
 
-- Responsive design using Bootstrap 5
-- Clean, accessible presentation of research papers
-- Collapsible abstracts and media mentions with toggle buttons
-- Organized teaching materials 
-- Mobile-friendly layout
-- Easy to maintain with static HTML content
+   `SELF` renders as your name in bold. Published papers also need `venue`
+   and `year`. `agenda` must be one of the slugs in `AGENDAS` in `build.py`;
+   adding a new one means adding a `--plot-<slug>` colour to
+   `assets/css/site.css` and a shape to `SHAPES` in `assets/js/hero.js`.
 
-## Development
+2. Rebuild and refresh the search index and the map:
 
-### Updating the Website
+   ```bash
+   python3 build.py
+   cd tools && npm run embed && cd ..
+   ```
 
-#### Adding a New Paper
+3. Commit everything, including the regenerated HTML and JSON.
 
-To add a new research paper to your website:
+## Adding a course
 
-1. Open `index.html`
-2. Navigate to the "Working Papers" section
-3. Copy an existing paper card and update the following:
-   - Paper title and link
-   - Publication status
-   - Authors (make sure your name is in `<strong>` tags)
-   - Abstract
-   - Media mentions (if applicable)
+Add an entry to `content/courses.yml` and rebuild. The Teaching page and its
+nav link appear automatically; while the file is an empty list, neither
+exists.
 
-Example template for a new paper:
+## Commands
 
-```html
-<div class="col-md-12 mb-4">
-    <div class="card paper-card">
-        <div class="card-body">
-            <h3 class="card-title paper-title">
-                <a href="[PAPER_URL]" target="_blank">
-                    [PAPER_TITLE]
-                </a>
-            </h3>
-            <p class="paper-status">[PUBLICATION_STATUS]</p>
-            <p class="paper-authors">[AUTHOR1], <strong>Juan Felipe Imbet</strong>, [AUTHOR3]</p>
-            <div class="paper-abstract collapse">
-                <p class="mt-3"><strong>Abstract:</strong> [PAPER_ABSTRACT]</p>
-            </div>
-            <button class="btn btn-sm btn-outline-primary mt-2 toggle-abstract">Show Abstract</button>
-            
-            <!-- Add media mentions if applicable -->
-            <div class="media-mentions mt-3 collapse">
-                <h5><i class="fas fa-newspaper me-2"></i>Media Mentions</h5>
-                <ul>
-                    <li><a href="[MENTION_URL]" target="_blank">[MENTION_TITLE]</a></li>
-                    <!-- Add more media mentions as needed -->
-                </ul>
-            </div>
-            <button class="btn btn-sm btn-outline-secondary mt-2 toggle-mentions">Show Media Mentions</button>
-        </div>
-    </div>
-</div>
+| Command | Purpose |
+|---|---|
+| `python3 build.py` | Regenerate the site. Run after any content change. |
+| `cd tools && npm run embed` | Recompute embeddings. Run after adding or editing a paper. |
+| `python3 -m pytest tests/` | Python tests. |
+| `node --test tools/test/*.test.mjs` | JavaScript tests. |
+| `python3 -m http.server 8899` | Preview locally at 127.0.0.1:8899. |
+
+`build.py` warns when `papers.yml` is newer than the embeddings.
+
+## Layout
+
+```
+content/      YAML source — the only files you normally edit
+templates/    Jinja2 templates
+build.py      Renders templates to HTML, and writes search.json + sitemap.xml
+tools/        Embedding and PCA tooling (Node)
+assets/       CSS, JS, images, generated JSON
+archive/      Old teaching material and talks; unlinked, kept for old URLs
+blog/, code.html, wedding/   Older hand-written pages, left as they were
+*.html        Generated. Do not edit by hand.
 ```
 
-#### Adding a Publication
+`assets/css/custom.css` and `assets/js/main.js` belong to those older
+hand-written pages, not to the generated site.
 
-To add a new publication to your website:
+## Design
 
-1. Open `index.html`
-2. Navigate to the "Publications" section
-3. Copy an existing publication card and update the following:
-   - Publication title
-   - Journal name and status
-   - Authors (make sure your name is in `<strong>` tags)
+Colour and type follow EDHEC's brand: grenat `#5F1937`, Montserrat and
+Open Sans. Tokens are defined once at the top of `assets/css/site.css`.
 
-Example template for a new publication:
-
-```html
-<div class="col-md-12">
-    <div class="card mb-4 paper-card">
-        <div class="card-body">
-            <h3 class="card-title paper-title">[PUBLICATION_TITLE]</h3>
-            <p class="paper-status">[JOURNAL_NAME]</p>
-            <p class="paper-authors">[AUTHOR1], <strong>Juan Felipe Imbet</strong>, [AUTHOR3]</p>
-        </div>
-    </div>
-</div>
-```
-
-#### Updating Your CV
-
-To update your CV:
-
-1. Replace the `cv.pdf` file with your updated CV
-2. Make sure the filename remains `cv.pdf` to maintain all links
-
-### Updating Teaching Materials
-
-Place your teaching materials in the appropriate subfolder under `teaching/` and update the corresponding index page.
-
-## Deployment
-
-The website is deployed automatically via GitHub Pages whenever changes are pushed to the main branch.
-
-## License
-
-All rights reserved. © Juan Felipe Imbet
+The full design rationale is in
+`docs/superpowers/specs/2026-08-20-website-redesign-design.md`.
