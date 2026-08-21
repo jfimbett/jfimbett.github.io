@@ -139,3 +139,45 @@ def test_search_index_covers_every_paper(tmp_path):
     assert ids == {paper["id"] for paper in build_context()["papers"]}
     for doc in payload["docs"]:
         assert doc["text"].strip(), "{} has empty search text".format(doc["id"])
+
+
+def _render_home_with_map(flag, tmp_path):
+    """Render index.html with site.show_research_map forced to `flag`."""
+    import build
+
+    real_build_context = build.build_context
+
+    def patched():
+        context = real_build_context()
+        context["site"] = dict(context["site"], show_research_map=flag)
+        return context
+
+    build.build_context = patched
+    try:
+        render_site(out_dir=tmp_path)
+    finally:
+        build.build_context = real_build_context
+    return (tmp_path / "index.html").read_text(encoding="utf-8")
+
+
+def test_research_map_is_omitted_when_the_flag_is_off(tmp_path):
+    markup = _render_home_with_map(False, tmp_path)
+    assert "plot-canvas" not in markup
+    assert "hero.js" not in markup
+
+
+def test_research_map_returns_when_the_flag_is_on(tmp_path):
+    markup = _render_home_with_map(True, tmp_path)
+    assert 'id="plot-canvas"' in markup
+    assert "assets/js/hero.js" in markup
+    assert "plot__legend" in markup
+
+
+def test_the_nav_does_not_duplicate_the_cv_link(tmp_path):
+    """The CV lives in the hero's link row; a second copy in the nav is noise."""
+    import re
+
+    render_site(out_dir=tmp_path)
+    markup = (tmp_path / "index.html").read_text(encoding="utf-8")
+    nav = re.search(r'<div class="site-nav__links">(.*?)</div>', markup, re.S).group(1)
+    assert "cv.pdf" not in nav

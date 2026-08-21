@@ -40,7 +40,6 @@
     <div class="site-nav__links">
       <a href="index.html" aria-current="page">About</a>
       <a href="research.html">Research</a>
-      <a href="cv.pdf">CV</a>
       <button type="button" id="search-open" class="site-nav__search" aria-label="Search this site" aria-expanded="false">⌕</button>
     </div>
   </div>
@@ -65,44 +64,6 @@
   </div>
 </section>
 
-<section class="section section--tint" id="map">
-  <div class="wrap">
-    <p class="eyebrow">Research map</p>
-    <h2 class="section__title">Papers in embedding space</h2>
-    <p>Each point is a paper, placed by a two-dimensional projection of its
-    text embedding. Papers that read alike sit together; colour marks the
-    research agenda.</p>
-    <figure class="plot">
-      <canvas class="plot__canvas" id="plot-canvas" tabindex="0" role="img"
-              aria-label="Scatter plot of 9 papers positioned by the similarity of their text and coloured by research agenda. The same papers are listed below.">
-        <svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true" focusable="false">
-          <rect width="100" height="100" fill="#FFFFFF"/>
-          <circle cx="88.0" cy="62.0" r="2.6" fill="#A63446"/>
-          <circle cx="82.5" cy="57.6" r="2.6" fill="#A63446"/>
-          <circle cx="44.9" cy="33.5" r="2.6" fill="#007FB0"/>
-          <circle cx="30.8" cy="81.8" r="2.6" fill="#5F1937"/>
-          <circle cx="12.0" cy="73.4" r="2.6" fill="#5F1937"/>
-          <circle cx="41.0" cy="39.5" r="2.6" fill="#007FB0"/>
-          <circle cx="19.1" cy="66.2" r="2.6" fill="#5F1937"/>
-          <circle cx="32.9" cy="18.2" r="2.6" fill="#6B5300"/>
-          <circle cx="31.1" cy="20.6" r="2.6" fill="#007FB0"/>
-        </svg>
-      </canvas>
-      <div class="plot__tooltip" id="plot-tooltip" aria-hidden="true"></div>
-      <ul class="plot__legend">
-        <li><span class="plot__swatch" data-agenda="social-media"></span>Social media and markets</li>
-        <li><span class="plot__swatch" data-agenda="corporate-finance"></span>Corporate finance</li>
-        <li><span class="plot__swatch" data-agenda="asset-pricing"></span>Asset pricing</li>
-        <li><span class="plot__swatch" data-agenda="computational-finance"></span>Computational finance</li>
-      </ul>
-      <p class="plot__hint">Hover or focus a point for the full title; click to open the paper.</p>
-      <figcaption class="visually-hidden">
-        Papers shown in the map:
-        <ul><li><a href="research.html#social-media-bank-run">Social Media as a Bank Run Catalyst</a></li><li><a href="research.html#tweeting-for-money">Tweeting for Money: Social Media and Mutual Fund Flows</a></li><li><a href="research.html#short-term-options">The Forecasting Power of Short-Term Options</a></li><li><a href="research.html#offshore-data-leaks">The Real Effects of Offshore Data Leaks: Evidence from Private Firms</a></li><li><a href="research.html#dynamic-contracting-tax">Dynamic Contracting and Corporate Tax Strategies</a></li><li><a href="research.html#stroke-of-a-pen">Stroke of a Pen: Investment and Stock Returns under Energy Policy Uncertainty</a></li><li><a href="research.html#competitive-executive-compensation">Competitive Executive Compensation with Profitability Shocks</a></li><li><a href="research.html#theories-as-regularizers">Theories as Regularizers</a></li><li><a href="research.html#liquid-assets">Liquid Assets</a></li></ul>
-      </figcaption>
-    </figure>
-  </div>
-</section>
 
 
 <section class="section">
@@ -267,6 +228,5 @@ equivalent measures built from past returns.</p></div>
 
 <script type="module" src="assets/js/search.js"></script>
 <script type="module" src="assets/js/semantic.js"></script>
-<script type="module" src="assets/js/hero.js"></script>
 </body>
 </html>

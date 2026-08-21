@@ -38,6 +38,7 @@
   </div>
 </section>
 
+{% if site.show_research_map %}
 <section class="section section--tint" id="map">
   <div class="wrap">
     <p class="eyebrow">Research map</p>
@@ -75,6 +76,7 @@
     </figure>
   </div>
 </section>
+{% endif %}
 
 
 <section class="section">
@@ -90,5 +92,7 @@
 {% endblock %}
 
 {% block scripts %}
+{% if site.show_research_map %}
 <script type="module" src="assets/js/hero.js"></script>
+{% endif %}
 {% endblock %}

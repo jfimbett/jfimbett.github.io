@@ -7,6 +7,9 @@ office: ""
 photo: assets/images/profile.jpg
 photo_webp: assets/images/profile.webp   # optional; served first when present
 cv: cv.pdf
+# The research map (papers plotted in embedding space) is built and tested but
+# hidden until it is ready to show. Set to true to put the section back.
+show_research_map: false
 intro: Corporate finance, asset pricing, and computational finance.
 research_interests:
   - Corporate Finance
