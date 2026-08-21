@@ -21,6 +21,16 @@ CONTENT = ROOT / "content"
 
 SELF = "SELF"
 VALID_STATUS = {"published", "working", "wip"}
+# Research agendas, in legend order. The slug colours a paper's point in the
+# hero scatter (assets/js/hero.js reads a --plot-<slug> custom property), and
+# the label names it in the legend rendered by templates/index.html.j2.
+AGENDAS = (
+    ("social-media", "Social media and markets"),
+    ("corporate-finance", "Corporate finance"),
+    ("asset-pricing", "Asset pricing"),
+    ("computational-finance", "Computational finance"),
+)
+VALID_AGENDA = {slug for slug, _ in AGENDAS}
 ID_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 DATA_DIR = "assets/data"
 
@@ -85,7 +95,12 @@ def validate_papers(papers):
         label = paper.get("id") or paper.get("title") or "<untitled>"
         where = "papers[{}] ({})".format(index, label)
 
-        _check_required(paper, ("id", "title", "authors", "status"), where, errors)
+        _check_required(
+            paper,
+            ("id", "title", "authors", "status", "agenda", "short"),
+            where,
+            errors,
+        )
         _check_id(paper, seen, index, where, errors)
 
         status = paper.get("status")
@@ -101,6 +116,14 @@ def validate_papers(papers):
                     errors.append(
                         "{}: published papers requires '{}'".format(where, field)
                     )
+
+        agenda = paper.get("agenda")
+        if agenda and agenda not in VALID_AGENDA:
+            errors.append(
+                "{}: unknown agenda '{}' (expected one of {})".format(
+                    where, agenda, sorted(VALID_AGENDA)
+                )
+            )
 
         authors = paper.get("authors")
         if isinstance(authors, list) and SELF not in authors:
@@ -206,6 +229,8 @@ def write_search_index(context, out_dir):
             "venue": paper.get("venue") or paper["status"],
             "status": paper["status"],
             "topics": paper.get("topics", []) or [],
+            "agenda": paper["agenda"],
+            "short": paper["short"],
             "summary": (paper.get("summary") or "").strip(),
             "text": _search_text(paper),
         })
@@ -235,6 +260,7 @@ def build_context():
         "grouped": partition(papers),
         "courses": courses,
         "has_teaching": bool(courses),
+        "agendas": [{"id": slug, "label": label} for slug, label in AGENDAS],
         "year": 2026,
     }
 

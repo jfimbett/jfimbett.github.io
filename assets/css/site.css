@@ -16,6 +16,13 @@
   --border: #DCDCDC;
   --muted: #5A5A5A;
 
+  /* Research-map series. One per agenda slug in build.py's AGENDAS; the
+     scatter reads these by name, so a new agenda needs a token here. */
+  --plot-social-media: #A63446;          /* 6.56:1 on white */
+  --plot-corporate-finance: #5F1937;     /* 12.49:1 on white */
+  --plot-asset-pricing: #007FB0;         /* 4.50:1 on white */
+  --plot-computational-finance: #6B5300; /* 7.34:1 on white */
+
   --display: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --body: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
@@ -43,6 +50,10 @@
     /* On near-black these pass comfortably, so the bright originals return. */
     --coral-ink: #FF6E6E;
     --bleu-ink: #00B9FF;
+    --plot-social-media: #FF8A8A;
+    --plot-corporate-finance: #D4849F;
+    --plot-asset-pricing: #4FC9FF;
+    --plot-computational-finance: #E0B84C;
   }
 }
 
@@ -149,24 +160,58 @@ img { max-width: 100%; height: auto; }
 
 .rule { border: 0; height: 3px; width: 4.5rem; background: var(--coral); margin: 1.75rem 0; }
 
-.hero__figure { position: relative; margin: 1.5rem 0 0; }
-.hero__canvas {
-  display: block; width: 100%; max-width: 820px; aspect-ratio: 4 / 3;
-  margin-inline: auto; background: var(--paper);
-  border: 1px solid var(--border);
-}
 .hero__portrait {
   /* Native size is 369x560; never upscale it. */
   display: block; width: min(100%, 369px); margin-inline: auto;
   border: 1px solid var(--border);
 }
-.hero__anchor-label {
-  position: absolute; pointer-events: none;
-  font-family: var(--mono); font-size: var(--step--1);
-  background: var(--grenat); color: #FFFFFF;
-  padding: 0.3rem 0.55rem; opacity: 0; transition: opacity 120ms;
+
+/* --- Research map (scatter of papers in embedding space) ----------------- */
+
+.plot { position: relative; margin: 1.5rem 0 0; }
+.plot__canvas {
+  display: block; width: 100%; aspect-ratio: 1 / 1;
+  background: var(--paper); border: 1px solid var(--border);
+  touch-action: manipulation;
 }
-.hero__anchor-label[data-visible="true"] { opacity: 1; }
+@media (min-width: 700px) {
+  .plot__canvas { aspect-ratio: 16 / 10; }
+}
+.plot__canvas:focus-visible { outline: 3px solid var(--bleu-ink); outline-offset: 2px; }
+
+.plot__tooltip {
+  position: absolute; pointer-events: none; z-index: 2;
+  max-width: min(22rem, 70%);
+  font-family: var(--body); font-size: var(--step--1); line-height: 1.35;
+  background: var(--grenat); color: #FFFFFF;
+  padding: 0.4rem 0.6rem; opacity: 0; transition: opacity 120ms;
+}
+.plot__tooltip[data-visible="true"] { opacity: 1; }
+
+.plot__legend {
+  display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem;
+  list-style: none; padding: 0; margin: 1rem 0 0;
+  font-size: var(--step--1); color: var(--ink);
+}
+.plot__legend li { display: flex; align-items: center; gap: 0.5rem; }
+.plot__swatch {
+  /* Shape mirrors the marker drawn on the canvas by assets/js/hero.js. */
+  width: 0.75rem; height: 0.75rem;
+  background: var(--muted); flex: none;
+}
+.plot__swatch[data-agenda="social-media"] { border-radius: 50%; }
+.plot__swatch[data-agenda="asset-pricing"] {
+  clip-path: polygon(50% 0%, 100% 90%, 0% 90%);
+}
+.plot__swatch[data-agenda="computational-finance"] {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.plot__swatch[data-agenda="social-media"] { background: var(--plot-social-media); }
+.plot__swatch[data-agenda="corporate-finance"] { background: var(--plot-corporate-finance); }
+.plot__swatch[data-agenda="asset-pricing"] { background: var(--plot-asset-pricing); }
+.plot__swatch[data-agenda="computational-finance"] { background: var(--plot-computational-finance); }
+
+.plot__hint { font-size: var(--step--1); color: var(--muted); margin: 0.75rem 0 0; }
 
 /* --- Sections ------------------------------------------------------------ */
 

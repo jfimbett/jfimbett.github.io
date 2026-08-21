@@ -52,7 +52,9 @@ async function main() {
       id: doc.id,
       x: round(coords[i][0]),
       y: round(coords[i][1]),
-      label: doc.title,
+      label: doc.short,
+      title: doc.title,
+      agenda: doc.agenda,
       href: `research.html#${doc.id}`,
     })),
   };

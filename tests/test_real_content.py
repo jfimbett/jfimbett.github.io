@@ -1,9 +1,15 @@
 """Guards on the actual content, not just the schema."""
 
+import json
+
 import pytest
 
 from build import (
+    AGENDAS,
     CONTENT,
+    DATA_DIR,
+    ROOT,
+    VALID_AGENDA,
     load_yaml,
     validate_courses,
     validate_papers,
@@ -52,3 +58,46 @@ def test_no_dauphine_email_remains(papers):
 
 def test_courses_is_empty_for_now():
     assert validate_courses(load_yaml(CONTENT / "courses.yml")) == []
+
+
+# --- Research map ---------------------------------------------------------
+# The hero scatter needs three things to line up: a valid agenda on every
+# paper, a colour token for every agenda, and a hero.json that still describes
+# the papers currently in papers.yml.
+
+
+@pytest.fixture(scope="module")
+def hero():
+    return json.loads((ROOT / DATA_DIR / "hero.json").read_text(encoding="utf-8"))
+
+
+def test_every_paper_has_a_known_agenda(papers):
+    for paper in papers:
+        assert paper["agenda"] in VALID_AGENDA, paper["id"]
+
+
+def test_every_agenda_is_used_by_at_least_one_paper(papers):
+    used = {paper["agenda"] for paper in papers}
+    assert used == VALID_AGENDA
+
+
+def test_short_labels_stay_short_enough_to_plot(papers):
+    for paper in papers:
+        assert len(paper["short"]) <= 26, paper["id"]
+
+
+def test_every_agenda_has_a_plot_colour_token():
+    css = (ROOT / "assets" / "css" / "site.css").read_text(encoding="utf-8")
+    for slug, _ in AGENDAS:
+        assert "--plot-{}:".format(slug) in css, slug
+
+
+def test_hero_json_matches_the_papers(papers, hero):
+    anchors = {anchor["id"]: anchor for anchor in hero["anchors"]}
+    assert set(anchors) == {paper["id"] for paper in papers}
+    for paper in papers:
+        anchor = anchors[paper["id"]]
+        assert anchor["agenda"] == paper["agenda"]
+        assert anchor["label"] == paper["short"]
+        assert anchor["title"] == paper["title"]
+        assert -1 <= anchor["x"] <= 1 and -1 <= anchor["y"] <= 1

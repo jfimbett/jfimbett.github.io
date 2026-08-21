@@ -37,27 +37,34 @@
   <div class="wrap">
     <p class="eyebrow">Research map</p>
     <h2 class="section__title">Papers in embedding space</h2>
-    <p>Each point is a paper, placed by the similarity of its text. Related work
-    sits together. Hover a point for the title; click to open it.</p>
-    <figure class="hero__figure">
-      <canvas class="hero__canvas" id="hero-canvas" role="img"
-              aria-label="An animated field of particles positioned by the similarity of this researcher's papers.">
+    <p>Each point is a paper, placed by a two-dimensional projection of its
+    text embedding. Papers that read alike sit together; colour marks the
+    research agenda.</p>
+    <figure class="plot">
+      <canvas class="plot__canvas" id="plot-canvas" tabindex="0" role="img"
+              aria-label="Scatter plot of {{ papers | length }} papers positioned by the similarity of their text and coloured by research agenda. The same papers are listed below.">
         <svg viewBox="0 0 100 100" width="100%" height="100%" aria-hidden="true" focusable="false">
-          <rect width="100" height="100" fill="#ECE4E7"/>
-          <circle cx="72" cy="34" r="2.5" fill="#5F1937"/>
-          <circle cx="66" cy="40" r="2.5" fill="#5F1937"/>
-          <circle cx="30" cy="70" r="2.5" fill="#5F1937"/>
-          <circle cx="22" cy="64" r="2.5" fill="#5F1937"/>
-          <circle cx="38" cy="76" r="2.5" fill="#5F1937"/>
-          <circle cx="34" cy="22" r="2.5" fill="#5F1937"/>
-          <circle cx="30" cy="18" r="2.5" fill="#5F1937"/>
-          <circle cx="46" cy="46" r="2.5" fill="#A63446"/>
-          <circle cx="42" cy="52" r="2.5" fill="#A63446"/>
+          <rect width="100" height="100" fill="#FFFFFF"/>
+          <circle cx="88.0" cy="62.0" r="2.6" fill="#A63446"/>
+          <circle cx="82.5" cy="57.6" r="2.6" fill="#A63446"/>
+          <circle cx="44.9" cy="33.5" r="2.6" fill="#007FB0"/>
+          <circle cx="30.8" cy="81.8" r="2.6" fill="#5F1937"/>
+          <circle cx="12.0" cy="73.4" r="2.6" fill="#5F1937"/>
+          <circle cx="41.0" cy="39.5" r="2.6" fill="#007FB0"/>
+          <circle cx="19.1" cy="66.2" r="2.6" fill="#5F1937"/>
+          <circle cx="32.9" cy="18.2" r="2.6" fill="#6B5300"/>
+          <circle cx="31.1" cy="20.6" r="2.6" fill="#007FB0"/>
         </svg>
       </canvas>
-      <div class="hero__anchor-label" id="hero-label" aria-hidden="true"></div>
+      <div class="plot__tooltip" id="plot-tooltip" aria-hidden="true"></div>
+      <ul class="plot__legend">
+        {% for agenda in agendas if agenda.id in papers | map(attribute='agenda') | list %}
+        <li><span class="plot__swatch" data-agenda="{{ agenda.id }}"></span>{{ agenda.label }}</li>
+        {% endfor %}
+      </ul>
+      <p class="plot__hint">Hover or focus a point for the full title; click to open the paper.</p>
       <figcaption class="visually-hidden">
-        Papers shown in the field:
+        Papers shown in the map:
         <ul>{% for paper in papers %}<li><a href="research.html#{{ paper.id }}">{{ paper.title }}</a></li>{% endfor %}</ul>
       </figcaption>
     </figure>

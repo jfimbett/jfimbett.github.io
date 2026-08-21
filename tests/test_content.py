@@ -9,6 +9,8 @@ def _paper(**over):
         "title": "A Paper",
         "authors": ["Someone", "SELF"],
         "status": "working",
+        "agenda": "asset-pricing",
+        "short": "A Paper",
     }
     base.update(over)
     return base
@@ -16,6 +18,25 @@ def _paper(**over):
 
 def test_valid_paper_passes():
     assert validate_papers([_paper()])
+
+
+def test_missing_agenda_is_rejected():
+    paper = _paper()
+    del paper["agenda"]
+    with pytest.raises(ContentError, match="missing required field 'agenda'"):
+        validate_papers([paper])
+
+
+def test_missing_short_label_is_rejected():
+    paper = _paper()
+    del paper["short"]
+    with pytest.raises(ContentError, match="missing required field 'short'"):
+        validate_papers([paper])
+
+
+def test_unknown_agenda_is_rejected():
+    with pytest.raises(ContentError, match="unknown agenda 'macro'"):
+        validate_papers([_paper(agenda="macro")])
 
 
 def test_duplicate_id_is_rejected():
