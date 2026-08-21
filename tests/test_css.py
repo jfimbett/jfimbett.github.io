@@ -122,3 +122,13 @@ def test_no_bootstrap_or_fontawesome_remains(css):
     lowered = css.lower()
     assert "bootstrap" not in lowered
     assert "font-awesome" not in lowered
+
+
+def test_nav_wraps_on_narrow_screens(css):
+    """At 320-360px the brand plus four controls exceed the viewport.
+
+    Without wrapping the whole page scrolls sideways, which is why this is a
+    guard rather than a comment: the failure is invisible on a laptop.
+    """
+    inner = re.search(r"\.site-nav__inner \{(.*?)\}", css, re.S).group(1)
+    assert "flex-wrap: wrap" in inner

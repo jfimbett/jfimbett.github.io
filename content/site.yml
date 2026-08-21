@@ -5,6 +5,7 @@ institution: EDHEC Business School
 email: juan.imbet@edhec.edu
 office: ""
 photo: assets/images/profile.jpg
+photo_webp: assets/images/profile.webp   # optional; served first when present
 cv: cv.pdf
 intro: Corporate finance, asset pricing, and computational finance.
 research_interests:

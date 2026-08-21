@@ -28,8 +28,13 @@
       <p class="hero__intro">{{ site.intro }}</p>
       <p><a href="research.html">Research</a> · <a href="{{ site.cv }}">CV (PDF)</a> · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
     </div>
-    <img class="hero__portrait" src="{{ site.photo }}" width="369" height="560"
-         alt="Portrait of {{ site.name }}">
+    <picture>
+      {% if site.photo_webp %}
+      <source srcset="{{ site.photo_webp }}" type="image/webp">
+      {% endif %}
+      <img class="hero__portrait" src="{{ site.photo }}" width="369" height="560"
+           alt="Portrait of {{ site.name }}">
+    </picture>
   </div>
 </section>
 
@@ -79,7 +84,7 @@
     {% for paper in grouped.published %}
     {{ entry(paper, loop.index) }}
     {% endfor %}
-    <p style="margin-top:2.5rem"><a href="research.html">All research →</a></p>
+    <p class="section__more"><a href="research.html">All research →</a></p>
   </div>
 </section>
 {% endblock %}

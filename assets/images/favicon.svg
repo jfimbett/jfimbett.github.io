@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Research map mark">
+  <rect width="32" height="32" rx="6" fill="#5F1937"/>
+  <circle cx="22" cy="10" r="3" fill="#FF6E6E"/>
+  <rect x="6" y="19" width="5.5" height="5.5" fill="#ECE4E7"/>
+  <path d="M16 12.5 L19.5 19.5 L12.5 19.5 Z" fill="#00B9FF"/>
+</svg>
