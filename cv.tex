@@ -1,0 +1,258 @@
+%-------------------------------------------------------------------------------
+%  Curriculum Vitae - Juan F. Imbet
+%  Compile with: pdflatex cv.tex
+%-------------------------------------------------------------------------------
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[left=0.4in,right=0.75in,top=0.3in,bottom=0.30in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}          % Times (NimbusRomNo9L)
+\usepackage{fontawesome}       % \faMapMarker, \faLink, \faEnvelope
+\usepackage{array}
+\usepackage{textcomp}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+%-------------------------------------------------------------------------------
+%  Layout helpers
+%-------------------------------------------------------------------------------
+% Section title followed by a full-width rule.
+\newcommand{\cvsection}[1]{%
+  \par\vspace{12.80pt}%
+  \textbf{#1}\par\nobreak
+  \vspace{6.08pt}\hrule height 0.4pt\nobreak\vspace{6.9pt}\nobreak}
+
+% Body of a section: indented by 1.5em, flush right with the text block.
+\makeatletter
+\newenvironment{cvbody}
+  {\begin{list}{}{%
+      \@beginparpenalty\@M      % never break between a title and its body
+      \setlength{\leftmargin}{1.5em}%
+      \setlength{\rightmargin}{0pt}%
+      \setlength{\labelwidth}{0pt}%
+      \setlength{\labelsep}{0pt}%
+      \setlength{\listparindent}{0pt}%
+      \setlength{\itemindent}{0pt}%
+      \setlength{\topsep}{0pt}%
+      \setlength{\partopsep}{0pt}%
+      \setlength{\parsep}{0pt}%
+      \setlength{\itemsep}{0pt}}%
+   \item\relax}
+  {\end{list}}
+\makeatother
+
+% One entry with a right-aligned italic date.
+\newcommand{\dated}[2]{#1\hfill\textit{#2}\par}
+
+% One row of the skills block: bold label, value column at a fixed offset.
+\newcommand{\skillrow}[2]{%
+  \noindent\makebox[203pt][l]{\textbf{#1}}%
+  \begin{minipage}[t]{311pt}\raggedright #2\end{minipage}\par}
+
+% Blank line.
+\newcommand{\cvgap}{\vspace{\baselineskip}}
+
+%-------------------------------------------------------------------------------
+\begin{document}
+
+%-------------------------------------------------------------------------------
+%  Header
+%-------------------------------------------------------------------------------
+\begingroup\centering
+  {\huge\bfseries JUAN F. IMBET}\\[12.0pt]
+  \faMapMarker\ Of. P606 Université Paris Dauphine Pl. du Maréchal de Lattre de Tassigny, 75016 Paris\\[2.95pt]
+  \faLink{}jfimbett.github.io\\[2.95pt]
+  \faEnvelope\ juan.imbet@dauphine.psl.eu
+\par\endgroup
+\vspace{3.0pt}
+
+%-------------------------------------------------------------------------------
+\cvsection{PERSONAL INFORMATION}
+\begin{cvbody}
+Date and place of birth: July 10 1990 , Bogotá - Colombia\par
+Citizenship: Colombian and Spanish\par
+Mobile: +33769964844\par
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{RESEARCH FIELDS}
+\begin{cvbody}
+Financial Economics, Asset Pricing, Corporate Finance, Computational Finance.\par
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{EMPLOYMENT}
+\begin{cvbody}
+\dated{\textbf{EDHEC Business School, Nice - France}}{Sep 2026 - Present}
+\textit{Assistant Professor of Finance}\par
+\dated{\textbf{Université Paris Dauphine - PSL}}{Sep 2021 - Aug 2026}
+\textit{Assistant Professor of Finance}\par
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{AFFILIATIONS}
+\begin{cvbody}
+\dated{\textbf{Institute for Advanced Studies - Luxembourg}}{Oct 2024 - Oct 2028}
+\textit{External Member of the Scientific Council}\par
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{EDUCATION}
+\begin{cvbody}
+\dated{\textbf{Universitat Pompeu Fabra, Barcelona - Spain}}{2016-2021}
+\textit{Ph.D. in Finance (cum laude). Advisor: Javier Gil-Bazo}\par
+\textit{Jury Members: Patrick Bolton (chair), Victor DeMiguel, and Alberto Manconi.}\par
+\dated{\textbf{The Wharton School, University of Pennsylvania, Philadelphia-U.S.A.}}{Jan-Jun 2020}
+\textit{Visiting Ph.D. student in Finance. Sponsor: Winston Dou}\par
+\dated{\textbf{Universitat Pompeu Fabra, Barcelona - Spain}}{2015-2016}
+\textit{M.Res in Finance}\par
+\dated{\textbf{Barcelona School of Economics, Barcelona - Spain}}{2014-2015}
+\textit{M.Sc in Finance}\par
+\dated{\textbf{Universidad de los Andes, Bogotá - Colombia}}{2010-2013}
+\textit{Minor in Mathematics}\par
+\dated{\textbf{Universidad de los Andes, Bogotá - Colombia}}{2009-2013}
+\textit{B.A. in Economics}\par
+\dated{\textbf{Universidad de los Andes, Bogotá - Colombia}}{2008-2012}
+\textit{B.Sc. in Industrial Engineering}\par
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{WORKING PAPERS}
+\begin{cvbody}
+- \textbf{The Real Effects of Offshore Data Leaks: Evidence from private firms} Joint with Marcelo Ortiz.\par
+- \textbf{Dynamic Contracting and Corporate Tax Strategies } Joint with Marcelo Ortiz and Vincent Tena\par
+- \textbf{Stroke of a Pen: Investment and Stock Returns under Energy Policy Uncertainty}\par
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\newpage
+\cvsection{PUBLICATIONS}
+\begin{cvbody}
+- \textbf{Social Media as a Bank Run Catalyst.} Joint with Tony Cookson, Christoph Schiller, Corbin Fox and Javier Gil-Bazo. \textit{Journal of Financial Economics, Forthcoming}\par
+- \textbf{Tweeting for Money: Social Media and Mutual Fund Flows.} Joint with Javier Gil-Bazo. \textit{Management Science, Forthcoming}\par
+- Böök, A., \textbf{Imbet, J. F.}, Reinke, M., \& Sala, C. (2025). The Forecasting Power of Short-Term Options. \textit{The Journal of Derivatives}, 32(2).\par
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{RESEARCH EXPERIENCE AND OTHER EMPLOYMENT}
+\begin{cvbody}
+\dated{- Research Assistant for Filippo Ippolito (UPF and BSE) and Roberto Steri (University of Luxembourg)}{2017}
+\dated{- Research Assistant for Anna Torres i Lacombra (UPF and BSM)}{October 2016}
+\dated{- Valuation of a 200 MW Coal based power plant, PGE Projects, LATAM and USA}{Summer 2016}
+\dated{- Operations Research Analyst, Ajover S.A., Bogotá-Colombia}{Jan-Jun 2014}
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{TEACHING EXPERIENCE}
+\begin{cvbody}
+\textbf{Instructor}\par
+\dated{- Microeconomics for Finance, M1 in Finance, Université Paris Dauphine - PSL}{Fall 2025}
+\dated{- Asset Pricing Theory, M2 104, Université Paris Dauphine - PSL}{Fall 2025}
+\dated{- Large Language Models in Finance, Barcelona School of Economics Summer School}{Summer 2025, 2026}
+\dated{- Investment Funds and Risks, Master in Risk Management, Université du Luxembourg}{Dec 2022, 2023, 2024, 2025}
+\dated{- Python for Finance, M1 in Finance, Université Paris Dauphine - PSL}{Fall 2023, 2024, 2025}
+\dated{- Programming I: VBA and Python, M203 in Financial Markets, Université Paris Dauphine - PSL}{Fall 2024, 2025}
+\dated{- Banks and Financial Intermediaries, M1 in Finance Université Paris Dauphine - PSL}{Winter 2022, 2023}
+\dated{- Empirical Asset Pricing, M2 104, Université Paris Dauphine - PSL}{Winter 2022, 2023, 2024, 2025}
+\dated{- Python Programming for Finance, M203 Université Paris Dauphine - PSL}{Fall 2021, 2022, 2023, 2024, 2025}
+\dated{- Introduction to Programming using Matlab, M.Sc in Finance, BSE}{Fall 2018}
+\cvgap
+\textbf{Teaching Assistant}\par
+\dated{- Asset Pricing, M.Sc. in Finance, BSE}{Fall 2016, 2017, 2018}
+\dated{- Corporate Finance, M.Sc. in Management, BSM}{Fall 2016, 2017, 2018}
+\dated{- Financial Econometrics, M.Sc. in Finance and Banking BSM}{Fall 2018}
+\dated{- Banking Theory, M.Sc in Finance, BSE}{Spring 2018}
+\dated{- Advanced Portfolio Management, Summer School in Finance, BSE}{Summer 2017, 2018, 2019, 2021}
+\dated{- Empirical Corporate Finance, Summer School in Finance, BSE}{Summer 2017, 2018, 2019, 2021}
+\dated{- Investments, Summer School in Finance, BSE}{Summer 2017, 2018, 2019}
+\dated{- Investments, M.Sc in Finance, ESADE Business School}{Fall 2020}
+\dated{- Corporate Finance, M.Sc in Finance, ESADE Business School}{Winter 2017, 2018}
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{HONORS, SCHOLARSHIPS AND FELLOWSHIPS}
+\begin{cvbody}
+\dated{- AAP SEPIA \texteuro{}3,000}{2023}
+\dated{- Paris Dauphine Grant for Junior Researchers \texteuro{}2,500, \texteuro{}1,000}{2023, 2024}
+\dated{- Institut Europlace de Finance - \texteuro{}10,000}{2022}
+\dated{- PSL Junior Fellow Research Grant - \texteuro{}150,000}{2022-2024}
+\dated{- Cum laude Ph.D. Defense, UPF}{2020}
+\dated{- AFA Ph.D. Student Travel Grant}{2020}
+\dated{- Mobility Grant to visit The Wharton School at The University of Pennsylvania, SEBAP}{2020}
+\dated{- Teaching prize among UPF Ph.D students in Economics, Finance, and Management}{2017-2018}
+\dated{- Ph.D. UPF and BSE Scholarship}{2015-2020}
+\dated{- Beneficiary of the program Credito Beca, Colfuturo, Colombia}{2014-2015}
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{SKILLS}
+\begin{cvbody}
+\begin{tabular}{@{}p{203pt}@{}p{311pt}@{}}
+\textbf{Languages:} & Spanish (Native), English (Fluent), French (Fluent),\newline Italian (Intermediate) Catalan (Intermediate), Russian (Beginner)\\
+\textbf{Programming} & \\
+\textbf{General purpose languages:} & Python, Julia, C, C++, Java, VBA\\
+\textbf{Numerical Computing and Statistics:} & R, Matlab, Stata\\
+\textbf{Numerical LP and MIP Solvers:} & X-Press, Gurobi, CPLEX\\
+\textbf{Web development:} & HTML, JavaScript (Next.js, React), CSS, PHP\\
+\textbf{Other:} & \LaTeX, Git, Linux OS, SQL\\
+\end{tabular}
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{PROFESSIONAL SERVICE}
+\begin{cvbody}
+\textbf{Refereeing Activity}: Finance Research Letters, Journal of Financial Markets, Management Science, Financial Innovation\par
+\textbf{Scientific Committee}: 2026 FMA Consortium on Asset Management, COAP Conference 2025, 5th and 6th Dauphine Finance PhD Workshops, 27th Meeting of Young Economists (SMYE 2023), The Finance Symposium 2023\par
+\textbf{Conference and Seminar Organizer}: Paris Dauphine Tech for Finance: AI and Blockchain 2024, 2025 (co-organizer), Finance Seminar Series Paris Dauphine (co-organizer).\par
+\textbf{Ph.D. Dissertation Committee}\par
+- \textbf{Aleksandr Ermakov}: \textit{Ph.D. Université du Luxembourg (2023)}. Placement: University of Manchester.\par
+- \textbf{Azamat Devonaev}: \textit{Ph.D. Université du Luxembourg (2025)}.\par
+\textbf{Master's Thesis Supervisor - Paris Dauphine}\par
+- 2025 Thomas Andrieu, Clement Dardare, Jason Durand, Guillaume Calmel, Noe Boudon\par
+- 2024 Sixtine Parisot\par
+- 2023 Rosalie Dechance, Dhia Ben Cheikh\par
+\textbf{Keynotes in Industry Events}\par
+- The Rise of AI in Banking, Organized by Truffle Capital (Paris)\par
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{CONFERENCES AND SEMINARS. *PRESENTATION BY COAUTHOR, $\dagger$ DISCUSSION}
+\begin{cvbody}
+- \textbf{2026}: European Finance Association Annual Meeting (Ghent), EDHEC AI \& Finance Workshop $\dagger$, Ownership, Control, and Economic Performance (Paris Dauphine)\par
+- \textbf{2025} : Colombian Economics Conference, Warwick, Pontificia Universidad Catolica de Chile*, CUNEF*, Taxation Conference University of Ghent, EDHEC Business School, French Finance Association Dijon, Asian Financial Association Taiwan, Finance Forum of the Spanish Finance Association, 2025 China International Conference in Finance*\par
+- \textbf{2024}: ECB, IESE*. IESE Tax Conference*, Montpellier Business School, Hitotsubashi University, Armenian Economic Association, American Accounting Association* (2 papers), 4th Corporate Policies and Asset Prices conference (Luxembourg) $\dagger$, 1st Modern Finance Conference.\par
+- \textbf{2023}: ACPR Chaire Bank of France, FMA Annual Meeting Chicago, Bank of Mexico, USC*, NBER Summer Institute*, Cleveland Fed*, CEMFI*, Fed Board*, TCU*, Washington University*, FRB Boston*, Wharton*, St. Louis*, FDIC*, Single Resolution Board (Brussels), ECB*, Bundesbank*, Toulouse Business School $\dagger$, Midwest Finance Association (Chicago)*, University of Luxembourg, University of Edinburgh Economics of Financial Technology Conference\par
+- \textbf{2022}: FMA Consortium on Asset Management and Fintech (Dublin), 5th Dauphine Finance PhD Workshop $\dagger$, International Risk Management Company Bari Italy, British Accounting and Financial Association (BAFA) Bristol, Kozminski University, CUNEF*\par
+- \textbf{2021}: 37th International Conference of the French Finance Association, 28th Finance Forum of the Spanish Finance Association, Paris Dauphine PSL, Bank of Lithuania, University of Bristol, University of Glasgow, CUNEF, Universitat de les Illes Balears.\par
+- \textbf{2020}: UPF Finance Seminar\par
+- \textbf{2018}: ESADE Finance Seminar, 2nd Corporate Policies and Asset Prices Conference, (Bayes Business School)\par
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{OTHER EDUCATION}
+\begin{cvbody}
+\dated{- Options Futures and Other Financial Derivatives, LSE, London, England}{Summer 2012}
+\dated{- French Language Lessons - Alliance Française, Bogotá Colombia}{2010-2012}
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{HOBBIES}
+\begin{cvbody}
+- Electric Guitar and Bass\par
+- Cooking\par
+\end{cvbody}
+
+%-------------------------------------------------------------------------------
+\cvsection{REFERENCES}
+\begin{cvbody}
+- Javier Gil-Bazo, Professor of Finance, Pompeu Fabra University, Barcelona School of Economics, and Barcelona School of Management, javier.gil-bazo@upf.edu\par
+- Roberto Steri, Associate Professor of Finance, University of Luxembourg, roberto.steri@uni.lu\par
+- Diane Pierret, Assistant Professor of Finance, University of Luxembourg, CEPR, diane.pierret@uni.lu\par
+- Tony Cookson, Smeal Chair Professor of Finance, Smeal College of Business, Penn State University.\\
+jac8911@psu.edu\par
+\end{cvbody}
+
+\end{document}
