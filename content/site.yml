@@ -2,6 +2,7 @@ name: Juan Felipe Imbet
 short_name: Juan F. Imbet
 title: Assistant Professor of Finance
 institution: EDHEC Business School
+institution_url: https://www.edhec.edu/en
 email: juan.imbet@edhec.edu
 office: ""
 photo: assets/images/profile.jpg
@@ -11,6 +12,27 @@ cv: cv.pdf
 # hidden until it is ready to show. Set to true to put the section back.
 show_research_map: false
 intro: Corporate finance, asset pricing, and computational finance.
+welcome:
+  - |
+    Welcome to my website. I am an Assistant Professor of Finance at EDHEC
+    Business School in Nice. Before joining EDHEC I spent five years as an
+    Assistant Professor of Finance at Université Paris Dauphine–PSL, and I hold
+    a PhD in Finance from Universitat Pompeu Fabra in Barcelona, part of which
+    I completed as a visiting student at The Wharton School.
+  - |
+    My work sits between corporate finance, asset pricing, and computational
+    finance. Much of it asks what happens when information reaches markets
+    through channels the classical models never anticipated: how conversation
+    on social media accelerates bank runs and steers money into mutual funds,
+    what leaked offshore data does to the private firms it exposes, and how
+    much option prices really tell us about what comes next. Alongside that I
+    build the computational machinery these questions need, from language
+    models applied to financial text to numerical methods for dynamic
+    corporate policy.
+  - |
+    The research page has every paper, each with a plain-language summary next
+    to its abstract. My CV is linked above, and email is the fastest way to
+    reach me.
 research_interests:
   - Corporate Finance
   - Asset Pricing

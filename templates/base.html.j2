@@ -48,8 +48,13 @@
     <h2 class="eyebrow">Contact</h2>
     <p>
       <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
-      {{ site.title }}, {{ site.institution }}
+      {{ site.title }}
       {% if site.office %}<br>{{ site.office }}{% endif %}
+    </p>
+    <p class="site-footer__mark">
+      <a class="edhec-link" href="{{ site.institution_url }}" rel="noopener" target="_blank">
+        {% include 'partials/edhec.html.j2' %}
+      </a>
     </p>
     <div class="profile-links">
       {% for key, url in site.profiles.items() %}

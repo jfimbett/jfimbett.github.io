@@ -164,6 +164,19 @@ img { max-width: 100%; height: auto; }
 }
 .hero__institution { color: var(--muted); font-size: var(--step-0); margin-bottom: 1.5rem; }
 
+/* EDHEC's mark. Its official grenat is the same #5F1937 the site is built on,
+   so it is drawn with the theme tokens and follows light and dark mode. */
+.edhec { display: block; width: 8.25rem; height: auto; }
+.edhec__ink { fill: var(--grenat); }
+.edhec__paper { fill: var(--paper); }
+.edhec-link { display: inline-block; text-decoration: none; opacity: 0.85; transition: opacity 0.15s; }
+.edhec-link:hover, .edhec-link:focus-visible { opacity: 1; }
+
+.hero__institution .edhec { width: 9.5rem; margin-top: 0.55rem; }
+
+.site-footer__mark { margin-top: -0.35rem; }
+.site-footer__mark .edhec { width: 7rem; }
+
 .rule { border: 0; height: 3px; width: 4.5rem; background: var(--coral); margin: 1.75rem 0; }
 
 .hero__portrait {

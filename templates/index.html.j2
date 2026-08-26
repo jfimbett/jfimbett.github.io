@@ -1,5 +1,4 @@
 {% extends 'base.html.j2' %}
-{% from 'partials/paper.html.j2' import entry %}
 {% block title %}{{ site.name }} | {{ site.title }}{% endblock %}
 
 {% block head %}
@@ -23,7 +22,11 @@
     <div>
       <h1 class="hero__title">{{ site.name }}</h1>
       <p class="hero__role">{{ site.title }}</p>
-      <p class="hero__institution">{{ site.institution }}</p>
+      <p class="hero__institution">
+        <a class="edhec-link" href="{{ site.institution_url }}" rel="noopener" target="_blank">
+          {% include 'partials/edhec.html.j2' %}
+        </a>
+      </p>
       <hr class="rule">
       <p class="hero__intro">{{ site.intro }}</p>
       <p><a href="research.html">Research</a> · <a href="{{ site.cv }}">CV (PDF)</a> · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
@@ -81,10 +84,10 @@
 
 <section class="section">
   <div class="wrap">
-    <p class="eyebrow">Selected work</p>
-    <h2 class="section__title">Publications</h2>
-    {% for paper in grouped.published %}
-    {{ entry(paper, loop.index) }}
+    <p class="eyebrow">About</p>
+    <h2 class="section__title">Welcome</h2>
+    {% for paragraph in site.welcome %}
+    <p>{{ paragraph }}</p>
     {% endfor %}
     <p class="section__more"><a href="research.html">All research →</a></p>
   </div>
