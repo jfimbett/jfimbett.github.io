@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python for Finance | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Object Oriented Programming</h1>
+<hr>
+
+<h2>- Object Oriented Programming</h2>
+<p>Object Oriented Programming is a programming paradigm that uses objects and classes. It is useful for creating reusable code, and it can also be used to create complex programs. Object Oriented Programming is done using the <code>class</code> keyword. Classes are used to create objects, which are instances of a class. Objects can have attributes and methods. Attributes are variables that belong to an object, and methods are functions that belong to an object.</p>
+<pre><code class="language-python">class Asset:
+    pass
+</code></pre>
+<hr>
+
+<h2>Constructor</h2>
+<p>A constructor is a special method that is used to initialize an object. It is useful for creating objects with default values. Constructors are done using the <code>__init__</code> method. The <code>__init__</code> method has two arguments: <code>self</code> and <code>args</code>. The <code>self</code> argument is used to refer to the object itself, and the <code>args</code> argument is used to pass arguments to the constructor. The <code>__init__</code> method is called when an object is created.</p>
+<pre><code class="language-python">class Asset:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+
+asset = Asset(&#x27;Bitcoin&#x27;, 50000)
+</code></pre>
+<hr>
+
+<h2>Attributes</h2>
+<p>Attributes are variables that belong to an object. They are useful for storing information about an object. Attributes can be accessed using the <code>.</code> operator. Attributes can also be accessed using the <code>getattr</code> function. Attributes can be set using the <code>=</code> operator. Attributes can also be set using the <code>setattr</code> function. Attributes can be deleted using the <code>del</code> operator. Attributes can also be deleted using the <code>delattr</code> function.</p>
+<pre><code class="language-python">asset.name # Get attribute
+asset.price = 60000 # Set attribute
+asset.type = &#x27;Cryptocurrency&#x27; # Set attribute not defined in constructor
+</code></pre>
+<hr>
+
+<h2>Methods</h2>
+<p>Methods are functions that belong to an object. Methods can be called using the <code>()</code> operator. Since they are functions they are defined using the <code>def</code> keyword and always contain the <code>self</code> argument first.</p>
+<pre><code class="language-python">class Asset:
+    ...
+
+    def double_price(self):
+        return self.price*2
+
+</code></pre>
+<hr>
+
+<h2>Dunders (Magic methods)</h2>
+<p>Dunders are special methods that are used to avoid operator overloading. They are useful for creating objects that behave like built-in objects. Dunders are done using the <code>__</code> keyword. For example, the <code>+</code> operator can be used to add two numbers, but it can also be used to add two strings.</p>
+<pre><code class="language-python">class Vector2D:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Vector2D(self.x + other.x, self.y + other.y)
+
+v1 = Vector2D(1, 2)
+v2 = Vector2D(3, 4)
+v3 = v1 + v2
+</code></pre>
+<hr>
+
+<h2>- Dunders (Magic methods)</h2>
+<p>Non-exhaustive list of dunders</p>
+<pre><code class="language-python">__init__ # Constructor
+__str__ # String representation
+__add__ # Addition + 
+__sub__ # Subtraction -
+__mul__ # Multiplication *
+__truediv__ # Division /
+__floordiv__ # Floor division //
+__mod__ # Modulo %
+__pow__ # Exponentiation **
+__lt__ # Less than &lt;
+__le__ # Less than or equal to &lt;=
+__eq__ # Equal to ==
+__ne__ # Not equal to !=
+__gt__ # Greater than &gt;
+__ge__ # Greater than or equal to &gt;=
+</code></pre>
+<hr>
+
+<h2>Example: Portfolio Class</h2>
+<p>A portfolio consists of a list of assets. Each asset has a name (identifier) as well as a history of prices.</p>
+<pre><code class="language-python">class Asset:
+
+    self.mu = np.nan # Expected return
+    self.sigma = np.nan # Volatility
+
+    def __init__(self, name: str, price_history: pd.DataFrame):
+        self.name = name
+        self.price_history = price_history
+        self.compute_mu()
+        self.compute_sigma()
+
+    def compute_mu(self):
+        self.mu = self.price_history.pct_change().mean()
+    
+    def compute_sigma(self):
+        self.sigma = self.price_history.pct_change().std()
+
+</code></pre>
+<hr>
+
+<h2>Example: Portfolio Class (2)</h2>
+<pre><code class="language-python">class Portfolio:
+
+    self.mu = np.nan # Expected return
+    self.sigma = np.nan # Volatility
+
+    def __init__(self, assets: List[Asset], weights: List[float]):
+        self.assets = assets
+        self.weights = weights
+        self.compute_mu()
+        self.compute_sigma()
+
+    def compute_mu(self):
+        self.mu = np.sum([asset.mu * weight for asset, weight in zip(self.assets, self.weights)])
+    
+    def compute_sigma(self):
+        # Covariance matrix
+        cov = np.cov([asset.price_history.pct_change().dropna() for asset in self.assets])
+        # Weighted covariance matrix
+        cov = np.diag(self.weights) @ cov @ np.diag(self.weights)
+        # Portfolio volatility
+        self.sigma = np.sqrt(np.diag(cov).sum())
+
+</code></pre>
+<hr>
+
+<h2>Python OOP Exercise: Library Management System</h2>
+<h2>Objective</h2>
+<ul>
+<li>Practice fundamental OOP concepts:</li>
+<li>Classes</li>
+<li>Objects</li>
+<li>Inheritance</li>
+<li>Methods</li>
+</ul>
+<hr>
+
+<h2>Problem Statement</h2>
+<p>Design a basic <strong>Library Management System</strong> that allows a user to:</p>
+<ul>
+<li>Add books to the library</li>
+<li>View available books</li>
+<li>Borrow a book</li>
+<li>Return a book</li>
+</ul>
+<hr>
+
+<h2>Requirements: <code>Book</code> Class</h2>
+<h3><code>Book</code> Class</h3>
+<ul>
+<li><strong>Attributes:</strong></li>
+<li><code>title</code>: The title of the book</li>
+<li><code>author</code>: The author of the book</li>
+<li>
+<p><code>available</code>: Whether the book is available for borrowing</p>
+</li>
+<li>
+<p><strong>Methods:</strong></p>
+</li>
+<li><code>__init__(self, title, author)</code>: Initializes the book with title and author, available by default</li>
+<li><code>__str__(self)</code>: Returns a string representation of the book</li>
+</ul>
+<hr>
+
+<h2>Requirements: <code>Library</code> Class</h2>
+<h3><code>Library</code> Class</h3>
+<ul>
+<li><strong>Attributes:</strong></li>
+<li>
+<p><code>books</code>: A list of <code>Book</code> objects</p>
+</li>
+<li>
+<p><strong>Methods:</strong></p>
+</li>
+<li><code>__init__(self)</code>: Initializes the library with an empty list of books</li>
+<li><code>add_book(self, book)</code>: Adds a <code>Book</code> to the library's list</li>
+<li><code>display_books(self)</code>: Prints details of all books</li>
+<li><code>borrow_book(self, title)</code>: Borrows a book by title if available</li>
+<li><code>return_book(self, title)</code>: Returns a borrowed book, making it available again</li>
+</ul>
+<hr>
+
+<h2>Main Program</h2>
+<h3>Interaction Steps</h3>
+<ol>
+<li>Create a <code>Library</code> object</li>
+<li>Add at least three <code>Book</code> objects to the library</li>
+<li>Display the list of available books</li>
+<li>Allow the user to borrow and return books by title</li>
+</ol>
+<hr>
+
+<h2>Example Interaction</h2>
+<pre><code class="language-python"># Create the library and add books
+my_library = Library()
+book1 = Book(&quot;The Great Gatsby&quot;, &quot;F. Scott Fitzgerald&quot;)
+book2 = Book(&quot;1984&quot;, &quot;George Orwell&quot;)
+book3 = Book(&quot;To Kill a Mockingbird&quot;, &quot;Harper Lee&quot;)
+
+my_library.add_book(book1)
+my_library.add_book(book2)
+my_library.add_book(book3)
+
+# Display all available books
+print(&quot;Available books:&quot;)
+my_library.display_books()
+
+# Borrow a book
+print(&quot;\nBorrowing &#x27;1984&#x27;...&quot;)
+my_library.borrow_book(&quot;1984&quot;)
+
+# Try to borrow the same book again
+print(&quot;\nAttempting to borrow &#x27;1984&#x27; again...&quot;)
+my_library.borrow_book(&quot;1984&quot;)
+
+# Return the book
+print(&quot;\nReturning &#x27;1984&#x27;...&quot;)
+my_library.return_book(&quot;1984&quot;)
+
+# Display all available books after returning
+print(&quot;\nAvailable books after returning:&quot;)
+my_library.display_books()
+</code></pre>
+<hr>
+
+<h2>Data Classes</h2>
+<p>Data classes are a way to create classes whose main purpose is to store data. Data classes are done using the <code>dataclass</code> decorator. When you work with dataclasses, the constructor, <code>__init__</code>, <code>__repr__</code>, <code>__eq__</code>, and <code>__hash__</code> methods are automatically generated for you. Data classes are useful for creating simple classes that only store data.</p>
+<pre><code class="language-python">from dataclasses import dataclass
+
+@dataclass
+class Asset:
+    name: str
+    price: float
+
+asset = Asset(&#x27;Bitcoin&#x27;, 50000)
+</code></pre>
+</main>
+</body>
+</html>

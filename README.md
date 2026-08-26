@@ -51,9 +51,18 @@ exists.
 | `cd tools && npm run embed` | Recompute embeddings. Run after adding or editing a paper. |
 | `python3 -m pytest tests/` | Python tests. |
 | `node --test tools/test/*.test.mjs` | JavaScript tests. |
+| `python3 tools/render_archive.py` | Rebuild the archived course pages under `archive/`. |
 | `python3 -m http.server 8899` | Preview locally at 127.0.0.1:8899. |
 
 `build.py` warns when `papers.yml` is newer than the embeddings.
+
+The published site is entirely static and `.nojekyll` keeps GitHub Pages from
+running Jekyll over it. That matters: Pages enables `jekyll-optional-front-matter`,
+so Jekyll renders *every* Markdown file in the repo, and a single stray Liquid
+tag in a note under `docs/` is enough to fail the whole deploy. The archived
+Marp decks under `archive/` used to depend on Jekyll for their HTML, so they are
+pre-rendered by `tools/render_archive.py` instead; it skips any Markdown file
+that already has a sibling `.html`, so hand-written pages are safe.
 
 ## Layout
 

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python for Finance | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>NumPy, Matplotlib,and Pandas</h1>
+<hr>
+
+<h2>Community developed libraries</h2>
+<hr>
+
+<p><img alt="Numpy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/NumPy_logo.svg/1200px-NumPy_logo.svg.png" /></p>
+<hr>
+
+<h2>Numpy</h2>
+<p>Numpy is a library for scientific computing. It is useful for working with arrays and matrices. Most of its code is written in C, so it is very fast. Numpy is used in many scientific computing applications, including machine learning and deep learning. Numpy is imported using the <code>import</code> keyword. Numpy is usually imported using the alias <code>np</code>.</p>
+<pre><code class="language-python">import numpy as np
+</code></pre>
+<hr>
+
+<h2>Numpy arrays</h2>
+<p>Numpy arrays are used to store multiple items in a single variable. They can be created using the <code>np.array</code> function. Numpy arrays are similar to lists, but they are faster and more efficient. Numpy arrays can be created from lists, tuples, and other arrays.</p>
+<pre><code class="language-python">x = np.array([1, 2, 3])
+</code></pre>
+<pre><code class="language-output">array([1, 2, 3])
+</code></pre>
+<hr>
+
+<h2>Numpy arrays are faster than lists</h2>
+<pre><code class="language-python">x = list(range(1000000))
+y = np.array(x)
+%timeit sum(x) 
+%timeit np.sum(y)
+</code></pre>
+<pre><code class="language-output">4.92 ms ± 9.35 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+130 µs ± 75.3 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+</code></pre>
+<hr>
+
+<h2>Why are numpy arrays faster than lists?</h2>
+<p>NumPy arrays are faster than lists because they are stored efficiently in memory, allowing for faster data access and manipulation. They also support vectorized operations, which are optimized and implemented in lower-level languages like C, making them much faster than equivalent Python loops. Additionally, NumPy takes advantage of CPU caching, optimized algorithms, and specialized functions, resulting in faster computations compared to pure Python list operations.</p>
+<hr>
+
+<h2>Use numpy for linear algebra</h2>
+<p>Most common functions</p>
+<pre><code class="language-python">X = np.array([[1, 2, 3], [4, 5, 6]])
+Y = np.array([[1, 2], [3, 4], [5, 6]])
+x = np.array([1, 2, 3])
+
+X.T # transpose
+X@Y # matrix multiplication
+X*X # element-wise multiplication
+np.dot(X, Y) # matrix multiplication
+np.matmul(X, Y) # matrix multiplication
+np.vdot(x, x) # dot product
+np.inner(x, x) # dot product
+np.outer(x, x) # outer product
+np.linalg.norm(x) # norm
+np.linalg.det(X@Y) # determinant
+np.linalg.inv(X@Y) # inverse
+np.linalg.eig(X@Y) # eigenvalues and eigenvectors
+np.linalg.svd(X@Y) # singular value decomposition
+
+
+</code></pre>
+<hr>
+
+<h2>Numpy types</h2>
+<p>Numpy allows to store data in different types. This is useful when you want to save memory, or when you want to perform operations on different types of data. Data types include int32, int64, float32, float64, bool, and object. The default data type is float64.</p>
+<pre><code class="language-python">x = np.array([1, 2, 3], dtype=np.int8)
+x.dtype # dtype(&#x27;int8&#x27;)
+</code></pre>
+<hr>
+
+<p><img alt="Matplotlib" src="https://matplotlib.org/stable/_static/logo_light.svg" /></p>
+<hr>
+
+<h2>Matplotlib</h2>
+<p>Matplotlib is a library for plotting data. It is useful for visualizing data. Matplotlib is imported using the <code>import</code> keyword. Matplotlib is usually imported using the alias <code>plt</code>.</p>
+<pre><code class="language-python">import matplotlib.pyplot as plt
+# or
+from matplotlib import pyplot as plt
+</code></pre>
+<hr>
+
+<h2>Matplotlib - Most common plots</h2>
+<ul>
+<li>Line plot - <code>plt.plot</code></li>
+<li>Scatter plot - <code>plt.scatter</code></li>
+<li>Bar plot - <code>plt.bar</code></li>
+<li>Histogram - <code>plt.hist</code></li>
+<li>Box plot - <code>plt.boxplot</code></li>
+<li>Pie chart - <code>plt.pie</code></li>
+</ul>
+<p>Matplotlib is a very powerful library. Graphs can be customized in many ways, and a complete guide would be too long.</p>
+<hr>
+
+<h2>Customizing plots</h2>
+<ul>
+<li><code>plt.title</code> - Set the title of the plot</li>
+<li><code>plt.xlabel</code> - Set the label for the x-axis</li>
+<li><code>plt.ylabel</code> - Set the label for the y-axis</li>
+<li><code>plt.rotate</code> - Rotate the x-axis labels</li>
+<li><code>plt.legend</code> - Show the legend</li>
+<li><code>plt.show</code> - Show the plot</li>
+</ul>
+<p>Check out the examples <a href="https://matplotlib.org/stable/gallery/index.html">here</a></p>
+<hr>
+
+<p><img alt="Pandas" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1200px-Pandas_logo.svg.png" /></p>
+<hr>
+
+<h2>Pandas</h2>
+<p>Pandas is a library for data analysis. Probably the most used library in data science. Pandas is imported using the <code>import</code> keyword. Pandas is usually imported using the alias <code>pd</code>.</p>
+<pre><code class="language-python">import pandas as pd
+</code></pre>
+<p>Dataframes are the main data structure in Pandas. They are used to store tabular data. They can be created using the <code>pd.DataFrame</code> function. Dataframes can be created from lists, tuples, dictionaries, and other dataframes. It is common to name dataframes <code>df</code>.</p>
+<pre><code class="language-python">df = pd.DataFrame({&#x27;a&#x27;: [1, 2, 3], &#x27;b&#x27;: [4, 5, 6]})
+</code></pre>
+<pre><code class="language-output">   a  b
+0  1  4
+1  2  5
+2  3  6
+</code></pre>
+<hr>
+
+<h2>Pandas - Load data from a file</h2>
+<p>Pandas can load data from CSV files, JSON files, Excel files, parquet files, and SQL databases.</p>
+<pre><code class="language-python">df = pd.read_csv(&#x27;file.csv&#x27;)
+df = pd.read_json(&#x27;file.json&#x27;)
+df = pd.read_excel(&#x27;file.xlsx&#x27;)
+df = pd.read_sql(&#x27;SELECT * FROM table&#x27;, connection)
+df = pd.read_parquet(&#x27;file.parquet&#x27;)
+</code></pre>
+<hr>
+
+<h2>Pandas - miscellaneous</h2>
+<p>Pandas can load data from a URL.</p>
+<pre><code class="language-python">df = pd.read_csv(&#x27;https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv&#x27;)
+</code></pre>
+<p>Pandas and NumPy are closely related. Pandas is built on top of NumPy, and it uses NumPy arrays to store data. Pandas can convert dataframes to NumPy arrays using the <code>to_numpy</code> method.</p>
+<pre><code class="language-python">df.to_numpy()
+</code></pre>
+<hr>
+
+<h2>Dataframe indexing</h2>
+<p>Dataframes can be indexed using the <code>iloc</code> and <code>loc</code> methods. The <code>iloc</code> method is used to index dataframes by position. The <code>loc</code> method is used to index dataframes by label. Dataframes can also be indexed using the <code>[]</code> operator. The <code>[]</code> operator is used to index dataframes by label.</p>
+<p>Using <code>iloc</code></p>
+<pre><code class="language-python">df = pd.DataFrame({&#x27;a&#x27;: [1, 2, 3], &#x27;b&#x27;: [4, 5, 6]})
+df.iloc[0] # First row
+df.iloc[0, 0] # First element of first row
+df.iloc[:, 0] # First column
+df.iloc[0:2] # First two rows
+df.iloc[0:2, 0:2] # First two rows and columns
+df.iloc[[0, 2]] # First and third row
+df.iloc[[0, 2], [0, 2]] # First and third row and column
+df.iloc[lambda x: x.index % 2 == 0] # Even rows
+df.iloc[lambda x: x.index % 2 == 0, lambda x: x.columns % 2 == 0] # Even rows and columns
+</code></pre>
+<hr>
+
+<h2>Dataframe indexing (2)</h2>
+<p>Using <code>loc</code></p>
+<pre><code class="language-python">df = pd.DataFrame({&#x27;a&#x27;: [1, 2, 3], &#x27;b&#x27;: [4, 5, 6]})
+df.loc[0] # First row
+df.loc[0, &#x27;a&#x27;] # First element of first row
+df.loc[:, &#x27;a&#x27;] # First column
+df.loc[0:2] # First two rows
+df.loc[0:2, &#x27;a&#x27;:&#x27;b&#x27;] # First two rows and columns
+df.loc[[0, 2]] # First and third row
+df.loc[[0, 2], [&#x27;a&#x27;, &#x27;b&#x27;]] # First and third row and column
+df.loc[lambda x: x.index % 2 == 0] # Even rows
+df.loc[lambda x: x.index % 2 == 0, lambda x: x.columns % 2 == 0] # Even rows and columns
+</code></pre>
+<hr>
+
+<h2>Data operations</h2>
+<p>Dataframes can be modified using the <code>assign</code> method. The <code>assign</code> method is used to modify dataframes by adding new columns. Dataframes can also be modified using the <code>[]</code> operator. The <code>[]</code> operator is used to modify dataframes by adding new columns.</p>
+<pre><code class="language-python">df = pd.DataFrame({&#x27;a&#x27;: [1, 2, 3], &#x27;b&#x27;: [4, 5, 6]})
+df[&#x27;c&#x27;] = df.a + df.b # Add a new column
+df[&#x27;c&#x27;] = df[&#x27;a&#x27;] + df[&#x27;b&#x27;] # Add a new column
+</code></pre>
+<p>Columns can be accessed using the <code>[]</code> operator. The <code>[]</code> operator is used to access columns by label. Columns can also be accessed using the <code>.</code> operator. The <code>.</code> operator is used to access columns by label. The <code>.</code> operator cannot be used to describe a column that does not exist, and cannot be used to describe a column with a reserved name. E.g. <code>df.dtype</code> is not a valid column.</p>
+<hr>
+
+<h2>Inplace vs not inplace</h2>
+<p>Dataframes can be modified inplace or not inplace. The <code>inplace</code> parameter is used to specify whether or not the dataframe should be modified inplace. The <code>inplace</code> parameter has two possible values: <code>True</code> and <code>False</code>. For efficiency reasons, it is recommended to not modify dataframes inplace.</p>
+<pre><code class="language-python">df = pd.DataFrame({&#x27;a&#x27;: [1, 2, 3], &#x27;b&#x27;: [4, 5, 6]})
+df.rename(columns={&#x27;a&#x27;: &#x27;A&#x27;}, inplace=True) # Modify inplace
+df = df.rename(columns={&#x27;a&#x27;: &#x27;A&#x27;}) # Modify not inplace
+</code></pre>
+<hr>
+
+<h2>The <code>groupby</code> operation produces a <code>DataFrameGroupBy</code> object</h2>
+<pre><code class="language-python">df = pd.DataFrame({&#x27;group&#x27;: [&#x27;A&#x27;, &#x27;A&#x27;, &#x27;B&#x27;, &#x27;B&#x27;], &#x27;value&#x27;: [1, 2, 3, 4]})
+df.groupby(&#x27;group&#x27;)
+</code></pre>
+<pre><code class="language-output">&lt;pandas.core.groupby.generic.DataFrameGroupBy object at 0x7f8e1c0b5d90&gt;
+</code></pre>
+<hr>
+
+<h2><code>apply</code> and custom functions</h2>
+<p>The <code>apply</code> method is used to apply a function to a dataframe. The <code>apply</code> method has two arguments: a function, and an axis. The function is applied to each row or column of the dataframe. The axis is used to specify whether the function should be applied to each row or column. The axis can be <code>0</code> for rows, or <code>1</code> for columns. The default axis is <code>0</code>.</p>
+<pre><code class="language-python">df = pd.DataFrame({&#x27;group&#x27;: [&#x27;A&#x27;, &#x27;A&#x27;, &#x27;B&#x27;, &#x27;B&#x27;], &#x27;value&#x27;: [1, 2, 3, 4]})
+df.groupby(&#x27;group&#x27;).apply(lambda x: x.value.sum())
+# or
+df.groupby(&#x27;group&#x27;)[&#x27;value&#x27;].apply(lambda x: x.sum())
+# or
+df.groupby(&#x27;group&#x27;).value.sum()
+</code></pre>
+<pre><code class="language-output">group
+A    3
+B    7
+</code></pre>
+<hr>
+
+<h2>Homework (Optional, do not use GPT)</h2>
+<p>In this homework you will process and analyze a dataset of the Titanic passengers. The dataset is available <a href="https://raw.githubusercontent.com/mwaskom/seaborn-data/master/titanic.csv">here</a>. The dataset contains the following columns:</p>
+<ul>
+<li><code>survived</code> - Whether the passenger survived (0 = No, 1 = Yes)</li>
+<li><code>pclass</code> - The class of the passenger (1 = 1st, 2 = 2nd, 3 = 3rd)</li>
+<li><code>sex</code> - The</li>
+<li><code>age</code> - The age of the passenger</li>
+<li><code>sibsp</code> - The number of siblings or spouses the passenger had aboard the Titanic</li>
+</ul>
+<hr>
+
+<ul>
+<li><code>parch</code> - The number of parents or children the passenger had aboard the Titanic</li>
+<li><code>fare</code> - The fare the passenger paid</li>
+<li><code>embarked</code> - The port the passenger embarked from (C = Cherbourg, Q = Queenstown, S = Southampton)</li>
+<li><code>class</code> - The class of the passenger</li>
+<li><code>who</code> - (man, woman, child).</li>
+<li><code>adult_male</code> - Whether the passenger is an adult male.</li>
+<li><code>deck</code> - The deck the passenger was on.</li>
+<li><code>embark_town</code> - The town the passenger embarked from.</li>
+<li><code>alive</code> - Whether the passenger survived (yes, no).</li>
+<li><code>alone</code> - Whether the passenger was alone.</li>
+</ul>
+<hr>
+
+<h2>Questions</h2>
+<ul>
+<li>
+<p>Estimate the probability of survival for a passenger in each class. (1, 2, 3). The probability of survival is the number of survivors divided by the total number of passengers in each class.</p>
+</li>
+<li>
+<p>How does this probability change if the passenger was a man, a woman, a male child, or a female child?</p>
+</li>
+<li>
+<p>Determine if the event of <em>not</em> surviving given that the passenger was an adult male is independent of the class of the passenger. Recall that two events are independent if the probability of one event occurring does not affect the probability of the other event occurring.</p>
+</li>
+</ul>
+<p>$$
+P(A|B) = P(A)
+$$</p>
+<hr>
+
+<h2>Questions (2)</h2>
+<ul>
+<li>
+<p>Estimate the average age of the passengers who survived and the passengers who did not survive.</p>
+</li>
+<li>
+<p>Estimate the average fare paid by the passengers who survived and the passengers who did not survive.</p>
+</li>
+<li>
+<p>Based on the documentation of pandas and matplotlib, create a plot that shows the relatiin between the fare paid and the age of the passengers.</p>
+</li>
+<li>
+<p>How does this relationship change across the different classes?</p>
+</li>
+</ul>
+</main>
+</body>
+</html>

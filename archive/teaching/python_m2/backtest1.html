@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python for Finance | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Developing a Backtesting library in Python</h1>
+<h2>Juan F. Imbet <em>Ph.D.</em></h2>
+<h3>Paris Dauphine University</h3>
+<h3>M203 (M2)</h3>
+<hr>
+
+<h2>What is backtesting?</h2>
+<ul>
+<li>Backtesting is a simulation technique used to test the effectiveness of a trading strategy.</li>
+<li>You want to know what <strong>would have happened</strong> if you had used a particular strategy in the past.</li>
+<li>No backtest is perfect, as it relies on the assumption that what you see and would have done <strong>ex-post</strong> is what you would have seen (and done) <strong>ex-ante</strong>.</li>
+<li>However, it is a useful tool to test the robustness of a strategy.</li>
+</ul>
+<hr>
+
+<h2>Python libraries for backtesting</h2>
+<ul>
+<li>Python has several libraries that can be used for backtesting, but we will develop our own.</li>
+<li>I have explored many of them, and identified two main issues:</li>
+<li>Too much focus on technical analysis. </li>
+<li>Little Portfolio Optimization. </li>
+<li>Not fast enough for large datasets.</li>
+<li>Ideally we would like to focus more on the <em>what to buy</em> and <em>how much to buy</em> rather than on the <em>when to buy</em> (although important)</li>
+</ul>
+<hr>
+
+<h2>What we will do</h2>
+<ul>
+<li>We will develop a simple backtesting library in Python.</li>
+<li>We will use a blockchain architecture to help the user reduce the probability of overfitting.</li>
+</ul>
+<hr>
+
+<h2>Some python libraries for backtesting</h2>
+<ul>
+<li><strong>Backtrader</strong>: A popular library for backtesting. It is very flexible and has a lot of features. However, it is not very fast.</li>
+<li><strong>Zipline</strong>: Developed by Quantopian, it is a good library for backtesting, but it stopped being maintained. (Some libraries are not comptible. )</li>
+</ul>
+<hr>
+
+<h2>General Idea, Notation</h2>
+<ul>
+<li>
+<p>Time is discrete: $t=0,1,2,\ldots,T$, e.g. daily, intraday, etc.</p>
+</li>
+<li>
+<p>Filtration of companies available for investment: $S_t$</p>
+</li>
+<li>
+<p>Filtration of information available at time $t$: $\mathcal{F}_t$</p>
+</li>
+<li>
+<p>Investment strategy: A function that maps the available set of companies and information to a portfolio: $\pi_t = \pi(S_t, \mathcal{F}_t)$</p>
+</li>
+<li>
+<p>Backtesting: Simulate the performance of the strategy $\pi$ over a historical period.</p>
+</li>
+</ul>
+<hr>
+
+<h2>First Module: Data, Moments, and Returns.</h2>
+<ul>
+<li>The library should work with data from any asset as far as it is in the right format.</li>
+<li>For testing we will use data on US stocks. </li>
+<li>For the moment the only data in the information set corresponds to the market data of the companies.</li>
+<li>We will start with a narrow set of companies, and then we will expand it.</li>
+<li>We will use <code>pandas</code>, <code>numpy</code> and <code>scipy</code> for this module.</li>
+<li>Go to branch <code>branch1</code> in our repository.</li>
+</ul>
+</main>
+</body>
+</html>

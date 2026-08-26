@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Version Control using GitHub and Python | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Version Control using GitHub and Python.</h1>
+<h2>Juan F. Imbet</h2>
+<h3>Paris Dauphine University</h3>
+<p>juan.imbet@dauphine.psl.eu
+<a href="jfimbett.github.io">jfimbett.github.io</a> </p>
+<hr>
+
+<h2>GitHub</h2>
+<p>Github is a cloud-based platform to store and share code.</p>
+<ul>
+<li>Showcase or share your work.</li>
+<li>Track and manage changes to your code over time.</li>
+<li>Let others review your code, and make suggestions to improve it.</li>
+<li>Collaborate on a shared project, without worrying that your changes will impact the work of your collaborators before you're ready to integrate them</li>
+</ul>
+<hr>
+
+<h2>Git</h2>
+<p>Git is a version control system. It is useful when you and other people are working on the same project. It was created by Linus Torvalds in 2005 (the creator of Linux). Typically, to do this in a Git-based workflow, you would:</p>
+<ul>
+<li>Create a branch off from the main copy of files that you (and your collaborators) are working on.</li>
+<li>Make edits to the files independently and safely on your own personal branch.</li>
+<li>Let Git intelligently merge your specific changes back into the main copy of files, so that your changes don't impact other people's updates.</li>
+<li>Let Git keep track of your and other people's changes, so you all stay working on the most up-to-date version of the project</li>
+</ul>
+<hr>
+
+<h2>How do Git and GitHub work together?</h2>
+<ul>
+<li>When you upload files to GitHub, you'll store them in a "Git repository." This means that when you make changes (or "commits") to your files in GitHub, Git will automatically start to track and manage your changes.</li>
+</ul>
+<p>Once you start to collaborate with others and all need to work on the same repository at the same time, you’ll continually:</p>
+<ul>
+<li>Pull all the latest changes made by your collaborators from the remote repository on GitHub.</li>
+<li>Push back your own changes to the same remote repository on GitHub.</li>
+</ul>
+<hr>
+
+<h2>Requirements</h2>
+<ul>
+<li><a href="https://github.com/">Create an account on GitHub</a></li>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Install Git on your computer</a>.</li>
+<li><a href="https://docs.github.com/en/get-started/using-github/connecting-to-github">Connect to GitHub</a></li>
+<li><a href="https://github.com/cli/cli">Install the GitHub CLI</a></li>
+</ul>
+<hr>
+
+<h1>Communicating on GitHub</h1>
+<p>GitHub provides built-in collaborative communication tools allowing you to interact closely with your community. E.g. you can follow the last updates of your favorite library, or even your favorite programming language. </p>
+<hr>
+
+<h3>GitHub Issues</h3>
+<ul>
+<li>Are useful for discussing specific details of a project such as bug reports, planned improvements and feedback.</li>
+<li>Are specific to a repository, and usually have a clear owner.</li>
+<li>Are often referred to as GitHub's bug-tracking system.</li>
+</ul>
+<h3>Pull Requests</h3>
+<ul>
+<li>Allow you to propose specific changes</li>
+<li>Allow you to comment directly on proposed changes suggested by others</li>
+<li>Are specific to a repository</li>
+<li>Provide a collaborative experience outside the codebase, allowing the brainstorming of ideas, and the creation of a community knowledge base</li>
+</ul>
+<hr>
+
+<h3>GitHub Discussions</h3>
+<ul>
+<li>Are like a forum, and are best used for open-form ideas and discussions where collaboration is important.</li>
+<li>May span many repositories</li>
+</ul>
+<hr>
+
+<h2>What should I use?</h2>
+<hr>
+
+<h2>Issues</h2>
+<ul>
+<li>I want to keep track of tasks, enhancements and bugs. </li>
+<li>I want to file a bug report. </li>
+<li>I want to share feedback about a specific feature. </li>
+<li>I want to ask a question about files in the repository. </li>
+</ul>
+<hr>
+
+<p><img alt="Issues" src="https://docs.github.com/assets/cb-435865/mw-1440/images/help/issues/issue-example.webp" /></p>
+<hr>
+
+<h2>Scenarios for Pull Requests</h2>
+<ul>
+<li>I want to fix a typo in a repository.</li>
+<li>I want to make changes to a repository.</li>
+<li>I want to make changes to fix an issue.</li>
+<li>I want to comment on changes suggested by others.</li>
+</ul>
+<hr>
+
+<p><img alt="Pull Requests" src="https://docs.github.com/assets/cb-56735/mw-1440/images/help/pull_requests/pr-conversation-example.webp" /></p>
+<hr>
+
+<p><img alt="Pull Requests 2" src="https://docs.github.com/assets/cb-43403/mw-1440/images/help/pull_requests/pr-files-changed-example.webp" /></p>
+<hr>
+
+<h2>Scenarios for Discussions</h2>
+<ul>
+<li>I have a question that's not necessarily related to specific files in the repository.</li>
+<li>I want to share news with my collaborators, or my team.</li>
+<li>I want to start or participate in an open-ended conversation.</li>
+<li>I want to make an announcement to my community.</li>
+</ul>
+<hr>
+
+<h2>Feature preview</h2>
+<h3>GitHub's release cycle</h3>
+<p>GitHub's products and features can go through multiple release phases.</p>
+<ul>
+<li>Alpha: The product or feature is under heavy development and often has changing requirements and scope</li>
+<li>Beta: The product or feature is in a more stable state and is available to a limited number of users</li>
+<li>General Availability (GA): The product or feature is fully released and available to all users</li>
+</ul>
+<p>Github has a <a href="https://docs.github.com/en/get-started/using-github/exploring-early-access-releases-with-feature-preview">feature preview</a> that allows you to try out new features of a repository before they are released to the general public.</p>
+<hr>
+
+<h2>Interacting with GitHub</h2>
+<ul>
+<li>Browser (only use one of the following)</li>
+<li>Apple Safari</li>
+<li>Google Chrome</li>
+<li>Microsoft Edge</li>
+<li>Mozilla Firefox</li>
+<li>GitHub Mobile</li>
+<li>Command Line Interface (CLI)</li>
+</ul>
+<p>I recommend to do (almost) everything from the command line.</p>
+<hr>
+
+<h2>Writing on GitHub: Markdown</h2>
+<ul>
+<li>
+<p>Markdown is an easy-to-read, easy-to-write language for formatting plain text. You can use Markdown syntax, along with some additional HTML tags, to format your writing on GitHub, in places like repository READMEs and comments on pull requests and issues. </p>
+</li>
+<li>
+<p><strong>These slides are written in Marp, a language based on Markdown for slides.</strong>.</p>
+</li>
+<li>
+<p>Markdown files are saved with the <code>.md</code> extension. The most common file in any repository is the <code>README.md</code> file.</p>
+</li>
+<li>
+<p>You can use HTML tags in Markdown files for more complex formatting.</p>
+</li>
+<li>
+<p>Click <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">here</a> for a guide on how to write in Markdown.</p>
+</li>
+</ul>
+<hr>
+
+<h2>Basic Markdown Syntax</h2>
+<pre><code class="language-markdown"># Heading 1
+## Heading 2
+### Heading 3
+
+*italic*
+**bold**
+***bold italic***
+
+* List item 1
+1. List item 2
+
+Plain text
+</code></pre>
+<pre><code class="language-output"></code></pre>
+<hr>
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<p><em>italic</em>
+<strong>bold</strong>
+<strong><em>bold italic</em></strong></p>
+<ul>
+<li>List item 1
+1. List item 2</li>
+</ul>
+<p>Plain text</p>
+<hr>
+
+<h2>Finding ways to contribute to open source on GitHub</h2>
+<ul>
+<li>Discovering relevant projects <code>github.com/topics/&lt;topic&gt;</code></li>
+<li>Finding good first issues <code>github.com/&lt;owner&gt;/&lt;repository&gt;/contribute</code>. </li>
+<li>Opening an issue. </li>
+</ul>
+<hr>
+
+<h2>Let's get started</h2>
+<hr>
+
+<h2>Main commands, <code>git</code> and <code>gh</code></h2>
+<ul>
+<li><code>git</code> is the command line tool for Git, this is the command we will use more often.</li>
+<li><code>gh</code> is the command line tool for GitHub, it is useful to create repositories and manage issues.</li>
+</ul>
+<hr>
+
+<h2>Command Line Interface</h2>
+<pre><code class="language-bash">git --version 
+git config --global user.name &quot;Juan Imbett&quot;
+git config user.name
+git config --global user.email &quot;jfimbett@gmail.com&quot;
+git config --global user.email
+</code></pre>
+<pre><code class="language-output">git version 2.44.0.windows.1
+Juan Imbett
+jfimbett@gmail.com
+</code></pre>
+<h2>Make sure you are connected to GitHub</h2>
+<pre><code class="language-bash">gh auth login
+</code></pre>
+<hr>
+
+<h2>HTTPS and SSH</h2>
+<ul>
+<li>
+<p>HTTPS is the default way to connect to GitHub. It stands for HyperText Transfer Protocol Secure. It is a secure way to transfer data between your computer and GitHub.</p>
+</li>
+<li>
+<p>SSH stands for Secure Shell. It is a secure way to connect to GitHub. It is more secure than HTTPS, but it requires more configuration. Since we do not have nuclear codes in our repositories, we will use HTTPS.</p>
+</li>
+</ul>
+<hr>
+
+<h2>Step 3: Create a Local Repository</h2>
+<pre><code class="language-bash">cd 
+mkdir hello-world
+cd hello-world
+git init # creates .git folder
+</code></pre>
+<pre><code class="language-output">Initialized empty Git repository in C:/Users/jfimb/Documents/hello-world/.git/
+</code></pre>
+<hr>
+
+<h2>Step 4: Add Files to the Repository</h2>
+<p>Windows 
+<pre><code class="language-bash">echo # My First Commit &gt;&gt; README.md
+more README.md
+git add .
+git commit -m &quot;First commit&quot;
+</code></pre></p>
+<p>iOS
+<pre><code class="language-bash">echo &quot;# My First Commit&quot; &gt;&gt; README.md
+cat README.md
+git add .
+git commit -m &quot;First commit&quot;
+</code></pre></p>
+<pre><code class="language-output">[master (root-commit) eaef7df] First commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+</code></pre>
+<hr>
+
+<h2>Step 5: Create a Remote Repository</h2>
+<pre><code class="language-bash">gh repo create hello-world --public --source=.
+</code></pre>
+<pre><code class="language-output">✓ Created repository jfimbett/hello-world on GitHub
+  https://github.com/jfimbett/hello-world
+✓ Added remote https://github.com/jfimbett/hello-world.git
+</code></pre>
+<hr>
+
+<h2>Step 6: Push the Local Repository to GitHub</h2>
+<pre><code class="language-bash">git push -u origin master
+</code></pre>
+<p>Where <code>origin</code> is the name of the remote repository and <code>master</code> is the name of the branch (more on this later)</p>
+<hr>
+
+<h2>Step 7: Check the Repository on GitHub</h2>
+<hr>
+
+<h2>Step 8: Pulling changes from GitHub</h2>
+<ul>
+<li>Go directly to the GitHub website and make a change to the README.md file.</li>
+<li>Pull the changes to your local repository.</li>
+</ul>
+<pre><code class="language-bash">git pull origin master
+</code></pre>
+<pre><code class="language-output">remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 923 bytes | 115.00 KiB/s, done.
+From https://github.com/jfimbett/hello-world
+ * branch            master     -&gt; FETCH_HEAD
+   8db2404..b1066dc  master     -&gt; origin/master
+Updating 8db2404..b1066dc
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+</code></pre>
+<hr>
+
+<h2>Step 9: Create a Branch</h2>
+<ul>
+<li>
+<p>A branch is a copy of the main repository. It is useful when you want to work on a feature without affecting the main repository.</p>
+</li>
+<li>
+<p>Let's create a branch called <code>feature1</code>, create a python file and push it to the remote repository.</p>
+</li>
+</ul>
+<pre><code class="language-bash">git checkout -b feature1 # creates and switches to the branch
+echo print(&#x27;Hello World&#x27;) &gt;&gt; hello.py # creates a python file
+git add . # adds the file to the staging area
+git commit -m &quot;Add hello.py&quot; # commits the file
+git push origin feature1 # pushes the branch to the remote repository
+</code></pre>
+<hr>
+
+<pre><code class="language-output">Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 36 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 302 bytes | 302.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for &#x27;feature1&#x27; on GitHub by visiting:
+remote:      https://github.com/jfimbett/hello-world/pull/new/feature1
+remote:
+To https://github.com/jfimbett/hello-world.git
+ * [new branch]      feature1 -&gt; feature1
+</code></pre>
+<hr>
+
+<h2>Check the repository on GitHub</h2>
+<ul>
+<li>You will see a new branch called <code>feature1</code> with the file <code>hello.py</code>.</li>
+<li>The branch will be 1 commit ahead of the <code>master</code> branch.</li>
+<li>You can create a pull request to merge the changes to the <code>master</code> branch.</li>
+</ul>
+<pre><code class="language-bash">gh pr create --base master --head feature1 
+</code></pre>
+<p>Let's explore the command. <code>--base</code> is the branch where you want to merge the changes. <code>--head</code> is the branch where the changes are.</p>
+<hr>
+
+<pre><code class="language-output">Creating pull request for feature1 into master in jfimbett/hello-world
+
+? Title Add hello.py
+? Body &lt;Received&gt;
+? What&#x27;s next? Submit
+https://github.com/jfimbett/hello-world/pull/1
+</code></pre>
+<ul>
+<li>You should see a pull request on the GitHub website.</li>
+</ul>
+<p>A pull request is a proposal to merge a set of changes from one branch into another. In a pull request, collaborators can review and discuss the proposed set of changes before they integrate the changes into the main codebase. </p>
+<hr>
+
+<h2>Commenting on a Pull Request</h2>
+<ul>
+<li>The repository administrator is the one that can accept or reject the pull request. As an admin you can make commens  on the pull request.</li>
+<li>Let's imagine that the admin asks you to make a change to the file <code>hello.py</code>. You can do it in the browser, for example asking to have double quotes instead of single quotes.</li>
+<li>You can check the pull request comments witht he command <code>gh pr view 1</code>.</li>
+</ul>
+<pre><code class="language-bash">gh pr view 1
+</code></pre>
+<hr>
+
+<pre><code class="language-output">Add hello.py jfimbett/hello-world#1
+Open • jfimbett wants to merge 1 commit into master from feature1 • about 10 minutes ago
++1 -0 • No checks
+
+
+  No description provided
+
+
+jfimbett commented (Owner) • 0m • Newest comment
+
+  Good commit, but please do the changes.
+
+
+View this pull request on GitHub: https://github.com/jfimbett/hello-world/pull/1
+</code></pre>
+<hr>
+
+<h2>Making changes to the Pull Request</h2>
+<ul>
+<li>You can make changes to the pull request by checking out the branch and making the changes.</li>
+</ul>
+<pre><code class="language-bash">git checkout feature1
+echo print(&quot;Hello World&quot;) &gt; hello.py ## two &gt; are for appending, one is for overwriting
+git add .
+git commit -m &quot;Change hello.py&quot;
+git push origin feature1
+</code></pre>
+<hr>
+
+<h2>Step 10: Merge the Pull Request</h2>
+<ul>
+<li>Once the changes are made, you can accept the pull request.</li>
+</ul>
+<pre><code class="language-bash">gh pr merge 1 --delete-branch # merges the pull request and deletes the branch, 
+gh pr merge 1 # merges the pull request and keeps the other branch
+</code></pre>
+<hr>
+
+<pre><code class="language-output">Merging pull request jfimbett/hello-world#1 (Add hello.py)
+? What merge method would you like to use? Create a merge commit
+? What&#x27;s next? Submit
+✓ Merged pull request jfimbett/hello-world#1 (Add hello.py)
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 889 bytes | 222.00 KiB/s, done.
+From https://github.com/jfimbett/hello-world
+ * branch            master     -&gt; FETCH_HEAD
+   b1066dc..66a1170  master     -&gt; origin/master
+Updating b1066dc..66a1170
+Fast-forward
+ hello.py | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.py
+✓ Deleted local branch feature1 and switched to branch master
+✓ Deleted remote branch feature1
+</code></pre>
+<hr>
+
+<h2>Forking and Cloning a Repository: Explore ideas before they are proposed.</h2>
+<ul>
+<li>A fork is a new repository that shares code and visibility settings with the original “upstream” repository. It doesnt download the code to your local machine by itself.</li>
+<li>Propose changes to someone else's project.</li>
+<li>Use someone else's project as a starting point for your own idea.</li>
+<li>E.g. I like this repository on how to train a neural network to play the game snake. https://github.com/greerviau/SnakeAI</li>
+<li>Cloning is the process of downloading a repository to your local machine.</li>
+</ul>
+<pre><code class="language-bash">gh repo fork greerviau/SnakeAI --remote=true
+</code></pre>
+<hr>
+
+<pre><code class="language-output">? Would you like to clone the fork? Yes
+Cloning into &#x27;SnakeAI&#x27;... the fork? (y/N) y
+remote: Enumerating objects: 211, done.
+remote: Total 211 (delta 0), reused 0 (delta 0), pack-reused 211 (from 1)
+Receiving objects: 100% (211/211), 85.75 KiB | 3.30 MiB/s, done.
+Resolving deltas: 100% (103/103), done.
+From https://github.com/greerviau/SnakeAI
+ * [new branch]      master     -&gt; upstream/master
+✓ Cloned fork
+! Repository greerviau/SnakeAI set as the default repository. 
+To learn more about the default repository, run: gh repo set-default --help
+</code></pre>
+<pre><code class="language-bash">cd SnakeAI
+</code></pre>
+<hr>
+
+<h2>The .gitignore file</h2>
+<ul>
+<li>The <code>.gitignore</code> file is a text file that tells Git which files or folders to ignore in a project.</li>
+</ul>
+<p>Example of a <code>.gitignore</code> file:
+<pre><code class="language-.gitignore"># Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+</code></pre>
+You should include here large data files. </p>
+<hr>
+
+<h2>Step 12: Delete the Local Repository</h2>
+<ul>
+<li>
+<p>Deleting a repository is a dangerous operation, it is irreversible. To avoid any unwanted deletion, I recommend deleting directly on the github website.</p>
+</li>
+<li>
+<p>To stop tracking a repository, you can delete the <code>.git</code> folder.</p>
+</li>
+</ul>
+<p>iOS
+<pre><code class="language-bash">rm -rf .git
+</code></pre></p>
+<p>Windows
+<pre><code class="language-bash">rmdir .git /s /q
+</code></pre></p>
+<hr>
+
+<h2>The Git Fork-Branch-Pull Workflow</h2>
+<ol>
+<li>Fork and Clone a project. 
+  - Fork: Create a copy of the repository on your GitHub account.
+  - Clone: Download the repository to your local machine.</li>
+</ol>
+<pre><code class="language-bash">gh repo fork jfimbett/pybacktestchain --remote=true
+</code></pre>
+<hr>
+
+<pre><code class="language-output">✓ Created fork jfimbett-test/pybacktestchain
+? Would you like to clone the fork? Yes
+Cloning into &#x27;pybacktestchain&#x27;...
+remote: Enumerating objects: 128, done.
+remote: Counting objects: 100% (128/128), done.
+remote: Compressing objects: 100% (69/69), done.
+remote: Total 128 (delta 52), reused 110 (delta 39), pack-reused 0 (from 0)
+Receiving objects: 100% (128/128), 158.67 KiB | 4.07 MiB/s, done.
+Resolving deltas: 100% (52/52), done.
+From https://github.com/jfimbett/pybacktestchain
+ * [new branch]      branch1           -&gt; upstream/branch1
+ * [new branch]      branch2           -&gt; upstream/branch2
+ * [new branch]      branch_blockchain -&gt; upstream/branch_blockchain
+ * [new branch]      master            -&gt; upstream/master
+✓ Cloned fork
+! Repository jfimbett/pybacktestchain set as the default repository. To learn more about the default repository, run: gh repo set-default --help
+</code></pre>
+<hr>
+
+<h2>Origin vs Upstream vs Local</h2>
+<p><img alt="" src="https://www.tomasbeuzen.com/post/git-fork-branch-pull/featured_hud478d74d48d19bfd1c1c03fc398c8033_312322_720x0_resize_lanczos_3.png" /></p>
+<hr>
+
+<h2><code>origin</code></h2>
+<p>What is it?</p>
+<ul>
+<li><code>origin</code> is the default name given to the remote repository when you clone a repository. It refers to the repository from which your local copy was cloned.</li>
+</ul>
+<p>Purpose:</p>
+<ul>
+<li>It's typically where you push your changes (e.g., git push origin main) and pull updates from.</li>
+<li>
+<p>If you fork a repository on GitHub and then clone your fork locally, origin points to your forked repository (i.e., your own copy of the repository on GitHub).</p>
+</li>
+<li>
+<p>If you fork a repository using <code>gh repo fork</code> the <code>--remote=true</code> flag will automatically bring both the <code>origin</code> and <code>upstream</code> remotes.</p>
+</li>
+</ul>
+<hr>
+
+<h2><code>upstream</code></h2>
+<p>What is it?
+<code>upstream</code> is a common convention (but not a special keyword in Git) to refer to the original repository from which you forked a project. It points to the repository you forked from, typically maintained by the original author or organization.</p>
+<ul>
+<li>Purpose: It is used to pull changes from the original repository into your fork. This is especially useful when you want to keep your fork up-to-date with the latest changes from the original repository.</li>
+<li>It helps maintain a link to the "source of truth" repository.</li>
+</ul>
+<hr>
+
+<h2>What are the branches I have access to?</h2>
+<pre><code class="language-bash">cd repository
+git branch -a
+</code></pre>
+<pre><code class="language-output">* master
+  remotes/origin/HEAD -&gt; origin/master
+  remotes/origin/branch1
+  remotes/origin/branch2
+  remotes/origin/branch_blockchain
+  remotes/origin/master
+  remotes/upstream/branch1
+  remotes/upstream/branch2
+  remotes/upstream/branch_blockchain
+  remotes/upstream/master
+</code></pre>
+<hr>
+
+<h2>What if I only have <code>origin</code> or <code>upstream</code> but not both?</h2>
+<ul>
+<li>
+<p>You can add a remote repository with the command <code>git remote add &lt;name&gt; &lt;url&gt;</code>. 
+<pre><code class="language-bash">git remote add upstream jfimbett/pybacktestchain.git
+</code></pre>
+Why would I want both?</p>
+</li>
+<li>
+<p><code>origin</code> points to <code>https://github.com/yourusername/repo.git</code>. </p>
+</li>
+<li><code>upstream</code> points to <code>https://github.com/originaluser/repo.git</code></li>
+</ul>
+<hr>
+
+<h2><code>fetch</code></h2>
+<ul>
+<li><code>fetch</code> is a command that downloads changes from a remote repository to your local repository. It does not merge the changes, it only downloads them. </li>
+</ul>
+<pre><code class="language-bash">git fetch upstream
+</code></pre>
+<hr>
+
+<h2>Pull from a branch</h2>
+<p><code>git checkout upstream/branch_blockchain</code>
+<pre><code class="language-output">Switched to a new branch &#x27;branch_blockchain&#x27;
+</code></pre>
+<pre><code class="language-bash">git pull upstream branch_blockchain
+</code></pre>
+<pre><code class="language-output">From https://github.com/jfimbett/pybacktestchain
+ * branch            branch_blockchain -&gt; FETCH_HEAD
+</code></pre></p>
+<hr>
+
+<h2>What if there is a new branch in the <code>upstream</code> repository?</h2>
+<p>Before
+<pre><code class="language-bash">master
+remotes/origin/HEAD -&gt; origin/master
+remotes/origin/branch1
+remotes/origin/branch2
+remotes/origin/branch_blockchain
+remotes/origin/master
+remotes/upstream/branch1
+remotes/upstream/branch2
+remotes/upstream/branch_blockchain
+remotes/upstream/master
+</code></pre></p>
+<hr>
+
+<h2><code>fetch</code></h2>
+<p><pre><code class="language-bash">git fetch upstream
+</code></pre>
+<pre><code class="language-output">remotes/origin/HEAD -&gt; origin/master
+remotes/origin/branch1
+remotes/origin/branch2
+remotes/origin/branch_blockchain
+remotes/origin/master
+remotes/upstream/branch1
+remotes/upstream/branch2
+remotes/upstream/branch_blockchain
+remotes/upstream/master
+remotes/upstream/testing_branch
+</code></pre></p>
+<hr>
+
+<h2>Version Control</h2>
+<ul>
+<li>How to automate the process of version control? </li>
+<li>Python through Anaconda.</li>
+<li>Cookiecutter: A tool that helps you create a project template.</li>
+<li>Poetry: Dependency management and packaging in Python.</li>
+<li>Semantic Release: A tool that automates the versioning and release process based on the commit messages. </li>
+<li>For this example let's create an empty repository, that we will convert into a library, upload to GitHub and manage the version control.</li>
+</ul>
+<hr>
+
+<h2>Anaconda</h2>
+<ul>
+<li>Install Python through Anaconda and create a virtual environment. This will allow you to install packages without affecting the base environment, plus you can easily share the environment with others. Different versions of the same libraries/packages can have different behavior. A good practice is to create a virtual environment for each project, you can use the same name as the project.</li>
+</ul>
+<pre><code class="language-bash">conda create --name mylibrary python=3.11 
+conda activate mylibrary
+</code></pre>
+<pre><code class="language-output">(mylibrary) C:\Users\jfimb\Documents&gt; # Look at the (mylibrary) at the beginning of the line
+</code></pre>
+<hr>
+
+<h2>Cookiecutter</h2>
+<ul>
+<li>Cookiecutter is a command-line utility that creates projects from project templates.</li>
+<li>A professional project consists of a set of files and directories that are organized in a specific way. E.g. tests, documentation, source code, etc.</li>
+<li>You can look for your favorite template <a href="https://www.cookiecutter.io/templates">here</a></li>
+<li>Install cookiecutter using <code>conda</code> rather than <code>pip</code> to avoid conflicts with other packages.</li>
+</ul>
+<pre><code class="language-bash">conda install -c conda-forge cookiecutter
+</code></pre>
+<hr>
+
+<h2>Treat your code as a package/library</h2>
+<p>Our goal is to creat something that looks like this, a package structure. Even if you dont use python, you can have a similar structure with another language.</p>
+<pre><code class="language-text">mylibrary
+├── CHANGELOG.md               ┐
+├── CONDUCT.md                 │
+├── CONTRIBUTING.md            │
+├── docs                       │ Package documentation
+│   └── ...                    │
+├── LICENSE                    │
+├── README.md                  ┘
+├── pyproject.toml             ┐ 
+├── src                        │
+│   └── mylibrary        │ Package source code, metadata,
+│       ├── __init__.py        │ and build instructions 
+│       ├── moduleA.py         │
+│       └── moduleB.py         ┘
+└── tests                      ┐
+    └── ...                    ┘ Package tests
+</code></pre>
+<hr>
+
+<h2>Notes:</h2>
+<ul>
+<li>The <code>CHANGELOG.md</code> file contains a list of changes made to the package. It is useful to keep track of the changes made to the package.</li>
+<li>The <code>CONDUCT.md</code> file contains the code of conduct of the package. It is useful to keep track of the rules of the package.</li>
+<li>The <code>CONTRIBUTING.md</code> file contains the guidelines for contributing to the package. It is useful to keep track of the contributions to the package.</li>
+<li>The <code>docs</code> folder contains the documentation of the package. It is useful to keep track of the documentation of the package.</li>
+<li>The <code>LICENSE</code> file contains the license of the package. It is useful to keep track of the license of the package.</li>
+</ul>
+<hr>
+
+<h2><strong>Important</strong></h2>
+<ul>
+<li>Do not worry about the structure of the package src with a directory called <code>mylibrary</code>. This is the way python packages are organized. The <code>__init__.py</code> file is necessary for python to recognize the directory as a package.</li>
+</ul>
+<hr>
+
+<h2>Retrieve a template</h2>
+<p><code>py-pkgs</code> provides a template for Python packages. </p>
+<pre><code class="language-bash">cookiecutter https://github.com/py-pkgs/py-pkgs-cookiecutter.git
+</code></pre>
+<hr>
+
+<pre><code class="language-output">  [1/7] author_name (Monty Python): Juan F. Imbet
+  [2/7] package_name (mypkg): mylibrary
+  [3/7] package_short_description (A package for doing great things!): Example of how to use templates in cookiecutter. 
+  [4/7] package_version (0.1.0): 0.0.0
+  [5/7] python_version (3.9):
+  [6/7] Select open_source_license
+    1 - MIT
+    2 - Apache License 2.0
+    3 - GNU General Public License v3.0
+    4 - CC0 v1.0 Universal
+    5 - BSD 3-Clause
+    6 - Proprietary
+    7 - None
+    Choose from [1/2/3/4/5/6/7] (1):
+  [7/7] Select include_github_actions
+    1 - no
+    2 - ci
+    3 - ci+cd
+    Choose from [1/2/3] (1):
+</code></pre>
+<hr>
+
+<h2>Important:</h2>
+<ul>
+<li>Select 0.0.0 for the package version, this will allow us to use <code>semantic-release</code> to calculate the next version based on the commit message history.</li>
+</ul>
+<hr>
+
+<pre><code class="language-bash">cd mylibrary
+dir # or ls in iOS
+</code></pre>
+<pre><code class="language-output">    Directory: C:\Users\jfimb\Documents\mylibrary
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        28/08/2024     15:51                docs
+d-----        28/08/2024     15:51                src
+d-----        28/08/2024     15:51                tests
+-a----        28/08/2024     15:51           2066 .gitignore
+-a----        28/08/2024     15:51            624 .readthedocs.yml
+-a----        28/08/2024     15:51            107 CHANGELOG.md
+-a----        28/08/2024     15:51           3090 CONDUCT.md
+-a----        28/08/2024     15:51           2319 CONTRIBUTING.md
+-a----        28/08/2024     15:51           1094 LICENSE
+-a----        28/08/2024     15:51            365 pyproject.toml
+-a----        28/08/2024     15:51            681 README.md
+</code></pre>
+<hr>
+
+<h2>Poetry</h2>
+<ul>
+<li>Poetry is a tool that helps you manage dependencies and packaging in Python. It is a good practice to use it when you are creating a package. </li>
+</ul>
+<pre><code class="language-bash">pip install poetry
+</code></pre>
+<p>Cookiecutter has already created a <code>pyproject.toml</code> file for you. This file contains the metadata of the package, the dependencies, and the build instructions. </p>
+<hr>
+
+<h2><code>pyproject.toml</code></h2>
+<ul>
+<li><code>toml</code> stands for Tom's Obvious, Minimal Language. It is a configuration file format that is easy to read due to its simplicity. It was created by Tom Preston-Werner, the co-founder of GitHub.</li>
+</ul>
+<pre><code class="language-toml">[tool.poetry]
+name = &quot;mylibrary&quot;
+version = &quot;0.0.0&quot;
+description = &quot;Example of how to use templates in cookiecutter.&quot;
+authors = [&quot;Juan F. Imbet&quot;]
+license = &quot;MIT&quot;
+readme = &quot;README.md&quot;
+
+[tool.poetry.dependencies]
+python = &quot;^3.9&quot;
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = [&quot;poetry-core&gt;=1.0.0&quot;]
+build-backend = &quot;poetry.core.masonry.api&quot;
+</code></pre>
+<hr>
+
+<h2>Poetry, the basics</h2>
+<ul>
+<li><code>poetry install</code> installs the dependencies.</li>
+<li><code>poetry add &lt;package&gt;</code> adds a package to the dependencies.</li>
+<li><code>poetry remove &lt;package&gt;</code> removes a package from the dependencies.</li>
+<li><code>poetry build</code> builds the package.</li>
+<li><code>poetry publish</code> publishes the package to PyPI (requires an account).</li>
+</ul>
+<hr>
+
+<h2>Sync with GitHub</h2>
+<pre><code class="language-bash">git init
+git add .
+git commit -m &quot;First commit&quot;
+gh repo create mylibrary --public --source=.
+git push -u origin master
+</code></pre>
+<hr>
+
+<h2>Version Control <code>major</code>.<code>minor</code>.<code>patch</code></h2>
+<ul>
+<li>
+<p>The most common way to define a version of a package is with three numbers separated by dots. The first number is the major version, the second number is the minor version, and the third number is the patch version.</p>
+</li>
+<li>
+<p>Patchs are for bug fixes, minors are for new features, and majors are for breaking changes.</p>
+</li>
+<li>Patchs and minors are backward compatible, this means that if you have a package that depends on version 1.0.0, it will work with version 1.0.1 and 1.1.0, but not necessarily with version 2.0.0.</li>
+</ul>
+<hr>
+
+<h2>Semantic Release</h2>
+<ul>
+<li>Semantic Release is a tool that automates the versioning and release process based on the commit messages. It is a good practice to use it when you are creating a package.
+<pre><code>&lt;type&gt;(optional scope): short summary in present tense
+
+(optional body: explains motivation for the change)
+
+(optional footer: note BREAKING CHANGES here, and issues to be closed)
+</code></pre></li>
+</ul>
+<hr>
+
+<p><code>&lt;type&gt;</code> refers to the kind of change made and is usually one of:</p>
+<ul>
+<li>
+<p><code>feat</code>: A new feature.</p>
+</li>
+<li>
+<p><code>fix</code>: A bug fix.</p>
+</li>
+<li>
+<p><code>docs</code>: Documentation changes.</p>
+</li>
+<li>
+<p><code>style</code>: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc).</p>
+</li>
+<li>
+<p><code>refactor</code>: A code change that neither fixes a bug nor adds a feature.</p>
+</li>
+<li>
+<p><code>perf</code>: A code change that improves performance.</p>
+</li>
+<li>
+<p><code>test</code>: Changes to the test framework.</p>
+</li>
+<li>
+<p><code>build</code>: Changes to the build process or tools.</p>
+</li>
+</ul>
+<hr>
+
+<h3>Examples</h3>
+<p>A <code>type</code> of <code>fix</code> triggers a patch version bump. </p>
+<pre><code class="language-bash">git commit -m &quot;fix(mod_plotting): fix confusing error message in \
+                 plot_words&quot;
+</code></pre>
+<p>A <code>type</code> of <code>feat</code> triggers a minor version bump.</p>
+<pre><code class="language-bash">git commit -m &quot;feat(package): add example data and new module to \
+                 package&quot;
+</code></pre>
+<hr>
+
+<p>The text <code>BREAKING_CHANGE:</code> in the footer triggers a major version bump.</p>
+<pre><code class="language-bash">git commit -m &quot;feat(mod_plotting): move code from plotting module \
+                 to pycounts module
+ 
+BREAKING CHANGE: plotting module wont exist after this release.&quot;
+</code></pre>
+<hr>
+
+<h2>Configuration</h2>
+<p>To configure PSR, we need to tell it where the version number of our package is stored. The package version is stored in the pyproject.toml file for a poetry-managed project. It exists as the variable version under the table <code>[tool.poetry]</code>. To tell PSR this, we need to add a new table to synchronize the version number. </p>
+<hr>
+
+<p><pre><code class="language-toml">...rest of file hidden...
+
+[tool.semantic_release]
+version_variable = &quot;pyproject.toml:version&quot;
+</code></pre>
+We can do it with the following command:</p>
+<pre><code class="language-bash">poetry add --group dev python-semantic-release
+echo [tool.semantic_release] &gt;&gt; pyproject.toml
+echo version_variable = &quot;pyproject.toml:version&quot; &gt;&gt; pyproject.toml
+echo version_toml = [ &gt;&gt; pyproject.toml
+echo &quot;pyproject.toml:tool.poetry.version&quot;, &gt;&gt; pyproject.toml
+echo ] &gt;&gt; pyproject.toml
+poetry install
+</code></pre>
+<hr>
+
+<h2>Installing dependencies</h2>
+<pre><code class="language-output">Installing dependencies from lock file
+
+Package operations: 0 installs, 2 updates, 0 removals
+
+  - Updating certifi (2024.7.4 /home/conda/feedstock_root/build_artifacts/certifi_1720457958366/work/certifi -&gt; 2024.7.4)
+  - Updating urllib3 (2.2.2 /home/conda/feedstock_root/build_artifacts/urllib3_1719391292974/work -&gt; 2.2.2)
+
+Installing the current project: mylibrary (0.0.0)
+</code></pre>
+<p>Look at the <code>pyproject.toml</code> file, you will see the new table <code>[tool.semantic_release]</code>. Also note that the version 0.0.0 is the same one that appears in the <code>pyproject.toml</code> file.</p>
+<pre><code class="language-toml">[tool.poetry]
+name = &quot;mylibrary&quot;
+version = &quot;0.0.0&quot;
+</code></pre>
+<hr>
+
+<h2>What if I need more libraries in the future?</h2>
+<ul>
+<li>You can add them to the <code>pyproject.toml</code> file with the command <code>poetry add &lt;package&gt;</code>.</li>
+<li>You can remove them with the command <code>poetry remove &lt;package&gt;</code>.</li>
+<li>E.g. <code>poetry add numpy</code> or <code>poetry remove numpy</code>.</li>
+</ul>
+<hr>
+
+<h2>Semantic Release, the basics</h2>
+<ul>
+<li><code>semantic-release version</code> calculates the next version based on the commit message history. </li>
+</ul>
+<pre><code class="language-bash">semantic-release version
+</code></pre>
+<pre><code class="language-output">0.0.0
+The next version is: 0.0.0! 🚀
+No build command specified, skipping
+</code></pre>
+<hr>
+
+<h3>Note: Failed to create release on Github!</h3>
+<p>Sometimes you will see the following message:</p>
+<pre><code class="language-output">[09:46:57] ERROR    [semantic_release.cli.commands.version] ERROR version.version: 404 Client Error: Not  version.py:744
+                    Found for url: https://api.github.com/repos/jfimbett/sec_yf/releases
+                    NoneType: None
+404 Client Error: Not Found for url: https://api.github.com/repos/jfimbett/sec_yf/releases
+Failed to create release on Github!
+</code></pre>
+<p>This is because semantic-release requires a GitHub token to create a release. </p>
+<hr>
+
+<h3>Create a GitHub token</h3>
+<p>(Thanks to Samuli Salonen for finding this solution)</p>
+<ul>
+<li>Go to https://github.com/settings/tokens</li>
+<li>Generate new token with “repo” and “workflow” access</li>
+<li>Copy the token (only shown once, so save it somewhere)</li>
+<li>Add the token to your environment variables with the name <code>GH_TOKEN</code>. In Windows, you can do this with the command <code>setx GH_TOKEN &lt;your token&gt;</code>.</li>
+<li>Remember to restart your terminal after setting the environment variable.</li>
+</ul>
+<hr>
+
+<h3>Instructions for MacOS (zsh)</h3>
+<ol>
+<li>For <code>zsh</code> users, (default chell on macOS Catalina and later). </li>
+<li>Open your terminal</li>
+<li>Type <code>nano ~/.zshrc</code> this will open the <code>.zshrc</code> file in the nano text editor (a minimalistic text editor that comes by default in most Unix systems).</li>
+<li>
+<p>Add the following line to the end of the file
+<pre><code class="language-bash">export GH_TOKEN=&lt;your token&gt;
+</code></pre></p>
+</li>
+<li>
+<p>Save the file and exit. (Look at the bottom of the terminal for the commands to save and exit).</p>
+</li>
+<li>Apply the changes with the command <code>source ~/.zshrc</code>.</li>
+<li>For <code>bash</code> users do the same but with the file <code>~/.bash_profile</code>.</li>
+</ol>
+<hr>
+
+<h2>Patches</h2>
+<p>Add some code to src/mylibrary/mylibrary.py</p>
+<pre><code class="language-python"># src/mylibrary/mylibrary.py
+def hello_world():
+    return &quot;Hello World&quot;
+</code></pre>
+<pre><code class="language-bash">git add src/mylibrary/mylibrary.py
+git commit -m &quot;fix(mylibrary): add hello_world function&quot;
+git push -u origin master
+</code></pre>
+<pre><code class="language-output">[master 07e4667] fix(mylibrary): add hello_world function
+ 1 file changed, 2 insertions(+)
+
+Enumerating objects: 9, done.
+...
+branch &#x27;master&#x27; set up to track &#x27;origin/master&#x27;.
+
+</code></pre>
+<hr>
+
+<h2>Patches with Semantic Release</h2>
+<pre><code class="language-bash">semantic-release version
+</code></pre>
+<pre><code class="language-output">0.0.1
+The next version is: 0.0.1! 🚀
+No build command specified, skipping
+</code></pre>
+<hr>
+
+<h2>Documentation</h2>
+<p>Add documentation to the <code>hello_world</code> function.</p>
+<pre><code class="language-python"># src/mylibrary/mylibrary.py
+def hello_world():
+    &quot;&quot;&quot;Returns the string &#x27;Hello World&#x27;.&quot;&quot;&quot;
+    return &quot;Hello World&quot;
+</code></pre>
+<pre><code class="language-bash">git add src/mylibrary/mylibrary.py
+git commit -m &quot;docs(mylibrary): add documentation to hello_world function&quot;
+git push -u origin master
+</code></pre>
+<pre><code class="language-output">[master 654d724] docs(mylibrary): add documentation to hello_world function
+ 1 file changed, 1 insertion(+)
+
+Enumerating objects: 9, done.
+...
+branch &#x27;master&#x27; set up to track &#x27;origin/master&#x27;.
+</code></pre>
+<hr>
+
+<h2>Not every commit triggers a version bump</h2>
+<pre><code class="language-bash">semantic-release version
+</code></pre>
+<pre><code class="language-output">0.0.1
+No release will be made, 0.0.1 has already been released!
+</code></pre>
+<hr>
+
+<h2>Minor change, backward compatible</h2>
+<p>Add a new function to the <code>mylibrary.py</code> file.</p>
+<pre><code class="language-python"># src/mylibrary/mylibrary.py
+def hello_world():
+    &quot;&quot;&quot;Returns the string &#x27;Hello World&#x27;.&quot;&quot;&quot;
+    return &quot;Hello World&quot;
+
+def hello_world2():
+    &quot;&quot;&quot;Returns the string &#x27;Hello World 2&#x27;.&quot;&quot;&quot;
+    return &quot;Hello World 2&quot;
+</code></pre>
+<pre><code class="language-bash">git add src/mylibrary/mylibrary.py
+git commit -m &quot;feat(mylibrary): add hello_world2 function&quot;
+git push -u origin master
+</code></pre>
+<pre><code class="language-output">[master a5094a5] feat(mylibrary): add hello_world2 function
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+ ...
+</code></pre>
+<hr>
+
+<h2>Minor change with Semantic Release</h2>
+<pre><code class="language-bash">semantic-release version
+</code></pre>
+<pre><code class="language-output">0.1.0
+The next version is: 0.1.0! 🚀
+No build command specified, skipping
+</code></pre>
+<hr>
+
+<h2>Major change, not backward compatible</h2>
+<p>Move the <code>hello_world</code> function to a new file called <code>hello.py</code> and remove the <code>hello_world2</code> function.</p>
+<pre><code class="language-python"># src/mylibrary/hello.py
+def hello_world():
+    &quot;&quot;&quot;Returns the string &#x27;Hello World&#x27;.&quot;&quot;&quot;
+    return &quot;Hello World&quot;
+</code></pre>
+<pre><code class="language-python"># src/mylibrary/mylibrarypy
+
+</code></pre>
+<pre><code class="language-bash">git add . # we use . when we modify multiple files
+git commit -m &quot;feat: update the code majorly&quot; -m &quot;BREAKING CHANGE: hello_world2 function removed it cannot be used&quot;
+git push -u origin master
+</code></pre>
+<p>Note how you can use more than once the <code>-m</code> flag to add more information to the commit message.</p>
+<hr>
+
+<h2>Major change with Semantic Release</h2>
+<pre><code class="language-bash">semantic-release version
+</code></pre>
+<pre><code class="language-output">1.0.0
+The next version is: 1.0.0! 🚀
+No build command specified, skipping
+</code></pre>
+<hr>
+
+<h2>Where are the versions stored?</h2>
+<ul>
+<li>Releases tab on GitHub.</li>
+<li><code>CHANGELOG.md</code> file.</li>
+</ul>
+<hr>
+
+<h2>Back to the package structure</h2>
+<pre><code class="language-bash">poetry install
+python
+Python 3.11.9 | packaged by Anaconda, Inc. | (main, Apr 19 2024, 16:40:41) 
+[MSC v.1916 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; from mylibrary.hello import hello_world
+&gt;&gt;&gt; hello_world()
+&#x27;Hello World&#x27;
+</code></pre>
+<p>Poetry installs locally the package in the virtual environment. You can import the package as if it was a library. You must be in the root directory of the package for python to recognize the package.</p>
+<hr>
+
+<h2>Adding a new library and updating the version</h2>
+<pre><code class="language-python"># src/mylibrary/mylibrary.py
+import pandas as pd
+</code></pre>
+<pre><code class="language-bash">poetry add pandas
+poetry install
+python
+Python 3.11.9 | packaged by Anaconda, Inc. | (main, Apr 19 2024, 16:40:41) 
+[MSC v.1916 64 bit (AMD64)] on win32
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt; from mylibrary.mylibrary import pd
+&gt;&gt;&gt; pd
+&lt;module &#x27;pandas&#x27; from &#x27;C:\\Users\\...\\__init__.py&#x27;&gt;
+&gt;&gt;&gt;
+</code></pre>
+<hr>
+
+<h2>Further reading</h2>
+<ul>
+<li>Creating a <a href="https://py-pkgs.org/welcome">python package</a></li>
+<li>GitHub <a href="https://training.github.com/downloads/github-git-cheat-sheet/">cheat sheet</a></li>
+<li>GitHub <a href="https://docs.github.com/en/get-started">documentation</a>. </li>
+</ul>
+</main>
+</body>
+</html>

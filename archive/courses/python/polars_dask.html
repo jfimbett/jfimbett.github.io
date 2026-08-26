@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python for Finance | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Parallel programming - Polars and Dask</h1>
+<h2>(For the curious reader)</h2>
+<hr>
+
+<h2>Parallel programming</h2>
+<p>Breaking down larger problems into smaller, independen, that can be executed simultaneously.</p>
+<hr>
+
+<h2>Fundamentals of Parallel Computer Architecture</h2>
+<ul>
+<li>
+<p><strong>Multi-core computing</strong>: A multi-core processor has multiple processing cores on a single chip, which can execute instructions in parallel.</p>
+</li>
+<li>
+<p><strong>Symmetric multiprocessing (SMP)</strong>: In SMP, two or more similar processors controlled by a single OS have equal access to a shared main memory and all common resources.</p>
+</li>
+<li>
+<p><strong>Distributed computing</strong>: In this architecture, system components on different networked computers coordinate their actions through communication, often using HTTP or message queues.</p>
+</li>
+<li>
+<p><strong>Massively parallel computing</strong>: This involves using a large number of computers or processors to execute computations in parallel.</p>
+</li>
+</ul>
+<hr>
+
+<p><img alt="Polars" src="https://devio2022-media.developers.io/wp-content/uploads/2023/02/eyecatch-polars-1-960x504.png" /></p>
+<hr>
+
+<h2>Short Introduction to Polars</h2>
+<p>https://pola.rs/</p>
+<hr>
+
+<h2>Polars</h2>
+<p>Polars is a library for parallel data processing. It is useful for working with large datasets. Polars is imported using the <code>import</code> keyword. Polars is usually imported using the alias <code>pl</code>.</p>
+<pre><code class="language-python">import polars as pl
+</code></pre>
+<p>How is it coded? Polars is written in Rust, a low-level programming language. Rust is similar to C++, but it is safer and more efficient. Rust is used to write high-performance applications, including web browsers and operating systems.</p>
+<hr>
+
+<h2>Polars - Dataframes</h2>
+<p>Dataframes are the main data structure in Polars. They are used to store tabular data. They can be created using the <code>pl.DataFrame</code> function. Dataframes can be created from lists, tuples, dictionaries, and other dataframes. It is common to name dataframes <code>df</code>.</p>
+<pre><code class="language-python">df = pl.DataFrame({&#x27;a&#x27;: [1], &#x27;b&#x27;: [4]})
+</code></pre>
+<pre><code class="language-output">shape: (3, 2)
+┌─────┬─────┐
+│ a   ┆ b   │
+│ --- ┆ --- │
+│ i64 ┆ i64 │
+╞═════╪═════╡
+│ 1   ┆ 4   │
+╞═════╪═════╡
+</code></pre>
+<hr>
+
+<h2>Polars - Lazy evaluation</h2>
+<p>Polars uses lazy evaluation to improve performance. This means that operations are not executed until they are needed. This is useful for working with large datasets, because it allows the program to only load the data that is needed. Lazy evaluation is done using the <code>lazy</code> method. The <code>lazy</code> method has one argument: a function. The function is applied to the dataframe, and the result is returned.</p>
+<pre><code class="language-python">df = pl.DataFrame({&#x27;a&#x27;: [1, 2, 3], &#x27;b&#x27;: [4, 5, 6]})
+df.lazy()
+</code></pre>
+<hr>
+
+<h2>Polars - General Instructions</h2>
+<p>Some instructions are similar to Pandas, however some other operations have a different syntax to connect to the Rust API.</p>
+<h2>Creating dataframes</h2>
+<pre><code class="language-python">df = pl.read_csv(&#x27;file.csv&#x27;)
+df = pl.read_parquet(&#x27;file.parquet&#x27;)
+</code></pre>
+<hr>
+
+<h2>Polars - Expressions</h2>
+<p>Expressions can be performed in sequence, this improves readability. You can use the <code>\</code> character to split code, or use parenthesis (<strong>recommended</strong>).</p>
+<ul>
+<li>Use <code>filter</code> to mask observations.</li>
+<li>Use <code>pl.col</code> to select a column.</li>
+<li>Use methos inside <code>pl</code> to perform operations on columns. E.g. <code>pl.col('a').sum()</code>.</li>
+</ul>
+<p>Example of Polars code</p>
+<pre><code class="language-python">df = (df 
+    .filter(pl.col(&#x27;a&#x27;) &gt; 0)
+    .select(pl.col(&#x27;a&#x27;), pl.col(&#x27;b&#x27;))
+    .groupby(pl.col(&#x27;a&#x27;))
+    .agg([pl.col(&#x27;b&#x27;).sum().alias(&#x27;sum_b&#x27;)])
+)
+</code></pre>
+<hr>
+
+<h2>Subset Observations - rows</h2>
+<p>Filter: Extract rows that meet logical criteria.</p>
+<pre><code class="language-python">df.flter(pl.col(&quot;random&quot;) &gt; 0.5)
+df.flter(
+(pl.col(&quot;groups&quot;)  &quot;B&quot;)
+&amp; (pl.col(&quot;random&quot;) &gt; 0.5) 
+)
+</code></pre>
+<p>Sample</p>
+<pre><code class="language-python"># Randomly select fraction of rows.
+df.sample(frac=0.5)
+# Randomly select n rows.
+df.sample(n=2)
+</code></pre>
+<hr>
+
+<h2>Subset Observations - rows (2)</h2>
+<pre><code class="language-python">#Select first and last rows
+# Select frst n rows
+df.head(n=2)
+# Select last n rows.
+df.tail(n=2)
+</code></pre>
+<hr>
+
+<h2>Make New Columns</h2>
+<pre><code class="language-python">df.with_columns(
+    [
+    (pl.col(&quot;a&quot;) * 2).alias(&quot;a_doubled&quot;),
+    (pl.col(&quot;b&quot;) + pl.col(&quot;a&quot;)).alias(&quot;a_plus_b&quot;),
+    (pl.col(&quot;c&quot;) / 2).alias(&quot;c_halved&quot;),
+    ]
+)
+</code></pre>
+<hr>
+
+<h2>Dask</h2>
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Dask_Logo.svg/220px-Dask_Logo.svg.png" /></p>
+<p>https://www.dask.org/</p>
+<hr>
+
+<h1>What is Dask?</h1>
+<p>Dask is a flexible parallel computing library for analytic computing. It is designed to scale from single machines to clusters of machines. Dask is useful for working with large datasets. Dask is imported using the <code>import</code> keyword and the <code>dd</code> alias for the <code>dask.dataframe</code> module.</p>
+<pre><code class="language-python">import dask.dataframe as dd
+</code></pre>
+<hr>
+
+<h2>Example</h2>
+<pre><code class="language-python">import dask.dataframe as dd
+
+df = dd.read_parquet(&quot;s3://data/uber/&quot;)
+
+# How much did NYC pay Uber?
+df.base_passenger_fare.sum().compute()
+
+# And how much did drivers make?
+df.driver_pay.sum().compute()
+</code></pre>
+<p>The <code>compute()</code> method is used to execute the code after a lazy evaluation.</p>
+<hr>
+
+<h2>Dask - Loops</h2>
+<pre><code class="language-python">from dask.distributed import Client
+
+client = Client()
+
+# Define your own code
+def f(x):
+    return x + 1
+
+# Run your code in parallel
+futures = client.map(f, range(100))
+results = client.gather(futures)
+</code></pre>
+</main>
+</body>
+</html>

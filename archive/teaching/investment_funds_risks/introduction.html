@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Investment Funds Risks | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Investment Funds Risks</h1>
+<h2>University of Luxembourg</h2>
+<h2>Juan F. Imbet <em>Ph.D.</em></h2>
+<hr>
+
+<h2>About Me</h2>
+<ul>
+<li>Assistant Professor of Finance at Paris Dauphine University - Paris Sciences et Lettres. </li>
+<li>Ph.D. in Finance from Pompeu Fabra University and the Barcelona School of Economics.</li>
+<li>External Member of the Institute for Advanced Studies in Luxembourg.</li>
+<li>Researcher in Financial Economics and Asset Management.</li>
+<li>Instructor of courses on Data Science and Finance (Python). </li>
+<li>juan.imbet@dauphine.psl.eu</li>
+</ul>
+<hr>
+
+<h2>Outline</h2>
+<ul>
+<li>25/11/2024:  Active Investment</li>
+<li>26/11/2024: Equity Strategies</li>
+<li>27/11/2024: Asset Allocation and Macro Strategies</li>
+<li>29/11/2024: Arbitrage Strategies</li>
+</ul>
+<hr>
+
+<h2>References</h2>
+<ul>
+<li>Pedersen L. H. (2019). Efficiently Inefficient: How Smart Money Invests and Market Prices Are Determined. Princeton University Press.</li>
+</ul>
+<h2>Requirements</h2>
+<ul>
+<li>Statistics: Confidence intervals, t-tests, regressions.</li>
+<li>Asset Pricing: CAPM, Fama-French 3-factor model.</li>
+<li>Any programming language (Python, R, Matlab).</li>
+<li>Basic Finance: Risk, Return, Portfolio Theory.</li>
+</ul>
+<hr>
+
+<h1>Part 1: Active Investment</h1>
+<hr>
+
+<h2>Understanding Hedge Funds</h2>
+<hr>
+
+<h2>Introduction</h2>
+<ul>
+<li>There are many types of active investors. Some of them are classified as <strong>Hedge Funds</strong></li>
+<li>Hedge funds are investment pools that are relatively unconstrained in what they do. </li>
+<li>They are relatively unregulated (for now), charge very high fees, and will not necessarily give you your money back when you want it. </li>
+<li>They are supposed to make money all the time, and when they fail at this, their investors tend to redeem. </li>
+<li>They are generally run for rich people by rich people. (e.g. clients in Geneva and run in Greenwhich Connecticut).</li>
+</ul>
+<hr>
+
+<h2>Hedge Funds vs Mutual Funds</h2>
+<ul>
+<li>Hedge funds have a lot of freedom in the trading that they do, as well as limited requirements. </li>
+<li>In exchange for this freedom they are restricted in how they can raise money. </li>
+<li>In terms of freedom, hedge funds can use leverage, short-selling, derivatives, and incentive fees. </li>
+<li>Hedge fund investors must be accredited investors (they need to be rich).</li>
+<li>The first formal hedge fund is believed to have been a fund created by Alfred Winslow Jones in 1949.  </li>
+<li>In the 1990s the hedge fund industry sa a dramatically increased interest as institutional investors began to embrace hedge funds. </li>
+</ul>
+<hr>
+
+<h2>Objectives and Fees</h2>
+<ul>
+<li>The objective of asset managers is to add value tot heir investors by making money relative to a benchmark.</li>
+<li>Mutual funds typically have a market index as a benchmark.</li>
+<li>Hedge funds are not trying to beat the stock market but, rather, trying to make money in any environment.</li>
+<li>This is where the <strong>Hedge</strong> term comes from.</li>
+<li>E.g. hedge fund investors would normally punish a hedge fund which is down by 10% even if the stock market is down by 20%.</li>
+</ul>
+<hr>
+
+<h2>Objectives and Fees</h2>
+<ul>
+<li>While fees vary greatly across funds, the classic hedge fund fee structure has been "2 and 20". A 2% management fee paid regardless of returns, and a 20% performance fee. </li>
+<li>A hedge fund's performance fee is often subject to a high-water mark, which means that the fund must make up for losses before it can collect a performance fee.</li>
+<li>This means that it normally only collects profits when it reaches a new high in terms of the value of the fund.</li>
+</ul>
+<hr>
+
+<h2>Performance</h2>
+<ul>
+<li>A number of famous hedge fund managers have produced spectacular returns over the years. But these managers do not represent the typical hedge fund. Are they good or just lucky?</li>
+<li>This question is very hard to answer fr several reasons. First, the data on hedge fund returns are rather poor as they are available only over a limited time period and subject to important <strong>biases</strong>, </li>
+<li>Hedge funds report their returns to promote themselves in many cases. </li>
+<li>When they decide to start reporting information to data providers, the information is backfilled. This means that they might only decide to report their returns when they have a good track record.</li>
+</ul>
+<hr>
+
+<h2>Organization of Hedge Funds</h2>
+<p>Hedge funds are contractually organized in different ways, but the typical <strong>master-feeder</strong> structure (in the US, but in many cases also in Europe) is as follows:</p>
+<hr>
+
+<h2>Explanation</h2>
+<ul>
+<li>The structure is not as complicated as it looks. </li>
+<li>Contractually there is a distinction between the <em>fund</em>, where the money is, and the <em>management company</em>, where the traders and other staff are.</li>
+<li>An investor in a hedge fund invests in a <em>feeder fund</em>, whose sole purpose in life is to invest in the <em>master fund</em> where the trading is done.</li>
+<li>This structure is useful since it allows the manager to focus on running a single master fund while at the same time creating different investment products (the feeder funds) for different types of investors.</li>
+<li>Typically US investors prefer a feeder func that is registered in the US, while non residents prefer an offshore feeder fund.</li>
+<li>These offshore funds are typically domiciled in the Cayman Islands.</li>
+<li>For different currencies, there can be different feeder funds each one hedged to the currency of the investor.</li>
+</ul>
+<hr>
+
+<h2>Explanation</h2>
+<ul>
+<li>This feeder/master structure is also useful for risk management. If the master fund has a volatility of 20%, the feeder fund can have half the volatility by investing half the money in the master fund and the other half in money market funds.</li>
+<li>The master fund has a pool of money, and this is where all the trades are carried out. </li>
+<li>The fund has an Investment Management Agreement (IMA) with the management company. The MC provides investment services, including strategy development, implementation, and trading. This is where all the employees work. </li>
+<li>The master fund is typically organized as a partnership, where the feeder funds are the limited partners, and the general partner is the company that owns the management company. (E.g. JP Morgan Chase and Jp Morgan Chase Investment Management).</li>
+</ul>
+<hr>
+
+<h3>Explanation</h3>
+<ul>
+<li>The hedge fund also contracts with agents who handle trading, custody, clearing, and other services.</li>
+<li>For exchange-traded instruments, the hedge fund will typically have a prime broker who will provide leverage, short-selling, and other services.</li>
+</ul>
+<p>Some nomenclature:</p>
+<ul>
+<li>NYSE: New York Stock Exchange</li>
+<li>CME: Chicago Mercantile Exchange</li>
+<li>DTCC: Depository Trust &amp; Clearing Corporation</li>
+<li>OCC: Options Clearing Corporation</li>
+</ul>
+<hr>
+
+<h2>Hedge Funds' Role in the Economy</h2>
+<ul>
+<li>Hedge funds often face criticism in the media. </li>
+<li>Companies do not like to see their shares shorted, since this indicates a belief that the company's share price could go down. </li>
+<li>Short sellers, including hedge funds, are sometimes accused of being the source of a company's problem. </li>
+<li>However, hedge funds play several useful roles in the economy. </li>
+<li>They make markets more efficient by collecting information.</li>
+<li>They also provide diversification to accredited investors.  </li>
+</ul>
+<hr>
+
+<h2>Evaluating Trading Strategies</h2>
+<h3>Performance Measures</h3>
+<hr>
+
+<h2>Alpha and Beta</h2>
+<ul>
+<li>The most basic measure of trading performance is, of course, the return $R_t$ in a period $t$. The return is often separated into its alpha and beta (abusing notation a bit). Beta is the strategy's market exposure, while alpha is the excess return after accounting for performance due to market movements. </li>
+<li>
+<p>Defining the excess return on top of the risk free rate $R^e_t=R_t-R^f$
+$$
+R^e_t=\alpha+\beta R^{me}_t+\epsilon_t
+$$
+-where $R^{me}_t$ is the market excess return and $\epsilon_t$ is the residual return.</p>
+</li>
+<li>
+<p>Here beta measures the strategy's tendency to follow the market. While $\epsilon_t$ measures the idiosyncratic return. </p>
+</li>
+<li>The idiosyncratic return can be positive or negative but in average is zero. </li>
+</ul>
+<hr>
+
+<h2>Alpha and Beta</h2>
+<ul>
+<li>Knowing a strategy's beta is useful for many reasons. </li>
+<li>If you want to mix a hedge fund with another investment, the beta risk is not diversified away while idiosyncratic risk is.</li>
+<li>Furthermore, market exposure ("beta risk") is easy to obtain at very low fees, for example, by buying index funds. <em>You should not be paying large fees for beta risk</em>.</li>
+<li>Many hedge funds are ( or claim to be) market neutral. This means that their performance is independent of what happens in the market (i.e. $\beta=0$).</li>
+<li>Another use of beta is that it tells us how to make a strategy market neutral. If a strategy has a beta of 2, we can make it market neutral by shorting twice the market.
+$$
+\text{market-neutral excess return}=\alpha+\epsilon_t
+$$
+$$
+\mathbb{E}[\text{market-neutral excess return}]=\alpha
+$$</li>
+</ul>
+<hr>
+
+<h2>Alpha and Beta</h2>
+<ul>
+<li>Alpha is clearly the sexiest term in the regression. </li>
+<li>It is the Holy Grail all active managers seek. </li>
+<li>A hedge-fund's quest for alpha <em>defies</em> the Capital Asset Pricing Model (CAPM), since they would be compensated for risk that is not systematic.</li>
+<li>A hedge fund's alpha and beta are estimated with significant error. Hencem if a hedge fund has an estimated alpha of 6%, how do we know if this is luck or skill?</li>
+<li>Researches often look at the t-statistic. </li>
+<li>We can also compute a strategy's excess return above and beyond several risk exposures, e.g. the Fama-French 3-factor model.
+$$
+R^e_t=\alpha+\beta R^{me}_t+\beta^{smb} R^{smb}_t+\beta^{hml} R^{hml}_t+\epsilon_t
+$$</li>
+</ul>
+<hr>
+
+<h2>Risk-reward ratios</h2>
+<ul>
+<li>As we have seen, a positive alpha is good while a negative alpha is bad. </li>
+<li>However, is a high positive alpha always better then a low positive alpha? Not always. </li>
+<li>The alpha tells you the size of the market-neutral returns that a strategy delivers, it does not say at what risk. </li>
+<li>Second, alpha depends on how a strategy  is scaled. For instance, a twice-leveraged strategy has twice the alpha of an unlevered version. </li>
+<li>Risk-reward ratios resolve these issues. At a basic level, potential investors in a hedge fund want to know how the future expected excess returns compare to the risk that the hedge fund is taking. </li>
+<li>The Sharpe Ratio (SR) is a measure of just that (some people call it the risk adjusted return, but again this is a misnomer).</li>
+</ul>
+<hr>
+
+<h2>Sharpe Ratio</h2>
+<p>$$
+SR=\frac{\mathbb{E}[R^e_t]}{\sigma(R^e_t)}
+$$</p>
+<hr>
+
+<h2>The Information Ratio</h2>
+<ul>
+<li>The SR gives the hedge fund credit for all excess returns,but we learned that some of these excess returns are due to market exposure.</li>
+<li>
+<p>The IR addresses this by focusing on the risk-adjusted <em>abnormal</em> return, or just the risk-adjusted alpha
+$$
+IR=\frac{\mathbb{E}[\alpha]}{\sigma(\epsilon)}
+$$</p>
+</li>
+<li>
+<p>If the hedge fund has a benchmark which is not the market, the IR is computed with respect to this benchmark.</p>
+</li>
+</ul>
+<hr>
+
+<h2>You can't eat alpha</h2>
+<ul>
+<li>Suppose, for instance, that a hedge fund beats the risk-free rate by 3% at a tiny risk of 2% with a great SR of 1.5. Some investors might say, "Well, it's still just 3%. I was hoping for more return". </li>
+<li>Whether this is a fair criticism or not depends on several things. In particular if the low risk is long-term or show-term. </li>
+<li>If we suppose the risk is really that low, you can apply leverage to the strategy to achieve higher return and risk. </li>
+</ul>
+<hr>
+
+<h2>alpha-to-margin (AM) ratio</h2>
+<p>$$
+AM = \frac{\alpha}{\text{margin}}
+$$</p>
+<ul>
+<li>The idea behind is to compute the return on a *maximally leveraged" version of a amrket neutral strategy. </li>
+<li>While hedge funds can apply leverage to any strategy, there is a maximum amount of leverage that depends on their margin requirements (more on this later). The maximum leverage is therefore 1/margin.</li>
+<li>There is a close relationship between the AM ratio and the IR
+$$
+AM = IR \times \frac{\sigma(\epsilon)}{\text{margin}}
+
+$$</li>
+</ul>
+<hr>
+
+<h2>Time horizons (annualization)</h2>
+<ul>
+<li>THe horizon we use to compute performance/risk measures matters.</li>
+<li>Some of them can be annualized easily (assuming 252 trading days)
+$$
+E[R^e_{\text{annualized}}]=252 \times E[R^e_{\text{daily}}]
+$$
+$$
+\sigma(R^e_{\text{annualized}})=\sqrt{252} \times \sigma(R^e_{\text{daily}})
+$$
+$$
+SR_{\text{annualized}}=\sqrt{252} \times SR_{\text{daily}}
+$$</li>
+</ul>
+<hr>
+
+<h2>Strategies seem riskier the higher the frequency</h2>
+<ul>
+<li>
+<p>Consider estimating the probability of having negative excess returns. Assume excess returns follow a normal distribution (not always realistic), call $z$ the standard normal distribution
+$$
+Pr(R^e<0)=Pr(E[R^e]+\sigma z<0)=Pr(z<-SR)
+$$</p>
+</li>
+<li>
+<p>A high frequency trader can observe very frequent losses even on a highly profitable strategy. </p>
+</li>
+</ul>
+<hr>
+
+<h2>High Water Mark</h2>
+<ul>
+<li>The highest price (cumulative return) achieved in the past </li>
+</ul>
+<p>$$
+HWM_t = \max_{s\leq t} P_s
+$$</p>
+<h2>Drawdown</h2>
+<p>$$
+DD_t = \frac{HWM_t - P_t}{HWM_t}
+$$</p>
+<h2>Maximum Drawdown</h2>
+<p>$$
+MDD_T = \max_{t \leq T} DD_t
+$$</p>
+<hr>
+
+<h2>Adjusting for Stale Prices</h2>
+<ul>
+<li>Hedge funds' investments are often illiquid, and their prices are not always available.</li>
+<li>How would you compute a beta if data is not available at every frequency?</li>
+</ul>
+<p>$$
+R_t^e = \alpha^\text{adjusted} + \beta_0 R^{me}_t + \beta_1 R^{me}_{t-1} + ... + \beta_k R^{me}_{t-k} + \epsilon_t^\text{adjusted}
+$$</p>
+<p>$$
+\beta^\text{all-in} = \beta_0 + \beta_1 + ... + \beta_k
+$$</p>
+<ul>
+<li>Adjust ratios accordingly.
+$$
+IR^\text{adjusted} = \frac{\alpha^\text{adjusted}}{\sigma(\epsilon^\text{adjusted})}
+$$</li>
+</ul>
+<hr>
+
+<h2>Finding and Backtesting Investment Strategies</h2>
+<hr>
+
+<h2>Good Strategies are Hard (but not impossible) to Find</h2>
+<ul>
+<li>Production of information. </li>
+<li>Access to information (legal vs illegal).</li>
+<li>Behavioral biases and limits to arbitrage.</li>
+<li>Compensation for liquidity. </li>
+<li>Compensation for funding costs.</li>
+</ul>
+<hr>
+
+<h2>How to backtest a strategy</h2>
+<ul>
+<li>Universe</li>
+<li>Signals</li>
+<li>Trading Rules</li>
+<li>Time Lags </li>
+<li>Portfolio Rebalancing</li>
+<li>Enter/Exit Rules</li>
+</ul>
+<hr>
+
+<h2>identifying good signals.</h2>
+<p>Consider a signal $S_t$ that predicts returns</p>
+<p>$$
+R_{t+1}^e = a+b S_t + \epsilon_{t+1}
+$$</p>
+<p>OLS estimator</p>
+<p>$$
+\hat{b} = \frac{\sum_{t=1}^T (S_t-\bar{S})R_{t+1}}{\sum_{t=1}^T (S_t-\bar{S})^2} = \sum_t x_t R_{t+1}
+$$
+where
+$$
+x_t = k \times (S_t-\bar{S})
+$$
+$$
+k = \frac{1}{\sum_{t=1}^T (S_t-\bar{S})^2}
+$$</p>
+<hr>
+
+<h2>Identifying good signals</h2>
+<ul>
+<li>In a time series regression the OLS estimate of the regression gives you the cumulative return of a timing strategy.</li>
+<li>For the strategy to be profitable, it must be positive. </li>
+<li>However, it only provides evidence in sample, since it assumes that the unconditional mean of the signal is known in advance.</li>
+</ul>
+<hr>
+
+<h2>Cross sectional signals</h2>
+<p>$$
+R^i_{t+1} = a + b S_t^i + \epsilon_{i, t+1}
+$$
+Fix a date $t$ and estimate the regression for all assets $i$ in the universe.
+$$
+\hat{b}_t = \frac{\sum_{i=1}^N (S_t^i-\bar{S})R_{t+1}^i}{\sum_{i=1}^N (S_t^i-\bar{S})^2} = \sum_i x_t^i R_{t+1}^i
+$$
+where
+$$
+x_t^i = k \times (S_t^i-\bar{S})
+$$
+$$
+k = \frac{1}{\sum_{i=1}^N (S_t^i-\bar{S})^2}
+$$</p>
+<hr>
+
+<h2>Fama MacBeth regressions use the same concept</h2>
+<p>$$
+\hat{b} = \sum_t \hat{b}_t/T
+$$
+$$
+\sigma(\hat{b}) = \sqrt{\sum_t (\hat{b}_t - \hat{b})^2/(T-1)}
+$$</p>
+<ul>
+<li>The SR of the security selection strategy is 
+$$
+SR = \frac{\hat{b}}{\sigma(\hat{b})}
+$$
+which is related to the $t$-statistic of the cross-sectional regression.
+$$
+t = \sqrt{T}\frac{\hat{b}}{\sigma(\hat{b})}
+$$</li>
+</ul>
+<hr>
+
+<h2>Portfolio Management - Basics</h2>
+<ul>
+<li>Consider the following static portfolio allocation problem:</li>
+<li>Universe of $i \in \{1, ..., N\}$ tradeable assets with random return $r_i$.</li>
+<li>Finite first and second moments: $\mathbb{E}[r_i] < \infty$, $\mathbb{E}[r_i^2] < \infty$.</li>
+<li>No transaction costs or short-sell restrictions.</li>
+<li>Investors maximize a utility function $U:\mathbf{R}^N \rightarrow \mathbf{R}$ dependent on moments of $r_i$ and possibly other characteristics.</li>
+</ul>
+<hr>
+
+<h2>Example</h2>
+<p>$$
+\max_\mathbf{\theta} \theta'\mu - \frac{\gamma}{2} \theta' \Sigma \theta
+$$
+$$
+\text{Subject to } \theta'\mathbf{u} = 1
+$$</p>
+<p>where</p>
+<p>$$
+\theta = \begin{bmatrix}
+\theta_1 \\
+\vdots \\
+\theta_N
+\end{bmatrix}, \quad
+\mathbf{u} = \begin{bmatrix}
+1 \\
+\vdots \\
+1
+\end{bmatrix}, \quad
+\mu = \begin{bmatrix}
+\mathbb{E}[r_1] \\
+\vdots \\
+\mathbb{E}[r_N]
+\end{bmatrix}, \quad
+\Sigma = \begin{bmatrix}
+\sigma_1^2 & \ldots & \sigma_{1N} \\
+\vdots & \ddots & \vdots \\
+\sigma_{N1} & \ldots & \sigma_N^2
+\end{bmatrix}.
+$$</p>
+<p>Parameter $\gamma$ captures risk aversion.</p>
+<hr>
+
+<h2>Closed Form Solution</h2>
+<p>The problem allows for a closed-form solution ($\gamma > 0$):</p>
+<p>$$
+\mathcal{L} = \theta'\mu - \frac{\gamma}{2} \theta' \Sigma \theta - \lambda (\theta'\mathbf{u} - 1)
+$$</p>
+<p>$$
+\mathcal{L}_\theta = \mu - \gamma \Sigma \theta - \lambda \mathbf{u} = 0 \implies \theta = \frac{1}{\gamma} \Sigma^{-1} (\mu - \lambda \mathbf{u})
+$$</p>
+<p>$$
+\lambda = \frac{\mathbf{u}'\Sigma^{-1}\mu - \gamma}{\mathbf{u}'\Sigma^{-1}\mathbf{u}}
+$$</p>
+<p>$$
+\theta = \frac{1}{\gamma} \Sigma^{-1} \left( \mu - \frac{\mathbf{u}'\Sigma^{-1}\mu - \gamma}{\mathbf{u}'\Sigma^{-1}\mathbf{u}} \mathbf{u} \right).
+$$</p>
+<hr>
+
+<h2>Is it realistic?</h2>
+<p>This simple portfolio allocation problem often fails to capture the complexity of financial markets:</p>
+<ul>
+<li>Irrelevant for asset managers using numerical methods.</li>
+<li>Realistic models can be solved with state-of-the-art methods and solvers.</li>
+<li>Bottlenecks occur when $N$ is large, as complex problems are often NP-Hard.</li>
+<li>Realistic problems require convex and mixed-integer formulations.</li>
+<li>Risk management decisions influence portfolio manager strategies.</li>
+</ul>
+<hr>
+
+<h2>Risk Management Decision: Market Exposure</h2>
+<p>To control market risk ($\beta$):</p>
+<p>$$
+\max_\mathbf{\theta} \theta'\mu - \frac{\gamma}{2} \theta' \Sigma \theta
+$$</p>
+<p>$$
+\text{Subject to } \theta'\mathbf{u} = 1, \quad \theta'\mathbf{\beta} = \bar{\beta}
+$$</p>
+<p>where $\bar{\beta} \in \mathbb{R}$ and $\mathbf{\beta} = [\beta_1, ..., \beta_N]$.</p>
+<hr>
+
+<h2>Factor Exposure and Concentration</h2>
+<p>Consider a multi-factor model with $K$ factors:</p>
+<p>$$
+r_t = \mathbf{B}f_t + \epsilon_t
+$$</p>
+<p>where $\mathbf{B} \in \mathbb{R}^{N \times K}$ and $\bar{\beta} \in \mathbb{R}^K$.</p>
+<p>$$
+\max_\mathbf{\theta} \theta'\mu - \frac{\gamma}{2} \theta' \Sigma \theta
+$$</p>
+<p>$$
+\text{Subject to } \theta'\mathbf{u} = 1, \quad \mathbf{B}'\theta = \bar{\beta}, \quad \bar{b} \geq \theta \geq \underline{b}.
+$$</p>
+<hr>
+
+<h2>Value at Risk (VaR)</h2>
+<p>VaR measures the risk of loss for an investment:</p>
+<p>$$
+VaR_\alpha(X) = -\inf\{x \in \mathbb{R} : F_X(x) > \alpha\}.
+$$</p>
+<p>For a given portfolio, time horizon, and probability $\alpha$, $\alpha$-VaR is the maximum possible loss, excluding worse outcomes with a combined probability of at most $\alpha$.</p>
+<p>Approaches to compute $F_X$:</p>
+<ul>
+<li>Historical data</li>
+<li>Distribution assumptions</li>
+<li>Non-parametric methods</li>
+</ul>
+<hr>
+
+<h2>Leverage</h2>
+<p>Leverage boosts investment performance at the expense of higher risk:</p>
+<p>$$
+L = \frac{\text{Total Value of Positions}}{\text{Capital}}.
+$$</p>
+<p>For a fund receiving $X$ dollars:</p>
+<p>$$
+L = \theta^+ + \theta^-
+$$</p>
+<p>where $\theta^+$ and $\theta^-$ are the fractions for long and short positions, respectively.</p>
+<hr>
+
+<h2>Introducing Leverage</h2>
+<p>To model leverage with cash ($\theta_c$):</p>
+<p>$$
+\max_\mathbf{\theta} \theta'\mu - \frac{\gamma}{2} \theta' \Sigma \theta
+$$</p>
+<p>$$
+\text{Subject to } \theta'\mathbf{u} + \theta_c = 1, \quad \theta = \theta^+ - \theta^-, \quad \theta^+ \geq 0, \quad \theta^- \geq 0.
+$$</p>
+<hr>
+
+<h1>Controlling Leverage</h1>
+<p>$$
+\max_\mathbf{\theta} \theta'\mu - \frac{\gamma}{2} \theta' \Sigma \theta
+$$</p>
+<p>$$
+\text{Subject to } \theta'\mathbf{u} + \theta_c = 1, \quad \mathbf{u}'(\theta^+ + \theta^-) \leq L.
+$$</p>
+<p>Arbitrage funds may use leverage up to $\times 10$, while mutual funds tend to have leverage close to $1$.</p>
+<hr>
+
+<h2>Liquidity</h2>
+<p>Introducing cash allows liquidity management, essential for institutions facing withdrawals:</p>
+<p>$$
+\theta_c \geq \bar{c} \geq 0.
+$$</p>
+<hr>
+
+<h1>Non-Convex Non-Linear Dynamics</h1>
+<p>Real-world features requiring advanced modeling include:</p>
+<ul>
+<li>Sector concentration</li>
+<li>Portfolio size</li>
+<li>Higher moments</li>
+<li>Transaction costs</li>
+<li>Asset liquidity</li>
+<li>Heterogeneous preferences</li>
+</ul>
+<hr>
+
+<h1>Part 2: Equity Strategies</h1>
+<hr>
+
+<h2>Equity Valuation and Investing</h2>
+<hr>
+
+<h2>Equity Strategies</h2>
+<ul>
+<li>Equity strategies are also called stock selection strategies.</li>
+<li>Discretionary: The manager uses his/her judgment to select stocks.</li>
+<li>Dedicated short bias: The manager shorts stocks (looking for bad news).</li>
+<li>Quantitative Equity: The manager uses a model to select stocks.</li>
+</ul>
+<hr>
+
+<h2>Intrinsic Value and The Dividend Discount Model</h2>
+<ul>
+<li>Intrinsic value is the value of an asset based on its fundamentals.</li>
+<li>Market Efficiency believers believe that intrinsic values are equal to market prices.</li>
+<li>Value investors believe that intrinsic values can be different from market prices, and they try to buy assets that are undervalued.</li>
+<li>This popular investment strategy (Warren Buffet) unfortunately has brought miss-conceptions from practitioners (e.g. bounds on the book-to-market ratio).</li>
+</ul>
+<hr>
+
+<h2>Dividend Discount Model</h2>
+<p>$$
+V_t = \mathbb{E}_t\Big(\frac{V_{t+1} + D_{t+1}}{1+k_t} \Big)
+$$</p>
+<p>Here we will denote discount rates $k$ instead of $r$ to avoid confusion with returns.</p>
+<ul>
+<li>Iterating forward we get
+$$
+V_t = \sum_{j=1}^\infty \frac{\mathbb{E}_t(D_{t+j})}{(1+k_{t+j-1})^j}
+$$</li>
+</ul>
+<hr>
+
+<h2>Easier said than done</h2>
+<ul>
+<li>How are you supposed to estimate the future dividends? Specially as you go further in the future.</li>
+<li>Gordon's Model: $D_{t+j} = D_t(1+g)^j$ constant dividend growth rate. $V_t=\frac{D_t}{k-g}$.</li>
+<li>Multi-stage model: Estimate a precise dividend growth rate for a few years, and then assume a constant growth rate from the terminal value. </li>
+</ul>
+<hr>
+
+<h2>Earnings, Book Value, and the Residual Income Model</h2>
+<p>Clean surplus accounting: 
+$$
+B_{t} = \underbrace{B_{t-1}}_\text{Book Value} + \underbrace{NI_t}_\text{Net Income} - \underbrace{D_t}_\text{Dividends}
+$$
+Solving for dividends and assuming a constant discount rate $k$
+$$
+\begin{aligned}
+D_t = B_{t-1} + NI_t - B_{t} \\
+D_t = NI_t - (B_t - B_{t-1}) \\
+D_t = NI_t - ((1+k)B_{t-1} - B_{t-1}) \\
+D_t = NI_t - k B_{t-1}
+\end{aligned}
+$$
+Replacing
+$$
+V_t = B_t +\underbrace{\sum_{j=1}^\infty \frac{\mathbb{E}_t((NI_t - k B_{t-1}))}{(1+k_{t+j-1})^j}}_\text{Present Value of Residual Income ($>$, $<$, $=$ 0)}
+$$</p>
+<hr>
+
+<h2>Other Approaches</h2>
+<ul>
+<li>Relative Valuations: Look at multiples of similar companies.</li>
+<li>Implied Expected Returns: Look at the implicit $k$ from the market price and future dividends.</li>
+</ul>
+<hr>
+
+<h2>Discretionary Equity Investing</h2>
+<ul>
+<li>Most active equity investors trade based on discretionary judgement.</li>
+<li>Hedge funds that use this strategy are called long-short equity funds.</li>
+</ul>
+<hr>
+
+<h2>Value Investing</h2>
+<ul>
+<li>Value investing: Buy cheap stocks and short expensive stocks.</li>
+<li>Fundamental Analysis (Valuation)</li>
+<li>Margin of Safety: Include thresholds for buying and selling.</li>
+<li>Value Trap: Deeply undervalued stocks that never recover.</li>
+</ul>
+<hr>
+
+<h2>Quality Investing and Quality at a Reasonable Price</h2>
+<p>$$
+\frac{V_t}{B_t} = \frac{\frac{\mathbb{E}_t[NI_{t+1}]}{B_t}\frac{\mathbb{E}_t[D_{t+1}]}{\mathbb{E}[NI_{t+1}]}}{k-g}=\frac{\text{profitability}\times \text{payout}}{\text{required return}-\text{growth}}
+$$</p>
+<hr>
+
+<h2>Activist Investing</h2>
+<ul>
+<li>Activist investors buy a large stake in a company and try to change its strategy.</li>
+<li>They can be successful if they can convince other shareholders that their strategy is better.</li>
+<li>When an investors buys more than 5% of a company, they must report this to the SEC in the so called 13D filing and his/her intentions to be an activist investor.</li>
+</ul>
+<hr>
+
+<h2>Trading on Flows and Sentiment</h2>
+<ul>
+<li>Technical drivers of price changes. </li>
+<li>Large orders can move prices because the may reflect information or because liquidity providers must be enticed to take the other side of the trade.</li>
+<li>Some hedge funds might buy expensive stocks believing that they will become more expensive (price bubbles).</li>
+<li>Pump and Dump: Buy a stock, promote it, sell it (illegal). There is some evidence of the opposite (short positions) happening during the SVB failure.</li>
+</ul>
+<hr>
+
+<h2>Dedicated Short Bias</h2>
+<ul>
+<li>While many hedge fund investors focus on buying and selling stocks, some focus only on shorting stocks. </li>
+<li>They <em>zoom in</em> on all the potential problems that a company might have. 
+1. materially overstated earnings
+2. aggressive accounting methods
+3. incomprehensible financial statements
+4. well-intended firms with fundamentally flawed business plans (e.g. blackberry)</li>
+</ul>
+<hr>
+
+<h2>How does shorting work?</h2>
+<p>Example:</p>
+<ol>
+<li>Suppose that Fidelity (a mutual fund) owns 100 shares of IBM and the hedge fund <em>Coolest Short Fund L.P.</em> wants to short IBM.</li>
+<li>The fund (via its broker) borrows the 100 shares from Fidelity with the promise to return them the next day (or on a determined date in the future).</li>
+<li>The fund sells the 100 shares at say the current price of $100. But this money does not go to the fund, it stays in the broker's account plus a margin.</li>
+<li>Next day assume the price has dropped to 98. The fund buys 100 shares at 98 using the money in the broker's account and returns the shares to Fidelity. The fund recovers the profit and the margin.</li>
+</ol>
+<hr>
+
+<h2>How does shorting work?</h2>
+<p>Example</p>
+<ol start="5">
+<li>Imagine the price has gone up to 102. The fund must buy the shares at 102 to return them to Fidelity. The margin is used to cover the loss, but if the price goes up too much the fund might have to add more money to the broker's account.</li>
+</ol>
+<hr>
+
+<h2>What is the margin for?</h2>
+<ul>
+<li>The margin serves as a guarantee that the fund will return the shares to Fidelity. </li>
+<li>It also helps the broker to cover the losses of the fund in case the price goes up.</li>
+<li>The margin is usually measured as a percentage of the value of the short position.</li>
+<li>The fraction 1/margin is the maximum leverage that the fund can apply to the short position.</li>
+</ul>
+<hr>
+
+<h2>Some regulation</h2>
+<ul>
+<li>Short selling is not always possible. </li>
+<li>It is banned in some countries, or banned for some stocks for some periods. </li>
+<li><em>recall risk</em>: contracts are normally daily but are extended if the lender wants to keep the shares. However, the lender can recall the shares at any time.</li>
+<li>Short Sale Frictions mean that companies can be overvalued!</li>
+</ul>
+<hr>
+
+<h2>Quantitative Equity Investing</h2>
+<ul>
+<li><em>Quant Equity</em> means model-driven equity investing, performed, for instance, by equity market neutral hedge funds. </li>
+</ul>
+<p>Cons:</p>
+<ol>
+<li>trading rules cannot be tailored to every specific situation. </li>
+<li>Difficult to take advantage of <em>soft</em> information (less of a concern in the future with AI).</li>
+</ol>
+<p>Advantages:</p>
+<ol>
+<li>Applied to a broad set of stocks. </li>
+<li>Rigor may help to avoid behavioral biases.</li>
+<li>Backtesting can be done to evaluate the strategy.</li>
+<li>Fundamental quant, statistical arbitrage, and high-frequency trading are all examples of quant equity.</li>
+</ol>
+<hr>
+
+<h2>The Workflow of a Quant Equity Strategy</h2>
+<ol>
+<li>Data Collection: Collect data on stocks, indices, and other assets (or other data that might be useful).</li>
+<li>Signal Generation: Generate signals based on the data.</li>
+<li>Identify signals that are predictive of future returns (both in the time series and cross-section).</li>
+<li>Estimate the distribution of future returns e.g. using a linear prediction model $\mathbb{E}[R_{t+1}]=\hat{a}+\hat{b}F_t$, or a more complex model (e.g. a machine learning model).</li>
+<li>Input the distribution of future returns into a portfolio optimization model.</li>
+<li>Add stop-losses, position limits, and other risk management rules not taken into account by the optimization model.</li>
+</ol>
+<hr>
+
+<h2>Asset Allocation and Macro Strategies</h2>
+<hr>
+
+<h2>The Returns to the Major Asset Classes</h2>
+<p>Macro investing deals with an investor’s overall asset allocation, that is, how much to invest in equities, bonds, and the other major asset classes. Two components:</p>
+<ol>
+<li>The long- term strategic asset allocation policy. </li>
+<li>The reallocations around the long-term weights based on current market
+views, called tactical asset allocation or market timing.</li>
+</ol>
+<ul>
+<li>Macro investors are concerned with the overall market developments and
+economic conditions such as whether inflation is rising, economic growth,
+which countries are doing well, global trade, and other global trends such as
+political changes. </li>
+</ul>
+<hr>
+
+<h2>Strategic Asset Allocation</h2>
+<ul>
+<li>
+<p>Large institutional investors often first decide on their long-run strategic asset
+allocation, that is, the desired typical portfolio consistent with the investment
+goals around which one can implement tactical bets and security selection
+views.</p>
+</li>
+<li>
+<p>This strategic asset allocation is crucial to the success of pension funds,
+endowments, and other investors. The strategic allocation is sometimes called
+the policy portfolio or the benchmark portfolio</p>
+</li>
+</ul>
+<hr>
+
+<h2>Passive Asset Allocation</h2>
+<ul>
+<li>The only truly passive portfolio is the market portfolio.</li>
+<li>The market-weighted asset allocation means that you invest 45% in equities if equities have a total market capitalization that is 45% of the market capitalization of the market.</li>
+<li>The market portfolio is passive in two unique ways:
+1. Minimal trading: When stocks increase in value, your allocation
+to stocks naturally increases and, simultaneously, the market portfolio weight
+for stocks increases. </li>
+</ul>
+<ol start="2">
+<li>If you buy the market allocation, you are not assuming that someone else is the “sucker”</li>
+</ol>
+<hr>
+
+<h2>Constant Rebalanced Asset Allocation</h2>
+<ul>
+<li>A constantly rebalanced portfolio maintains fixed weights (e.g., 60% stocks, 40% bonds) through frequent rebalancing.  </li>
+<li>Despite fixed weights, this strategy is active as it requires continuous adjustments.  </li>
+<li>The 60/40 portfolio is popular among pension funds for its value-driven asset allocation.  </li>
+</ul>
+<hr>
+
+<h2>Liquidity-Based Asset Allocation</h2>
+<ul>
+<li>Illiquidity in private assets complicates rebalancing and capital withdrawals.  </li>
+<li>Short-term investors must avoid illiquid assets due to liquidity risk and withdrawal needs.  </li>
+<li>Mutual funds require highly liquid assets to meet daily redemption requirements.  </li>
+<li>Long-term investors can earn a liquidity premium by investing in illiquid assets.</li>
+</ul>
+<hr>
+
+<h2>Risk-Based Asset Allocation &amp; Risk Parity Investing</h2>
+<ul>
+<li>Risk-based allocation focuses on distributing risk, not dollars, across asset classes.  </li>
+<li>Risk parity allocates portfolio risk more equally, unlike equity-heavy traditional allocations.  </li>
+<li>Stable Sharpe ratios suggest adjusting exposure inversely with asset volatility.  </li>
+<li>Leveraged risk parity can deliver higher risk-adjusted returns but adds leverage risks.</li>
+</ul>
+<hr>
+
+<h2>MARKET TIMING AND TACTICAL ASSET ALLOCATION</h2>
+<hr>
+
+<h2>Market Timing</h2>
+<p>$$
+R_{t+1} = \underbrace{\frac{D_{t+1}}{P_t}}_\text{Dividend Yield} + \underbrace{\frac{P_{t+1} - P_t}{P_t}}_\text{Price Appreciation}
+$$</p>
+<p>Dividends are more stable than prices, so the dividend yield is a more stable predictor of future returns. E.g. $D_{t+1} \approx D_t$.</p>
+<hr>
+
+<h2>What drives Equity Returns?</h2>
+<p>Define $PD_t = \frac{P_t}{D_t}$
+$$
+R_{t+1} = \underbrace{\frac{D_{t+1}}{P_t}}_\text{Dividend yield} + \underbrace{\frac{D_{t+1}-D_{t}}{D_t}}_\text{Dividend growth} + \underbrace{\frac{PD_{t+1}-PD_t}{PD_t}}_\text{Valuation Change} + \underbrace{\frac{D_{t+1}-D_{t}}{D_t} \times \frac{PD_{t+1}-PD_t}{PD_t}}_\text{Small Adjustment}
+$$</p>
+</main>
+</body>
+</html>

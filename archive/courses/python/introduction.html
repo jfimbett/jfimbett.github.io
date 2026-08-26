@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python for Finance | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>An Introduction to Python</h1>
+<h2>Juan F. Imbet <em>Ph.D.</em></h2>
+<h3>Paris Dauphine University</h3>
+<hr>
+
+<h2>What is Python?</h2>
+<p>Python is a programming language that has been around for a while. However, only recently it has become popular for data science and machine learning applications.</p>
+<p><strong>Python is a:</strong></p>
+<ol>
+<li><strong>General purpose programming language</strong></li>
+<li><strong>Interpreted language</strong></li>
+<li><strong>Object-oriented language</strong></li>
+<li><strong>High-level language</strong></li>
+<li><strong>Dynamically typed language</strong></li>
+</ol>
+<hr>
+
+<h2>General purpose programming language</h2>
+<p>Python can be used for many different things. For example, you can use Python to build websites, create games, build machine learning models, analyze data, and more.</p>
+<h2><strong>For example</strong></h2>
+<ol>
+<li><strong>Web development</strong> using Django and Flask</li>
+<li><strong>Machine learning</strong> using Scikit-Learn, TensorFlow, and Keras</li>
+<li><strong>Data science</strong> using Pandas, NumPy, and SciPy</li>
+<li><strong>Game development</strong> using Pygame</li>
+<li><strong>Algorithmic trading</strong> using Zipline and Quantopian</li>
+<li><strong>AI applications</strong> using OpenAI's API</li>
+</ol>
+<hr>
+
+<h2>Interpreted language</h2>
+<p>Python is an interpreted language, meaning that it is not directly translated into machine code. Instead, Python code is interpreted into <em>Python bytecode</em>, which is then interpreted (at runtime) into machine code.</p>
+<h2><strong>Comparison to other programming languages</strong></h2>
+<ol>
+<li><strong>C++</strong> is a compiled language</li>
+<li><strong>Java</strong> is a compiled language</li>
+<li><strong>Python</strong> is an interpreted language</li>
+<li><strong>JavaScript</strong> is an interpreted language</li>
+</ol>
+<hr>
+
+<h2>Object-oriented language</h2>
+<ul>
+<li>Python is an object-oriented language. Everything in Python is an <strong>object</strong>. Objects have <strong>attributes</strong> and <strong>methods</strong>. Attributes are variables that belong to an object, and methods are functions that belong to an object.</li>
+</ul>
+<h2><strong>Comparison to other programming paradigms</strong></h2>
+<ol>
+<li><strong>Procedural programming</strong>: Focuses on logic and procedures. E.g. C and Fortran.</li>
+<li><strong>Functional programming</strong>: Focuses on functions and data. E.g. Haskell and Lisp.</li>
+</ol>
+<hr>
+
+<h2>High-level language</h2>
+<p>It looks like English</p>
+<ul>
+<li><strong>Comparison to other programming languages</strong></li>
+</ul>
+<ol>
+<li><strong>Low-level languages</strong> are closer to machine languages than human languages. For example, assembly language is a low-level language.</li>
+<li><strong>High-level languages</strong> are closer to human languages than machine languages. For example, C++ is a high-level languages.</li>
+</ol>
+<hr>
+
+<h2>Dynamic vs Static Typing</h2>
+<p>Python is a dynamically typed language. This means that variables do not have a fixed type. The type of a variable is determined at runtime, based on the value that is assigned to it.</p>
+<ul>
+<li><strong>Comparison to other programming languages</strong></li>
+</ul>
+<ol>
+<li><strong>Dynamically typed languages</strong> like Python and JavaScript do not require variables to be declared before they are used.</li>
+<li><strong>Statically typed languages</strong> like C++ and Java require variables to be declared before they are used.</li>
+</ol>
+<!--
+
+<hr>
+
+# Dynamic vs Static Typing
+
+Static typing example, e.g. C++
+<pre><code class="language-c++">int x = 1;
+int y = 2;
+double z = x / y;
+char c = &#x27;a&#x27;;
+</code></pre>
+
+Dynamic typing example, e.g. Python
+<pre><code class="language-python">x = 1
+y = 2
+z = x / y
+c = &#x27;a&#x27;
+</code></pre>
+
+-->
+
+<hr>
+
+<h2>Python syntax</h2>
+<p>Python syntax is very clean, simple, and easy to understand. This is one of the reasons why Python is so popular for beginners.</p>
+<ul>
+<li><strong>Some unique features of Python syntax</strong></li>
+</ul>
+<ol>
+<li><strong>Indentation</strong> is used to delimit blocks rather than curly braces</li>
+<li><strong>No semicolons</strong> are required to end statements</li>
+<li><strong>No variable declarations</strong> are required</li>
+</ol>
+<hr>
+
+<h2>Example of the Python syntax</h2>
+<pre><code class="language-python"># This is a comment
+x = 1
+y = 2
+if x &lt; y:
+    print(&#x27;x is less than y&#x27;)
+else:
+    print(&#x27;x is greater than or equal to y&#x27;)
+</code></pre>
+<hr>
+
+<h2>SETTING UP YOUR ENVIRONMENT</h2>
+<hr>
+
+<h2>Installing Python</h2>
+<p>There are two main versions of Python: Python 2 and Python 3. Python 2 is legacy, Python 3 is the current version. This course will use Python 3.</p>
+<p><strong>Installing Python</strong>
+Rather than installing Python directly, it is recommended to install a Python distribution. A Python distribution is a collection of Python packages that are pre-installed and pre-configured. This makes it easier to get started with Python.</p>
+<ol>
+<li><strong>Windows</strong> - <a href="https://www.anaconda.com/download/">Anaconda</a></li>
+<li><strong>Mac</strong> - <a href="https://www.anaconda.com/download/">Anaconda</a></li>
+<li><strong>Linux</strong> - <a href="https://www.anaconda.com/download/">Anaconda</a></li>
+<li><strong>Online</strong> - <a href="https://colab.research.google.com/">Google Colab</a></li>
+</ol>
+<hr>
+
+<h2>Installing an IDE</h2>
+<p>An IDE (Integrated Development Environment) is a program that provides an editor, debugger, and compiler all in one. There are many different IDEs for Python, and it is important to choose one that you like. This course will use <strong>VS Code</strong>, but feel free to explore other options. (But I will not provide support for other IDEs).</p>
+<ul>
+<li><strong>Installing VS Code</strong></li>
+</ul>
+<ol>
+<li><strong>Windows</strong> - <a href="https://code.visualstudio.com/download">VS Code</a></li>
+<li><strong>Mac</strong> - <a href="https://code.visualstudio.com/download">VS Code</a></li>
+<li><strong>Linux</strong> - <a href="https://code.visualstudio.com/download">VS Code</a></li>
+</ol>
+<hr>
+
+<h2>Some useful extensions on VS Code</h2>
+<ul>
+<li>Jupyter</li>
+<li>Python</li>
+</ul>
+<hr>
+
+<h2>Preliminaries</h2>
+<h2>Computer Architecture and Programming Languages</h2>
+<hr>
+
+<h2>How do Computers Work?</h2>
+<p>A computer is a machine that can be programmed to accept data (input), process it into useful information (output), and store it away (in a secondary storage device) for safekeeping or later reuse. The processing of input to output is directed by the software but performed by the hardware.</p>
+<hr>
+
+<h2>Computers think in binary (for now)</h2>
+<p>Computers are made of billions of tiny electronic components, which all work together to perform calculations. These components are called transistors. Transistors are made of semiconductors, which can be turned on and off by electricity. This is the basis of the binary system, which uses only two numbers (0 and 1) to represent all other numbers.</p>
+<hr>
+
+<h2>Binary numbers</h2>
+<p>A number expressed in a specific base can be expressed as $N_b$, where $N$ is the number and $b$ is the base.</p>
+<ul>
+<li>Example</li>
+</ul>
+<p>$$
+\begin{align*}
+150_{10} \rightarrow \text{The number 150 that we all know. }\\
+\rightarrow 1\times10^2 + 5\times10^1 + 0\times10^0  \\
+\end{align*}
+$$
+How do we get the same number with powers of 2?
+$$
+\begin{align*}
+150_{10} \rightarrow \text{The number 150 that we all know. }\\
+\rightarrow 1\times10^2 + 5\times10^1 + 0\times10^0  \\
+\end{align*}
+$$</p>
+<p>$$
+\begin{align*}
+10010110_2 = 1 \times 2^7 + 0 \times 2^6 + 0 \times 2^5 + 1 \times 2^4 + 0 \times 2^3 + 1 \times 2^2 + 1 \times 2^1 + 0 \times 2^0 \\
+= 128 + 16 + 4 + 2 = 150_2
+\end{align*}
+$$</p>
+<hr>
+
+<h2>Binary code</h2>
+<p>Binary code is the language that computers use. It is made up of binary numbers (0s and 1s) that represent commands or other types of data. Different types of binary code can be used to represent text, images, audio, or other types of data.</p>
+<hr>
+
+<h2>Who has the time to write binary code?</h2>
+<p>Binary code is very difficult to write and understand. For this reason, programming languages were invented. The first programming language that <strong>assembled</strong> code into binary was <strong>Assembly</strong> in 1949.</p>
+<p>Example of Assembly code:</p>
+<pre><code class="language-assembly">MOV AX, 5
+MOV BX, 10
+ADD AX, BX
+</code></pre>
+<hr>
+
+<h2>But, who has the time (and skills) to write Assembly code?</h2>
+<p>(Very few people)
+Assembly code is still very difficult to write and understand. For this reason, programming languages were invented. The first programming language that <strong>compiled</strong> code into binary was <strong>FORTRAN</strong> in 1957.</p>
+<p>Example of FORTRAN code:</p>
+<pre><code class="language-fortran">PROGRAM ADD
+  INTEGER A, B, C
+  A = 5
+  B = 10
+  C = A + B
+END PROGRAM ADD
+</code></pre>
+<p>Look how it uses more human-readable words.</p>
+<hr>
+
+<h2>How is Python ran?</h2>
+<p>Python is an <strong>interpreted</strong> language, meaning that it is not directly translated into machine code. Instead, Python code is interpreted into Python bytecode, which is then interpreted (at runtime) into machine code.</p>
+<p>Python bytecode is stored in files with the extension <code>.pyc</code>. These files are created by the Python interpreter when a <code>.py</code> file is imported. The bytecode is then executed by the Python virtual machine (PVM).</p>
+<p>The PVM is a program that reads Python bytecode and executes it on the hardware. The PVM is written in C, which is a compiled language.</p>
+<hr>
+
+<h2>In what language is Python written?</h2>
+<p>Python is written in C, and some libraries are written in Python itself. This is why some C libraries can be used in Python.</p>
+<p>C code</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main() {
+   printf(&quot;Hello, World!&quot;);
+   return 0;
+}
+</code></pre>
+<p>Python code</p>
+<pre><code class="language-python">print(&quot;Hello, World!&quot;)
+</code></pre>
+<hr>
+
+<h2>Running Python code</h2>
+<p>In VS Code using the Python extension running cells. Install the python and jupyter extensions.</p>
+<p>In VS Code</p>
+<pre><code class="language-python">Run Cell | Run Below | Debug Cell
+#%% 
+print(&quot;Hello, World!&quot;)
+</code></pre>
+<p>In the terminal using the command <code>python &lt;filename&gt;</code>.</p>
+<pre><code class="language-python"># hello.py
+print(&quot;Hello, World!&quot;)
+</code></pre>
+<pre><code class="language-console">python hello.py
+</code></pre>
+<pre><code class="language-output">Hello, World!
+</code></pre>
+<hr>
+
+<h2>- Running Python code</h2>
+<p>Large code is normally written in a text editor and then executed in the terminal. This is the preferred way to write Python code.</p>
+<pre><code class="language-python"># hello.py
+print(&quot;Hello, World!&quot;)
+</code></pre>
+<pre><code class="language-console">python hello.py
+</code></pre>
+<pre><code class="language-output">Hello, World!
+</code></pre>
+<!--
+
+<hr>
+
+# Pseudo-code
+
+Pseudo-code is a detailed description of what a computer program or algorithm must do, expressed in a formally-styled natural language rather than in a programming language. Pseudo-code is used to plan out the structure of a program before writing actual code.
+
+-->
+
+<hr>
+
+<h2>Interactive Mode</h2>
+<p>Python can be run in interactive mode, which allows you to enter Python code directly into the Python interpreter. This is useful for testing small pieces of code, or for learning Python syntax.</p>
+<pre><code class="language-python">1 + 1
+</code></pre>
+<pre><code class="language-output">2
+</code></pre>
+<p>I will abuse notation and display the output of some operations without the <code>print</code> function</p>
+<pre><code class="language-python">x = 1
+x
+</code></pre>
+<pre><code class="language-output">1
+</code></pre>
+<hr>
+
+<h2>Errors</h2>
+<p>Errors are a part of programming. Errors are caused by mistakes in the code, and they stop the program from being executed. Python has many built-in error types, and even allows you to create your own custom errors.</p>
+<pre><code class="language-python">x = 1
+y = 0
+x / y
+</code></pre>
+<pre><code class="language-output">ZeroDivisionError: division by zero
+</code></pre>
+<h2>Raise an error</h2>
+<pre><code class="language-python">raise ValueError(&#x27;This is a value error&#x27;)
+</code></pre>
+<pre><code class="language-output">ValueError: This is a value error
+</code></pre>
+<hr>
+
+<h2>Exceptions</h2>
+<p>Exceptions are raised when the program is syntactically correct but the code resulted in an error. This causes the program to stop execution. Exceptions and errors can be handled using try-except blocks.</p>
+<pre><code class="language-python">x = 1
+y = 0
+try:
+    x / y
+except ZeroDivisionError:
+    print(&#x27;Cannot divide by zero&#x27;)
+</code></pre>
+<pre><code class="language-output">Cannot divide by zero
+</code></pre>
+<hr>
+
+<h2>Warnings</h2>
+<p>Warnings are raised when the program is syntactically correct but there may be a problem. This does not cause the program to stop execution. Warnings can be ignored, or they can be turned into errors using the warnings module. Always be careful when ignoring warnings, as they may indicate a problem with the code. For example, never ignore warnings about matrix determinants being close to zero.</p>
+<pre><code class="language-python">import warnings
+warnings.warn(&#x27;This is a warning&#x27;)
+</code></pre>
+<pre><code class="language-output">&lt;ipython-input-1-1a2b3c4d5e6f&gt;:2: UserWarning: This is a warning
+  warnings.warn(&#x27;This is a warning&#x27;)
+</code></pre>
+<h2>Supress warnings</h2>
+<pre><code class="language-python">import warnings
+warnings.filterwarnings(&#x27;ignore&#x27;)
+</code></pre>
+<hr>
+
+<h2>Navigate through error messages</h2>
+<pre><code class="language-python">x = 1
+y = 0
+x / y
+</code></pre>
+<pre><code class="language-output">---------------------------------------------------------------------------
+ZeroDivisionError                         Traceback (most recent call last)
+Cell In [18], line 3
+      1 x = 1
+      2 y = 0
+----&gt; 3 x / y
+
+ZeroDivisionError: division by zero
+</code></pre>
+<p>Python will tell you the type of error, the line of code that caused the error, and a description of the error. This information can be used to fix the error. However, sometimes the error message is not very helpful, and identifying the cause of the error comes with experience.</p>
+<hr>
+
+<h2>Some good practices that we will follow</h2>
+<h2>Type hints (more on types later)</h2>
+<p>Type hints are a formalized way of adding type annotations to Python code. Type hints are not enforced by the Python interpreter, but they can be used by external tools such as type checkers, IDEs, etc.</p>
+<pre><code class="language-python">def add(x: int, y: int) -&gt; int:
+    return x + y
+</code></pre>
+<hr>
+
+<h2>Checking the size of an object</h2>
+<pre><code class="language-python">import sys
+x = 1
+sys.getsizeof(x)
+</code></pre>
+<pre><code class="language-output">28
+</code></pre>
+<h2>Checking the type of an object</h2>
+<pre><code class="language-python">type(x)
+</code></pre>
+<pre><code class="language-output">int
+</code></pre>
+<hr>
+
+<h2>Checking the memory address of an object</h2>
+<pre><code class="language-python">id(x)
+</code></pre>
+<pre><code class="language-output">140735674332528
+</code></pre>
+<h2>Testing if an object is of a certain type</h2>
+<pre><code class="language-python">isinstance(x, int)
+</code></pre>
+<pre><code class="language-output">True
+</code></pre>
+<hr>
+
+<h2>Checking the documentation of an object</h2>
+<pre><code class="language-python">help(x)
+</code></pre>
+<pre><code class="language-output">Help on int object:
+</code></pre>
+<hr>
+
+<h2>Byte and other notations</h2>
+<p>One byte equals 8 bits. A bit is a single binary digit, either a 0 or a 1. A byte can represent 256 different values, which is enough to represent all the letters in the English alphabet (both upper and lower case), the numbers 0-9, and some special characters. Base 2 is not the only way to represent numbers. Base 8 (octal) and base 16 (hexadecimal) are also commonly used.</p>
+<pre><code class="language-python">x = 0b1010 # binary
+y = 0o12 # octal
+z = 0xA # hexadecimal
+</code></pre>
+<pre><code class="language-output">10
+10
+10
+</code></pre>
+<hr>
+
+<h2>Variables and data types</h2>
+<p>Variables are used to store data in a program. Variables can be thought of as containers that hold information. Their value (in Python) can be changed as the program runs (Dynamic Typing).</p>
+<p>Python comes with many built-in data types, and you can define your own data types as well. The most common data types are strings, integers, floats, and booleans. Expressed in python as</p>
+<pre><code class="language-python">x = 1
+y = 2.5
+z = &#x27;Hello World&#x27;
+w = True
+</code></pre>
+<hr>
+
+<h2>Strings</h2>
+<p>Strings are used to store text. They are immutable, meaning that their value cannot be changed after they are created. Strings can be created using single quotes, double quotes, or triple quotes.</p>
+<pre><code class="language-python">x = &#x27;Hello World&#x27;
+y = &quot;Hello Again&quot;
+z = &#x27;&#x27;&#x27;Hello World&#x27;&#x27;&#x27;
+</code></pre>
+<p>Strings occupy memory, and the amount of memory they occupy depends on their length. Triple quotes are used to create multi-line strings.</p>
+<hr>
+
+<h2>String Methods</h2>
+<p>We can modify strings by declaring them as variables and using the . notation</p>
+<pre><code class="language-python">x = &#x27;HELLO world&#x27;
+x.upper() # &#x27;HELLO WORLD&#x27;
+x.lower() # &#x27;hello world&#x27;
+x.title() # &#x27;Hello World&#x27;
+</code></pre>
+<hr>
+
+<h2>More methods</h2>
+<pre><code class="language-python">x = &#x27;HELLO&#x27;
+y = &#x27;world&#x27;
+x + y # &#x27;HELLOworld&#x27;
+x * 3 # &#x27;HELLOHELLOHELLO&#x27;
+x[0] # &#x27;H&#x27;
+x[1] # &#x27;E&#x27;
+</code></pre>
+<hr>
+
+<h2>Formatting strings</h2>
+<pre><code class="language-python">x = &#x27;Hello&#x27;
+y = &#x27;World&#x27;
+print(f&#x27;{x} {y}&#x27;)
+</code></pre>
+<pre><code class="language-output">Hello World
+</code></pre>
+<hr>
+
+<h2>Byte strings</h2>
+<p>Byte strings are used to store binary data. Byte strings can be created using the <code>b</code> prefix.</p>
+<pre><code class="language-python">x = b&#x27;Hello World&#x27;
+</code></pre>
+<pre><code class="language-output">b&#x27;Hello World&#x27;
+</code></pre>
+<p>The main difference is that byte strings are already encoded, whereas regular strings are not. This means that byte strings can only contain ASCII characters, whereas regular strings can contain any Unicode characters.</p>
+<hr>
+
+<h2>ASCII vs Unicode</h2>
+<p>ASCII is a character encoding standard that uses 7 bits to represent all uppercase and lowercase letters, numbers, punctuation, and other symbols. ASCII is limited to 128 characters, which is enough to represent all the characters in the English alphabet.</p>
+<p>Unicode is a character encoding standard that uses 8, 16, or 32 bits to represent all uppercase and lowercase letters, numbers, punctuation, and other symbols. Unicode is not limited to 128 characters, and can represent over 1 million characters.</p>
+<p>Example</p>
+<pre><code class="language-python">x = &#x27;Hello World&#x27; # ASCII
+y = &#x27;你好世界&#x27; # Unicode
+</code></pre>
+<hr>
+
+<h2>Encoding and decoding strings</h2>
+<p>Encoding is the process of converting a string into a byte string. Decoding is the process of converting a byte string into a string. The default encoding is UTF-8, which uses 8 bits to represent each character.</p>
+<pre><code class="language-python">x = &#x27;Hello World&#x27;
+y = x.encode()
+z = y.decode()
+</code></pre>
+<pre><code class="language-output">b&#x27;Hello World&#x27;
+&#x27;Hello World&#x27;
+</code></pre>
+<hr>
+
+<h2>Documentation of string methods</h2>
+<pre><code class="language-python">help(str)
+</code></pre>
+<pre><code class="language-output">Help on class str in module builtins:
+</code></pre>
+<hr>
+
+<h2>Integers</h2>
+<p>Integers are used to store whole numbers. Integers can be created using the <code>int()</code> function, or by just writing a number with no decimal point.</p>
+<pre><code class="language-python">x = 1
+</code></pre>
+<p>All integers occupy the same amount of memory, regardless of their value. In a 64-bit system, integers occupy 28 bytes of memory.</p>
+<pre><code class="language-python">import sys
+sys.getsizeof(10)
+</code></pre>
+<pre><code class="language-output">28
+</code></pre>
+<hr>
+
+<h2>Methods between integers</h2>
+<pre><code class="language-python">x = 1
+y = 2
+x + y # 3
+x - y # -1
+x * y # 2
+x / y # 0.5 - float
+x // y # 0
+x % y # 1
+x ** y # 1
+</code></pre>
+<p>Documentation of integer methods</p>
+<pre><code class="language-python">help(int)
+</code></pre>
+<pre><code class="language-output">Help on class int in module builtins:
+</code></pre>
+<hr>
+
+<h2>Booleans</h2>
+<p>Booleans are used to store truth values. They can be created using the <code>bool()</code> function, or by just writing <code>True</code> or <code>False</code>. They are a subtype of integers, and <code>True</code> is equal to <code>1</code> and <code>False</code> is equal to <code>0</code>. They occupy the same amount of memory as integers. In many languages booleans occupy 1 bit of memory, but in Python they occupy 28 bytes of memory.</p>
+<hr>
+
+<h2>Boolean logic</h2>
+<p>Boolean logic is a branch of mathematics that deals with true and false values. Boolean logic is used to make decisions in computer programs. Boolean logic is based on the work of the English mathematician George Boole.</p>
+<pre><code class="language-python">x = True
+y = False
+x and y # False
+x or y # True
+not x # False
+</code></pre>
+<p>Any complex logical expression can be expressed as a combination of and, or, and not.</p>
+<hr>
+
+<h2>Order of operations</h2>
+<p>The order of operations is the order in which mathematical expressions are evaluated. The order of operations is important because it can change the result of an expression. The order of operations is as follows:</p>
+<ol>
+<li>Parentheses</li>
+<li>Exponents</li>
+<li>Multiplication and division</li>
+<li>Addition and subtraction</li>
+</ol>
+<pre><code class="language-python">x = 1
+y = 2
+z = 3
+x + y * z # 7
+(x + y) * z # 9
+</code></pre>
+<hr>
+
+<h2>Floats</h2>
+<p>Floats are used to store decimal numbers. Interestingly floats occupy less memory than integers. Floats can be created using the <code>float()</code> function, or by writing a number with a decimal point.</p>
+<pre><code class="language-python">x = 1.0
+z = 1
+import sys
+sys.getsizeof(x) # 24
+sys.getsizeof(z) # 28
+</code></pre>
+<hr>
+
+<h2>Why do floats occupy less memory than integers?</h2>
+<p>Integers are stored in binary, and they occupy 28 bytes of memory. Floats are also stored in binary, but they occupy less memory because they are stored in scientific notation. This means that the decimal point is not stored, and the exponent is stored separately.</p>
+<pre><code class="language-python">x = 1.0
+y = 1e0
+z = 1e1
+sys.getsizeof(x) # 24
+sys.getsizeof(y) # 24
+sys.getsizeof(z) # 24
+</code></pre>
+<pre><code class="language-output">24
+24
+24
+</code></pre>
+<hr>
+
+<h2>Methods between floats</h2>
+<pre><code class="language-python">x = 1.0
+y = 2.5
+x + y # 3.5
+x - y # -1.5
+x * y # 2.5
+x / y # 0.4
+x // y # 0.0
+x % y # 1.0
+x ** y # 1.0
+</code></pre>
+<hr>
+
+<h2>Lists</h2>
+<p>Lists are used to store multiple items in a single variable. They can be created using square brackets, or by using the <code>list()</code> function. Lists are mutable, meaning that their values can be changed after they are created.</p>
+<pre><code class="language-python">x = [1, 2, 3]
+</code></pre>
+<pre><code class="language-output">[1, 2, 3]
+</code></pre>
+<p>Lists can contain any type of data, including other lists.</p>
+<pre><code class="language-python">x = [1, 2.0, True, [4, &#x27;c&#x27;, 6]]
+</code></pre>
+<pre><code class="language-output">[1, 2.0, True, [4, &#x27;c&#x27;, 6]]
+</code></pre>
+<hr>
+
+<h2>Most common list methods</h2>
+<p>Many methods are performed inplace, i.e. they modify the list and return <code>None</code></p>
+<pre><code class="language-python">x = [1, 2, 3]
+x[0] # 1 # The first element of the list is at index 0
+x.append(4) # [1, 2, 3, 4]
+x.extend([5, 6]) # [1, 2, 3, 4, 5, 6]
+x.insert(0, 0) # [0, 1, 2, 3, 4, 5, 6]
+x.remove(0) # [1, 2, 3, 4, 5, 6]
+x.pop() # [1, 2, 3, 4, 5]
+x.pop(0) # [2, 3, 4, 5]
+x.clear() # []
+</code></pre>
+<hr>
+
+<h2>More list methods</h2>
+<pre><code class="language-python">x = [1, 2, 3]
+y = [4, 5, 6]
+x + y # [1, 2, 3, 4, 5, 6] - concatenation
+x * 3 # [1, 2, 3, 1, 2, 3, 1, 2, 3] - repetition
+x.index(1) # 0
+x.count(1) # 1
+</code></pre>
+<p>Look how lists and strings are similar. This is because strings are just lists of characters (also called chars).</p>
+<pre><code class="language-python">x = [&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;]
+y = &#x27;123&#x27;
+x[0] # &#x27;1&#x27;
+y[0] # &#x27;1&#x27;
+x[0] + x[1] # &#x27;12&#x27;
+y[0] + y[1] # &#x27;12&#x27;
+len(x) # 3
+</code></pre>
+<hr>
+
+<h2>Dictionaries</h2>
+<p>Dictionaries are used to store key-value pairs. They can be created using curly braces, or by using the <code>dict()</code> function. Dictionaries are mutable, meaning that their values can be changed after they are created.</p>
+<pre><code class="language-python">x = {&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: 3}
+</code></pre>
+<pre><code class="language-output">{&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: 3}
+</code></pre>
+<p>Dictionaries can contain any type of data, including other dictionaries.</p>
+<pre><code class="language-python">x = {&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: {&#x27;d&#x27;: 4, &#x27;e&#x27;: 5}}
+</code></pre>
+<pre><code class="language-output">{&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: {&#x27;d&#x27;: 4, &#x27;e&#x27;: 5}}
+</code></pre>
+<p>Dictionaries in python are closely related to JSON objects, which are used to store data in web applications.</p>
+<hr>
+
+<h2>Most common dictionary methods</h2>
+<pre><code class="language-python">x = {&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: 3}
+x[&#x27;a&#x27;] # 1
+x[&#x27;d&#x27;] # KeyError
+x.keys() # dict_keys([&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;])
+x.values() # dict_values([1, 2, 3])
+x.items() # dict_items([(&#x27;a&#x27;, 1), (&#x27;b&#x27;, 2), (&#x27;c&#x27;, 3)])
+x.pop(&#x27;a&#x27;) # {&#x27;b&#x27;: 2, &#x27;c&#x27;: 3}
+</code></pre>
+<hr>
+
+<h2>More dictionary methods</h2>
+<pre><code class="language-python">x = {&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: 3}
+x[&#x27;d&#x27;] = 4 # {&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: 3, &#x27;d&#x27;: 4}
+x.update({&#x27;e&#x27;: 5, &#x27;f&#x27;: 6}) # {&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: 3, &#x27;d&#x27;: 4, &#x27;e&#x27;: 5, &#x27;f&#x27;: 6}
+x.popitem() # {&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;c&#x27;: 3, &#x27;d&#x27;: 4, &#x27;e&#x27;: 5}
+x.clear() # {}
+</code></pre>
+<p>Hash tables are closely related to dictionaries. They provide a "fast" way to look up values using keys. Hash tables are used in many programming languages, including Python.</p>
+<hr>
+
+<h2>Tuples</h2>
+<p>Tuples are used to store multiple items in a single variable. They can be created using parentheses, or by using the <code>tuple()</code> function. Tuples are immutable, meaning that their values cannot be changed after they are created.</p>
+<pre><code class="language-python">x = (1, 2, 3)
+</code></pre>
+<pre><code class="language-output">(1, 2, 3)
+</code></pre>
+<p>Tuples can contain any type of data, including other tuples.</p>
+<pre><code class="language-python">x = (1, 2.0, True, (4, &#x27;c&#x27;, 6))
+</code></pre>
+<pre><code class="language-output">(1, 2.0, True, (4, &#x27;c&#x27;, 6))
+</code></pre>
+<hr>
+
+<h2>Tuples are immutable</h2>
+<pre><code class="language-python">x = (1, 2, 3)
+x[0] = 0 # TypeError
+</code></pre>
+<pre><code class="language-output">TypeError: &#x27;tuple&#x27; object does not support item assignment
+</code></pre>
+<hr>
+
+<h2>Sets</h2>
+<p>Sets are used to store multiple items in a single variable. They can be created using curly braces, or by using the <code>set()</code> function. Sets are mutable, meaning that their values can be changed after they are created. A set only contains unique values, meaning that duplicates are not allowed.</p>
+<pre><code class="language-python">x = {1, 2, 3}
+</code></pre>
+<pre><code class="language-output">{1, 2, 3}
+</code></pre>
+<p>Sets can contain any type of data, including other sets.</p>
+<pre><code class="language-python">x = {1, 2.0, True, (4, &#x27;c&#x27;, 6)}
+</code></pre>
+<pre><code class="language-output">{1, 2.0, True, (4, &#x27;c&#x27;, 6)}
+</code></pre>
+<hr>
+
+<h2>Indentation</h2>
+<p>Indentation is used to delimit blocks of code in Python. This is different from other programming languages, which use curly braces to delimit blocks of code. Indentation is important because it determines which statements are executed in a program. Indentation is also important because it makes code easier to read. Keyboards have a tab key, which is used to indent code. Most code editors will automatically indent code for you. A python indentation is 4 spaces (also called 1 tab).</p>
+<p><strong>Indentation is important in Python!</strong> Always use an IDE that automatically indents your code. If you don't, you will get errors that are difficult to debug.</p>
+<hr>
+
+<h2>Control flow</h2>
+<p>Control flow is the order in which statements are executed in a program. Control flow statements are used to control the order in which statements are executed. The most common control flow statements are <code>if</code> statements, <code>for</code> loops, and <code>while</code> loops.</p>
+<hr>
+
+<h2>If, elif, and else statements</h2>
+<p>If statements are used to make decisions in a program. They allow the program to execute different code depending on whether or not a condition is true. If statements can be used by themselves, or they can be combined with <code>elif</code> and <code>else</code> statements.</p>
+<pre><code class="language-python">x = 1
+if x &gt; 0:
+    print(&#x27;x is positive&#x27;)
+elif x &lt; 0:
+    print(&#x27;x is negative&#x27;)
+else:
+    print(&#x27;x is zero&#x27;)
+</code></pre>
+<pre><code class="language-output">x is positive
+</code></pre>
+<hr>
+
+<h2>If statements can be alone or combined with elif and else statements</h2>
+<pre><code class="language-python">x = 1
+if x &gt; 0:
+    print(&#x27;x is positive&#x27;)
+</code></pre>
+<pre><code class="language-output">x is positive
+</code></pre>
+<pre><code class="language-python">x = -1
+if x &gt; 0:
+    print(&#x27;x is positive&#x27;)
+elif x &lt; 0:
+    print(&#x27;x is negative&#x27;)
+</code></pre>
+<pre><code class="language-output">x is negative
+</code></pre>
+<hr>
+
+<h2>Elif and else statements are optional, and cannot be used without an if statement</h2>
+<pre><code class="language-python">x = 0
+elif x &lt; 0:
+    print(&#x27;x is negative&#x27;)
+else:
+    print(&#x27;x is zero&#x27;)
+</code></pre>
+<pre><code class="language-output">SyntaxError: invalid syntax
+</code></pre>
+<hr>
+
+<h2>If statements in one line</h2>
+<p>Sometimes it is useful to write if statements in one line. This is called a ternary operator. It is useful when you want to assign a value to a variable depending on a condition.</p>
+<pre><code class="language-python">x = 1
+y = &#x27;positive&#x27; if x &gt; 0 else &#x27;negative&#x27;
+y
+</code></pre>
+<pre><code class="language-output">&#x27;positive&#x27;
+</code></pre>
+<!--
+
+
+<hr>
+
+# `__eq__` and `==` methods
+
+We say that two objects are equal if they have the same value. In Python, the `==` operator is used to check if two objects are equal. The `==` operator is implemented using the `__eq__` method. This method can be overridden to change the behavior of the `==` operator.
+
+<pre><code class="language-python">class Human:
+    ...
+    def __eq__(self, other):
+        return self.age == other.age
+
+john = Human(&#x27;John&#x27;, 28)
+jane = Human(&#x27;Jane&#x27;, 28)
+john == jane # True
+2==2.0 # True
+</code></pre>
+
+<pre><code class="language-output">True
+True
+</code></pre>
+
+
+<hr>
+
+
+# `__lt__` and `<` , `__gt__` and `>` , `__le__` and `<=` , `__ge__` and `>=` methods
+
+Mathematical operators that extend the natural order of numbers to other objects. These methods can be overridden to change the behavior of the mathematical operators.
+
+<pre><code class="language-python">class Human:
+    ...
+    def __lt__(self, other):
+        return self.age &lt; other.age
+
+    def __gt__(self, other):
+        return self.age &gt; other.age
+
+    def __le__(self, other):
+        return self.age &lt;= other.age
+
+    def __ge__(self, other):
+        return self.age &gt;= other.age
+
+Human(&#x27;John&#x27;, 28) &lt; Human(&#x27;Jane&#x27;, 28) # False
+</code></pre>
+-->
+
+<hr>
+
+<h2>Loops</h2>
+<p>Loops are used to repeat code in a program. They allow the program to execute the same code many times without having to write it over and over again. The most common loops are <code>for</code> loops and <code>while</code> loops.</p>
+<hr>
+
+<h2>For loops</h2>
+<p>For loops are used to iterate over a pre-determined sequence of values. They allow the program to execute the same code many times without having to write it over and over again. For loops can be used to iterate over any sequence, including lists, tuples, dictionaries, and strings.</p>
+<pre><code class="language-python">x = [1, 2, 3]
+for i in x:
+    print(i)
+</code></pre>
+<pre><code class="language-output">1
+2
+3
+</code></pre>
+<hr>
+
+<h2>For loops, range, and enumerate</h2>
+<pre><code class="language-python">x = [1, 2, 3]
+for i in range(len(x)):
+    print(i)
+</code></pre>
+<pre><code class="language-output">0
+1
+2
+</code></pre>
+<pre><code class="language-python">for i, j in enumerate(x):
+    print(i, j)
+</code></pre>
+<pre><code class="language-output">0 1
+1 2
+2 3
+</code></pre>
+<hr>
+
+<h2><code>zip</code></h2>
+<p>Loop over two or more sequences at the same time</p>
+<pre><code class="language-python">x = [1, 2, 3]
+y = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]
+for i, j in zip(x, y):
+    print(i, j)
+</code></pre>
+<pre><code class="language-output">1 a
+2 b
+3 c
+</code></pre>
+<hr>
+
+<h2>Can we mix methods?</h2>
+<p><code>zip</code> and <code>enumerate</code></p>
+<pre><code class="language-python">x = [1, 2, 3]
+y = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]
+for i, j in enumerate(zip(x, y)):
+    print(i, j)
+</code></pre>
+<pre><code class="language-output">0 (1, &#x27;a&#x27;)
+1 (2, &#x27;b&#x27;)
+2 (3, &#x27;c&#x27;)
+</code></pre>
+<hr>
+
+<h2>One line <code>for</code> loops</h2>
+<p>Useful to create lists</p>
+<pre><code class="language-python">x = [i for i in range(3)]
+x
+</code></pre>
+<pre><code class="language-output">[0, 1, 2]
+</code></pre>
+<hr>
+
+<h2>While loops</h2>
+<p>While loops are used to repeat code until a condition is no longer true. They allow the program to execute the same code many times without having to write it over and over again. While loops can be used to iterate over any sequence, including lists, tuples, dictionaries, and strings.</p>
+<pre><code class="language-python">x = 1
+while x &lt; 3:
+    print(x)
+    x += 1
+</code></pre>
+<pre><code class="language-output">1
+2
+</code></pre>
+<hr>
+
+<h2>Break statements</h2>
+<p>Break statements are used to exit a loop. They allow the program to exit a loop early if a certain condition is met.</p>
+<pre><code class="language-python">x = list(range(1000))
+for i in x:
+    if i == 3:
+        break
+    print(i)
+</code></pre>
+<pre><code class="language-output">0
+1
+2
+</code></pre>
+<hr>
+
+<h2>Continue statements</h2>
+<p>Continue statements are used to skip the rest of a loop. They allow the program to skip the rest of a loop if a certain condition is met.</p>
+<pre><code class="language-python">x = list(range(4))
+for i in x:
+    if i == 2:
+        continue
+    print(i)
+</code></pre>
+<pre><code class="language-output">0
+1
+3
+</code></pre>
+<hr>
+
+<h2>Pass statements</h2>
+<p>Pass statements are used to do nothing. But they are useful to complete a block of code that is not yet implemented, or create empty structures.  </p>
+<pre><code class="language-python">def my_function():
+    pass
+</code></pre>
+<p>They are useful for <code>try</code> and <code>except</code> blocks when nothing should be done in the <code>except</code> block.</p>
+<pre><code class="language-python">try:
+    x = 1 / 0
+except ZeroDivisionError:
+    pass # Not recommended
+</code></pre>
+<hr>
+
+<h2>Modules</h2>
+<p>Most interesting things in Python do not come built-in. They are provided by external libraries called modules. Modules are files that contain Python code. They can be imported into your program using the <code>import</code> keyword. Modules can contain functions, classes, and other things. Optionally you can import only some functions from a module using the <code>from</code> keyword. You can also import all functions from a module using the <code>*</code> operator, and rename a module using the <code>as</code> keyword.</p>
+<pre><code class="language-python">import math
+from math import sqrt
+from math import *
+import math as m
+from math import sqrt as s
+
+math.sqrt(4) # 2.0
+sqrt(4) # 2.0
+s(4) # 2.0
+m.sqrt(4) # 2.0
+pi # from math module
+</code></pre>
+<!--
+
+<hr>
+
+# Creating your own module
+
+<pre><code class="language-python"># my_module.py
+def add(x, y):
+    return x + y
+
+add(1,2)
+</code></pre>
+
+<pre><code class="language-python">import my_module
+my_module.add(1,2)
+</code></pre>
+
+<pre><code class="language-output">3
+3 # Look that the function is called twice
+</code></pre>
+
+
+<hr>
+
+# Importing your own module
+
+Use the `__name__` variable to check if a module is being imported or run directly. This is useful when you want to run a module as a script, but also import it into another module.
+
+<pre><code class="language-python"># my_module.py
+def add(x, y):
+    return x + y
+
+if __name__ == &#x27;__main__&#x27;:
+    print(add(1,2))
+</code></pre>
+
+<pre><code class="language-python">#main.py
+import my_module
+my_module.add(1,2)
+</code></pre>
+
+<pre><code class="language-commandline">python main.py
+</code></pre>
+<pre><code class="language-output">3
+</code></pre>
+-->
+
+<hr>
+
+<h2>Functions</h2>
+<p>Functions are used to perform a specific task. They allow the program to execute the same code many times without having to write it over and over again. Functions can be created using the <code>def</code> keyword. Functions can have parameters, which are variables that are passed into the function. Functions can also have return values, which are values that are returned by the function.</p>
+<pre><code class="language-python">def add(x, y):
+    return x + y
+
+add(1, 2) # 3
+</code></pre>
+<hr>
+
+<h2>Functions are objects</h2>
+<p>Functions are objects, and they can be passed around like any other object. This means that functions can be passed as arguments to other functions, and they can be returned by other functions. Parenthesis are used to call a function.</p>
+<pre><code class="language-python">add
+add(1, 2)
+</code></pre>
+<pre><code class="language-output">&lt;function __main__.add(x, y)&gt;
+3
+</code></pre>
+<hr>
+
+<h2>One line functions, lambda expressions</h2>
+<p>Sometimes it is useful to write functions in one line. This is called a lambda expression. It is useful when you want to pass a function as an argument to another function.</p>
+<pre><code class="language-python">add = lambda x, y: x + y
+add(1, 2) # 3
+</code></pre>
+<p>One line functions can also be created without an input</p>
+<pre><code class="language-python">x = lambda: 1
+x() # 1
+</code></pre>
+<hr>
+
+<h2>Function kwargs</h2>
+<p>A keyword argument is an argument that is passed by name. They are useful when you want to have default values for some arguments. Keyword arguments can be passed in any order, and they can be used with any number of arguments.</p>
+<pre><code class="language-python">def add_numbers(x,y, verbose = False):
+    if verbose:
+        print(f&#x27;Adding {x} and {y}&#x27;)
+    return x + y
+
+add_numbers(1, 2) # 3
+add_numbers(1, 2, verbose=True) # 3
+</code></pre>
+<pre><code class="language-output">3
+Adding 1 and 2
+3
+</code></pre>
+<hr>
+
+<h2>args and kwargs</h2>
+<p>Functions can have any number of arguments. This is useful when you don't know how many arguments a function will need. The <code>*</code> operator is used to pass a variable number of arguments to a function. The <code>**</code> operator is used to pass a variable number of keyword arguments to a function.</p>
+<pre><code class="language-python">def add(*args):
+    return sum(args)
+
+add(1, 2, 3) # 6
+
+def add(**kwargs):
+    return sum(kwargs.values())
+
+add(x=1, y=2, z=3) # 6
+
+def add(*args, **kwargs):
+    return sum(args) + sum(kwargs.values())
+
+add(1, 2, 3, x=1, y=2, z=3) # 12
+</code></pre>
+<hr>
+
+<h2>Logging</h2>
+<p>Logging is used to record information about a program's execution. It is useful for debugging, and it can also be used to record information about a program's execution. Logging is done using the <code>logging</code> module. The <code>logging</code> module has many built-in functions, and it can also be customized to suit your needs.</p>
+<pre><code class="language-python">import logging
+logging.basicConfig(level=logging.INFO)
+logging.info(&#x27;This is an info message&#x27;)
+logging.warning(&#x27;This is a warning message&#x27;)
+logging.error(&#x27;This is an error message&#x27;)
+logging.critical(&#x27;This is a critical message&#x27;)
+</code></pre>
+<pre><code class="language-output">INFO:root:This is an info message
+WARNING:root:This is a warning message
+ERROR:root:This is an error message
+CRITICAL:root:This is a critical message
+</code></pre>
+<hr>
+
+<h2>An appropriate optional logging</h2>
+<p>Use the fact that <code>and</code> statements are evaluated from left to right and stop as soon as a <code>False</code> value is found.</p>
+<pre><code class="language-python">import logging
+logging.basicConfig(level=logging.INFO)
+
+def some_function(verbose = False):
+    if verbose:
+        logging.info(&#x27;This is an info message&#x27;)
+        logging.warning(&#x27;This is a warning message&#x27;)
+        logging.error(&#x27;This is an error message&#x27;)
+        logging.critical(&#x27;This is a critical message&#x27;)
+
+    # equivalently
+    verbose and logging.info(&#x27;This is an info message&#x27;)
+    verbose and logging.warning(&#x27;This is a warning message&#x27;)
+    verbose and logging.error(&#x27;This is an error message&#x27;)
+    verbose and logging.critical(&#x27;This is a critical message&#x27;)
+
+</code></pre>
+<hr>
+
+<h2>Other logging methods - write to a file</h2>
+<pre><code class="language-python"># Write to a file
+logging.basicConfig(filename=&#x27;app.log&#x27;, filemode=&#x27;w&#x27;, format=&#x27;%(name)s - %(levelname)s - %(message)s&#x27;)
+logging.warning(&#x27;This will get logged to a file&#x27;)
+</code></pre>
+<hr>
+
+<h2>Assertion</h2>
+<p>Assertions are used to check if a condition is true. They are useful for debugging, and they can also be used to check if a program is working as expected. Assertions are done using the <code>assert</code> keyword. The <code>assert</code> keyword has two arguments: a condition, and an optional message. If the condition is true, then the program continues. If the condition is false, then the program stops and an error is raised.</p>
+<pre><code class="language-python">x = 1
+assert x == 1
+assert x == 0, &#x27;x should be 0&#x27;
+</code></pre>
+<pre><code class="language-output">AssertionError: x should be 0
+</code></pre>
+<hr>
+
+<h2>Basic User Input</h2>
+<p>User input is used to get input from the user. It is useful for getting information from the user, and it can also be used to get information from the user. User input is done using the <code>input</code> function. The <code>input</code> function has one argument: a prompt. The prompt is displayed to the user, and the user can enter a value. The value is returned by the <code>input</code> function.</p>
+<pre><code class="language-python">x = input(&#x27;Enter a number: &#x27;)
+x
+</code></pre>
+<pre><code class="language-output">Enter a number: 1
+&#x27;1&#x27;
+</code></pre>
+<hr>
+
+<h2>File I/O</h2>
+<p>File I/O is used to read and write files. It is useful for storing data. File I/O is done using the <code>open</code> function. The <code>open</code> function has two arguments: a filename, and a mode. The mode is used to specify how the file should be opened. The mode can be <code>r</code> for reading, <code>w</code> for writing, <code>a</code> for appending, <code>r</code> for reading and writing, <code>b</code> for binary, and <code>+</code> for updating. The default mode is <code>r</code>.</p>
+<pre><code class="language-python"># Writing to a file
+with open(&#x27;file.txt&#x27;, &#x27;w&#x27;) as f:
+    f.write(&#x27;Hello World&#x27;)
+
+# Reading from a file
+with open(&#x27;file.txt&#x27;, &#x27;r&#x27;) as f:
+    print(f.read())
+</code></pre>
+<hr>
+
+<h2>File I/O - Don't s</h2>
+<p>When dealing with files always use the <code>with</code> statement. This ensures that the file is closed properly. If you don't use the <code>with</code> statement, then you have to close the file manually.</p>
+<pre><code class="language-python"># Do not do this
+f = open(&#x27;file.txt&#x27;, &#x27;w&#x27;)
+f.write(&#x27;Hello World&#x27;)
+f.close()
+</code></pre>
+<hr>
+
+<h2>Decorators</h2>
+<p>Decorators are used to modify the behavior of a function. They allow the program to modify the behavior of a function without changing the function itself. Decorators are done using the <code>@</code> symbol. The <code>@</code> symbol is used to specify a decorator. The decorator is a function that takes a function as an argument, and returns a function. The decorator can be used to modify the behavior of the function.</p>
+<pre><code class="language-python">def decorator(func):
+    def wrapper(*args, **kwargs):
+        # Do something before
+        func(*args, **kwargs)
+        # Do something after
+    return wrapper
+</code></pre>
+<hr>
+
+<h2>Useful decorators</h2>
+<p>Timing a function</p>
+<pre><code class="language-python">import time
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        func(*args, **kwargs)
+        end = time.time()
+        print(f&#x27;{func.__name__} took {end - start} seconds&#x27;)
+    return wrapper
+
+@timer
+def add(x, y):
+    return x + y
+
+add(1, 2)
+</code></pre>
+<pre><code class="language-output">add took 0.0 seconds
+</code></pre>
+<hr>
+
+<h2>Useful decorators (2)</h2>
+<p>Logging a function</p>
+<pre><code class="language-python">import logging
+logging.basicConfig(level=logging.INFO)
+
+def logger(func):
+    def wrapper(*args, **kwargs):
+        logging.info(f&#x27;Running {func.__name__} with args {args} and kwargs {kwargs}&#x27;)
+        func(*args, **kwargs)
+    return wrapper
+</code></pre>
+<hr>
+
+<h2>Timeit</h2>
+<p>Timeit is used to time a function using the <code>timeit</code> module.</p>
+<pre><code class="language-python">import timeit
+timeit.timeit(&#x27;1 + 1&#x27;) # input has to be string
+%timeit 1 + 1 # Computes the average and s.d. of different runs.
+</code></pre>
+<pre><code class="language-output">0.01200000000000001
+8.52 ns ± 0.00658 ns per loop (mean ± std. dev. of 7 runs, 100,000,000 loops each)
+</code></pre>
+<hr>
+
+<h2>Type hints</h2>
+<p>Type hints are used to specify the type of a variable. They allow the program to specify the type of a variable without changing the variable itself. Type hints are done using the <code>:</code> symbol. The <code>:</code> symbol is used to specify a type hint. Hints are not enforced by the interpreter, but they are useful for documentation and debugging.</p>
+<pre><code class="language-python">
+def add(x: int, y: int) -&gt; int:
+    z: int = x + y
+    return z
+
+add(1, 2)
+add(1.0, 2) # No error
+</code></pre>
+<hr>
+
+<h2>Docstrings</h2>
+<p>Docstrings are used to document a function using the <code>"""</code> string. Try always to document your functions. Docstrings are useful for documentation and debugging. Use the following format for your docstrings. Most IDE will automatically show the docstring when you hover over a function and even help you to write it.</p>
+<pre><code class="language-python">def add(x: int, y: int) -&gt; int:
+    &quot;&quot;&quot;Add two numbers
+
+    Args:
+        x (int): First number
+        y (int): Second number
+
+    Returns:
+        int: Sum of x and y
+    &quot;&quot;&quot;
+    z: int = x + y
+    return z
+</code></pre>
+<p>Docstrings can be accessed using the function <code>help</code>.</p>
+<hr>
+
+<h2>Machine Epsilon</h2>
+<p>Machine epsilon is the smallest number that can be added to 1.0 and still be different from 1.0. It is useful for determining the precision of a floating point number. Machine epsilon is done using the <code>sys</code> module. The <code>sys</code> module has many built-in functions, and it can also be customized to suit your needs.</p>
+<pre><code class="language-python">import sys
+sys.float_info.epsilon # 2.220446049250313e-16
+1.0 + sys.float_info.epsilon == 1.0 # False
+1.0 + sys.float_info.epsilon/2 == 1.0 # True
+</code></pre>
+<hr>
+
+<h2>Homework (Optional but HIGHLY Recommended)</h2>
+<ul>
+<li>Don't waste your time using ChatGPT, you won't have access to it during the final exam.  </li>
+</ul>
+<hr>
+
+<h2>Password Cracker</h2>
+<ul>
+<li>A security system has a password that is 4 characters long. This password contains only ASCII characters (128 characters). The real password is unknown, but we know the <em>hash</em> of the password. The hash is a number that is the result of applying a function to the password, but it is impossible (very hard) to reverse the function.</li>
+<li>The hash of the password is <code>2868533088</code>, this integer is the result of applying the <code>hash_password()</code> function below to the password.</li>
+<li>Write a program that using brute force (trying all combinations) finds the password.</li>
+<li>For convenience the list <code>ascii_chars</code> contains all the ASCII characters that can be used in the password.</li>
+<li>Once you find the password, print it and break the loop. There are 128^4 = 268435456 possible combinations.</li>
+</ul>
+<hr>
+
+<pre><code class="language-python">ascii_chars = [chr(i) for i in range(32, 127)]
+
+def hash_password(text):
+    hash=0
+    for char in text:
+        hash =  ( hash*281  ^ ord(char)*997) &amp; 0xFFFFFFFF
+    return hash
+</code></pre>
+</main>
+</body>
+</html>

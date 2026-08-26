@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testing | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Testing Python Code</h1>
+<h2>Juan F. Imbet Ph.D.</h2>
+<hr>
+
+<h1>Testing</h1>
+<ul>
+<li>In general, the goal of testing is to check that your code produces the results you expect it to. You probably already conduct informal tests of your code in your current workflow.</li>
+<li>In general, the goal of testing is to check that your code produces the results you expect it to. You probably already conduct informal tests of your code in your current workflow.</li>
+<li>In Python, tests are usually written using an <code>assert</code> statement, which checks the truth of a given expression, and returns a user-defined error message if the expression is false.</li>
+</ul>
+<pre><code class="language-python">assert `expression`, `error message`
+</code></pre>
+<hr>
+
+<h2>The testing workflow</h2>
+<ul>
+<li>Write a test.</li>
+<li>Write the code to be tested.</li>
+<li>Test the code.</li>
+<li>Refactor code (make small changes).</li>
+<li>Repeat.</li>
+</ul>
+<hr>
+
+<p><img alt="" src="https://py-pkgs.org/_images/05-test-workflow.png" /></p>
+<hr>
+
+<h2><code>pytest</code></h2>
+<ul>
+<li><code>pytest</code> is a testing framework that makes building simple and scalable tests easy.Install it using  <code>pip install pytest</code>.</li>
+</ul>
+<pre><code class="language-python"># content of test_sample.py
+def inc(x):
+    return x + 1
+
+def test_answer():
+    assert inc(3) == 5
+</code></pre>
+<ul>
+<li>Tests are defined as functions prefixed with <code>test_</code> and contain one or more statements that <code>assert</code> code produces an expected result or raises a particular error.</li>
+<li>Tests are put in files of the form <code>test_*.py</code> or <code>*_test.py</code>, and are usually placed in a directory called tests/ in a package’s root.</li>
+</ul>
+<hr>
+
+<pre><code class="language-bash">pytest  
+================================== test session starts ==================================
+platform win32 -- Python 3.11.9, pytest-8.3.3, pluggy-1.5.0
+rootdir: ...
+configfile: pyproject.toml
+plugins: anyio-4.6.0
+collected 1 item
+
+test_sample.py F                                                                   [100%]
+
+======================================= FAILURES ======================================== 
+______________________________________ test_answer ______________________________________ 
+
+    def test_answer():
+&gt;       assert inc(3) == 5
+E       assert 4 == 5
+E        +  where 4 = inc(3)
+
+test_sample.py:6: AssertionError
+================================ short test summary info ================================
+FAILED test_sample.py::test_answer - assert 4 == 5
+=================================== 1 failed in 0.32s ===================================
+</code></pre>
+<hr>
+
+<h2>Tests in a package</h2>
+<p>Go to the <code>stable</code> branch. </p>
+<pre><code>pybacktestchain
+├── CHANGELOG.md
+├── CONDUCT.md
+├── CONTRIBUTING.md
+├── docs
+│   └── ...
+├── LICENSE
+├── README.md
+├── poetry.lock
+├── pyproject.toml
+├── src
+│   └── ...
+└── tests                        &lt;--------
+    └── test_pybacktestchain.py  &lt;--------
+</code></pre>
+<hr>
+
+<h2>Testing with <code>pytest</code>, e.g. proper imports</h2>
+<pre><code class="language-python"># content of test_imports.py
+def test_data_import():
+    from pybacktestchain.data_module import FirstTwoMoments
+    assert FirstTwoMoments is not None
+def test_broker_import():
+    from pybacktestchain.broker import Backtest, StopLoss
+    assert Backtest is not None
+    assert StopLoss is not None
+def test_blockchain_import():
+    from pybacktestchain.blockchain import load_blockchain
+    assert load_blockchain is not None
+</code></pre>
+<p><code>poetry add --group dev pytest</code>
+<code>pytest tests/</code></p>
+<hr>
+
+<h2>Test that a new backtest is added to a new blockchain</h2>
+<p>Check <code>test_blockchain.py</code> in the <code>tests/</code> directory.</p>
+<hr>
+
+<h2>Unit vs Integration tests</h2>
+<ul>
+<li>Unit tests are tests that check that individual units of code (e.g. functions) work as expected.</li>
+<li>Integration tests check that different parts of the code work together as expected <code>test_new_blockchain.py</code>.</li>
+</ul>
+<hr>
+
+<h2>Parametrization</h2>
+<ul>
+<li>Parametrization allows you to run the same test with different inputs and expected outputs.</li>
+</ul>
+<pre><code class="language-python">import pytest
+
+@pytest.mark.parametrize(&quot;input, expected&quot;, [
+    (1, 2),
+    (2, 3),
+    (3, 4),
+])
+def test_inc(input, expected):
+    assert inc(input) == expected
+</code></pre>
+</main>
+</body>
+</html>

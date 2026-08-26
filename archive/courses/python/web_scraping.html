@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python for Finance | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Webscraping with Python</h1>
+<hr>
+
+<h2>Web scraping: Basics of HTML</h2>
+<p>HTML is a markup language that is used to create web pages. HTML is used to describe the structure of a web page. HTML is done using tags. Tags are used to describe the structure of a web page. Tags are enclosed in angle brackets. Tags can be nested inside other tags. Tags can have attributes. Attributes are used to describe the properties of a tag.</p>
+<hr>
+
+<h2>Web scraping: Basics of HTML (2)</h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Page Title&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;My First Heading&lt;/h1&gt;
+        &lt;p&gt;My first paragraph.&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<hr>
+
+<h2>Web scraping: CSS</h2>
+<p>CSS is done using selectors. Selectors can be used to select elements by tag name, class, or id.</p>
+<pre><code class="language-css">/* Select all elements */
+* {
+    color: red;
+}
+/* Select all h1 elements */
+h1 {
+    color: red;
+}
+/* Select all elements with class=&quot;example&quot; */
+.example {
+    color: red;
+}
+/* Select the element with id=&quot;example&quot; */
+#example {
+    color: red;
+}
+</code></pre>
+<hr>
+
+<h2>HTTP Requests</h2>
+<p>HTTP is a protocol that is used to send and receive data over the internet. HTTP is done using requests. Requests are sent to a server. Requests have a method and a URL. The method is used to specify the type of request. The URL is used to specify the location of the resource. The server responds with a response. The response has a status code and a body. The status code is used to specify the status of the request. The body is used to specify the data that was sent.</p>
+<hr>
+
+<h2>GET, POST, PUT, DELETE</h2>
+<ul>
+<li><strong>GET</strong> - Requests data from a specified resource</li>
+<li><strong>POST</strong> - Submits data to be processed to a specified resource</li>
+<li><strong>PUT</strong> - Updates a specified resource</li>
+<li><strong>DELETE</strong> - Deletes a specified resource</li>
+</ul>
+<hr>
+
+<h2>Example: GET request</h2>
+<pre><code class="language-python">import requests
+url = &#x27;https://www.google.com&#x27;
+response = requests.get(url)
+print(response.status_code)
+print(response.text)
+</code></pre>
+<pre><code class="language-output">200
+&lt;!doctype html&gt;&lt;html itemscope=&quot;&quot; itemtype=&quot;http://schema.org/WebPage&quot; lang=&quot;es-419&quot;&gt;
+&lt;head&gt;...
+</code></pre>
+<hr>
+
+<h2>Example Post request</h2>
+<pre><code class="language-python">import requests
+url = &#x27;https://httpbin.org/post&#x27;
+data = {&#x27;key1&#x27;: &#x27;value1&#x27;, &#x27;key2&#x27;: &#x27;value2&#x27;}
+response = requests.post(url, data=data)
+print(response.status_code)
+print(response.text)
+</code></pre>
+<pre><code class="language-output">200
+{
+  &quot;args&quot;: {}, 
+  &quot;data&quot;: &quot;&quot;, 
+  &quot;files&quot;: {}, 
+  &quot;form&quot;: {
+    &quot;key1&quot;: &quot;value1&quot;, 
+    &quot;key2&quot;: &quot;value2&quot;
+  }, 
+...
+}
+</code></pre>
+<hr>
+
+<h2>Put and Delete requests</h2>
+<pre><code class="language-python">import requests
+url = &#x27;https://httpbin.org/put&#x27;
+data = {&#x27;key1&#x27;: &#x27;value1&#x27;, &#x27;key2&#x27;: &#x27;value2&#x27;}
+response = requests.put(url, data=data)
+print(response.status_code)
+print(response.text)
+</code></pre>
+<pre><code class="language-python">import requests
+url = &#x27;https://httpbin.org/delete&#x27;
+response = requests.delete(url)
+print(response.status_code)
+print(response.text)
+</code></pre>
+<hr>
+
+<h2>Good practice</h2>
+<p>Check the status code before parsing the response.</p>
+<pre><code class="language-python">import requests
+url = &#x27;https://www.google.com&#x27;
+response = requests.get(url)
+if response.status_code == 200:
+    print(response.text)
+else:
+    raise Exception(f&quot;Error: {response.status_code}&quot;)
+</code></pre>
+<hr>
+
+<h2>Headers</h2>
+<p>Not all websites allow you to communicate with them through a browserless environment. Some websites require you to specify a user agent. A user agent is a string that is used to identify the browser and operating system that is being used. A user agent can be specified using the headers argument.</p>
+<pre><code class="language-python">import requests
+
+url = &#x27;http://sec.gov&#x27;
+headers = {&#x27;User-Agent&#x27;: &#x27;Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36&#x27;}
+response = requests.get(url, headers=headers)
+print(response.status_code)
+</code></pre>
+<hr>
+
+<h2>Signing in</h2>
+<p>Some websites require you to sign in before you can access the data. You can sign in using the requests library. You can use the session object to keep track of the cookies. You can use the cookies argument to specify the cookies that you want to send.</p>
+<hr>
+
+<pre><code class="language-python">import requests
+
+# some website that requires username and password
+url = &#x27;http://httpbin.org/basic-auth/user/passwd&#x27;
+
+# create session object
+session = requests.Session(
+# sign in
+session.auth = (&#x27;user&#x27;, &#x27;passwd&#x27;)
+# send request
+response = session.get(url)
+# print response
+print(response.status_code)
+print(response.text)
+</code></pre>
+<pre><code class="language-output">200
+{
+  &quot;authenticated&quot;: true, 
+  &quot;user&quot;: &quot;user&quot;
+}
+</code></pre>
+<hr>
+
+<h2>Ok, so we get all the HTML, now what?</h2>
+<p>We need to parse the HTML to extract the data that we want. We can use the BeautifulSoup library to parse the HTML.</p>
+<pre><code class="language-python">import requests
+from bs4 import BeautifulSoup as bs
+
+url = &#x27;https://www.google.com&#x27;
+response = requests.get(url)
+soup = bs(response.text, &#x27;html.parser&#x27;)
+print(soup.prettify())
+</code></pre>
+<hr>
+
+<h2>HTML as a tree</h2>
+<pre><code class="language-output">&lt;div id=&quot;guser&quot; width=&quot;100%&quot;&gt;
+    &lt;nobr&gt;
+     &lt;span class=&quot;gbi&quot; id=&quot;gbn&quot;&gt;
+     &lt;/span&gt;
+     &lt;span class=&quot;gbf&quot; id=&quot;gbf&quot;&gt;
+     &lt;/span&gt;
+     &lt;span id=&quot;gbe&quot;&gt;
+     &lt;/span&gt;
+     &lt;a class=&quot;gb4&quot; href=&quot;http://www.google.com.co/history/optout?hl=es-419&quot;&gt;
+      ...
+</code></pre>
+<hr>
+
+<h2>My take on how to traverse the tree</h2>
+<p>Use the <code>find_all</code> method, and specify the tag name, class, or id.</p>
+<pre><code class="language-python">soup = bs(response.text, &#x27;html.parser&#x27;)
+soup.find_all(&#x27;a&#x27;)
+soup.find_all(&#x27;a&#x27;, class_=&#x27;gb4&#x27;)
+soup.find_all(&#x27;a&#x27;, id=&#x27;gb_70&#x27;)
+</code></pre>
+<p>Recall that <code>find_all</code> always returns a list, even if there is only one element.</p>
+</main>
+</body>
+</html>

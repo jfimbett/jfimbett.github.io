@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Python for Finance | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Introduction to Blockchain using Python</h1>
+<h2>Juan F. Imbet <em>Ph.D.</em></h2>
+<h3>Paris Dauphine University - PSL</h3>
+<hr>
+
+<h2>What is a Blockchain?</h2>
+<ul>
+<li>A blockchain is a shared <strong><em>ledger</em></strong> of transactions between parties in a network not controlled by a single central authority. </li>
+<li>You can think of a ledger like a record book: it records and stores all transactions between users in chronological order. </li>
+<li>Instead of one authority controlling this ledger (like a bank), an identical copy of the ledger is held by all users on the network, called <strong><em>nodes</em></strong>. </li>
+</ul>
+<hr>
+
+<h2>Structure of a Blockchain Block</h2>
+<ul>
+<li>Each block in a blockchain contains:<ul>
+<li><strong><em>Data</em></strong>: Details of transactions (e.g., sender, receiver, amount).</li>
+<li><strong><em>Previous Hash</em></strong>: A reference to the hash of the previous block.</li>
+<li><strong><em>Hash</em></strong>: A unique fingerprint for the current block.</li>
+<li><strong><em>Timestamp</em></strong>: The time when the block was created.</li>
+</ul>
+</li>
+<li>Blocks are linked together by their hashes, forming a chain.</li>
+</ul>
+<hr>
+
+<h2>How Does Blockchain Ensure Security?</h2>
+<ul>
+<li>Blockchain uses <strong><em>cryptographic hashing</em></strong> to secure data.</li>
+<li>A hash function takes input data and produces a fixed-size alphanumeric string.</li>
+<li>Even a slight change in the input produces a completely different hash.</li>
+<li>This makes it nearly impossible to alter the data without being detected.</li>
+</ul>
+<hr>
+
+<h2>Consensus Mechanisms</h2>
+<ul>
+<li>In a blockchain, all nodes must agree on the validity of transactions.</li>
+<li>Two popular consensus mechanisms are:<ul>
+<li><strong><em>Proof of Work (PoW)</em></strong>: Solving complex mathematical puzzles to validate transactions.</li>
+<li><strong><em>Proof of Stake (PoS)</em></strong>: Validators are chosen based on the number of coins they hold and are willing to "stake" as collateral.</li>
+</ul>
+</li>
+<li>Consensus ensures that the blockchain remains consistent across all nodes.</li>
+</ul>
+<hr>
+
+<h2>Centralised vs. Decentralised Ledgers</h2>
+<p><img alt="" src="https://blog.cfte.education/wp-content/uploads/2023/03/Centralised-vs-Decentralised-Ledger-CFTE-1024x576.png" /></p>
+<hr>
+
+<h2>How does the ledger look like?</h2>
+<ul>
+<li>All copies of one document are spread among users and they are constantly and automatically synchronised, hence identical at all times. </li>
+<li>The ledger is a list of all transactions that consist of a chain of blocks. </li>
+<li>A block is comprised of a group of transactions from the same time period, like a page from a record book.</li>
+<li>Blocks have a unique ID represented as the hash of its own code (or something that makes them unique). </li>
+<li>Along with its own hash, each block stores the hash of the block before it. </li>
+</ul>
+<hr>
+
+<h2>Hash</h2>
+<ul>
+<li>A hash is a unique string of letters and numbers created from text using a mathematical formula. Blocks are therefore “chained” together making the ledger (almost) immutable or unable to be changed. To add a block, it may first need to be mined and then approved by a number of notes through a consensus mechanism.</li>
+</ul>
+<hr>
+
+<h2>How does a block in a blockchain look like? E.g. Ethereum (a test network)</h2>
+<pre><code class="language-bash">pip install web3
+pip install &quot;web3[tester]&quot;
+</code></pre>
+<pre><code class="language-python">from web3 import Web3, EthereumTesterProvider
+w3 = Web3(EthereumTesterProvider())
+w3.is_connected()
+</code></pre>
+<pre><code class="language-bash">True
+</code></pre>
+<hr>
+
+<h2>Retrieving the latest block</h2>
+<p><pre><code class="language-python">last_block = w3.eth.get_block(&#x27;latest&#x27;)
+type(last_block)
+</code></pre>
+The interface provides a data structure that <code>inherits</code> from a dictionary. 
+<pre><code class="language-bash">&lt;class &#x27;web3.datastructures.AttributeDict&#x27;&gt;
+</code></pre></p>
+<hr>
+
+<h2>Block attributes</h2>
+<p>Pretty print the block attributes to a file</p>
+<pre><code class="language-python">import pprint
+with open(&#x27;block.txt&#x27;, &#x27;w&#x27;) as f:
+    pprint.pprint(last_block.keys(), f)
+</code></pre>
+<hr>
+
+<h2>Peak</h2>
+<pre><code class="language-bash">KeysView(
+    AttributeDict(
+        {&#x27;number&#x27;: 0, 
+        &#x27;hash&#x27;: HexBytes(&#x27;0x3351c94e692da67b54613efa25fd3a9a74ec4a7ba362c6815e628496cbe93523&#x27;), 
+        &#x27;parentHash&#x27;: HexBytes(&#x27;0x0000000000000000000000000000000000000000000000000000000000000000&#x27;), 
+        &#x27;nonce&#x27;: HexBytes(&#x27;0x0000000000000000&#x27;), 
+        &#x27;sha3Uncles&#x27;: HexBytes(&#x27;0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347&#x27;), 
+        &#x27;logsBloom&#x27;: HexBytes(&#x27;0x00&#x27;), 
+        &#x27;transactionsRoot&#x27;: HexBytes(&#x27;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&#x27;), 
+        &#x27;receiptsRoot&#x27;: HexBytes(&#x27;0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421&#x27;), 
+        &#x27;stateRoot&#x27;: HexBytes(&#x27;0xf1588db9a9f1ed91effabdec31f93cb4212b008c8b8ba047fd55fabebf6fd727&#x27;), 
+        &#x27;miner&#x27;: &#x27;0x0000000000000000000000000000000000000000&#x27;, 
+        &#x27;difficulty&#x27;: 0, 
+</code></pre>
+<hr>
+
+<h2>Get the real one</h2>
+<ul>
+<li>If we're interested in getting all blocks from genesis, we'll need to communicate with an Archive node. </li>
+<li>At the current time of this writing, the full state of the Ethereum blockchain takes around 10,000 GB of storage (~11TB). </li>
+<li>Luckily, we don't need to manage this infrastructure ourselves, and we can use QuickNode (or another provider) to boot up an Archive node. </li>
+</ul>
+<hr>
+
+<h2>Further Reading (you need to sign up)</h2>
+<ul>
+<li>https://www.quicknode.com/guides/ethereum-development/transactions/how-to-fetch-transaction-history-on-ethereum-using-web3py</li>
+</ul>
+<hr>
+
+<h2>Different Types of Blockchains</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th>READ</th>
+<th>WRITE</th>
+<th>COMMIT</th>
+<th>EXAMPLE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>OPEN</td>
+<td>Permissionless</td>
+<td>Anyone</td>
+<td>Anyone</td>
+<td>Anyone</td>
+<td>Bitcoin, Ethereum</td>
+</tr>
+<tr>
+<td></td>
+<td>OPEN</td>
+<td>Permissioned</td>
+<td>Anyone</td>
+<td>Authorised participants</td>
+<td>Subset of participants</td>
+<td>Supply chain</td>
+</tr>
+<tr>
+<td></td>
+<td>CLOSED</td>
+<td>Consortium</td>
+<td>Authorised participants</td>
+<td>Authorised participants</td>
+<td>Authorised participants</td>
+<td>Shared Banking</td>
+</tr>
+<tr>
+<td></td>
+<td>CLOSED</td>
+<td>Private Permissioned</td>
+<td>Authorised participants</td>
+<td>Network operator</td>
+<td>Network operator</td>
+<td>Shared Banking</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+<h2>The Layers of Blockchain</h2>
+<ul>
+<li>Because blockchains work as a distributed database, they can also work as a distributed computing system. </li>
+<li><strong>Protocol Layer</strong>: The rules that govern the network.</li>
+<li><strong>Network Layer</strong>: The network of nodes that communicate with each other.</li>
+<li><strong>Application Layer</strong>: The applications that run on top of the network.</li>
+</ul>
+<hr>
+
+<h2>Characteristics of Blockchain</h2>
+<ul>
+<li><strong><em>Distributed</em></strong>: The main ledger is maintained and held by all nodes in the network. No central authority holds or updates the ledger, rather each node independently constructs its own record by processing every block, deciding if its valid, and voting via the consensus mechanism on their conclusion. </li>
+<li><strong><em>Immutable</em></strong>: Once a block is added to the chain, it cannot be altered. This is because each block contains a hash of the previous block, so if a block is altered, the hash of the block will change, and the chain will be broken.</li>
+</ul>
+<hr>
+
+<h2>Characteristics of Blockchain</h2>
+<ul>
+<li><strong>Agreed by consensus</strong>: No block can be added to the ledger without approval from specified nodes in the network. </li>
+<li>Rules regarding how this consent is collected are called consensus mechanisms. </li>
+<li>Consensus protocols are crucial in ensuring that every block is valid and that all participants agree and maintain the same version of the ledger.</li>
+</ul>
+<hr>
+
+<h3>Missconceptions</h3>
+<ul>
+<li><strong><em>Pseudonymous</em></strong>: Blockchain does not allow its users to be totally anonymous. User identities are anonymous but their accounts are not, as all of their transactions are visible to all other users. </li>
+</ul>
+<hr>
+
+<h2>Mining</h2>
+<ul>
+<li>For some blockchains, in order to add blocks to the ledger, transfers must go through a mining process. </li>
+<li>Mining is a way of adding transaction records, via blocks, onto a public ledger. </li>
+<li>Miners are nodes in the network that ensure the transactions in the block are valid. </li>
+<li>Specifically, they ensure that senders have not already used the funds they want to send to receivers. </li>
+<li>Once miners finish the verification, they have to ask the network for consent to add the new block to the ledger.</li>
+<li>In order to do so, they have to follow the consensus mechanisms chosen for the platform. </li>
+</ul>
+<hr>
+
+<h3>Consensus</h3>
+<ul>
+<li>Agreement among the nodes regarding the "state" of the ledger is essential for the function of the blockchain ledger. </li>
+<li>The bitcoin blockchain uses a consensus model called Proof of Work, which requires the miner to compete against other miners to create and broadcast blocks for approval. </li>
+<li>Proof of work (PoW) describes a system that requires a not-insignificant but feasible amount of effort in order to deter frivolous or malicious uses of computing power, such as sending spam emails or launching denial of service attacks.</li>
+</ul>
+<hr>
+
+<h2>Example of PoW</h2>
+<ul>
+<li>PoW requires nodes on a network to provide evidence that they have expended computational power (i.e. work) in order to achieve consensus in a decentralized manner and to prevent bad actors from overtaking the network. </li>
+<li>The work itself is arbitrary. For Bitcoin, it involves iterations of SHA-256 hashing algorithms.</li>
+<li>Proof of work requires a computer to randomly engage in hashing functions until it arrives at an output with the correct minimum amount of leading zeroes. </li>
+<li>For example, the hash for block #660000, mined on December 4, 2020 is 00000000000000000008eddcaf078f12c69a439dde30dbb5aac3d9d94e9c18f6. The block reward for that successful hash was 6.25 BTC. </li>
+</ul>
+<hr>
+
+<h2>Digital Assets</h2>
+<ul>
+<li><strong><em>Tokens</em></strong> Tokenization describes the process of transferring rights from a real world asset into a digital representation – or token – on the blockchain. Being in possession of that digital token then gives you the right to that asset and the ability to trade and track it digitally. </li>
+</ul>
+<hr>
+
+<h3>Types of digital assets</h3>
+<ul>
+<li>Payment tokens: Commonly referred to as cryptocurrencies, these tokens are used as a medium of exchange and store of value.</li>
+<li>Utility tokens: These tokens are used to access a specific product or service. (similar to a gift card)</li>
+<li>Security tokens: These tokens represent ownership of an asset, such as real estate or company shares.</li>
+</ul>
+<hr>
+
+<h3>Relevance in Finance (Banking)</h3>
+<ul>
+<li>Banks are essential intermediaries for financial transactions. In many cases, they represent the only trusted third party. </li>
+<li>However given the bank stores all data on a single centralised ledger, it therefore creates a single point of failure, whereby hackers or malicious actors can direct all their efforts for cyberattacks or manipulation to this specific entity. </li>
+</ul>
+<hr>
+
+<h2>Blockchain beyond traditional finance.</h2>
+<ul>
+<li><strong><em>Due diligence in supply chains:</em></strong> Distributed ledgers can be used to track the provenance of goods, ensuring that they are ethically sourced and produced. Consumers could scan a QR code on a product to see its entire journey from production to sale (e.g. see really what's in your McDonald's chicken nuggets).</li>
+<li><strong>Healthcare</strong>: Provide more robust patient healthcare information across hospitals, clinics, and pharmacies.</li>
+<li><strong>Energy</strong>: Decentralised peer-to-peer energy trading, allowing consumers to buy and sell energy directly from each other.</li>
+</ul>
+<hr>
+
+<h2>Ethereum: A Programmable Blockchain</h2>
+<ul>
+<li>Although the concept of the blockchain was born out of the research into cryptocurrencies, they are much more powerful than just that.</li>
+<li>Blockchain essentially encodes one thing: state transitions. Whenever someone sends a coin in Bitcoin to someone else, the global state of the blockchain is changed.Moreover, it provides a crypographically secure way to performing these updates in the ledger.</li>
+<li>An interesting way to think of a blockchain is as a never-halting computation: new instructions and data are fetched from a pool, the pool of unconfirmed transactions. Each result is recorded in the blockchain, which forms the state of the computation. Any single snapshot of the blockchain is the state of the computation at that point.</li>
+</ul>
+<hr>
+
+<h3>Transactions as computations</h3>
+<p><img alt="" src="transactions_computations.png" /></p>
+<hr>
+
+<h3>Blockchains and software</h3>
+<ul>
+<li>All software systems deal in some way or another with state transitions. So what if we could generalize the state transitions inside a blockchain into any software we could think of. </li>
+<li>Blockchains deal with reaching consensus for decentralized computations, it does not matter what those computations are. And this is exactly what the Ethereum network brings to the table: a blockchain that can perform any computation as part of a transaction.</li>
+</ul>
+<hr>
+
+<h2>Transactions as computations</h2>
+<p><img alt="" src="transactions_computations2.png" /></p>
+<hr>
+
+<h2>What computations make sense? Examples:</h2>
+<ul>
+<li>Secure deposits that get returned to the payer if conditions are met (or not).</li>
+<li>Money that cannot be spent unless a certain number of users agree to spending it.</li>
+<li>Money that can only be spent after producing external data that satisfies rules set. </li>
+</ul>
+<hr>
+
+<h3>Some Technical Details</h3>
+<ul>
+<li>Ethereum is <strong><em>Turing complete</em></strong>, meaning that it can run any computation that can be expressed in code.</li>
+<li>A <strong><em>Turing complete</em></strong> system is one that can solve any computational problem given enough time and memory.</li>
+<li>Every machine capable of running a <strong><em>Turing complete language</em></strong> has one big problem: <strong><em>The Halting Problem</em></strong>.</li>
+</ul>
+<hr>
+
+<h3>The Halting Problem</h3>
+<ul>
+<li>Formulated by Alan Turing in 1936, the Halting Problem is a fundamental problem in computer science.</li>
+<li>It states that it is impossible to determine generally whether a program will halt (stop running) or run forever.</li>
+<li>Its proof is related to the incompleteness theorem of Gödel, which states that there are true statements that cannot be proven. It is also related to the Entscheidungsproblem, which is the problem of deciding whether a given statement is provable from an axiomatic system.</li>
+</ul>
+<hr>
+
+<h2>Why is the Halting Problem important for Programmable Blockchains?</h2>
+<ul>
+<li>A malicious actor could create some <em>code</em> in the blockchain that never halts, consuming all the resources of the network.</li>
+</ul>
+<hr>
+
+<h2>Ether</h2>
+<ul>
+<li>Although Ethereum brings general computations to the blockchain, it still uses a "coin". </li>
+<li>Since computation is costly, and it is in fact rewarded by giving nodes that produce blocks ether, what better way to limit computations than by requiring ether for running them. </li>
+<li>Thus Ethereum solves the problem of denial of service attacks through malicious (or bugged) scripts that run forever. Every time a script is run, the user requesting the script to run must set a limit of ether to spend in it.</li>
+</ul>
+<hr>
+
+<h2>Smart Contracts</h2>
+<ul>
+<li>Smart contracts are the key element of Ethereum. In them any algorithm can be encoded. Smart contracts can carry arbitrary state and can perform any arbitrary computations. They are even able to call other smart contracts. This gives the scripting facilities of Ethereum tremendous flexibility. </li>
+<li>When a block is created, in contrast to Bitcoin, Ethereum follows a different pattern for selecting which blocks get added to the valid blockchain. </li>
+<li>For consensus, Ethereum follows a protocol called GHOST, (Greedy Heaviest Observed Subtree). </li>
+<li>An important aspect of how smart contracts work in Ethereum is that they have their own address in the blockchain. In other words, contract code is not carried inside each transaction that makes use of it. This would quickly become unwieldy. Instead, a node can create a special transaction that assigns an address to a contract.</li>
+</ul>
+<hr>
+
+<h2>Apps on Ethereum (DApps)</h2>
+<ul>
+<li>No Owners: Once deployed to Ethreum, dapp code can't be taken down. And anyone can use the dapp's features. Even if the team behind the dapp disbanded you could still use it. Once on Ethereum, it stays there. </li>
+<li>Free from censorship: No body can be blocked from using a dapp or submitting transactions. If Twitter was on Ethereum no one could block an account. </li>
+<li>Built-in payments: Ethereum uses by default ETH payments.</li>
+<li>Open Source: Most code is maintained and tested by large communities. </li>
+<li>Anonymous Login: Your Ethereum wallet (account) is the login.</li>
+<li>Safer than current Web applications: Protocols backed with stronger cryptography.</li>
+<li>No down time: An app will only go down if Ethereum goes down. </li>
+</ul>
+<hr>
+
+<h2>How dapps work</h2>
+<ul>
+<li>Dapps have their backend code (smart contracts) running on a decentralized network and not a centralized server. They use the Ethereum blockchain for data storage and smart contracts for their app logic.</li>
+<li>A smart contract is like a set of rules that live on-chain for all to see and run exactly according to those rules. Imagine a vending machine: if you supply it with enough funds and the right selection, you'll get the item you want. And like vending machines, smart contracts can hold funds much like your Ethereum account. This allows code to mediate agreements and transactions.</li>
+</ul>
+<hr>
+
+<h2>Dapps and Web 3.0</h2>
+<ul>
+<li>Web 1.0: Internet used for sharing information through the http protocol. Few information providers to a growing audience. Mostly static content. </li>
+<li>Web 2.0: Ability to let users share and modify data. Success for large tech companies e.g. Google, Amazon, Airbnb...</li>
+<li>Web 3.0: Internet applications running on a block-chain. Less reliance on large database and server providers. The front end of these applications are very similar to modern web applications (except authentication),while the backend uses smart-contracts as their "programming language", usually coded in a programming language called Solidity. </li>
+</ul>
+<hr>
+
+<h2>NFTs</h2>
+<ul>
+<li>Non-fungible tokens (NFTs) are a type of digital asset that represents ownership or proof of authenticity of a unique item or piece of content using blockchain technology.</li>
+<li>Unlike cryptocurrencies, they cannot be traded or exchanged at equivalency.</li>
+<li>NFTs can also be used to represent individuals' identities, property rights, and more.</li>
+<li>Much of the current market for NFTs is centered around collectibles, such as digital artwork, sports cards, and rarities.</li>
+<li>Applications outside finance, e.g. Passports, academic credentials, tickets, and voting (more secure than the current electronic voting). </li>
+</ul>
+<hr>
+
+<h2>Solidity (for the curious reader)</h2>
+<ul>
+<li>Solidity is a statically-typed programming language designed for developing smart contracts that run on the Ethereum Virtual Machine (EVM).</li>
+<li>It is influenced by C++, Python, and JavaScript and is designed to target the EVM.</li>
+<li>https://soliditylang.org/</li>
+</ul>
+<hr>
+
+<h2>Example using Python</h2>
+<h3>Blockchain as a data structure.</h3>
+<hr>
+
+<h2>The <code>hashlib</code> module</h2>
+<ul>
+<li>Python's <code>hashlib</code> module provides a common interface to many secure hash and message digest algorithms.</li>
+<li>It is part of the <code>cpython</code> standard library and is used to generate secure hashes of data. (C++ code that can be called directly from Python).</li>
+<li>SHA- is a family of cryptographic hash functions, each with a different bit length. SHA-256 is a 256-bit hash function that is widely used in blockchain technology.</li>
+</ul>
+<hr>
+
+<h2>The SHA algorithms</h2>
+<ul>
+<li>Developed by the National Security Agency (NSA) in the United States, the Secure Hash Algorithms are a family of cryptographic hash functions. Published by the National Institute of Standards and Technology (NIST) as a U.S. Federal Information Processing Standard (FIPS), the algorithms are used to secure data and ensure its integrity.</li>
+<li>The whole idea behind is to make a function that is easy to compute in one direction but hard (almost impossible) to reverse.</li>
+<li>One consequence of this is that the function is highly discontinuous, meaning that a small change in the input will result in a large change in the output.</li>
+</ul>
+<hr>
+
+<h2>Implementation in python</h2>
+<p><pre><code class="language-python">import hashlib
+has = lambda x: hashlib.sha256(x.encode()).hexdigest()
+has(&#x27;hello&#x27;)
+has(&#x27;helo&#x27;)
+</code></pre>
+<pre><code class="language-output">&#x27;2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824&#x27;
+&#x27;f4e454f802b88d2f64168ff1742e8cf413fd677d38b87cbefb45821f8981b912&#x27;
+</code></pre></p>
+<hr>
+
+<h2>Application: Building a Simple Blockchain</h2>
+<ul>
+<li>We will build a simple blockchain in Python with the following structure:<ul>
+<li>Define a <code>Block</code> class that contains data, previous hash, timestamp, and hash.</li>
+<li>Define a <code>Blockchain</code> class that manages a list of blocks.</li>
+<li>Add functionality to create new blocks and validate the integrity of the blockchain.</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+<h2>Python Code: Block Class</h2>
+<pre><code class="language-python">import hashlib
+import time
+from dataclasses import dataclass, field
+
+@dataclass
+class Block:
+    data: str
+    previous_hash: str = &#x27;&#x27;
+    timestamp: float = field(default_factory=time.time)
+    hash: str = field(init=False)
+
+    def __post_init__(self):
+        # Automatically calculate the hash after initialization
+        self.hash = self.calculate_hash
+
+    @property
+    def calculate_hash(self):
+        return hashlib.sha256(
+            (str(self.timestamp) + self.data + self.previous_hash).encode()
+        ).hexdigest()
+</code></pre>
+<hr>
+
+<p>Explanation:</p>
+<ul>
+<li><code>@dataclass</code>: This decorator automatically generates the <code>__init__</code>, <code>__repr__</code>, and other methods based on the class attributes.</li>
+<li><code>field()</code>: Used for <code>timestamp</code> with <code>default_factory</code> to set its default value to the current time.</li>
+<li><code>init=False</code>: For the hash field, so it isn't required during initialization and is computed in <code>__post_init__</code>.
+<code>__post_init__()</code>: A special method in dataclasses that runs immediately after the object is initialized, used here to calculate the hash.</li>
+</ul>
+<hr>
+
+<h2>Python Code: Blockchain Class</h2>
+<pre><code class="language-python">from dataclasses import dataclass, field
+
+@dataclass
+class Blockchain:
+    chain: list = field(default_factory=list)
+
+    def __post_init__(self):
+        # Initialize the chain with the genesis block
+        self.chain.append(self.create_genesis_block())
+
+    def create_genesis_block(self):
+        return Block(&#x27;Genesis Block&#x27;, &#x27;0&#x27;)
+
+    def add_block(self, data: str):
+        previous_block = self.chain[-1]
+        new_block = Block(data, previous_block.hash)
+        self.chain.append(new_block)
+</code></pre>
+<hr>
+
+<h2>Verifying Blockchain Integrity</h2>
+<ul>
+<li>To verify the integrity of a blockchain:<ul>
+<li>Iterate through the chain.</li>
+<li>Check if each block's <code>previous_hash</code> matches the <code>hash</code> of the preceding block.</li>
+<li>If any mismatch is found, the blockchain is compromised.</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">def is_chain_valid(self):
+    for i in range(1, len(self.chain)):
+        current_block = self.chain[i]
+        previous_block = self.chain[i - 1]
+        if current_block.previous_hash != previous_block.hash:
+            return False
+    return True
+</code></pre>
+<hr>
+</main>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Problem Set 2 | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Problem Set 2</h1>
+<h2>Empirical Asset Pricing</h2>
+<h2>M2 104</h2>
+<h2>Paris Dauphine - PSL</h2>
+<p>The problem set together with the code needs to be emailed to juan.imbet@dauphine.psl.eu <em>before</em> March 7 23:59. You can solve the problem sets in groups of maximum <em>2</em> people. </p>
+<h1>Setup</h1>
+<p>Consider the following factor model with 5 assets and 2 factors with the appropriate dimensions of the parameters:</p>
+<p>$$
+\begin{align*}
+\underbrace{R_{t}^e}_{5 \times 1} &= \underbrace{a}_{5 \times 1} + \underbrace{\beta}_{5 \times 2} \underbrace{f_t}_{2 \times 1} + \underbrace{\epsilon_{t}}_{5 \times 1} \\
+\end{align*}
+$$
+with $\epsilon_t \sim \mathcal{N}(0, \Sigma)$, where $\Sigma$ is a non-diagonal covariance matrix. And $f_t \sim \mathcal{N}(\mu_f, \Sigma_f)$, where $\Sigma_f$ is the covariance matrix of the factor realizations, and $\mu_f$ is the expected value of the factor returns. </p>
+<p>the true values of the parameters are:
+$$
+a = \begin{pmatrix} 0.0 \\ 0.0 \\ 0.0 \\ 0.0 \\ 0.0 \end{pmatrix}, \quad \beta = \begin{pmatrix} 0.5 & 0.0 \\ 0.0 & 0.5 \\ 0.5 & 0.5 \\ 0.3 & 1.2 \\ 0.7 & 0.4 \end{pmatrix}, \quad \Sigma = \begin{pmatrix} 1.0 & 0.5 & 0.5 & 0.5 & 0.5 \\ 0.5 & 1.0 & 0.5 & 0.0 & 0.0 \\ 0.5 & 0.5 & 1.0 & 0.0 & 0.0 \\ 0.5 & 0.0 & 0.0 & 1.0 & 0.5 \\ 0.5 & 0.0 & 0.0 & 0.5 & 1.0 \end{pmatrix}
+$$
+and
+$$
+\mu_f = \begin{pmatrix} 0.05 \\ 0.07 \end{pmatrix}, \quad \Sigma_f = \begin{pmatrix} 1.0 & 0.5 \\ 0.5 & 1.0 \end{pmatrix}
+$$</p>
+<hr>
+
+<h1>Question 1 (4 points)</h1>
+<p>Create a function that given a time horizon $T$ simulates the dynamics of the system above. The function should return both time series $R_t^e$ and $f_t$. </p>
+<div style="page-break-after: always;"></div>
+
+<hr>
+
+<h1>Question 2 (4 points)</h1>
+<p>Create a function that given simulated data $R_t^e$ estimates using OLS and GLS the parameters $\hat{\alpha}$ and $\hat{\lambda}$ (together with their standard errors) in the following model (assume that you only know the true values of $\Sigma$, $\Sigma_f$ and $\beta$ so you dont need to estimate them):
+$$
+E_T[R_{t}^e] = \alpha + \beta \lambda
+$$</p>
+<hr>
+
+<h1>Question 3 (4 points)</h1>
+<p>For a given $T=10$ repeat the above exercise 1000 times and plot the distribution of the estimated parameters $\hat{\alpha}$ and $\hat{\lambda}$ (together with the true values). What do you observe? The true values of $\alpha$ are $a$ and the true values of $\lambda$ are $\mu_f$.</p>
+<hr>
+
+<h1>Question 4 (4 points)</h1>
+<p>Repeat the above exercise, but for each estimated parameter consider the distribution of the ratio
+$$
+\frac{\hat{\theta}-\theta}{\text{s.e.}(\hat{\theta})}
+$$
+can you find any difference in the distribution of the ratios between OLS and GLS? Hint: look at the tails of the distribution. Comment on the results.</p>
+<hr>
+
+<h1>Question 5 (4 points)</h1>
+<p>Assume now that you do not know the true values of $\beta$, $\Sigma$ and $\Sigma_f$. For a fixed $T=10$ and 1000 simulations, compare the expected value of your estimators. Does estimation error affect the expected value of $\hat{\alpha}$ and $\hat{\lambda}$? Comment on the results.</p>
+</main>
+</body>
+</html>

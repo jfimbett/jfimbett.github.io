@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Project</h1>
+<hr>
+
+<h2>Overview</h2>
+<ul>
+<li>The latest version of the project we have been working on during the course can be installed directly using <code>pip</code>. 
+<pre><code class="language-bash">pip install pybacktestchain
+</code></pre></li>
+</ul>
+<p>You can see the source code/ documentation in https://pypi.org/project/pybacktestchain/. </p>
+<ul>
+<li>
+<p>Your main goal is to create your own python package, which will import <code>pybacktestchain</code> to implement new functionalities. </p>
+</li>
+<li>
+<p>All projects have to be implemented individually. </p>
+</li>
+</ul>
+<hr>
+
+<h2>Project Basics</h2>
+<ul>
+<li>Package structure from <code>cookiecutter</code> template.</li>
+<li>Package dependencies using <code>poetry</code>.</li>
+<li>Version control with <code>semantic-release</code>.</li>
+<li>If you need to refresh anything, refer to the slides or the following documentation https://py-pkgs.org/welcome</li>
+<li>Part of the requirements is to be able to have a history of the changes made to the package.</li>
+<li>Tests</li>
+<li>Proper documentation (all .md files)</li>
+<li>Follow the instructions in the link above to publish your package in <code>pypi</code>, do not try to publish in <code>test-pypi</code>, it is not worth it and is not reliable. </li>
+</ul>
+<hr>
+
+<h2>Project Requirements</h2>
+<ul>
+<li>Create a new package that imports <code>pybacktestchain</code> and implements new functionalities. (You can create new functions or overwrite existing ones) E.g. <ul>
+<li>Functionality with new asset classes together with their respective data structures and investment strategies. </li>
+<li>A properly developed user interface to interact with the package.</li>
+<li>C-implementation of the main functions of the package.</li>
+<li>A cryptocurrency implementation on the blockchain that compensates adding new blocks or profitable backtest ideas. </li>
+<li>Proper distributed computing implementation to backtest strategies in parallel.</li>
+<li>Web services to backtest and collaborate with the development of investment strategies in a team. </li>
+</ul>
+</li>
+</ul>
+<hr>
+
+<h2>What do I expect from you?</h2>
+<ul>
+<li>Same standards as seen in class. Proper documentation, usage of version control, and code quality. Check the official style guide for python code if required https://peps.python.org/pep-0008/</li>
+<li>You can use LLMs to help you code, but you must understand what you are doing. I also use LLMs to code, so I will know if you understand or not the code. </li>
+<li>Originality, you have enough time to develop something new and interesting.</li>
+<li>Having all the development process documented in the repository really supports your cv in job applications.</li>
+<li>If you are not sure if your idea is good or not, send me an email and visit me during office hours.</li>
+<li>Your grade will be based on your project having the minimum requirements and the originality/implementation of the idea. </li>
+</ul>
+<hr>
+
+<h2>Project Deliverables</h2>
+<ul>
+<li>Github repository with the package.</li>
+<li>Package published in <code>pypi</code>.</li>
+<li>Send me an email with both links before January 17 2025 11:59 PM.</li>
+<li>I will provide office hours on the following dates (please send me an email in advance): <ul>
+<li>Thursday Dec 12 2024 - 13:00-15:00</li>
+<li>Tuesday Jan 07 2025 -  10:00-12:00</li>
+</ul>
+</li>
+</ul>
+</main>
+</body>
+</html>

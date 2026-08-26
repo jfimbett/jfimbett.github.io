@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced Topics in Python | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1>Some Advanced Topics in Python: Data Validation and Speed.</h1>
+<h2>Juan F. Imbet Ph.D.</h2>
+<hr>
+
+<h2>Agenda</h2>
+<ul>
+<li><code>pydantic</code></li>
+<li><code>cython</code></li>
+<li><code>numba</code></li>
+</ul>
+<hr>
+
+<h3>Some libraries that will appear in the presentation</h3>
+<ul>
+<li><code>setuptools</code>: a Python tool used to package, distribute, and install Python projects, making it easier to share and install them as reusable modules or applications.</li>
+<li><code>distutils</code>:  is a core Python library used to distribute and install Python packages, providing basic functionality for packaging projects, but it lacks many of the advanced features found in setuptools, such as dependency management and compatibility with modern packaging standards.</li>
+</ul>
+<hr>
+
+<p><img alt="" src="https://repository-images.githubusercontent.com/90194616/6d31d0d9-6770-4cbc-90d5-a611662126ee" /></p>
+<hr>
+
+<h2><code>pydantic</code></h2>
+<ul>
+<li>Using Pydantic can be incredibly beneficial in Python projects where you need to <em>validate</em>, <em>parse</em>, and <em>manage</em> data consistently. </li>
+<li>It's especially useful when dealing with external data sources, API responses, or user input, as it helps ensure the data conforms to specified structures and types, reducing errors and making the code more readable and maintainable.</li>
+<li>Pydantic is a Python library used for data validation and parsing. It enforces data types and values on Python objects through a class-based approach, making it easy to work with structured data reliably. It leverages Python's type hints.</li>
+</ul>
+<hr>
+
+<h2>Why use <code>pydantic</code></h2>
+<ul>
+<li><strong><em>Data Validation:</em></strong> Ensures that the data passed to your functions or objects meets the type and structural requirements you've defined.</li>
+<li><strong><em>Data Parsing and Coercion:</em></strong> Automatically converts compatible data types, so you don’t have to worry about converting strings to integers or parsing dates.</li>
+<li><strong><em>Type Safety:</em></strong> Uses type hints, helping to catch errors early and enhancing code readability.</li>
+<li><strong><em>JSON Serialization:</em></strong> Easily converts data models to JSON format, making it useful for APIs and data storage.</li>
+<li><strong><em>Code Clarity and Readability:</em></strong> Clearly separates the structure of your data from business logic, making it easier to understand.</li>
+</ul>
+<hr>
+
+<h2>Example 1: Basic Model Creation and Validation</h2>
+<p>Consider a simple model for a <code>User</code> with required fields for <code>id</code>, <code>name</code>, and <code>email</code>. Without Pydantic, you’d need to manually check and parse each input to ensure it meets your requirements. With Pydantic, you can define the model structure and it handles the rest.</p>
+<hr>
+
+<h3>Without Pydantic</h3>
+<pre><code class="language-python">class User:
+    def __init__(self, id: int, name: str, email: str):
+        if not isinstance(id, int):
+            raise ValueError(&#x27;id must be an integer&#x27;)
+        if not isinstance(name, str):
+            raise ValueError(&#x27;name must be a string&#x27;)
+        if not isinstance(email, str):
+            raise ValueError(&#x27;email must be a string&#x27;)
+        self.id = id
+        self.name = name
+        self.email = email
+</code></pre>
+<hr>
+
+<h3>Without pydantic, but using dataclasses</h3>
+<pre><code class="language-python">from dataclasses import dataclass
+
+@dataclass
+class User:
+    id: int
+    name: str
+    email: str
+</code></pre>
+<hr>
+
+<h3>With Pydantic</h3>
+<p><code>pip install pydantic[email]</code></p>
+<pre><code class="language-python">from pydantic import BaseModel, EmailStr
+
+class User(BaseModel):
+    id: int
+    name: str
+    email: EmailStr
+
+user = User(id=1, name=&quot;John Doe&quot;, email=&quot;johndoe@example.com&quot;)
+print(user)
+
+try:
+    invalid_user = User(id=&quot;abc&quot;, name=&quot;Jane&quot;, email=&quot;not-an-email&quot;)
+except ValueError as e:
+    print(e)
+</code></pre>
+<hr>
+
+<h2>Example 2: Data Parsing and Type Conversion</h2>
+<pre><code class="language-python">user = User(id=&quot;123&quot;, name=&quot;Alice&quot;, email=&quot;alice@example.com&quot;)
+print(user)
+</code></pre>
+<pre><code class="language-output">id=123 name=&#x27;Alice&#x27; email=&#x27;alice@example.com&#x27;
+</code></pre>
+<hr>
+
+<h2>Example 3: Nested Models</h2>
+<pre><code class="language-python">class Address(BaseModel):
+    street: str
+    city: str
+    zip_code: int
+
+class UserWithAddress(BaseModel):
+    id: int
+    name: str
+    email: EmailStr
+    address: Address
+
+address = Address(street=&quot;123 Main St&quot;, city=&quot;New York&quot;, zip_code=10001)
+user_with_address = UserWithAddress(id=2, name=&quot;Jane Doe&quot;, email=&quot;jane@example.com&quot;, address=address)
+print(user_with_address)
+</code></pre>
+<pre><code class="language-output">id=2 name=&#x27;Jane Doe&#x27; email=&#x27;jane@example.com&#x27; address=Address(street=&#x27;123 Main St&#x27;, city=&#x27;New York&#x27;, zip_code=10001)
+</code></pre>
+<hr>
+
+<h2>Example 4: JSON Serialization</h2>
+<pre><code class="language-python">import json
+
+# Convert model to JSON
+user_json = user_with_address.model_dump_json()
+print(user_json)
+
+# Load model from JSON
+user_dict = json.loads(user_json)
+user_from_json = UserWithAddress(**user_dict)
+print(user_from_json)
+</code></pre>
+<p><pre><code class="language-output">{&quot;id&quot;:2,&quot;name&quot;:&quot;Jane Doe&quot;,&quot;email&quot;:&quot;jane@example.com&quot;,&quot;address&quot;:{&quot;street&quot;:&quot;123 Main St&quot;,&quot;city&quot;:&quot;New York&quot;,&quot;zip_code&quot;:10001}}
+</code></pre>
+<pre><code class="language-output">id=2 name=&#x27;Jane Doe&#x27; email=&#x27;jane@example.com&#x27; address=Address(street=&#x27;123 Main St&#x27;, city=&#x27;New York&#x27;, zip_code=10001)
+</code></pre></p>
+<hr>
+
+<h3><code>Fields</code></h3>
+<ul>
+<li>The <code>Field</code> function is used to customize and add metadata to fields of models.
+<pre><code class="language-python">from pydantic import BaseModel, Field
+class User(BaseModel):
+    name: str = Field(default=&#x27;John Doe&#x27;)
+</code></pre></li>
+</ul>
+<hr>
+
+<h3>Numeric Constraints <code>gt</code>, <code>ge</code>, <code>lt</code>, <code>le</code>, <code>multiple_of</code>, <code>allow_inf_nan</code>.</h3>
+<pre><code class="language-python">from pydantic import BaseModel, Field
+
+
+class Foo(BaseModel):
+    positive: int = Field(gt=0)
+    non_negative: int = Field(ge=0)
+    negative: int = Field(lt=0)
+    non_positive: int = Field(le=0)
+    even: int = Field(multiple_of=2)
+    love_for_pydantic: float = Field(allow_inf_nan=True)
+
+
+foo = Foo(
+    positive=1,
+    non_negative=0,
+    negative=-1,
+    non_positive=0,
+    even=2,
+    love_for_pydantic=float(&#x27;inf&#x27;),
+)
+print(foo)
+&quot;&quot;&quot;
+positive=1 non_negative=0 negative=-1 non_positive=0 even=2 love_for_pydantic=inf
+&quot;&quot;&quot;
+</code></pre>
+<hr>
+
+<h3><code>Optional</code> Fields</h3>
+<pre><code class="language-python">from typing import Optional
+
+from typing_extensions import Annotated
+
+from pydantic import BaseModel, Field
+
+
+class Foo(BaseModel):
+    positive: Optional[Annotated[int, Field(gt=0)]]
+</code></pre>
+<hr>
+
+<h3>String Constraints</h3>
+<pre><code class="language-python">from pydantic import BaseModel, Field
+
+
+class Foo(BaseModel):
+    short: str = Field(min_length=3)
+    long: str = Field(max_length=10)
+    regex: str = Field(pattern=r&#x27;^\d*$&#x27;)  
+
+
+foo = Foo(short=&#x27;foo&#x27;, long=&#x27;foobarbaz&#x27;, regex=&#x27;123&#x27;)
+print(foo)
+#&gt; short=&#x27;foo&#x27; long=&#x27;foobarbaz&#x27; regex=&#x27;123&#x27;
+</code></pre>
+<hr>
+
+<h3>Massive applications</h3>
+<ul>
+<li>https://docs.pydantic.dev/latest/</li>
+<li><code>pydantic</code> is used in different applications to automatize the data validation process and the documentation (e.g. APIs). </li>
+</ul>
+<hr>
+
+<p><img alt="" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Cython_logo.svg/1200px-Cython_logo.svg.png" /></p>
+<hr>
+
+<h2>Cython: An Overview</h2>
+<p>What is Cython?</p>
+<ul>
+<li>A programming language designed to make writing C extensions for Python easier.</li>
+<li>Aims to be a <strong><em>superset</em></strong> of Python with high-level, object-oriented, and functional features.</li>
+<li>
+<p><strong><em>superset</em></strong> just means that all valid Python code is valid Cython code, but Cython adds additional syntax to allow for static type declarations.
+Key feature:</p>
+</li>
+<li>
+<p>Supports optional static type declarations, allowing translation into optimized C/C++ code</p>
+</li>
+</ul>
+<hr>
+
+<h2>Getting Started</h2>
+<ul>
+<li><code>pip install Cython</code></li>
+</ul>
+<h2>Building Cython Code</h2>
+<p>Cython code must, unlike python, be compiled. This happens in two stages:</p>
+<ul>
+<li>A <code>.pyx</code> or <code>.py</code> file is compiled by Cython to a <code>.c</code> file, containing the code of a Python extension module.</li>
+<li>The <code>.c</code> file is compiled by a C compiler to a <code>.so</code> file (or <code>.pyd</code> on Windows) which can be import-ed directly into a Python session. setuptools takes care of this part. Although Cython can call them for you in certain cases.</li>
+</ul>
+<hr>
+
+<h2>The workflow</h2>
+<ol>
+<li>Think about yout function in pure Python.
+<pre><code class="language-python"># example.py
+def sum_of_squares(n):
+    total = 0
+    for i in range(1, n + 1):
+        total += i * i
+    return total
+</code></pre></li>
+</ol>
+<hr>
+
+<ol start="2">
+<li>Write a Cython version of the function. Add type declarations where necessary.
+<pre><code class="language-python"># example.pyx
+def sum_of_squares(int n):
+    cdef int total = 0
+    cdef int i
+    for i in range(1, n + 1):
+        total += i * i
+    return total
+</code></pre>
+Here is what is happening:</li>
+</ol>
+<ul>
+<li><code>cdef int total</code>: We declare total as an integer, making it a C integer instead of a Python integer. </li>
+<li><code>cdef int i</code>: We declare i as an integer, making it a C integer instead of a Python integer.</li>
+</ul>
+<hr>
+
+<ol start="3">
+<li>Compile the Cython code</li>
+</ol>
+<pre><code class="language-python"># setup.py
+from setuptools import setup
+from Cython.Build import cythonize
+
+setup(
+    ext_modules=cythonize(&quot;example.pyx&quot;)
+)
+</code></pre>
+<ul>
+<li><code>python setup.py build_ext --inplace</code></li>
+</ul>
+<hr>
+
+<h3>Output</h3>
+<ul>
+<li>A file called <code>example.c</code> will be created in the same directory as <code>example.pyx</code>.</li>
+<li>A <code>.pyd</code> file will be created in the same directory as <code>example.pyx</code>.</li>
+</ul>
+<h3>Test it</h3>
+<pre><code class="language-python">from example import sum_of_squares
+
+# Test the function with a large number
+print(sum_of_squares(100))
+</code></pre>
+<p>Do you get a negative number when <code>n</code> is too large? This is because the result is too large to fit in a 32-bit signed integer.</p>
+<hr>
+
+<h2>Modify and compile again</h2>
+<pre><code class="language-python"># example.pyx
+def sum_of_squares(int n):
+    cdef long long total = 0
+    cdef int i
+    for i in range(1, n + 1):
+        total += i * i
+    return total
+</code></pre>
+<hr>
+
+<h2>Performance Gain</h2>
+<pre><code class="language-python">from example import sum_of_squares as sum_of_squares_cython
+
+def sum_of_squares(n):
+    total = 0
+    for i in range(1, n + 1):
+        total += i * i
+    return total
+
+%timeit sum_of_squares(1000)
+%timeit sum_of_squares_cython(1000)
+</code></pre>
+<pre><code class="language-output">50.4 μs ± 3.15 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+389 ns ± 3.14 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+</code></pre>
+<hr>
+
+<h2>Speedup</h2>
+<p><img alt="" src="python_vs_cython.png" /></p>
+<hr>
+
+<h1>Can we do better? <code>Numba</code></h1>
+<p><img alt="" src="https://numba.pydata.org/_static/numba-blue-horizontal-rgb.svg" /></p>
+<hr>
+
+<ul>
+<li>Numba is a just-in-time (JIT) compiler that translates Python functions to optimized machine code at runtime using the industry-standard LLVM compiler library.</li>
+<li>LLVM (Low-Level Virtual Machine) is a compiler infrastructure that provides a collection of modular and reusable compiler and toolchain technologies.</li>
+</ul>
+<hr>
+
+<h1>Example</h1>
+<pre><code class="language-python">from numba import jit
+
+@jit
+def sum_of_squares_numba(n):
+    total = 0
+    for i in range(1, n + 1):
+        total += i * i
+    return total
+</code></pre>
+<hr>
+
+<h2>What is happening behind the scenes?</h2>
+<ul>
+<li>By adding @jit decorators, Numba can automatically compile Python functions to machine code, taking advantage of the CPU's vectorized instructions.</li>
+</ul>
+<hr>
+
+<h2>Performance Gain</h2>
+<p><img alt="" src="numba.png" /></p>
+<hr>
+
+<h3>Can we do better? Slighty, no python in <code>@jit</code></h3>
+<pre><code class="language-python">from numba import njit
+</code></pre>
+<p><img alt="" src="numba_jit_njit.png" /></p>
+<hr>
+
+<h2>Parallelization in the compiler. Exploit <code>numpy</code> and <code>numba</code></h2>
+<ul>
+<li>Numba offers a range of options for parallelizing your code for CPUs and GPUs, often with only minor code changes</li>
+<li>Automatic multi-threading: NumPy array expressions have a significant amount of implied parallelism, as operations are broadcast independently over the input elements. ParallelAccelerator can identify this parallelism and automatically distribute it over several threads. All we need to do is enable the parallelization pass with <code>parallel=True</code></li>
+</ul>
+<hr>
+
+<h3>Example: Gaussian Kernel</h3>
+<p><code>@jit(nopython=True) == @njit</code></p>
+<pre><code class="language-python">SQRT_2PI = np.sqrt(2 * np.pi)
+
+@jit(nopython=True, parallel=True)
+def gaussians(x, means, widths):
+    &#x27;&#x27;&#x27;Return the value of gaussian kernels.
+    
+    x - location of evaluation
+    means - array of kernel means
+    widths - array of kernel widths
+    &#x27;&#x27;&#x27;
+    n = means.shape[0]
+    result = np.exp( -0.5 * ((x - means) / widths)**2 ) / widths
+    return result / SQRT_2PI / n
+</code></pre>
+<hr>
+
+<h3>Testing</h3>
+<pre><code class="language-python">means = np.random.uniform(-1, 1, size=1000000)
+widths = np.random.uniform(0.1, 0.3, size=1000000)
+
+gaussians(0.4, means, widths)
+</code></pre>
+<h3>Parallelized vs Non-Parallelized</h3>
+<pre><code class="language-python">gaussians_nothread = jit(nopython=True)(gaussians.py_func)
+
+%timeit gaussians_nothread(0.4, means, widths)
+%timeit gaussians(0.4, means, widths)
+</code></pre>
+<pre><code class="language-output">9.62 ms ± 181 μs per loop (mean ± std. dev. of 7 runs, 1 loop each)
+2.03 ms ± 51.1 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+</code></pre>
+<hr>
+
+<h3>Comparison with pure <code>numpy</code></h3>
+<p><code>%timeit gaussians.py_func(0.4, means, widths) # compare to pure NumPy</code></p>
+<p><code>22.9 ms ± 808 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)</code></p>
+<p>The performance ratio depends on the number of CPUs in your system, but the multithreaded version is definitely faster than the single threaded version.</p>
+<hr>
+
+<h2>Multithreading with <code>prange()</code></h2>
+<ul>
+<li>There are other situations where you would like multithreading, but do not have a straightforward array expression. In those cases, using prange()</li>
+</ul>
+<p>Example: Approximating Pi in a square. </p>
+<ul>
+<li>We can approximate the value of π by randomly sampling points in a square and counting the fraction of points that fall within a quarter circle inscribed in the square.</li>
+</ul>
+<hr>
+
+<h2>Example</h2>
+<pre><code class="language-python">import random
+
+# Serial version
+@jit(nopython=True)
+def monte_carlo_pi_serial(nsamples):
+    acc = 0
+    for i in range(nsamples):
+        x = random.random()
+        y = random.random()
+        if (x**2 + y**2) &lt; 1.0:
+            acc += 1
+    return 4.0 * acc / nsamples
+</code></pre>
+<hr>
+
+<pre><code class="language-python"># Parallel version
+@jit(nopython=True, parallel=True)
+def monte_carlo_pi_parallel(nsamples):
+    acc = 0
+    # Only change is here
+    for i in numba.prange(nsamples):
+        x = random.random()
+        y = random.random()
+        if (x**2 + y**2) &lt; 1.0:
+            acc += 1
+    return 4.0 * acc / nsamples
+</code></pre>
+<hr>
+
+<pre><code class="language-python">%timeit monte_carlo_pi_serial(int(4e8))
+%timeit monte_carlo_pi_parallel(int(4e8))
+</code></pre>
+<pre><code class="language-output">4.04 s ± 39.9 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+260 ms ± 4.52 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+</code></pre>
+<hr>
+
+<h3>Further Reading</h3>
+<ul>
+<li>SIMD (Single Instruction, Multiple Data) vectorization: Numba can automatically vectorize your functions to take advantage of SIMD instructions on modern CPUs.</li>
+<li>CUDA: Numba can compile Python functions to run on NVIDIA GPUs using CUDA.</li>
+</ul>
+<hr>
+
+<h1>Libraries for the curious</h1>
+<p><strong><em>DataFrames</em></strong>: When you have too much data.</p>
+<ul>
+<li><code>dask</code>: Dask is a flexible parallel computing library for analytics. </li>
+<li><code>polars</code>: Polars is a blazingly fast DataFrame library implemented in Rust and leveraging Apache Arrow.</li>
+</ul>
+<hr>
+
+<h1>Libraries for the curious</h1>
+<p><strong><em>Create your own programming language</em></strong>:</p>
+<ul>
+<li><code>llvmlite</code>: A lightweight LLVM python binding for writing JIT compilers.</li>
+<li><code>rply</code>: A pure Python parser generator inspired by PLY (Python Lex-Yacc).</li>
+<li><code>sly</code>: Sly (Sly Lex Yacc) is a Python implementation of the lex and yacc tools for constructing scanners and parsers.</li>
+</ul>
+<hr>
+
+<h1>Libraries for the curious</h1>
+<p><strong><em>Large Language Models</em></strong>:</p>
+<ul>
+<li><code>transformers</code>: Created by the team at Hugging Face, Transformers provides thousands of pre-trained models for natural language processing (NLP) tasks.</li>
+</ul>
+<hr>
+
+<h1>Libraries for the curious</h1>
+<p><strong><em>Game Development</em></strong>:</p>
+<ul>
+<li><code>pygame</code>: Pygame is a set of Python modules designed for writing video games.</li>
+<li><code>arcade</code>: Arcade is an easy-to-learn Python library for creating 2D video games.</li>
+</ul>
+</main>
+</body>
+</html>

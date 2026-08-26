@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Return Predictability: Lessons and Insights for Future Hedge Fund Managers | Juan F. Imbet</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+<link href="../../assets/css/site.css" rel="stylesheet">
+<style>
+  /* site.css styles the main pages; course notes also need code and tables. */
+  .archive { padding-block: 3rem 5rem; }
+  .archive pre {
+    background: var(--grenat-pastel); border: 1px solid var(--border);
+    padding: 0.9rem 1rem; overflow-x: auto; border-radius: 3px;
+    font-size: 0.9em; line-height: 1.5;
+  }
+  .archive code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .archive :not(pre) > code {
+    background: var(--grenat-pastel); padding: 0.1em 0.35em; border-radius: 3px;
+  }
+  .archive table { border-collapse: collapse; margin: 1.25rem 0; display: block; overflow-x: auto; }
+  .archive th, .archive td { border: 1px solid var(--border); padding: 0.45rem 0.7rem; text-align: left; }
+  .archive hr { border: 0; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+  .archive img { max-width: 100%; height: auto; }
+  .archive__note { color: var(--muted); font-size: 0.9em; }
+</style>
+<script>
+  window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<main class="wrap archive">
+<p class="archive__note"><a href="../../index.html">Juan F. Imbet</a> · archived course notes</p>
+<h1><strong>Return Predictability: Lessons and Insights for Future Hedge Fund Managers</strong></h1>
+<h2>Crash Course - UASM</h2>
+<h2>August 2025</h2>
+<h3>Juan F. Imbet</h3>
+<hr>
+
+<h2><strong>Motivation</strong></h2>
+<p>If you pick a month at random between 1870 and 2025, how does the compound realized return of the SP500 <strong>one year ahead</strong> look like?</p>
+<hr>
+
+<p><img src="returns0.png" style="width: 100%;"></p>
+<hr>
+
+<p><img src="returns1.png" style="width: 100%;"></p>
+<hr>
+
+<h2>Guessing the events</h2>
+<ul>
+<li>End of Great Recession (1932-06)</li>
+<li>Patient Zero COVID (2019-12)</li>
+<li>Banks Recognise Subprime-related losses (2007-12)</li>
+<li>End of WW1 (1918-11)</li>
+</ul>
+<hr>
+
+<p><img src="returns2.png" style="width: 100%;"></p>
+<hr>
+
+<h2>Business Cycles</h2>
+<p>What do periods of low/high expected returns have in common?</p>
+<ul>
+<li>Assets seem to be <strong>cheap</strong> when expected returns are high.</li>
+<li>Assets seem to be <strong>expensive</strong> when expected returns are low.</li>
+<li>A ratio of how much an asset is paying (e.g. dividends) vs its price is a good indicator of where in the business cycle we are.</li>
+<li>This applies to all assets, not just stocks, e.g. how much rent you can get from a house vs its price.</li>
+</ul>
+<hr>
+
+<h2><strong>D/P variation over time</strong></h2>
+<p><img src="./python_scripts/dp_plot.png" style="width:100%;"></p>
+<hr>
+
+<h2><strong>D/P and 3-year ahead returns</strong></h2>
+<p><img src="./python_scripts/dp_vs_r3_plot.png" style="width:100%;"></p>
+<hr>
+
+<h2><strong>How does the D/P capture return variation?</strong></h2>
+<p><img src="./python_scripts/hi_1y.png" style="width:100%;"></p>
+<hr>
+
+<h2><strong>Market Efficiency: Overview and Evidence</strong></h2>
+<ul>
+<li><strong>Animal Spirits</strong> (Keynes, 1936): Prices are driven by irrational behavior and sentiment.</li>
+<li><strong>Efficient Market Hypothesis</strong> (Fama 1970, Malkiel 1973): Prices in Financial Markets reflect all available information, and returns are unpredictable.</li>
+<li><strong>Behavioral Finance</strong> (Shiller, 1981): Prices are driven by irrational behavior and sentiment.</li>
+<li>Debate between how <strong><em>should</em></strong> markets behave (normative) vs how <strong><em>do</em></strong> markets behave (positive).</li>
+</ul>
+<hr>
+
+<h2><strong>Modern Approach</strong></h2>
+<ul>
+<li>
+<p><strong>Efficient Inefficiently</strong> (Pedersen, 2019): The idea that markets are efficient enough to reflect relevant information into prices but inefficient enough to incentivize market participants to gather information and trade.</p>
+</li>
+<li>
+<p>Markets do react to new information, but the reaction is not always immediate nor rational.</p>
+</li>
+<li>If markets were not efficient enough then it would be <strong>easy</strong> to make money. </li>
+<li>It markets were not inefficient, how do we justify hedge fund fees structure of 2/20? 2% of assets and 20% of profits.</li>
+</ul>
+<hr>
+
+<h2><strong>What do we mean for predictability?</strong></h2>
+<ul>
+<li>
+<p><strong>Intuition</strong>: Can we find a variable that helps be right on average on the direction and magnitude of future returns?</p>
+</li>
+<li>
+<p><strong>Formal definition</strong>, conditional vs unconditional expectations.
+$$
+\mathbb{E}[R_{t\rightarrow t+\tau}|X_t] \neq \mathbb{E}[R_{t\rightarrow t+\tau}]
+$$</p>
+</li>
+</ul>
+<hr>
+
+<h2><strong>How do we search for predictability?</strong></h2>
+<ul>
+<li><strong>Data</strong>: Data collection vs Data Exhaustion. $\rightarrow$ Market Efficiency.</li>
+<li><strong>Economic Theory</strong>: What variables should be relevant?</li>
+<li><strong>Model</strong>: Linear vs Non-Linear $\rightarrow$ Economic Mechanisms vs Spurious Correlations.</li>
+<li><strong>Backtesting</strong>: Implementation and Transaction Costs.</li>
+<li><strong>Risk Management</strong>: How to manage the risk of a strategy that is not always profitable?</li>
+</ul>
+<hr>
+
+<h2><strong>Time-Series and Cross-sectional Predictability</strong></h2>
+<ul>
+<li><strong>Time-Series</strong>: Can you time the market? Can you time an industry? Can you buy low and sell high?</li>
+<li><strong>Cross-sectional</strong>: Can you pick the best stocks? Can you pick the best industries? Why do some stocks outperform others?</li>
+</ul>
+<hr>
+
+<h2><strong>Why is it predictability important for Hedge Funds?</strong></h2>
+<ul>
+<li>Mandate on generating returns <strong>regardless of market conditions</strong>.</li>
+<li>Flows are extremely sensitive to performance.</li>
+<li>Huge fees, deregulation, and access to financial technology and leverage means that the competition is fierce and expectations are high.</li>
+<li>Access to technology, traders, and real time information: <strong>timing the market</strong>.</li>
+<li>Access to a large universe of assets: <strong>cross-sectional predictability</strong>.</li>
+</ul>
+<hr>
+
+<h2><strong>Simplest Tool, Linear Regression</strong></h2>
+<p>Find Signal $X_t$ such that</p>
+<p>$$
+R_{t\rightarrow t+\tau} = a + \beta X_t + \epsilon_{t\rightarrow t+\tau}
+$$</p>
+<ul>
+<li><strong>$\hat{\beta} \neq 0$</strong>: Predictability, $\mathbb{E}[R_{t \rightarrow t+\tau}] = \hat{a}+\hat{\beta} X_t$</li>
+<li>But what if its just luck? $\rightarrow$ <strong>Significance Testing</strong>.</li>
+<li>Look at standard errors. </li>
+</ul>
+<hr>
+
+<h2><strong>Out-of-Sample Predictability / Backtesting.</strong></h2>
+<ul>
+<li>Even if $\hat{\beta} \neq 0$, it does not mean that we can make money.</li>
+<li><strong>Out-of-Sample</strong>: Test the strategy on a different sample.</li>
+<li>It normally requires a <strong>rolling</strong> estimation of the model. </li>
+</ul>
+<hr>
+
+<h2><strong>Long-term Experiment</strong></h2>
+<p>Consider two timing strategies on the SP500, no leverage constraints.</p>
+<ul>
+<li>Buy/short the market if the rolling expected return over the next 3 years is positive/negative.</li>
+<li>Buy/short the market if the rolling expected return predicted by the log dividend price ratio is positive/negative.</li>
+<li>Rule of Thumb of Sharpe Ratios of 3.</li>
+</ul>
+<hr>
+
+<h2><strong>Entire Sample: 1871-2023</strong></h2>
+<!-- _backgroundColor: #f0f4f8 -->
+<table>
+<thead>
+<tr>
+<th><strong>Strategy</strong></th>
+<th><strong>Average Return</strong></th>
+<th><strong>Annual Volatility</strong></th>
+<th><strong>Approx. Sharpe Ratio</strong></th>
+<th><strong>Overall</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark</td>
+<td>0.45</td>
+<td>0.17</td>
+<td>2.63</td>
+<td>:warning:</td>
+</tr>
+<tr>
+<td>Linear Model</td>
+<td>0.54</td>
+<td>0.15</td>
+<td>3.67</td>
+<td>:white_check_mark:</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+<h2><strong>Post-war Sample: 1946-2023</strong></h2>
+<!-- _backgroundColor: #f0f4f8 -->
+<table>
+<thead>
+<tr>
+<th><strong>Strategy</strong></th>
+<th><strong>Average Return</strong></th>
+<th><strong>Annual Volatility</strong></th>
+<th><strong>Approx. Sharpe Ratio</strong></th>
+<th><strong>Overall</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark</td>
+<td>0.26</td>
+<td>0.17</td>
+<td>1.56</td>
+<td>:rotating_light:</td>
+</tr>
+<tr>
+<td>Linear Model</td>
+<td>0.42</td>
+<td>0.13</td>
+<td>3.28</td>
+<td>:white_check_mark:</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+<h2><strong>1970-2023</strong></h2>
+<!-- _backgroundColor: #f0f4f8 -->
+<table>
+<thead>
+<tr>
+<th><strong>Strategy</strong></th>
+<th><strong>Average Return</strong></th>
+<th><strong>Annual Volatility</strong></th>
+<th><strong>Approx. Sharpe Ratio</strong></th>
+<th><strong>Overall</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark</td>
+<td>0.22</td>
+<td>0.16</td>
+<td>1.35</td>
+<td>:rotating_light:</td>
+</tr>
+<tr>
+<td>Linear Model</td>
+<td>0.39</td>
+<td>0.13</td>
+<td>2.93</td>
+<td>:white_check_mark:</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+<h2><strong>1990-2023</strong></h2>
+<!-- _backgroundColor: #f0f4f8 -->
+<table>
+<thead>
+<tr>
+<th><strong>Strategy</strong></th>
+<th><strong>Average Return</strong></th>
+<th><strong>Annual Volatility</strong></th>
+<th><strong>Approx. Sharpe Ratio</strong></th>
+<th><strong>Overall</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Benchmark</td>
+<td>0.06</td>
+<td>0.16</td>
+<td>0.38</td>
+<td>:rotating_light:</td>
+</tr>
+<tr>
+<td>Linear Model</td>
+<td>0.26</td>
+<td>0.14</td>
+<td>1.95</td>
+<td>:warning:</td>
+</tr>
+</tbody>
+</table>
+<hr>
+
+<h2><strong>Predictability works better across shorter samples</strong></h2>
+<ul>
+<li>Expected returns over longer samples capture macroeconomic trends, risk premia, consumption growth, productivity growth, etc.</li>
+<li>Regardless of the source of predictability (risk vs mispricing), its profits tend to diminish over time.</li>
+<li>This is due to the statistical behavior of what we are trying to predict.</li>
+<li>My favorite analogy:  <strong>General Relativity vs Quantum Mechanics</strong>, over long distances/extended periods of time you just follow the laws of physics, but at the micro-level, things get weird.</li>
+</ul>
+<hr>
+
+<h2><strong>More complex relationships</strong></h2>
+<ul>
+<li>
+<p><strong>Non-linearities</strong>: Many signals, that are not linearly related to returns.
+$$
+R_{t\rightarrow t+\tau} = f(X_{1t},X_{2t},\ldots,X_{kt}) + \epsilon_{t\rightarrow t+\tau}
+$$</p>
+</li>
+<li>
+<p><strong>Machine Learning</strong>: Can we use more complex models to predict returns?</p>
+</li>
+<li><strong>Pros</strong>: Strategies can be more profitable as it can capture more complex relationships.</li>
+<li><strong>Cons</strong>: Overfitting, Black-box, and lack of economic intuition.</li>
+<li><strong>Alternative Data</strong>: <ul>
+<li>Satellite images,</li>
+<li>Social Media,</li>
+<li>Credit Card Transactions,</li>
+<li>Walking patterns</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+<h2><strong>Does ML work?</strong></h2>
+<p>It does if you are careful.</p>
+<ul>
+<li>Evidence across equity markets exploiting <strong>publicly available data</strong>, it is not about gathering additional data but learning from it (Kelly et al. 2020).</li>
+<li><strong>Retail Investors could benefit from ML</strong>: Publicly available data and ML can help select Mutual Funds with positive alpha (DeMiguel et al. 2023).</li>
+<li>Allows for <strong>in-house</strong> development of strategies that are not available to the general public.</li>
+</ul>
+<hr>
+
+<!-- @incremental: true -->
+
+<h2><strong>Artificial Intelligence and Natural Language Processing</strong></h2>
+<ul>
+<li>So far we have assumed <strong>$X_t$</strong> is a number. <!-- fadeIn --></li>
+<li>2023 Q4 Apple Inc's 10-K report contains only 6.91% of numerical characters. <!-- fadeIn --></li>
+<li><strong>Natural Language Processing</strong>: Can we extract information from text? <!-- fadeIn --><ul>
+<li>Companies' reports, <!-- fadeIn --></li>
+<li>Central Bank Statements, <!-- fadeIn --></li>
+<li>News Articles, <!-- fadeIn --></li>
+<li>Earnings Calls. <!-- fadeIn --></li>
+<li>Social Media. <!-- fadeIn --></li>
+</ul>
+</li>
+</ul>
+<hr>
+
+<h2><strong>Why Text Matters in Investing</strong></h2>
+<ul>
+<li>Much of the information in finance is conveyed through words, not just numbers.</li>
+<li>Words can reveal emotions, intentions, and subtle cues that quantitative data misses.</li>
+<li>Intuition: Like reading between the lines in a business meeting.</li>
+</ul>
+<hr>
+
+<h2><strong>Sentiment Analysis Basics</strong></h2>
+<ul>
+<li><strong>Sentiment</strong>: The emotional tone behind words – positive, negative, or neutral.</li>
+<li>Algorithms analyze text to score sentiment, similar to how humans judge a conversation.</li>
+<li>Business intuition: A positive tone in a CEO's speech might predict better company performance.</li>
+</ul>
+<hr>
+
+<h2><strong>Text-Based Signals in Practice</strong></h2>
+<ul>
+<li><strong>Earnings Calls</strong>: The tone of executives can predict stock price movements.</li>
+<li><strong>News Articles</strong>: Negative coverage often leads to immediate market drops.</li>
+<li><strong>Social Media</strong>: Public sentiment on platforms like Twitter influences retail trading.</li>
+</ul>
+<hr>
+
+<h2><strong>Challenges with Text Data</strong></h2>
+<ul>
+<li>Text can be ambiguous: sarcasm, irony, or context-dependent meanings.</li>
+<li>Not all information is useful; some is just noise.</li>
+<li>Over-relying on text without combining with numbers can lead to poor decisions.</li>
+</ul>
+<hr>
+
+<h2><strong>Integrating Text into Investment Strategies</strong></h2>
+<ul>
+<li>Combine text signals with traditional financial metrics for better predictions.</li>
+<li>Hedge funds use NLP to gain an edge in timing trades or selecting stocks.</li>
+<li>Intuition: It's like having a translator for the "human" side of markets.</li>
+</ul>
+<hr>
+
+<h2><strong>AI Adoption</strong></h2>
+<p>A BarclayHedge survey of 55 hedge fund/CTA professionals</p>
+<ul>
+<li>Q1: Do you utilize a machine learning (artificial intelligence) approach in your investment processes?</li>
+</ul>
+<p><img alt="" src="q1_survey.png" /></p>
+<hr>
+
+<h2><strong>AI Adoption</strong></h2>
+<ul>
+<li>Q2: Which part of your investment process is driven by an application of machine learning techniques? </li>
+</ul>
+<p><img alt="" src="q2_survey.png" /></p>
+<hr>
+
+<h2><strong>AI Adoption</strong></h2>
+<ul>
+<li>Q5: What are your approximate total strategy assets that utilize machine learning/artificial intelligence (funds and managed accounts)?</li>
+</ul>
+<p><img alt="" src="q5_survey.png" /></p>
+<hr>
+
+<h1><strong>Conclusions</strong></h1>
+<ul>
+<li><strong>Return predictability exists</strong> and varies systematically with business cycles and market conditions</li>
+<li><strong>Modern hedge funds</strong> increasingly leverage AI, NLP, and alternative data sources to gain competitive advantages</li>
+<li><strong>Success requires</strong> combining traditional financial metrics with innovative approaches and rigorous risk management</li>
+</ul>
+<hr>
+
+<h1><strong>Questions?</strong></h1>
+<p>Thank you for your attention!</p>
+</main>
+</body>
+</html>
