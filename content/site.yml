@@ -21,14 +21,13 @@ welcome:
     I completed as a visiting student at The Wharton School.
   - |
     My work sits between corporate finance, asset pricing, and computational
-    finance. Much of it asks what happens when information reaches markets
-    through channels the classical models never anticipated: how conversation
-    on social media accelerates bank runs and steers money into mutual funds,
-    what leaked offshore data does to the private firms it exposes, and how
-    much option prices really tell us about what comes next. Alongside that I
-    build the computational machinery these questions need, from language
-    models applied to financial text to numerical methods for dynamic
-    corporate policy.
+    finance. Recent papers look at how social media activity relates to bank
+    runs and to mutual fund flows, what offshore data leaks do to the private
+    firms they expose, how energy policy uncertainty affects investment and
+    stock returns, and how well short-term options forecast volatility and
+    higher moments. A second strand is more methodological: contracting models
+    of corporate tax strategy and executive pay, and machine learning applied
+    to asset pricing.
   - |
     The research page has every paper, each with a plain-language summary next
     to its abstract. My CV is linked above, and email is the fastest way to
