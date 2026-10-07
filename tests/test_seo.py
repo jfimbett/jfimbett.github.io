@@ -34,7 +34,8 @@ def test_research_declares_every_published_paper(rendered):
     blocks = _json_ld((rendered / "research.html").read_text(encoding="utf-8"))
     graph = next(b["@graph"] for b in blocks if "@graph" in b)
     articles = [n for n in graph if n.get("@type") == "ScholarlyArticle"]
-    published = build_context()["grouped"]["published"]
+    grouped = build_context()["grouped"]
+    published = grouped["published"] + grouped["other"]
     assert len(articles) == len(published)
     for article in articles:
         assert article["name"]

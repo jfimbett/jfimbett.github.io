@@ -22,9 +22,11 @@ def test_partition_groups_by_status():
         {"id": "b", "status": "working"},
         {"id": "c", "status": "wip"},
         {"id": "d", "status": "published"},
+        {"id": "e", "status": "other"},
     ]
     grouped = partition(papers)
     assert [p["id"] for p in grouped["published"]] == ["a", "d"]
+    assert [p["id"] for p in grouped["other"]] == ["e"]
     assert [p["id"] for p in grouped["working"]] == ["b"]
     assert [p["id"] for p in grouped["wip"]] == ["c"]
 
@@ -181,3 +183,11 @@ def test_the_nav_does_not_duplicate_the_cv_link(tmp_path):
     markup = (tmp_path / "index.html").read_text(encoding="utf-8")
     nav = re.search(r'<div class="site-nav__links">(.*?)</div>', markup, re.S).group(1)
     assert "cv.pdf" not in nav
+
+
+def test_paper_panels_share_a_name_and_load_the_tabs_script(tmp_path):
+    render_site(out_dir=tmp_path)
+    markup = (tmp_path / "research.html").read_text(encoding="utf-8")
+    assert 'class="entry__panels"' in markup
+    assert '<details name="social-media-bank-run">' in markup
+    assert "assets/js/tabs.js" in markup

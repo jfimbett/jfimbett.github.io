@@ -6,7 +6,7 @@
 <script type="application/ld+json">
 {{ {
   "@context": "https://schema.org",
-  "@graph": grouped.published | map('scholarly_article_for', site) | list
+  "@graph": (grouped.published + grouped.other) | map('scholarly_article_for', site) | list
 } | tojson }}
 </script>
 {% endblock %}
@@ -14,7 +14,7 @@
 {% block page_heading %}<h1 class="visually-hidden">Research</h1>{% endblock %}
 
 {% block content %}
-<section class="section">
+<section class="section section--list">
   <div class="wrap">
     <p class="eyebrow">Research</p>
     <h2 class="section__title">Publications</h2>
@@ -22,17 +22,28 @@
   </div>
 </section>
 
-<section class="section section--tint">
+<section class="section section--list section--tint">
+  <div class="wrap">
+    <h2 class="section__title">Other publications</h2>
+    {% for paper in grouped.other %}{{ entry(paper, loop.index) }}{% endfor %}
+  </div>
+</section>
+
+<section class="section section--list">
   <div class="wrap">
     <h2 class="section__title">Working papers</h2>
     {% for paper in grouped.working %}{{ entry(paper, loop.index) }}{% endfor %}
   </div>
 </section>
 
-<section class="section">
+<section class="section section--list section--tint">
   <div class="wrap">
     <h2 class="section__title">Work in progress</h2>
     {% for paper in grouped.wip %}{{ entry(paper, loop.index) }}{% endfor %}
   </div>
 </section>
+{% endblock %}
+
+{% block scripts %}
+<script defer src="assets/js/tabs.js"></script>
 {% endblock %}

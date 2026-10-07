@@ -67,6 +67,12 @@ def test_published_with_venue_and_year_passes():
     assert validate_papers([_paper(status="published", venue="JFE", year=2026)])
 
 
+def test_other_publication_requires_venue_and_year():
+    with pytest.raises(ContentError):
+        validate_papers([_paper(status="other")])
+    assert validate_papers([_paper(status="other", venue="JPM", year=2026)])
+
+
 def test_non_url_safe_id_is_rejected():
     with pytest.raises(ContentError, match="not URL-safe"):
         validate_papers([_paper(id="A Paper!")])

@@ -20,7 +20,7 @@ ROOT = Path(__file__).parent
 CONTENT = ROOT / "content"
 
 SELF = "SELF"
-VALID_STATUS = {"published", "working", "wip"}
+VALID_STATUS = {"published", "other", "working", "wip"}
 # Research agendas, in legend order. The slug colours a paper's point in the
 # hero scatter (assets/js/hero.js reads a --plot-<slug> custom property), and
 # the label names it in the legend rendered by templates/index.html.j2.
@@ -111,11 +111,11 @@ def validate_papers(papers):
                     where, status, sorted(VALID_STATUS)
                 )
             )
-        if status == "published":
+        if status in ("published", "other"):
             for field in ("venue", "year"):
                 if not paper.get(field):
                     errors.append(
-                        "{}: published papers requires '{}'".format(where, field)
+                        "{}: {} papers requires '{}'".format(where, status, field)
                     )
 
         agenda = paper.get("agenda")
@@ -199,7 +199,7 @@ def format_authors(authors, self_name):
 
 def partition(papers):
     """Group papers by status, preserving file order within each group."""
-    grouped = {"published": [], "working": [], "wip": []}
+    grouped = {"published": [], "other": [], "working": [], "wip": []}
     for paper in papers:
         grouped[paper["status"]].append(paper)
     return grouped

@@ -11,7 +11,7 @@ served by GitHub Pages.
    - id: my-new-paper
      title: The Title
      authors: [Coauthor Name, SELF]
-     status: working          # published | working | wip
+     status: working          # published | other | working | wip
      year: 2026
      ssrn: https://papers.ssrn.com/...
      topics: [asset pricing]
@@ -24,7 +24,8 @@ served by GitHub Pages.
    ```
 
    `SELF` renders as your name in bold. Published papers also need `venue`
-   and `year`. `agenda` must be one of the slugs in `AGENDAS` in `build.py`;
+   and `year`; `other` is for practitioner-journal pieces and is listed under
+   "Other publications" with the same fields. `agenda` must be one of the slugs in `AGENDAS` in `build.py`;
    adding a new one means adding a `--plot-<slug>` colour to
    `assets/css/site.css` and a shape to `SHAPES` in `assets/js/hero.js`.
 

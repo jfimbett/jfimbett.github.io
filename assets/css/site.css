@@ -27,16 +27,16 @@
   --body: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
 
-  --step--1: clamp(0.80rem, 0.77rem + 0.15vw, 0.88rem);
-  --step-0:  clamp(1.00rem, 0.96rem + 0.20vw, 1.13rem);
-  --step-1:  clamp(1.25rem, 1.18rem + 0.35vw, 1.45rem);
-  --step-2:  clamp(1.56rem, 1.44rem + 0.60vw, 1.94rem);
-  --step-3:  clamp(1.95rem, 1.74rem + 1.05vw, 2.63rem);
-  --step-4:  clamp(2.44rem, 2.08rem + 1.80vw, 3.75rem);
+  --step--1: clamp(0.72rem, 0.70rem + 0.12vw, 0.78rem);
+  --step-0:  clamp(0.90rem, 0.87rem + 0.15vw, 0.98rem);
+  --step-1:  clamp(1.10rem, 1.04rem + 0.30vw, 1.25rem);
+  --step-2:  clamp(1.35rem, 1.26rem + 0.50vw, 1.65rem);
+  --step-3:  clamp(1.65rem, 1.50rem + 0.80vw, 2.15rem);
+  --step-4:  clamp(2.00rem, 1.75rem + 1.40vw, 3.00rem);
 
   --wrap: 1200px;
   --gutter: clamp(1.25rem, 4vw, 3rem);
-  --rhythm: clamp(3rem, 7vw, 6rem);
+  --rhythm: clamp(2rem, 4.5vw, 3.5rem);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -76,7 +76,7 @@ body {
   color: var(--ink);
   font-family: var(--body);
   font-size: var(--step-0);
-  line-height: 1.65;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -145,7 +145,7 @@ img { max-width: 100%; height: auto; }
 
 /* --- Hero ---------------------------------------------------------------- */
 
-.hero { padding-block: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem); }
+.hero { padding-block: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 3.5vw, 2.5rem); }
 .hero__grid {
   display: grid; gap: clamp(2rem, 5vw, 4rem);
   grid-template-columns: 1fr;
@@ -162,7 +162,7 @@ img { max-width: 100%; height: auto; }
   font-family: var(--display); font-weight: 600; font-size: var(--step-1);
   color: var(--ink); margin: 0 0 0.15em;
 }
-.hero__institution { color: var(--muted); font-size: var(--step-0); margin-bottom: 1.5rem; }
+.hero__institution { color: var(--muted); font-size: var(--step-0); margin-bottom: 1rem; }
 
 /* EDHEC's mark. Its official grenat is the same #5F1937 the site is built on,
    so it is drawn with the theme tokens and follows light and dark mode. */
@@ -181,7 +181,7 @@ img { max-width: 100%; height: auto; }
 
 .hero__portrait {
   /* Native size is 369x560; never upscale it. */
-  display: block; width: min(100%, 369px); margin-inline: auto;
+  display: block; width: min(100%, 300px); margin-inline: auto;
   border: 1px solid var(--border);
 }
 
@@ -236,20 +236,21 @@ img { max-width: 100%; height: auto; }
 
 .section { padding-block: var(--rhythm); }
 .section--tint { background: var(--grenat-pastel); }
+.section--list { padding-block: clamp(1.5rem, 3.5vw, 2.5rem); }
 .eyebrow {
   font-family: var(--display); font-weight: 700; font-size: var(--step--1);
   letter-spacing: 0.16em; text-transform: uppercase;
   color: var(--muted); margin-bottom: 0.75rem;
 }
-.section__title { font-size: var(--step-3); margin-bottom: 2.5rem; }
-.section__more { margin-top: 2.5rem; }
+.section__title { font-size: var(--step-3); margin-bottom: 1.5rem; }
+.section__more { margin-top: 1.5rem; }
 
 /* --- Numbered entries ---------------------------------------------------- */
 
 .entry {
-  display: grid; gap: 0.5rem 2rem;
+  display: grid; gap: 0.35rem 2rem;
   grid-template-columns: 1fr;
-  padding-block: 2.25rem;
+  padding-block: 1.25rem;
   border-top: 1px solid var(--border);
 }
 .entry:last-child { border-bottom: 1px solid var(--border); }
@@ -260,18 +261,20 @@ img { max-width: 100%; height: auto; }
   font-family: var(--display); font-weight: 700; font-size: var(--step-1);
   color: var(--grenat); font-variant-numeric: tabular-nums; line-height: 1.2;
 }
-.entry__title { font-size: var(--step-1); margin-bottom: 0.35rem; }
+.entry__body { line-height: 1.45; }
+.entry__body > p:last-child { margin-bottom: 0; }
+.entry__title { font-size: var(--step-1); margin-bottom: 0.2rem; }
 .entry__title a { text-decoration: none; }
 .entry__title a:hover { text-decoration: underline; }
-.entry__authors { color: var(--ink); margin-bottom: 0.2rem; }
+.entry__authors { color: var(--ink); margin-bottom: 0.1rem; }
 .entry__authors strong { font-weight: 600; }
 .entry__venue {
   font-family: var(--display); font-weight: 600; font-size: var(--step--1);
-  color: var(--muted); margin-bottom: 0.9rem;
+  color: var(--muted); margin-bottom: 0.4rem;
 }
 .summary {
   border-left: 3px solid var(--coral);
-  padding-left: 1.15rem; margin-block: 1.1rem;
+  padding-left: 1.15rem; margin-block: 0.5rem 0.75rem;
   color: var(--ink);
 }
 .summary p { margin-bottom: 0; }
@@ -286,7 +289,27 @@ img { max-width: 100%; height: auto; }
 .entry summary::before { content: "+ "; font-variant-numeric: tabular-nums; }
 .entry details[open] summary::before { content: "− "; }
 
-.entry__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-top: 0.75rem; }
+/* The <details> toggles (summary, abstract, media…) sit in one row, and the
+   open one drops to a full-width line beneath; their shared `name` keeps one
+   open at a time. With JavaScript (assets/js/tabs.js) the row becomes buttons
+   with a single shared panel, so the open toggle stays put. */
+.entry__panels { display: flex; flex-wrap: wrap; gap: 0 1.25rem; margin-block: 0.15rem 0.35rem; }
+.entry__panels > details { margin-block: 0; }
+.entry__panels > details[open] { flex-basis: 100%; order: 1; }
+.entry__tabs { display: flex; flex-wrap: wrap; flex-basis: 100%; gap: 0.25rem 1.25rem; }
+.entry__tab {
+  background: none; border: 0; padding: 0.35rem 0; cursor: pointer;
+  font-family: var(--display); font-weight: 600; font-size: var(--step--1);
+  color: var(--grenat); font-variant-numeric: tabular-nums;
+}
+.entry__tab::before { content: "+ "; }
+.entry__tab[aria-expanded="true"]::before { content: "− "; }
+.entry__tab:hover, .entry__tab:focus-visible { text-decoration: underline; }
+.entry__panels.is-tabbed > details:not([open]) { display: none; }
+.entry__panels.is-tabbed > details[open] { margin-top: 0.5rem; }
+.entry__panels.is-tabbed summary { display: none; }
+
+.entry__links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-top: 0.35rem; margin-bottom: 0.5rem; }
 .entry__links a {
   font-family: var(--display); font-weight: 600; font-size: var(--step--1);
   text-decoration: none; border-bottom: 1px solid var(--border);
@@ -304,7 +327,7 @@ img { max-width: 100%; height: auto; }
 
 .site-footer {
   border-top: 1px solid var(--border);
-  padding-block: var(--rhythm) 2.5rem;
+  padding-block: clamp(1.75rem, 4vw, 2.5rem) 2rem;
   margin-top: var(--rhythm);
 }
 .profile-links { display: flex; gap: 1.25rem; align-items: center; }

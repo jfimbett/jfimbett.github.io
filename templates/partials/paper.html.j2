@@ -18,19 +18,23 @@
     <p class="entry__venue">Work in progress</p>
     {% endif %}
 
+    <div class="entry__panels">
     {% if paper.summary %}
-    <div class="summary"><p>{{ paper.summary | trim }}</p></div>
+    <details name="{{ paper.id }}">
+      <summary>Summary</summary>
+      <div class="summary"><p>{{ paper.summary | trim }}</p></div>
+    </details>
     {% endif %}
 
     {% if paper.abstract %}
-    <details>
+    <details name="{{ paper.id }}">
       <summary>Abstract</summary>
       <p>{{ paper.abstract | trim }}</p>
     </details>
     {% endif %}
 
     {% if paper.media %}
-    <details>
+    <details name="{{ paper.id }}">
       <summary>Media coverage ({{ paper.media | length }})</summary>
       <ul>
         {% for item in paper.media %}
@@ -41,7 +45,7 @@
     {% endif %}
 
     {% if paper.regulators %}
-    <details>
+    <details name="{{ paper.id }}">
       <summary>Cited by regulators ({{ paper.regulators | length }})</summary>
       <ul>
         {% for item in paper.regulators %}
@@ -50,6 +54,7 @@
       </ul>
     </details>
     {% endif %}
+    </div>
 
     <div class="entry__links">
       {% if paper.doi %}<a href="{{ paper.doi }}" target="_blank" rel="noopener">Published version</a>{% endif %}
