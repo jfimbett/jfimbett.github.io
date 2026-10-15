@@ -84,28 +84,6 @@
     medium and long horizons, in and out of sample, and they beat the
     equivalent measures built from past returns.
 
-- id: paying-for-risk
-  title: "Paying for Risk, not Luck: Rethinking Incentives in Asset Management"
-  authors: [SELF, Igor Yelnik, Frank J. Fabozzi]
-  status: other
-  venue: The Journal of Portfolio Management
-  detail: Online first, September 2026, jpm.2026.061
-  year: 2026
-  doi: https://doi.org/10.3905/jpm.2026.061
-  topics: [asset management, incentives, risk-taking]
-  agenda: corporate-finance
-  short: Paying for Risk
-  abstract: |
-    This article examines how standard compensation structures in asset management can lead to systematic misalignment between investors and portfolio managers. Because investor flows respond asymmetrically to performance (i.e., rewarding strong outcomes disproportionately while penalizing weak outcomes more gradually), managers face a payoff structure that resembles a financial option. This implicit convexity creates an incentive to increase portfolio volatility, as higher risk raises the likelihood of extreme positive performance and the associated inflows of capital. As a result, managers may rationally take more risk than investors intend, even when expected returns are unchanged. We show that this behavior is not a consequence of poor judgment, but a structural feature of delegated portfolio management. To address this issue, we propose a simple and transparent alternative: Explicitly linking compensation to the level of risk deployed rather than relying solely on assets under management and realized performance. By aligning fees with agreed risk targets, investors can reduce incentives for excessive risk-taking while preserving appropriate rewards for managing capital effectively. The framework provides a practical approach for improving mandate design, enhancing oversight, and ensuring that the risks taken in a portfolio are consistent with investor objectives.
-  summary: |
-    Investors reward a fund's good years far more than they punish its bad
-    ones, which hands the manager something that looks like a call option on
-    their own performance. The rational response is to take more risk than the
-    investor asked for, not out of poor judgement but because the contract
-    pays for it. We propose tying fees to the amount of risk actually deployed
-    rather than to assets and realised returns alone, so that the risk in the
-    portfolio is the risk the investor agreed to.
-
 - id: offshore-data-leaks
   title: "The Real Effects of Offshore Data Leaks: Evidence from Private Firms"
   authors: [Marcelo Ortiz M., SELF]

@@ -28,15 +28,15 @@ def test_site_is_valid():
     assert site["email"] == "juan.imbet@edhec.edu"
 
 
-def test_there_are_ten_papers(papers):
-    assert len(papers) == 10
+def test_there_are_nine_papers(papers):
+    assert len(papers) == 9
 
 
 def test_status_counts_match_the_spec(papers):
     counts = {}
     for paper in papers:
         counts[paper["status"]] = counts.get(paper["status"], 0) + 1
-    assert counts == {"published": 2, "other": 2, "working": 4, "wip": 2}
+    assert counts == {"published": 2, "other": 1, "working": 4, "wip": 2}
 
 
 def test_published_papers_all_have_a_link(papers):
