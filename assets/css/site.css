@@ -180,7 +180,7 @@ img { max-width: 100%; height: auto; }
 .rule { border: 0; height: 3px; width: 4.5rem; background: var(--coral); margin: 1.75rem 0; }
 
 .hero__portrait {
-  /* Native size is 369x560; never upscale it. */
+  /* Source is 738x1120 (2x of the 369x560 layout box). */
   display: block; width: min(100%, 300px); margin-inline: auto;
   border: 1px solid var(--border);
 }
